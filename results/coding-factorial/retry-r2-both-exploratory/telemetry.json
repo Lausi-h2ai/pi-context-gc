@@ -1,0 +1,68 @@
+{
+  "requests": [
+    {
+      "instructions": "435a2a12bf45a9bf39fd4f897bc4c5bd72fd3a70885f7ec8c2fe590a79021da9",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "4b92a87e9e9096bcf89500b53febae84e8597e7265cfd56858d3a67f0060dd2e",
+      "inputHashes": [
+        "6cb1bb86e3799759b7105690cd3f7ad95f2ae4f308fa7dc0c570be67d494ea21"
+      ],
+      "inputItems": 1,
+      "payloadHash": "55b29045455ff57ee725356eeb26d09922d688b5e186d2be1c43aec46726e466",
+      "inputCharacters": 383
+    },
+    {
+      "instructions": "435a2a12bf45a9bf39fd4f897bc4c5bd72fd3a70885f7ec8c2fe590a79021da9",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "4b92a87e9e9096bcf89500b53febae84e8597e7265cfd56858d3a67f0060dd2e",
+      "inputHashes": [
+        "6cb1bb86e3799759b7105690cd3f7ad95f2ae4f308fa7dc0c570be67d494ea21",
+        "76304c74d41432584ed6bca59af462b2227752c8e6e30a2a97e10e12da4cafce",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf"
+      ],
+      "inputItems": 3,
+      "payloadHash": "5e7eac1c503f7bd71d7771c386fdf5502035ad95178b0063a905b534fc250a7a",
+      "inputCharacters": 861
+    }
+  ],
+  "usage": [
+    {
+      "input": 562,
+      "output": 20,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 582,
+      "cost": {
+        "input": 0.000056200000000000004,
+        "output": 0.000009999999999999999,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.00006620000000000001
+      },
+      "inputTotal": 562,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "totalTokens": 0,
+      "cost": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      },
+      "inputTotal": 0,
+      "cached_tokens": 0,
+      "stopReason": "error",
+      "error": "You have hit your ChatGPT usage limit (plus plan). Try again in ~262 min."
+    }
+  ]
+}

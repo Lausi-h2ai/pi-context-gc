@@ -1,0 +1,71 @@
+import unicodedata
+from urllib.parse import parse_qsl, quote_plus, urlsplit
+
+
+def canonical_url(url):
+    if not isinstance(url, str) or any(unicodedata.category(char) == "Cc" for char in url):
+        raise ValueError("invalid URL")
+    if url != url.lstrip():
+        raise ValueError("invalid URL")
+
+    try:
+        parsed = urlsplit(url)
+    except ValueError as exc:
+        raise ValueError("invalid URL") from exc
+
+    scheme = parsed.scheme.lower()
+    if scheme not in ("http", "https"):
+        raise ValueError("unsupported URL scheme")
+    if parsed.username is not None or parsed.password is not None:
+        raise ValueError("credentials are not allowed")
+    if "#" in url:
+        raise ValueError("fragments are not allowed")
+    if not parsed.netloc or not parsed.hostname:
+        raise ValueError("missing host")
+
+    hostname = parsed.hostname.lower()
+    if hostname.endswith("."):
+        hostname = hostname[:-1]
+    if not hostname:
+        raise ValueError("missing host")
+    if any(char.isspace() or char in "/\\?#@" for char in hostname):
+        raise ValueError("invalid host")
+    if parsed.netloc.endswith(":"):
+        raise ValueError("invalid port")
+
+    try:
+        port = parsed.port
+    except ValueError as exc:
+        raise ValueError("invalid port") from exc
+
+    authority = f"[{hostname}]" if ":" in hostname else hostname
+    if port is not None and port != (80 if scheme == "http" else 443):
+        authority += f":{port}"
+
+    raw_path = parsed.path or "/"
+    trailing_slash = raw_path.endswith("/")
+    stack = []
+    for segment in raw_path.split("/"):
+        if segment in ("", "."):
+            continue
+        if segment == "..":
+            if stack:
+                stack.pop()
+        else:
+            stack.append(segment)
+    path = "/" + "/".join(stack)
+    if trailing_slash and path != "/":
+        path += "/"
+
+    try:
+        pairs = parse_qsl(parsed.query, keep_blank_values=True, encoding="utf-8", errors="strict")
+    except (ValueError, UnicodeDecodeError) as exc:
+        raise ValueError("invalid query") from exc
+    pairs.sort(key=lambda pair: (pair[0], pair[1]))
+    query = "&".join(
+        f"{quote_plus(key, safe='', encoding='utf-8', errors='strict')}="
+        f"{quote_plus(value, safe='', encoding='utf-8', errors='strict')}"
+        for key, value in pairs
+    )
+
+    return f"{scheme}://{authority}{path}" + (f"?{query}" if pairs else "")

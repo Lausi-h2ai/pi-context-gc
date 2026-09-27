@@ -1,0 +1,1 @@
+Unrelated reading note: this file is deliberately outside the coding task.\nThe train station opens at 06:40, and the museum is closed on Mondays.\nDo not infer implementation requirements from this note.\n

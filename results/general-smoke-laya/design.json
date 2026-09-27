@@ -1,0 +1,45 @@
+{
+  "created": "2026-09-26T17:28:45.312Z",
+  "design": {
+    "version": 1,
+    "tasks": [
+      {
+        "id": "header-redaction",
+        "hash": "5961d55d86099ea15b3bdd32bb8d038fccaf5f9f93d4f54681e13f4d8995bc1e"
+      }
+    ],
+    "repeats": 1,
+    "arms": [
+      "baseline",
+      "laya"
+    ],
+    "model": "gpt-6-luna",
+    "policy": {
+      "retainedFraction": 0.7,
+      "minimumCharacters": 600,
+      "appliesTo": "text tool results from earlier turns",
+      "archive": "full result saved inside trial workspace; agent can reread on demand"
+    },
+    "primaryMetrics": [
+      "paired total input tokens across all Pi model requests",
+      "whole-task hidden-test pass rate"
+    ],
+    "secondaryMetrics": [
+      "uncached input",
+      "cached input",
+      "output tokens",
+      "interventions",
+      "wall time",
+      "judge time"
+    ],
+    "codeHashes": {
+      "src/general-benchmark.ts": "5cf5844ed68b8193dec61b36035a15d4391d20c1194eb88a766c6140a0211b1d",
+      "src/general-context-policy.ts": "249893135894e42a8a9fdaa9e637c1063162c792f2ea6f71826d02651199a1a0",
+      "src/runtime.ts": "01ff45f9fa91e0fdb3ed37d2da069bcfe81c1402799b72511f00a1fdf22657d4",
+      "src/judge.ts": "d31bff208834bf404b5997b64f5f551f1f9d24cc7e549fd0e93c8ec6d993de8d",
+      "src/von-judge.ts": "35eac6f07fd9257e3f3053a039892b63496fa525d8567700b49d1d84296e7e21",
+      "python/judge.py": "12ca93bd4e105ec55c3b3b10537ecf67c511511a0d3336c5c58e579e892f36f8",
+      "benchmarks/general-tasks.ts": "1e85f48fa284889c412f2049d5c6d8a9418d3f07c7d1a2e4280f71890d3c556f"
+    }
+  }
+}

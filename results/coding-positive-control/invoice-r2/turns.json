@@ -1,0 +1,81 @@
+[
+  {
+    "label": "bootstrap",
+    "latencyMs": 1480.187566000037,
+    "answer": "Understood—I’ll wait for the further requirements before inspecting files or implementing anything."
+  },
+  {
+    "label": "diagnostic",
+    "latencyMs": 3339.5265909999725,
+    "answer": "The actionable failure is that `parse_invoices` changes the amount string `123.00` to `123.0`, losing its decimal precision.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "9dd0c846",
+      "leaf": "fc42c897",
+      "beforeMessages": 7,
+      "afterMessages": 7,
+      "verdict": {
+        "action": "KEEP_RESULT",
+        "discardProbability": 0,
+        "durableProbability": 1,
+        "windows": 1,
+        "latencyMs": 0
+      }
+    }
+  },
+  {
+    "label": "tangent",
+    "latencyMs": 4097.0991090000025,
+    "answer": "The capital mentioned is Paris.",
+    "decision": {
+      "action": "DROP",
+      "reason": "confident disposable tail",
+      "checkpoint": "fc42c897",
+      "leaf": "8c27ecca",
+      "beforeMessages": 11,
+      "afterMessages": 7,
+      "verdict": {
+        "action": "DISCARD",
+        "discardProbability": 1,
+        "durableProbability": 0,
+        "windows": 1,
+        "latencyMs": 0
+      },
+      "archive": "/home/laurent/pi_jev/results/coding-positive-control/invoice-r2/archive/01a0de2e-2af2-770a-8f5c-cffc4c9df54e-8c27ecca.json"
+    }
+  },
+  {
+    "label": "constraints",
+    "latencyMs": 4825.723567000008,
+    "answer": "Requirements: parse semicolon-separated CSV with the exact `id;amount` header; trim spaces around both fields; normalize decimal commas to dots while preserving other amount text, including signs and leading/trailing zeros; accept only signed or unsigned digits optionally followed by one decimal separator and more digits; reject invalid amounts, empty fields, malformed field counts, empty input, and wrong headers with `ValueError`; skip physically blank lines; support quoted identifiers containing semicolons; and return an empty list for header-only input. I won’t implement yet.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "fc42c897",
+      "leaf": "115c366f",
+      "beforeMessages": 11,
+      "afterMessages": 11,
+      "verdict": {
+        "action": "KEEP_FULL",
+        "discardProbability": 0,
+        "durableProbability": 1,
+        "windows": 1,
+        "latencyMs": 0
+      }
+    }
+  },
+  {
+    "label": "implement",
+    "latencyMs": 10323.066936000017,
+    "answer": "Implemented CSV parsing with the required validation and trimming, while preserving amount text and normalizing decimal commas.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "side effects, errors, or context boundary",
+      "checkpoint": "115c366f",
+      "leaf": "3caf3694",
+      "beforeMessages": 17,
+      "afterMessages": 17
+    }
+  }
+]

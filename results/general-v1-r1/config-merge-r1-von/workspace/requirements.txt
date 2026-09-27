@@ -1,0 +1,3 @@
+Implement merge_settings(base, overlays).
+
+base is a JSON-style dictionary and overlays is a list of dictionaries applied from left to right. Return a fresh dictionary. When both the current value and an overlay value are dictionaries, merge them recursively. Otherwise the overlay replaces the current value. Lists and scalar values replace rather than merge, and all nested values must be copied so later caller mutations cannot change the result. An overlay value of None deletes that key; deleting a missing key is harmless. A None already present in base remains when no overlay deletes it. Do not mutate base, overlays, or any nested list/dictionary. Inputs are dictionaries/lists containing JSON-style values.

@@ -1,0 +1,79 @@
+[
+  {
+    "label": "bootstrap",
+    "text": "Repair all three functions in solver.py: parse_invoices, retry_delays, and normalize_members. You will receive their contracts, diagnostics, and implementation steps before editing. Do not inspect or edit files until asked. Acknowledge in one sentence.",
+    "latencyMs": 8085.906802,
+    "answer": "Understood; I’ll wait for the contracts, diagnostics, and implementation steps before inspecting or editing any files.Understood; I’ll wait for the contracts, diagnostics, and implementation steps before inspecting or editing any files.",
+    "messages": 3
+  },
+  {
+    "label": "guide",
+    "text": "Read project-guide.md completely using read. It is the stable contract for all three functions. Do not edit yet; acknowledge what functions are in scope.",
+    "latencyMs": 9452.66693,
+    "answer": "I’ve read `project-guide.md` completely. The three functions in scope are `parse_invoices`, `retry_delays`, and `normalize_members`; I won’t edit until you provide the remaining instructions.",
+    "messages": 9
+  },
+  {
+    "label": "plan",
+    "text": "Give a concise implementation plan for all three functions using the guide. Do not inspect or edit code yet.",
+    "latencyMs": 3973.835705999998,
+    "answer": "- **`parse_invoices`**: Use semicolon-delimited CSV parsing, require the exact header, skip physically blank lines, and validate two trimmed fields per record. Validate amounts against the specified numeric format, convert comma decimals to dots, and preserve all other amount text.\n- **`retry_delays`**: Check method eligibility, then process statuses in order, stopping on non-retryable status or after two delays. Apply the 100/200 ms defaults and valid `retry_after` overrides, rounded up and capped.\n- **`normalize_members`**: Validate each input path, convert backslashes to separators, normalize segments while preventing root escape, then deduplicate normalized paths in first-seen order. Empty input returns an empty list.",
+    "messages": 11
+  },
+  {
+    "label": "diagnostic-1",
+    "text": "Read diagnostic-1.log completely using read. State the actionable failure in one sentence. Do not edit yet.",
+    "latencyMs": 4561.28082,
+    "answer": "`parse_invoices` loses decimal precision and trailing zeros by converting amounts to `float`; it must preserve the validated amount text.",
+    "messages": 15
+  },
+  {
+    "label": "tangent-1",
+    "text": "As an unrelated short break, read aside-1.txt and answer its simple question in one phrase. Do not change code.",
+    "latencyMs": 4789.944476000001,
+    "answer": "Paris.",
+    "messages": 19
+  },
+  {
+    "label": "diagnostic-2",
+    "text": "Read diagnostic-2.log completely using read. State the actionable failure in one sentence. Do not edit yet.",
+    "latencyMs": 5987.3736229999995,
+    "answer": "`retry_delays` currently retries every status ≥400; it must retry only 429 or 503 and stop at any other status.",
+    "messages": 23
+  },
+  {
+    "label": "tangent-2",
+    "text": "As an unrelated short break, read aside-2.txt and answer its simple question in one phrase. Do not change code.",
+    "latencyMs": 5423.489027000003,
+    "answer": "Cobalt blue.",
+    "messages": 27
+  },
+  {
+    "label": "diagnostic-3",
+    "text": "Read diagnostic-3.log completely using read. State the actionable failure in one sentence. Do not edit yet.",
+    "latencyMs": 6391.109425000002,
+    "answer": "`normalize_members` silently strips leading traversal via `lstrip`-style normalization; it must reject any `..` segment that escapes the root.",
+    "messages": 31
+  },
+  {
+    "label": "tangent-3",
+    "text": "As an unrelated short break, read aside-3.txt and answer its simple question in one phrase. Do not change code.",
+    "latencyMs": 9885.558673,
+    "answer": "Otter.",
+    "messages": 35
+  },
+  {
+    "label": "constraints",
+    "text": "Read requirements.txt completely using read. Confirm you have all three contracts and the three diagnostic findings. Do not edit yet.",
+    "latencyMs": 5033.946256000003,
+    "answer": "I have all three contracts and the three diagnostic findings: invoice amount precision is lost, retry handling must restrict retries to 429/503, and archive paths must reject traversal that escapes the root. I won’t edit yet.",
+    "messages": 39
+  },
+  {
+    "label": "implement",
+    "text": "Now inspect solver.py and implement all three functions completely using the contracts and diagnostics. Use Python standard library only. Do not change any fixture files. Summarize the completed repair in one sentence.",
+    "latencyMs": 20359.368485,
+    "answer": "Repaired all three functions with the specified validation, retry rules, and path normalization while preserving invoice amount precision and leaving fixtures unchanged.",
+    "messages": 45
+  }
+]

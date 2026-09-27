@@ -1,0 +1,306 @@
+{
+  "id": "records-r1-baseline",
+  "task": "records",
+  "repetition": 0,
+  "arm": "baseline",
+  "config": {
+    "name": "baseline",
+    "filter": false,
+    "rewind": false,
+    "heuristic": false,
+    "threshold": 0.3
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 13,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ],
+          [
+            "y"
+          ],
+          [
+            "b",
+            "z"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-key",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": [
+          [
+            "a"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          [
+            "",
+            "x"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\q"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ]
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 7,
+    "total": 13,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "record is missing an unescaped '='"
+      },
+      {
+        "name": "escaped-key",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b=c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "b=c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record is missing an unescaped '='"
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record key must not be empty"
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\q"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ]
+        ]
+      }
+    ]
+  },
+  "inputTotal": 21289,
+  "inputUncached": 10537,
+  "inputCached": 10752,
+  "outputTokens": 808,
+  "allTokens": 22097,
+  "requests": 12,
+  "wallMs": 29848.84277300001,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 25,
+  "finalSourceHash": "35a644b757dfb3b18f5f7dd8390e11af91e117c57351308e789425c256bf07ea",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-baseline/session/2026-09-26T16-43-18-226Z_01a0de99-8552-7419-afc1-5cbe92ed2a72.jsonl",
+  "filterEvents": [],
+  "postToolEvents": []
+}

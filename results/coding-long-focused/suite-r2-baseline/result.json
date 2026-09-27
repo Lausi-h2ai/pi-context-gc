@@ -1,0 +1,726 @@
+{
+  "id": "suite-r2-baseline",
+  "task": "suite",
+  "repetition": 1,
+  "arm": "baseline",
+  "config": {
+    "name": "baseline",
+    "filter": false,
+    "rewind": false,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 10,
+    "total": 48,
+    "success": false,
+    "cases": [
+      {
+        "name": "invoice/precision",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.0"
+          }
+        ]
+      },
+      {
+        "name": "invoice/comma-negative",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '-0002,500'"
+      },
+      {
+        "name": "invoice/plus",
+        "pass": false,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "4.0"
+          }
+        ]
+      },
+      {
+        "name": "invoice/quoted-id",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: 'B\"'"
+      },
+      {
+        "name": "invoice/spaces-blank",
+        "pass": false,
+        "exception": "IndexError",
+        "message": "list index out of range"
+      },
+      {
+        "name": "invoice/header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invoice/invalid-0",
+        "pass": false,
+        "actual": []
+      },
+      {
+        "name": "invoice/invalid-1",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invoice/invalid-2",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "nan"
+          }
+        ]
+      },
+      {
+        "name": "invoice/invalid-3",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "100.0"
+          }
+        ]
+      },
+      {
+        "name": "invoice/invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: ''"
+      },
+      {
+        "name": "invoice/invalid-5",
+        "pass": false,
+        "actual": [
+          {
+            "id": "",
+            "amount": "2.0"
+          }
+        ]
+      },
+      {
+        "name": "invoice/invalid-6",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invoice/invalid-7",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "inf"
+          }
+        ]
+      },
+      {
+        "name": "invoice/invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '$2'"
+      },
+      {
+        "name": "invoice/invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '1.2.3'"
+      },
+      {
+        "name": "retry/empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/success-stop",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/ordinary",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/budget",
+        "pass": false,
+        "actual": [
+          100,
+          100,
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/401-stop",
+        "pass": false,
+        "actual": [
+          100,
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/500-no",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/post-no",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/post-key",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/empty-key",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/patch-no",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/head",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/retry-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/small-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/invalid-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/short-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "retry/none-after",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "paths/empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "paths/dots",
+        "pass": false,
+        "actual": [
+          "a//./b/"
+        ]
+      },
+      {
+        "name": "paths/internal-parent",
+        "pass": false,
+        "actual": [
+          "a/b/../c"
+        ]
+      },
+      {
+        "name": "paths/backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "paths/dedup",
+        "pass": false,
+        "actual": [
+          "a/b",
+          "a//b",
+          "c",
+          "a/./b"
+        ]
+      },
+      {
+        "name": "paths/unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "paths/reject-0",
+        "pass": false,
+        "actual": [
+          "../x"
+        ]
+      },
+      {
+        "name": "paths/reject-1",
+        "pass": false,
+        "actual": [
+          "a/../../x"
+        ]
+      },
+      {
+        "name": "paths/reject-2",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "paths/reject-3",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "paths/reject-4",
+        "pass": false,
+        "actual": [
+          "server/x"
+        ]
+      },
+      {
+        "name": "paths/reject-5",
+        "pass": false,
+        "actual": [
+          "C:relative"
+        ]
+      },
+      {
+        "name": "paths/reject-6",
+        "pass": false,
+        "actual": [
+          "d:/absolute"
+        ]
+      },
+      {
+        "name": "paths/reject-7",
+        "pass": false,
+        "actual": [
+          "x\u0000y"
+        ]
+      },
+      {
+        "name": "paths/reject-8",
+        "pass": false,
+        "actual": [
+          "."
+        ]
+      },
+      {
+        "name": "paths/reject-9",
+        "pass": false,
+        "actual": [
+          "a/.."
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 48,
+    "total": 48,
+    "success": true,
+    "cases": [
+      {
+        "name": "invoice/precision",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.00"
+          }
+        ]
+      },
+      {
+        "name": "invoice/comma-negative",
+        "pass": true,
+        "actual": [
+          {
+            "id": "B",
+            "amount": "-0002.500"
+          }
+        ]
+      },
+      {
+        "name": "invoice/plus",
+        "pass": true,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "+04.00"
+          }
+        ]
+      },
+      {
+        "name": "invoice/quoted-id",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A;B",
+            "amount": "9.20"
+          }
+        ]
+      },
+      {
+        "name": "invoice/spaces-blank",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "0.000"
+          }
+        ]
+      },
+      {
+        "name": "invoice/header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invoice/invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invoice input must include a header"
+      },
+      {
+        "name": "invoice/invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "expected id;amount header"
+      },
+      {
+        "name": "invoice/invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "invoice/invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "invoice/invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "invoice/invalid-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "invoice/invalid-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invoice records must have two fields"
+      },
+      {
+        "name": "invoice/invalid-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "invoice/invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "invoice/invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid invoice field"
+      },
+      {
+        "name": "retry/empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/success-stop",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/ordinary",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "retry/budget",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "retry/401-stop",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/500-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/post-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/post-key",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "retry/empty-key",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/patch-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "retry/head",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry/retry-after",
+        "pass": true,
+        "actual": [
+          201,
+          1000
+        ]
+      },
+      {
+        "name": "retry/small-after",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "retry/invalid-after",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "retry/short-after",
+        "pass": true,
+        "actual": [
+          500,
+          200
+        ]
+      },
+      {
+        "name": "retry/none-after",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "paths/empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "paths/dots",
+        "pass": true,
+        "actual": [
+          "a/b"
+        ]
+      },
+      {
+        "name": "paths/internal-parent",
+        "pass": true,
+        "actual": [
+          "a/c"
+        ]
+      },
+      {
+        "name": "paths/backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "paths/dedup",
+        "pass": true,
+        "actual": [
+          "a/b",
+          "c"
+        ]
+      },
+      {
+        "name": "paths/unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "paths/reject-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member escapes root"
+      },
+      {
+        "name": "paths/reject-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member escapes root"
+      },
+      {
+        "name": "paths/reject-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute archive member"
+      },
+      {
+        "name": "paths/reject-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute archive member"
+      },
+      {
+        "name": "paths/reject-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute archive member"
+      },
+      {
+        "name": "paths/reject-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "drive-prefixed archive member"
+      },
+      {
+        "name": "paths/reject-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "drive-prefixed archive member"
+      },
+      {
+        "name": "paths/reject-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member"
+      },
+      {
+        "name": "paths/reject-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member normalizes to empty"
+      },
+      {
+        "name": "paths/reject-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member normalizes to empty"
+      }
+    ]
+  },
+  "inputTotal": 191524,
+  "inputUncached": 28708,
+  "inputCached": 162816,
+  "outputTokens": 1558,
+  "allTokens": 193082,
+  "requests": 21,
+  "wallMs": 61237.76540500001,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 43,
+  "finalSourceHash": "be41168978d166c1a7b417f009586285e4d85155453b285e7342f40f7a1d93a4",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-long-focused/suite-r2-baseline/session/2026-09-26T16-26-13-970Z_01a0de89-e452-7153-9995-71d4c798922a.jsonl",
+  "filterEvents": [],
+  "postToolEvents": []
+}

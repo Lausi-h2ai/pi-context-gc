@@ -1,0 +1,100 @@
+[
+  {
+    "arm": "baseline",
+    "trials": 3,
+    "taskPasses": 3,
+    "testsPassed": 48,
+    "testsTotal": 48,
+    "inputTotal": 77968,
+    "inputUncached": 24208,
+    "inputCached": 53760,
+    "outputTokens": 1919,
+    "allTokens": 79887,
+    "inputSavingsPercent": 0,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 112793.888856,
+    "errors": [],
+    "paired": [
+      {
+        "id": "invoice-r1-baseline",
+        "baselineInput": 26044,
+        "input": 26044,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-baseline",
+        "baselineInput": 26133,
+        "input": 26133,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "paths-r1-baseline",
+        "baselineInput": 25791,
+        "input": 25791,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      }
+    ]
+  },
+  {
+    "arm": "aggressive",
+    "trials": 3,
+    "taskPasses": 3,
+    "testsPassed": 48,
+    "testsTotal": 48,
+    "inputTotal": 31174,
+    "inputUncached": 31174,
+    "inputCached": 0,
+    "outputTokens": 1852,
+    "allTokens": 33026,
+    "inputSavingsPercent": 60.016930022573355,
+    "filteredResults": 3,
+    "rewinds": 3,
+    "removedToolCharacters": 33364,
+    "judgeCalls": 45,
+    "judgeLatencyMs": 7906.222192003042,
+    "wallMs": 97123.637555,
+    "errors": [],
+    "paired": [
+      {
+        "id": "invoice-r1-aggressive",
+        "baselineInput": 26044,
+        "input": 10867,
+        "savedInput": 15177,
+        "savedPercent": 58.27445860850868,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-aggressive",
+        "baselineInput": 26133,
+        "input": 11300,
+        "savedInput": 14833,
+        "savedPercent": 56.75965254658861,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "paths-r1-aggressive",
+        "baselineInput": 25791,
+        "input": 9007,
+        "savedInput": 16784,
+        "savedPercent": 65.07696483269358,
+        "baselineSuccess": true,
+        "success": true
+      }
+    ]
+  }
+]

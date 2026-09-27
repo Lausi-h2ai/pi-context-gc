@@ -1,0 +1,53 @@
+{
+  "scenario": "long-composite",
+  "trialsPerArm": 2,
+  "baseline": {
+    "taskPasses": 2,
+    "testsPassed": 96,
+    "testsTotal": 96,
+    "inputTotal": 382530,
+    "inputUncached": 68674,
+    "inputCached": 313856,
+    "outputTokens": 3058,
+    "requests": 42
+  },
+  "aggressive": {
+    "taskPasses": 2,
+    "testsPassed": 96,
+    "testsTotal": 96,
+    "inputTotal": 384364,
+    "inputUncached": 56684,
+    "inputCached": 327680,
+    "outputTokens": 3104,
+    "requests": 42,
+    "inputSaved": -1834,
+    "inputSavingsPercent": -0.47943952108331356,
+    "filteredResults": 6,
+    "removedToolCharacters": 726,
+    "rewinds": 0,
+    "judgeCalls": 88
+  },
+  "paired": [
+    {
+      "task": "suite",
+      "repetition": 1,
+      "baselineInput": 191105,
+      "aggressiveInput": 191656,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 3,
+      "rewinds": 0
+    },
+    {
+      "task": "suite",
+      "repetition": 0,
+      "baselineInput": 191425,
+      "aggressiveInput": 192708,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 3,
+      "rewinds": 0
+    }
+  ],
+  "qualification": "Independent model generations with synthetic diagnostics and explicit tangents. Saved input includes cached tokens; it is not a billing estimate or a general coding-accuracy guarantee."
+}

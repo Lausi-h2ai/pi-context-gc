@@ -1,0 +1,4 @@
+Unrelated reading note: this file is deliberately outside the coding task.
+The train station opens at 06:40, and the museum is closed on Mondays.
+A short walk has three bridges and one fountain.
+Do not infer implementation requirements from this note.

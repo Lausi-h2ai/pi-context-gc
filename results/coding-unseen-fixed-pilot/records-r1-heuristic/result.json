@@ -1,0 +1,316 @@
+{
+  "id": "records-r1-heuristic",
+  "task": "records",
+  "repetition": 0,
+  "arm": "heuristic",
+  "config": {
+    "name": "heuristic",
+    "filter": false,
+    "rewind": false,
+    "heuristic": true,
+    "threshold": 0.3
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 13,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ],
+          [
+            "y"
+          ],
+          [
+            "b",
+            "z"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-key",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": [
+          [
+            "a"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          [
+            "",
+            "x"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\q"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ]
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 7,
+    "total": 13,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "record has no unescaped equals sign"
+      },
+      {
+        "name": "escaped-key",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b=c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "b=c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record has no unescaped equals sign"
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record key must not be empty"
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\q"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ]
+        ]
+      }
+    ]
+  },
+  "inputTotal": 14392,
+  "inputUncached": 14392,
+  "inputCached": 0,
+  "outputTokens": 799,
+  "allTokens": 15191,
+  "requests": 13,
+  "wallMs": 34390.71939600003,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "filteredResults": 1,
+  "removedToolCharacters": 4854,
+  "rewinds": 0,
+  "finalMessages": 27,
+  "finalSourceHash": "1cf54e0b72ec0d4aedecf8e8aef005e970810675c5fdc8303a0f2b5bf60d15b1",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-heuristic/session/2026-09-26T16-43-47-600Z_01a0de99-f810-7419-afc1-5cc13e44ed9d.jsonl",
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_accnLI3Pw8sb3bj75d103pdR|fc_0f0f9575bc431ef3016ab7f64cd73487d2a7532b69ec9d0d22",
+      "originalCharacters": 5263,
+      "retainedCharacters": 409,
+      "changed": true,
+      "archive": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-heuristic/workspace/.artifacts/a1ccc9370f92159127f281b631d8c35853fbc99f2f698df09b2adf24269d0b58.txt",
+      "decisions": []
+    }
+  ],
+  "postToolEvents": []
+}

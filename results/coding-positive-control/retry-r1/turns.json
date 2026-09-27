@@ -1,0 +1,81 @@
+[
+  {
+    "label": "bootstrap",
+    "latencyMs": 1963.161151999997,
+    "answer": "Understood—I’ll wait for the further requirements before inspecting files or implementing `retry_delays`."
+  },
+  {
+    "label": "diagnostic",
+    "latencyMs": 3213.9527369999996,
+    "answer": "The actionable failure is that HTTP 401 currently produces one retry, but should produce none.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "dc269ca0",
+      "leaf": "81593b4e",
+      "beforeMessages": 7,
+      "afterMessages": 7,
+      "verdict": {
+        "action": "KEEP_RESULT",
+        "discardProbability": 0,
+        "durableProbability": 1,
+        "windows": 1,
+        "latencyMs": 0
+      }
+    }
+  },
+  {
+    "label": "tangent",
+    "latencyMs": 3486.8678779999973,
+    "answer": "Paris.",
+    "decision": {
+      "action": "DROP",
+      "reason": "confident disposable tail",
+      "checkpoint": "81593b4e",
+      "leaf": "765c7589",
+      "beforeMessages": 11,
+      "afterMessages": 7,
+      "verdict": {
+        "action": "DISCARD",
+        "discardProbability": 1,
+        "durableProbability": 0,
+        "windows": 1,
+        "latencyMs": 0
+      },
+      "archive": "/home/laurent/pi_jev/results/coding-positive-control/retry-r1/archive/01a0de2a-aa5c-770a-8f5c-cff9f595a8ac-765c7589.json"
+    }
+  },
+  {
+    "label": "constraints",
+    "latencyMs": 7133.637876999994,
+    "answer": "Requirements noted: retry only 429/503 for allowed methods (POST requires a nonempty idempotency key), stop on any other status, allow at most two delays of 100/200 ms, apply valid larger `retry_after` values rounded up and capped at 1000 ms, ignore invalid values, and return `[]` for empty statuses; I won’t implement yet.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "81593b4e",
+      "leaf": "1419fbc0",
+      "beforeMessages": 11,
+      "afterMessages": 11,
+      "verdict": {
+        "action": "KEEP_FULL",
+        "discardProbability": 0,
+        "durableProbability": 1,
+        "windows": 1,
+        "latencyMs": 0
+      }
+    }
+  },
+  {
+    "label": "implement",
+    "latencyMs": 12667.614618,
+    "answer": "Implemented retry eligibility, the two-retry limit, and validated `retry_after` overrides in `solver.py`; HTTP 401 and other non-retryable statuses stop retries.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "side effects, errors, or context boundary",
+      "checkpoint": "1419fbc0",
+      "leaf": "ba4579ec",
+      "beforeMessages": 17,
+      "afterMessages": 17
+    }
+  }
+]

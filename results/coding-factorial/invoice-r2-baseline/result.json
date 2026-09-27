@@ -1,0 +1,284 @@
+{
+  "id": "invoice-r2-baseline",
+  "task": "invoice",
+  "repetition": 1,
+  "arm": "baseline",
+  "config": {
+    "name": "baseline",
+    "filter": false,
+    "rewind": false,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.0"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '-0002,500'"
+      },
+      {
+        "name": "plus",
+        "pass": false,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "4.0"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: 'B\"'"
+      },
+      {
+        "name": "spaces-blank",
+        "pass": false,
+        "exception": "IndexError",
+        "message": "list index out of range"
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": []
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "nan"
+          }
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "100.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: ''"
+      },
+      {
+        "name": "invalid-5",
+        "pass": false,
+        "actual": [
+          {
+            "id": "",
+            "amount": "2.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-6",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-7",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "inf"
+          }
+        ]
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '$2'"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '1.2.3'"
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.00"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": true,
+        "actual": [
+          {
+            "id": "B",
+            "amount": "-0002.500"
+          }
+        ]
+      },
+      {
+        "name": "plus",
+        "pass": true,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "+04.00"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A;B",
+            "amount": "9.20"
+          }
+        ]
+      },
+      {
+        "name": "spaces-blank",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "0.000"
+          }
+        ]
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "input must include a header"
+      },
+      {
+        "name": "invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "header must be exactly 'id;amount'"
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "id and amount must not be empty"
+      },
+      {
+        "name": "invalid-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "id and amount must not be empty"
+      },
+      {
+        "name": "invalid-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "each record must contain exactly two fields"
+      },
+      {
+        "name": "invalid-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      }
+    ]
+  },
+  "inputTotal": 26001,
+  "inputUncached": 10641,
+  "inputCached": 15360,
+  "outputTokens": 623,
+  "allTokens": 26624,
+  "requests": 10,
+  "wallMs": 30653.44586400001,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 21,
+  "finalSourceHash": "56db1658d5e0bf70912500bb254a6507977e7fe6e1f743b6aba3a6f94c0b2b9a",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-factorial/invoice-r2-baseline/session/2026-09-26T14-45-32-050Z_01a0de2d-b312-75a0-a36a-ab0efe39b1d3.jsonl",
+  "filterEvents": [],
+  "postToolEvents": []
+}

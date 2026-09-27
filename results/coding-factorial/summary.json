@@ -1,0 +1,423 @@
+[
+  {
+    "arm": "baseline",
+    "trials": 6,
+    "taskPasses": 4,
+    "testsPassed": 70,
+    "testsTotal": 96,
+    "inputTotal": 103561,
+    "inputUncached": 34441,
+    "inputCached": 69120,
+    "outputTokens": 2405,
+    "allTokens": 105966,
+    "inputSavingsPercent": 0,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 114390.10226100017,
+    "errors": [
+      {
+        "id": "retry-r2-baseline",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      },
+      {
+        "id": "paths-r2-baseline",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      }
+    ],
+    "paired": [
+      {
+        "id": "invoice-r1-baseline",
+        "baselineInput": 25891,
+        "input": 25891,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-baseline",
+        "baselineInput": 26008,
+        "input": 26008,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "paths-r1-baseline",
+        "baselineInput": 25661,
+        "input": 25661,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "invoice-r2-baseline",
+        "baselineInput": 26001,
+        "input": 26001,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r2-baseline",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      },
+      {
+        "id": "paths-r2-baseline",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  },
+  {
+    "arm": "filter",
+    "trials": 6,
+    "taskPasses": 4,
+    "testsPassed": 70,
+    "testsTotal": 96,
+    "inputTotal": 103594,
+    "inputUncached": 34474,
+    "inputCached": 69120,
+    "outputTokens": 2433,
+    "allTokens": 106027,
+    "inputSavingsPercent": -0.031865277469322884,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 4,
+    "judgeLatencyMs": 5169.631006999907,
+    "wallMs": 109995.242779,
+    "errors": [
+      {
+        "id": "retry-r2-filter",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      },
+      {
+        "id": "paths-r2-filter",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      }
+    ],
+    "paired": [
+      {
+        "id": "invoice-r1-filter",
+        "baselineInput": 25891,
+        "input": 25894,
+        "savedInput": -3,
+        "savedPercent": -0.011587037966864777,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-filter",
+        "baselineInput": 26008,
+        "input": 26082,
+        "savedInput": -74,
+        "savedPercent": -0.28452783758843303,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "paths-r1-filter",
+        "baselineInput": 25661,
+        "input": 25655,
+        "savedInput": 6,
+        "savedPercent": 0.02338178558902726,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "invoice-r2-filter",
+        "baselineInput": 26001,
+        "input": 25963,
+        "savedInput": 38,
+        "savedPercent": 0.14614822506826552,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r2-filter",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      },
+      {
+        "id": "paths-r2-filter",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  },
+  {
+    "arm": "rewind",
+    "trials": 6,
+    "taskPasses": 4,
+    "testsPassed": 70,
+    "testsTotal": 96,
+    "inputTotal": 119531,
+    "inputUncached": 40171,
+    "inputCached": 79360,
+    "outputTokens": 2750,
+    "allTokens": 122281,
+    "inputSavingsPercent": -15.420863066212176,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 34,
+    "judgeLatencyMs": 10246.79336100121,
+    "wallMs": 145625.36566399995,
+    "errors": [
+      {
+        "id": "retry-r1-rewind",
+        "error": "Error: {\"detail\":\"Unable to verify Daybreak Blue access. Please try again.\"}"
+      },
+      {
+        "id": "paths-r2-rewind",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      }
+    ],
+    "paired": [
+      {
+        "id": "invoice-r1-rewind",
+        "baselineInput": 25891,
+        "input": 25945,
+        "savedInput": -54,
+        "savedPercent": -0.20856668340349938,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-rewind",
+        "baselineInput": 26008,
+        "input": 15766,
+        "savedInput": 10242,
+        "savedPercent": 39.3801907105506,
+        "baselineSuccess": true,
+        "success": false
+      },
+      {
+        "id": "paths-r1-rewind",
+        "baselineInput": 25661,
+        "input": 25722,
+        "savedInput": -61,
+        "savedPercent": -0.23771482015508827,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "invoice-r2-rewind",
+        "baselineInput": 26001,
+        "input": 26000,
+        "savedInput": 1,
+        "savedPercent": 0.0038460059228473398,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r2-rewind",
+        "baselineInput": 0,
+        "input": 26098,
+        "savedInput": -26098,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": true
+      },
+      {
+        "id": "paths-r2-rewind",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  },
+  {
+    "arm": "both",
+    "trials": 6,
+    "taskPasses": 5,
+    "testsPassed": 83,
+    "testsTotal": 96,
+    "inputTotal": 130123,
+    "inputUncached": 43083,
+    "inputCached": 87040,
+    "outputTokens": 3209,
+    "allTokens": 133332,
+    "inputSavingsPercent": -25.64865151939437,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 40,
+    "judgeLatencyMs": 12352.263002999734,
+    "wallMs": 163963.57871200008,
+    "errors": [
+      {
+        "id": "paths-r2-both",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      }
+    ],
+    "paired": [
+      {
+        "id": "invoice-r1-both",
+        "baselineInput": 25891,
+        "input": 25974,
+        "savedInput": -83,
+        "savedPercent": -0.3205747170831552,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-both",
+        "baselineInput": 26008,
+        "input": 26085,
+        "savedInput": -77,
+        "savedPercent": -0.29606274992310944,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "paths-r1-both",
+        "baselineInput": 25661,
+        "input": 25755,
+        "savedInput": -94,
+        "savedPercent": -0.3663146408947382,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "invoice-r2-both",
+        "baselineInput": 26001,
+        "input": 26043,
+        "savedInput": -42,
+        "savedPercent": -0.16153224875965488,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r2-both",
+        "baselineInput": 0,
+        "input": 26266,
+        "savedInput": -26266,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": true
+      },
+      {
+        "id": "paths-r2-both",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  },
+  {
+    "arm": "both-exploratory",
+    "trials": 6,
+    "taskPasses": 4,
+    "testsPassed": 70,
+    "testsTotal": 96,
+    "inputTotal": 105078,
+    "inputUncached": 33398,
+    "inputCached": 71680,
+    "outputTokens": 2607,
+    "allTokens": 107685,
+    "inputSavingsPercent": -1.4648371491198464,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 32,
+    "judgeLatencyMs": 10568.637545999081,
+    "wallMs": 132176.9212690001,
+    "errors": [
+      {
+        "id": "retry-r2-both-exploratory",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~262 min."
+      },
+      {
+        "id": "paths-r2-both-exploratory",
+        "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~261 min."
+      }
+    ],
+    "paired": [
+      {
+        "id": "invoice-r1-both-exploratory",
+        "baselineInput": 25891,
+        "input": 26033,
+        "savedInput": -142,
+        "savedPercent": -0.5484531304314144,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r1-both-exploratory",
+        "baselineInput": 26008,
+        "input": 26073,
+        "savedInput": -65,
+        "savedPercent": -0.24992310058442602,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "paths-r1-both-exploratory",
+        "baselineInput": 25661,
+        "input": 26362,
+        "savedInput": -701,
+        "savedPercent": -2.7317719496512183,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "invoice-r2-both-exploratory",
+        "baselineInput": 26001,
+        "input": 26048,
+        "savedInput": -47,
+        "savedPercent": -0.1807622783739138,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "retry-r2-both-exploratory",
+        "baselineInput": 0,
+        "input": 562,
+        "savedInput": -562,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      },
+      {
+        "id": "paths-r2-both-exploratory",
+        "baselineInput": 0,
+        "input": 0,
+        "savedInput": 0,
+        "savedPercent": null,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  }
+]

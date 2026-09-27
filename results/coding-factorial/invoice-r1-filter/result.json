@@ -1,0 +1,293 @@
+{
+  "id": "invoice-r1-filter",
+  "task": "invoice",
+  "repetition": 0,
+  "arm": "filter",
+  "config": {
+    "name": "filter",
+    "filter": true,
+    "rewind": false,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.0"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '-0002,500'"
+      },
+      {
+        "name": "plus",
+        "pass": false,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "4.0"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: 'B\"'"
+      },
+      {
+        "name": "spaces-blank",
+        "pass": false,
+        "exception": "IndexError",
+        "message": "list index out of range"
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": []
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "nan"
+          }
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "100.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: ''"
+      },
+      {
+        "name": "invalid-5",
+        "pass": false,
+        "actual": [
+          {
+            "id": "",
+            "amount": "2.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-6",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-7",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "inf"
+          }
+        ]
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '$2'"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '1.2.3'"
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.00"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": true,
+        "actual": [
+          {
+            "id": "B",
+            "amount": "-0002.500"
+          }
+        ]
+      },
+      {
+        "name": "plus",
+        "pass": true,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "+04.00"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A;B",
+            "amount": "9.20"
+          }
+        ]
+      },
+      {
+        "name": "spaces-blank",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "0.000"
+          }
+        ]
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "missing or invalid header"
+      },
+      {
+        "name": "invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "header must be exactly 'id;amount'"
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "id and amount must not be empty"
+      },
+      {
+        "name": "invalid-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "id and amount must not be empty"
+      },
+      {
+        "name": "invalid-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "each record must contain exactly two fields"
+      },
+      {
+        "name": "invalid-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      }
+    ]
+  },
+  "inputTotal": 25894,
+  "inputUncached": 7974,
+  "inputCached": 17920,
+  "outputTokens": 603,
+  "allTokens": 26497,
+  "requests": 10,
+  "wallMs": 28024.020431999998,
+  "judgeCalls": 1,
+  "judgeLatencyMs": 3056.9253589999335,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 21,
+  "finalSourceHash": "1738de90350c3fe9027c46baa25772cd7804acf4b29c26e8a5d494a826707170",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-factorial/invoice-r1-filter/session/2026-09-26T14-36-31-200Z_01a0de25-7260-75a0-a36a-aaebfbd197c8.jsonl",
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_thsgVhcnjt1sAmJpjRQoNUBh|fc_00725f0c773a26df016ab7d871df9487d2bf193a14dd9ee82e",
+      "originalCharacters": 12327,
+      "retainedCharacters": 12327,
+      "action": "KEEP_FULL",
+      "changed": false
+    }
+  ],
+  "postToolEvents": []
+}

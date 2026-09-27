@@ -1,0 +1,102 @@
+[
+  {
+    "name": "short",
+    "repeats": 75,
+    "usage": [
+      {
+        "inputTotal": 1245,
+        "input": 1245,
+        "cacheRead": 0,
+        "output": 5
+      },
+      {
+        "inputTotal": 1260,
+        "input": 1260,
+        "cacheRead": 0,
+        "output": 5
+      }
+    ],
+    "sameCacheKey": true,
+    "sameInstructions": true
+  },
+  {
+    "name": "long",
+    "repeats": 190,
+    "usage": [
+      {
+        "inputTotal": 3085,
+        "input": 3085,
+        "cacheRead": 0,
+        "output": 5
+      },
+      {
+        "inputTotal": 3100,
+        "input": 284,
+        "cacheRead": 2816,
+        "output": 5
+      }
+    ],
+    "sameCacheKey": true,
+    "sameInstructions": true
+  },
+  {
+    "name": "medium-105",
+    "repeats": 105,
+    "usage": [
+      {
+        "inputTotal": 1725,
+        "input": 1725,
+        "cacheRead": 0,
+        "output": 5
+      },
+      {
+        "inputTotal": 1740,
+        "input": 1740,
+        "cacheRead": 0,
+        "output": 5
+      }
+    ],
+    "sameCacheKey": true,
+    "sameInstructions": true
+  },
+  {
+    "name": "medium-135",
+    "repeats": 135,
+    "usage": [
+      {
+        "inputTotal": 2205,
+        "input": 2205,
+        "cacheRead": 0,
+        "output": 5
+      },
+      {
+        "inputTotal": 2220,
+        "input": 428,
+        "cacheRead": 1792,
+        "output": 5
+      }
+    ],
+    "sameCacheKey": true,
+    "sameInstructions": true
+  },
+  {
+    "name": "medium-160",
+    "repeats": 160,
+    "usage": [
+      {
+        "inputTotal": 2605,
+        "input": 2605,
+        "cacheRead": 0,
+        "output": 5
+      },
+      {
+        "inputTotal": 2620,
+        "input": 2620,
+        "cacheRead": 0,
+        "output": 5
+      }
+    ],
+    "sameCacheKey": true,
+    "sameInstructions": true
+  }
+]

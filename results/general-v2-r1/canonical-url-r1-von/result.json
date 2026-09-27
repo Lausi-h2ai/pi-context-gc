@@ -1,0 +1,255 @@
+{
+  "id": "canonical-url-r1-von",
+  "task": "canonical-url",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "von",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": "http://example.com/path",
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com",
+        "name": "root",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:80/a",
+        "name": "default-http-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com:443/a",
+        "name": "default-https-port",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:8080/a",
+        "name": "nondefault-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/./b/../c/",
+        "name": "dot-segments",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com//a///b",
+        "name": "duplicate-slashes",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?z=2&a=1&z=1",
+        "name": "query-sorted",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?b=&a=hello%20world",
+        "name": "query-blank",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?a=2&a=1",
+        "name": "query-duplicate-key-values",
+        "pass": false
+      },
+      {
+        "name": "fragment-rejected",
+        "pass": false
+      },
+      {
+        "name": "credentials-rejected",
+        "pass": false
+      },
+      {
+        "name": "relative-rejected",
+        "pass": false
+      },
+      {
+        "name": "scheme-rejected",
+        "pass": false
+      },
+      {
+        "name": "missing-host",
+        "pass": false
+      },
+      {
+        "name": "invalid-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com./a",
+        "name": "trailing-dot-host",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/資料/é",
+        "name": "unicode-path",
+        "pass": true
+      },
+      {
+        "name": "control-character",
+        "pass": false
+      }
+    ],
+    "passed": 3,
+    "success": false,
+    "total": 19
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": "http://example.com/path",
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/",
+        "name": "root",
+        "pass": true
+      },
+      {
+        "actual": "http://example.com/a",
+        "name": "default-http-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a",
+        "name": "default-https-port",
+        "pass": true
+      },
+      {
+        "actual": "http://example.com:8080/a",
+        "name": "nondefault-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/c/",
+        "name": "dot-segments",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/b",
+        "name": "duplicate-slashes",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/p?a=1&z=1&z=2",
+        "name": "query-sorted",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/p?a=hello+world&b=",
+        "name": "query-blank",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/p?a=1&a=2",
+        "name": "query-duplicate-key-values",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "fragments are not allowed",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "fragment-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "credentials are not allowed",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "credentials-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "unsupported URL scheme",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "relative-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "unsupported URL scheme",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "scheme-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "missing host",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "missing-host",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid port",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a",
+        "name": "trailing-dot-host",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/資料/é",
+        "name": "unicode-path",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "control-character",
+        "pass": true
+      }
+    ],
+    "passed": 19,
+    "success": true,
+    "total": 19
+  },
+  "inputTotal": 45287,
+  "inputUncached": 19175,
+  "inputCached": 26112,
+  "cacheWrite": 0,
+  "outputTokens": 2442,
+  "requests": 18,
+  "prunedResults": 1,
+  "removedToolCharacters": 2116,
+  "judgeCalls": 1,
+  "judgeLatencyMs": 406.1660430015763,
+  "wallMs": 97409.66516500013,
+  "events": [
+    {
+      "toolCallId": "call_MhVrxQS5xatMEMDBHqzZciKW|fc_0278ab81c89280d1016ab8152d89b487d29d3e629a8a7dfd9f",
+      "toolName": "bash",
+      "originalCharacters": 2341,
+      "retainedCharacters": 225,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.178,
+      "durableProbability": 0.5192,
+      "archive": "/home/laurent/pi_jev/results/general-v2-r1/canonical-url-r1-von/workspace/.artifacts/e0adc7430eb17393fa65f33cde8a01d1a1bfa2ede5b48c0f65974fa1a93084f1.txt"
+    }
+  ]
+}

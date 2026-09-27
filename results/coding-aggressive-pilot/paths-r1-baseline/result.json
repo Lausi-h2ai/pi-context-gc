@@ -1,0 +1,257 @@
+{
+  "id": "paths-r1-baseline",
+  "task": "paths",
+  "repetition": 0,
+  "arm": "baseline",
+  "config": {
+    "name": "baseline",
+    "filter": false,
+    "rewind": false,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 3,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": false,
+        "actual": [
+          "a//./b/"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": false,
+        "actual": [
+          "a/b/../c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": false,
+        "actual": [
+          "a/b",
+          "a//b",
+          "c",
+          "a/./b"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": false,
+        "actual": [
+          "../x"
+        ]
+      },
+      {
+        "name": "reject-1",
+        "pass": false,
+        "actual": [
+          "a/../../x"
+        ]
+      },
+      {
+        "name": "reject-2",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "reject-3",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "reject-4",
+        "pass": false,
+        "actual": [
+          "server/x"
+        ]
+      },
+      {
+        "name": "reject-5",
+        "pass": false,
+        "actual": [
+          "C:relative"
+        ]
+      },
+      {
+        "name": "reject-6",
+        "pass": false,
+        "actual": [
+          "d:/absolute"
+        ]
+      },
+      {
+        "name": "reject-7",
+        "pass": false,
+        "actual": [
+          "x\u0000y"
+        ]
+      },
+      {
+        "name": "reject-8",
+        "pass": false,
+        "actual": [
+          "."
+        ]
+      },
+      {
+        "name": "reject-9",
+        "pass": false,
+        "actual": [
+          "a/.."
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": true,
+        "actual": [
+          "a/b"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": true,
+        "actual": [
+          "a/c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": true,
+        "actual": [
+          "a/b",
+          "c"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path escapes the relative root"
+      },
+      {
+        "name": "reject-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path escapes the relative root"
+      },
+      {
+        "name": "reject-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths are not allowed"
+      },
+      {
+        "name": "reject-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths are not allowed"
+      },
+      {
+        "name": "reject-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths are not allowed"
+      },
+      {
+        "name": "reject-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "drive-prefixed paths are not allowed"
+      },
+      {
+        "name": "reject-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "drive-prefixed paths are not allowed"
+      },
+      {
+        "name": "reject-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path contains a NUL character"
+      },
+      {
+        "name": "reject-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path normalizes to empty"
+      },
+      {
+        "name": "reject-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path normalizes to empty"
+      }
+    ]
+  },
+  "inputTotal": 25791,
+  "inputUncached": 7871,
+  "inputCached": 17920,
+  "outputTokens": 615,
+  "allTokens": 26406,
+  "requests": 10,
+  "wallMs": 25324.69926699999,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 21,
+  "finalSourceHash": "a24a2679cb377516982a160701d472fb27414414f27157a7f74f671f194b6479",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-aggressive-pilot/paths-r1-baseline/session/2026-09-26T16-02-21-491Z_01a0de74-08b3-7237-8c20-66cdd34b150d.jsonl",
+  "filterEvents": [],
+  "postToolEvents": []
+}

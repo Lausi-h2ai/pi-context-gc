@@ -1,0 +1,53 @@
+{
+  "scenario": "long-focused",
+  "trialsPerArm": 2,
+  "baseline": {
+    "taskPasses": 2,
+    "testsPassed": 96,
+    "testsTotal": 96,
+    "inputTotal": 393211,
+    "inputUncached": 60411,
+    "inputCached": 332800,
+    "outputTokens": 3264,
+    "requests": 43
+  },
+  "aggressive": {
+    "taskPasses": 2,
+    "testsPassed": 96,
+    "testsTotal": 96,
+    "inputTotal": 249879,
+    "inputUncached": 37911,
+    "inputCached": 211968,
+    "outputTokens": 3341,
+    "requests": 42,
+    "inputSaved": 143332,
+    "inputSavingsPercent": 36.4516760721343,
+    "filteredResults": 6,
+    "removedToolCharacters": 57254,
+    "rewinds": 6,
+    "judgeCalls": 88
+  },
+  "paired": [
+    {
+      "task": "suite",
+      "repetition": 1,
+      "baselineInput": 191524,
+      "aggressiveInput": 124385,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 3,
+      "rewinds": 3
+    },
+    {
+      "task": "suite",
+      "repetition": 0,
+      "baselineInput": 201687,
+      "aggressiveInput": 125494,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 3,
+      "rewinds": 3
+    }
+  ],
+  "qualification": "Independent model generations with synthetic diagnostics and explicit tangents. Saved input includes cached tokens; it is not a billing estimate or a general coding-accuracy guarantee. The long-focused policy was selected after inspecting the first long run and is not an independent holdout."
+}

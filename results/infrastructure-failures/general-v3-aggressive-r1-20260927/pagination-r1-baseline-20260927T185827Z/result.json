@@ -1,0 +1,354 @@
+{
+  "id": "pagination-r1-baseline",
+  "task": "pagination",
+  "stratum": "long",
+  "repetition": 0,
+  "arm": "baseline",
+  "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~186 min.",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {
+          "items": [],
+          "next_after": null
+        },
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "v": 1
+            },
+            {
+              "id": "b",
+              "v": 2
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "first-page",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "after-middle",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            }
+          ],
+          "next_after": "a"
+        },
+        "name": "after-first-limit-one",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "after-last",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "large-limit",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "nested": {
+                "x": 1
+              },
+              "tags": [
+                "x"
+              ]
+            }
+          ],
+          "next_after": null
+        },
+        "name": "record-fields-preserved",
+        "pass": true
+      },
+      {
+        "name": "unknown-cursor",
+        "pass": false
+      },
+      {
+        "name": "duplicate-id",
+        "pass": false
+      },
+      {
+        "name": "missing-id",
+        "pass": false
+      },
+      {
+        "name": "empty-id",
+        "pass": false
+      },
+      {
+        "name": "non-string-id",
+        "pass": false
+      },
+      {
+        "name": "zero-limit",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "list index out of range",
+          "module": "builtins",
+          "name": "IndexError"
+        },
+        "name": "negative-limit",
+        "pass": false
+      },
+      {
+        "name": "limit-too-large",
+        "pass": false
+      },
+      {
+        "name": "bool-limit",
+        "pass": false
+      },
+      {
+        "name": "invalid-after-type",
+        "pass": false
+      }
+    ],
+    "passed": 5,
+    "success": false,
+    "total": 18
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {
+          "items": [],
+          "next_after": null
+        },
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "v": 1
+            },
+            {
+              "id": "b",
+              "v": 2
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "first-page",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "after-middle",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            }
+          ],
+          "next_after": "a"
+        },
+        "name": "after-first-limit-one",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "after-last",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "large-limit",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "nested": {
+                "x": 1
+              },
+              "tags": [
+                "x"
+              ]
+            }
+          ],
+          "next_after": null
+        },
+        "name": "record-fields-preserved",
+        "pass": true
+      },
+      {
+        "name": "unknown-cursor",
+        "pass": false
+      },
+      {
+        "name": "duplicate-id",
+        "pass": false
+      },
+      {
+        "name": "missing-id",
+        "pass": false
+      },
+      {
+        "name": "empty-id",
+        "pass": false
+      },
+      {
+        "name": "non-string-id",
+        "pass": false
+      },
+      {
+        "name": "zero-limit",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "list index out of range",
+          "module": "builtins",
+          "name": "IndexError"
+        },
+        "name": "negative-limit",
+        "pass": false
+      },
+      {
+        "name": "limit-too-large",
+        "pass": false
+      },
+      {
+        "name": "bool-limit",
+        "pass": false
+      },
+      {
+        "name": "invalid-after-type",
+        "pass": false
+      }
+    ],
+    "passed": 5,
+    "success": false,
+    "total": 18
+  },
+  "inputTotal": 0,
+  "inputUncached": 0,
+  "inputCached": 0,
+  "cacheWrite": 0,
+  "outputTokens": 0,
+  "requests": 1,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 5082.583762999973,
+  "events": []
+}

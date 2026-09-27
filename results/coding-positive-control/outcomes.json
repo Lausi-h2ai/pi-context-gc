@@ -1,0 +1,556 @@
+[
+  {
+    "id": "invoice-r1",
+    "decisionSource": "fixture-aware deterministic control; NOT Laya",
+    "evaluation": {
+      "passed": 16,
+      "total": 16,
+      "success": true,
+      "cases": [
+        {
+          "name": "precision",
+          "pass": true,
+          "actual": [
+            {
+              "id": "A",
+              "amount": "123.00"
+            }
+          ]
+        },
+        {
+          "name": "comma-negative",
+          "pass": true,
+          "actual": [
+            {
+              "id": "B",
+              "amount": "-0002.500"
+            }
+          ]
+        },
+        {
+          "name": "plus",
+          "pass": true,
+          "actual": [
+            {
+              "id": "C",
+              "amount": "+04.00"
+            }
+          ]
+        },
+        {
+          "name": "quoted-id",
+          "pass": true,
+          "actual": [
+            {
+              "id": "A;B",
+              "amount": "9.20"
+            }
+          ]
+        },
+        {
+          "name": "spaces-blank",
+          "pass": true,
+          "actual": [
+            {
+              "id": "A",
+              "amount": "0.000"
+            }
+          ]
+        },
+        {
+          "name": "header-only",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "input must include a header"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "expected header 'id;amount'"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each record must have exactly two fields"
+        },
+        {
+          "name": "invalid-7",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        },
+        {
+          "name": "invalid-8",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        },
+        {
+          "name": "invalid-9",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid id or amount"
+        }
+      ]
+    },
+    "inputTotal": 12954,
+    "outputTokens": 659,
+    "inputCached": 1536,
+    "inputUncached": 11418,
+    "baselineInput": 25891,
+    "inputSavingsPercent": 49.96717005909389,
+    "filteredResults": 1,
+    "rewinds": 1,
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_d1f42leKflGEoS92s07825Hh|fc_0ebe8ac1fc3ad5a0016ab7d9aa3f8487d2a05963cc6f527c2e",
+        "originalCharacters": 12327,
+        "retainedCharacters": 3133,
+        "action": "KEEP_RESULT",
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "retry-r1",
+    "decisionSource": "fixture-aware deterministic control; NOT Laya",
+    "evaluation": {
+      "passed": 16,
+      "total": 16,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "success-stop",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "ordinary",
+          "pass": true,
+          "actual": [
+            100,
+            200
+          ]
+        },
+        {
+          "name": "budget",
+          "pass": true,
+          "actual": [
+            100,
+            200
+          ]
+        },
+        {
+          "name": "401-stop",
+          "pass": true,
+          "actual": [
+            100
+          ]
+        },
+        {
+          "name": "500-no",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "post-no",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "post-key",
+          "pass": true,
+          "actual": [
+            100,
+            200
+          ]
+        },
+        {
+          "name": "empty-key",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "patch-no",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "head",
+          "pass": true,
+          "actual": [
+            100
+          ]
+        },
+        {
+          "name": "retry-after",
+          "pass": true,
+          "actual": [
+            201,
+            1000
+          ]
+        },
+        {
+          "name": "small-after",
+          "pass": true,
+          "actual": [
+            100,
+            200
+          ]
+        },
+        {
+          "name": "invalid-after",
+          "pass": true,
+          "actual": [
+            100,
+            200
+          ]
+        },
+        {
+          "name": "short-after",
+          "pass": true,
+          "actual": [
+            500,
+            200
+          ]
+        },
+        {
+          "name": "none-after",
+          "pass": true,
+          "actual": [
+            100
+          ]
+        }
+      ]
+    },
+    "inputTotal": 13151,
+    "outputTokens": 660,
+    "inputCached": 1536,
+    "inputUncached": 11615,
+    "baselineInput": 26008,
+    "inputSavingsPercent": 49.434789295601355,
+    "filteredResults": 1,
+    "rewinds": 1,
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_knhhflZ0LQVL2qqdj0KpofkE|fc_0634da8101c88740016ab7d9c817dc87d29f238d84467a8991",
+        "originalCharacters": 12342,
+        "retainedCharacters": 3146,
+        "action": "KEEP_RESULT",
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "paths-r1",
+    "decisionSource": "fixture-aware deterministic control; NOT Laya",
+    "evaluation": {
+      "passed": 16,
+      "total": 16,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty-list",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "dots",
+          "pass": true,
+          "actual": [
+            "a/b"
+          ]
+        },
+        {
+          "name": "internal-parent",
+          "pass": true,
+          "actual": [
+            "a/c"
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": true,
+          "actual": [
+            "a/b/c"
+          ]
+        },
+        {
+          "name": "dedup",
+          "pass": true,
+          "actual": [
+            "a/b",
+            "c"
+          ]
+        },
+        {
+          "name": "unicode-spaces",
+          "pass": true,
+          "actual": [
+            "資料/é x.txt"
+          ]
+        },
+        {
+          "name": "reject-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member escapes root"
+        },
+        {
+          "name": "reject-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member escapes root"
+        },
+        {
+          "name": "reject-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member must be relative"
+        },
+        {
+          "name": "reject-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member must be relative"
+        },
+        {
+          "name": "reject-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member must be relative"
+        },
+        {
+          "name": "reject-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member must not have a drive prefix"
+        },
+        {
+          "name": "reject-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member must not have a drive prefix"
+        },
+        {
+          "name": "reject-7",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member contains a NUL character"
+        },
+        {
+          "name": "reject-8",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member normalizes to an empty path"
+        },
+        {
+          "name": "reject-9",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "archive member normalizes to an empty path"
+        }
+      ]
+    },
+    "inputTotal": 12906,
+    "outputTokens": 639,
+    "inputCached": 1536,
+    "inputUncached": 11370,
+    "baselineInput": 25661,
+    "inputSavingsPercent": 49.70577919800475,
+    "filteredResults": 1,
+    "rewinds": 1,
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_JJqaRVS2QHT7TqAGsaVci81B|fc_0e742f6f2f20d2aa016ab7d9fa56ec87d2abc3dc87ec0e13dd",
+        "originalCharacters": 12336,
+        "retainedCharacters": 3140,
+        "action": "KEEP_RESULT",
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "invoice-r2",
+    "decisionSource": "fixture-aware deterministic control; NOT Laya",
+    "evaluation": {
+      "passed": 16,
+      "total": 16,
+      "success": true,
+      "cases": [
+        {
+          "name": "precision",
+          "pass": true,
+          "actual": [
+            {
+              "id": "A",
+              "amount": "123.00"
+            }
+          ]
+        },
+        {
+          "name": "comma-negative",
+          "pass": true,
+          "actual": [
+            {
+              "id": "B",
+              "amount": "-0002.500"
+            }
+          ]
+        },
+        {
+          "name": "plus",
+          "pass": true,
+          "actual": [
+            {
+              "id": "C",
+              "amount": "+04.00"
+            }
+          ]
+        },
+        {
+          "name": "quoted-id",
+          "pass": true,
+          "actual": [
+            {
+              "id": "A;B",
+              "amount": "9.20"
+            }
+          ]
+        },
+        {
+          "name": "spaces-blank",
+          "pass": true,
+          "actual": [
+            {
+              "id": "A",
+              "amount": "0.000"
+            }
+          ]
+        },
+        {
+          "name": "header-only",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "input is empty"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "expected header id;amount"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each record must contain exactly two fields"
+        },
+        {
+          "name": "invalid-7",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        },
+        {
+          "name": "invalid-8",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        },
+        {
+          "name": "invalid-9",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid invoice fields"
+        }
+      ]
+    },
+    "inputTotal": 13054,
+    "outputTokens": 624,
+    "inputCached": 1536,
+    "inputUncached": 11518,
+    "baselineInput": 26001,
+    "inputSavingsPercent": 49.79423868312757,
+    "filteredResults": 1,
+    "rewinds": 1,
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_hdyG3CBM5CDSy3VKVJIcQwMP|fc_02d4e75f86df32ca016ab7daad006087d29f36772d4a2b0cc1",
+        "originalCharacters": 12327,
+        "retainedCharacters": 3133,
+        "action": "KEEP_RESULT",
+        "changed": true
+      }
+    ]
+  }
+]

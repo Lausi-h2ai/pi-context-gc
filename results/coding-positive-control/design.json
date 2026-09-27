@@ -1,0 +1,6 @@
+{
+  "created": "2026-09-26T14:41:42.712Z",
+  "repeats": 2,
+  "baselineRoot": "/home/laurent/pi_jev/results/coding-factorial",
+  "policy": "Fixture-aware deterministic positive control: compress diagnostic.log through KEEP_RESULT, discard tails containing aside.txt and its known trivia, keep other tails. No local model makes these decisions. Same prompts, tools, initial code and hidden tests as the matched baseline. Intended to validate mechanism, not to estimate Laya performance."
+}

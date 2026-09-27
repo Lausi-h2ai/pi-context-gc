@@ -1,0 +1,247 @@
+[
+  {
+    "arm": "baseline",
+    "trials": 3,
+    "taskPasses": 2,
+    "testsPassed": 31,
+    "testsTotal": 37,
+    "inputTotal": 80564,
+    "inputUncached": 36532,
+    "inputCached": 44032,
+    "outputTokens": 2196,
+    "allTokens": 82760,
+    "inputSavingsPercent": 0,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 96436.41943699998,
+    "errors": [],
+    "paired": [
+      {
+        "id": "intervals-r1-baseline",
+        "baselineInput": 29261,
+        "input": 29261,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "dependencies-r1-baseline",
+        "baselineInput": 30014,
+        "input": 30014,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "records-r1-baseline",
+        "baselineInput": 21289,
+        "input": 21289,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  },
+  {
+    "arm": "heuristic",
+    "trials": 3,
+    "taskPasses": 2,
+    "testsPassed": 31,
+    "testsTotal": 37,
+    "inputTotal": 55626,
+    "inputUncached": 37706,
+    "inputCached": 17920,
+    "outputTokens": 2026,
+    "allTokens": 57652,
+    "inputSavingsPercent": 30.95427237972296,
+    "filteredResults": 2,
+    "rewinds": 0,
+    "removedToolCharacters": 15131,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 108146.63269800006,
+    "errors": [],
+    "paired": [
+      {
+        "id": "intervals-r1-heuristic",
+        "baselineInput": 29261,
+        "input": 11978,
+        "savedInput": 17283,
+        "savedPercent": 59.06496702094939,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "dependencies-r1-heuristic",
+        "baselineInput": 30014,
+        "input": 29256,
+        "savedInput": 758,
+        "savedPercent": 2.525488105550744,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "records-r1-heuristic",
+        "baselineInput": 21289,
+        "input": 14392,
+        "savedInput": 6897,
+        "savedPercent": 32.3970125416882,
+        "baselineSuccess": false,
+        "success": false
+      }
+    ]
+  },
+  {
+    "arm": "filter",
+    "trials": 3,
+    "taskPasses": 3,
+    "testsPassed": 37,
+    "testsTotal": 37,
+    "inputTotal": 79603,
+    "inputUncached": 34547,
+    "inputCached": 45056,
+    "outputTokens": 1953,
+    "allTokens": 81556,
+    "inputSavingsPercent": 1.1928404746536891,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 11,
+    "judgeLatencyMs": 3867.6156670026103,
+    "wallMs": 103117.57270200005,
+    "errors": [],
+    "paired": [
+      {
+        "id": "intervals-r1-filter",
+        "baselineInput": 29261,
+        "input": 29181,
+        "savedInput": 80,
+        "savedPercent": 0.273401455862754,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "dependencies-r1-filter",
+        "baselineInput": 30014,
+        "input": 29230,
+        "savedInput": 784,
+        "savedPercent": 2.612114346638239,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "records-r1-filter",
+        "baselineInput": 21289,
+        "input": 21192,
+        "savedInput": 97,
+        "savedPercent": 0.455634365165114,
+        "baselineSuccess": false,
+        "success": true
+      }
+    ]
+  },
+  {
+    "arm": "rewind",
+    "trials": 3,
+    "taskPasses": 3,
+    "testsPassed": 37,
+    "testsTotal": 37,
+    "inputTotal": 78151,
+    "inputUncached": 31559,
+    "inputCached": 46592,
+    "outputTokens": 2000,
+    "allTokens": 80151,
+    "inputSavingsPercent": 2.9951343031627053,
+    "filteredResults": 0,
+    "rewinds": 3,
+    "removedToolCharacters": 0,
+    "judgeCalls": 27,
+    "judgeLatencyMs": 7444.373830006953,
+    "wallMs": 106557.81682199994,
+    "errors": [],
+    "paired": [
+      {
+        "id": "intervals-r1-rewind",
+        "baselineInput": 29261,
+        "input": 28917,
+        "savedInput": 344,
+        "savedPercent": 1.1756262602098388,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "dependencies-r1-rewind",
+        "baselineInput": 30014,
+        "input": 28736,
+        "savedInput": 1278,
+        "savedPercent": 4.258012927300592,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "records-r1-rewind",
+        "baselineInput": 21289,
+        "input": 20498,
+        "savedInput": 791,
+        "savedPercent": 3.715533843769081,
+        "baselineSuccess": false,
+        "success": true
+      }
+    ]
+  },
+  {
+    "arm": "both",
+    "trials": 3,
+    "taskPasses": 3,
+    "testsPassed": 37,
+    "testsTotal": 37,
+    "inputTotal": 78175,
+    "inputUncached": 35679,
+    "inputCached": 42496,
+    "outputTokens": 1990,
+    "allTokens": 80165,
+    "inputSavingsPercent": 2.9653443225261866,
+    "filteredResults": 0,
+    "rewinds": 3,
+    "removedToolCharacters": 0,
+    "judgeCalls": 38,
+    "judgeLatencyMs": 8017.503425005998,
+    "wallMs": 98971.75806000002,
+    "errors": [],
+    "paired": [
+      {
+        "id": "intervals-r1-both",
+        "baselineInput": 29261,
+        "input": 28792,
+        "savedInput": 469,
+        "savedPercent": 1.6028160349953913,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "dependencies-r1-both",
+        "baselineInput": 30014,
+        "input": 28628,
+        "savedInput": 1386,
+        "savedPercent": 4.617845005664023,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "records-r1-both",
+        "baselineInput": 21289,
+        "input": 20755,
+        "savedInput": 534,
+        "savedPercent": 2.508337639156377,
+        "baselineSuccess": false,
+        "success": true
+      }
+    ]
+  }
+]

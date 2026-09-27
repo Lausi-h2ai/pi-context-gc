@@ -1,0 +1,36 @@
+{
+  "requests": [
+    {
+      "instructions": "d8e461d65c933c1ce83dfa8fd2a3ec63ec443d04c4a0aefc7bb8d55ebfd6ebb7",
+      "tools": "5d4531298c15b7bf38aa87862be7d1187fc64bec8e4e4fcf1ecd98f33b1c3c4b",
+      "model": "gpt-6-luna",
+      "cacheKey": "94528f2120f51b5e42ba74519e466e5f50ee95da24791592afe05d791ebc0f88",
+      "inputHashes": [
+        "a588073ec23ff4d286598dc432ef1f2d29a58fda9280f1e82ea7cfac032966e4"
+      ],
+      "inputItems": 1,
+      "payloadHash": "5ecc23e7a3a0138e46e49509d67b62b8fca7e08c033e440d7346ef872def4c66",
+      "inputCharacters": 256
+    }
+  ],
+  "usage": [
+    {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "totalTokens": 0,
+      "cost": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      },
+      "inputTotal": 0,
+      "cached_tokens": 0,
+      "stopReason": "error",
+      "error": "fetch failed"
+    }
+  ]
+}

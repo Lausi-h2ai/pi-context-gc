@@ -1,0 +1,80 @@
+{
+  "created": "2026-09-26T14:35:55.054Z",
+  "design": {
+    "repeats": 2,
+    "arms": [
+      {
+        "name": "baseline",
+        "filter": false,
+        "rewind": false,
+        "threshold": 0.95
+      },
+      {
+        "name": "filter",
+        "filter": true,
+        "rewind": false,
+        "threshold": 0.95
+      },
+      {
+        "name": "rewind",
+        "filter": false,
+        "rewind": true,
+        "threshold": 0.95
+      },
+      {
+        "name": "both",
+        "filter": true,
+        "rewind": true,
+        "threshold": 0.95
+      },
+      {
+        "name": "both-exploratory",
+        "filter": true,
+        "rewind": true,
+        "threshold": 0.5
+      }
+    ],
+    "tasks": [
+      {
+        "id": "invoice",
+        "tests": 16,
+        "hash": "92afd4ebeb84b8d3b8d64f11121b6d5af26fa6d14093630eb69f83437b3b269e"
+      },
+      {
+        "id": "retry",
+        "tests": 16,
+        "hash": "f67bcb39efbcf4d3cd5257ba0bff04e009320ee02c0dc99c7b361b807f9ebe7a"
+      },
+      {
+        "id": "paths",
+        "tests": 16,
+        "hash": "469ed19784385c28ae669071da236e97bddfb8df2ea55d1a3bf28e5a1ab5646d"
+      }
+    ],
+    "codeHashes": {
+      "src/coding-benchmark.ts": "b39bf8b8825347f61370181f62ee6e42de925d553dbb034de5d5b989bcd91479",
+      "src/gc.ts": "2a485ba3849acbb305e8f3312f02cc628e30a87d3dd643be9f2675f8ad895c38",
+      "src/tool-filter.ts": "27b0c068434a290251608394c6868f3c5fc87891739236930da67ce7e0935d7c",
+      "src/post-tool-gc.ts": "1eeac37f24f621bf5f55d585c6be475e3c58a1551aa0cd90afa287f4ed4e46bf",
+      "src/runtime.ts": "01ff45f9fa91e0fdb3ed37d2da069bcfe81c1402799b72511f00a1fdf22657d4",
+      "python/judge.py": "12ca93bd4e105ec55c3b3b10537ecf67c511511a0d3336c5c58e579e892f36f8",
+      "benchmarks/tasks.ts": "a8abebde2fbe58266fb4fd143a2140ea1dbc398804c89a4d2c37dbde0b7e7150",
+      "benchmarks/evaluate.py": "5fe911026f0c088ba983a3aa89408736a43458f1e88740ea109280c95440c010"
+    },
+    "model": "gpt-6-luna",
+    "primaryMetrics": [
+      "total input tokens across every model call",
+      "all hidden tests pass"
+    ],
+    "secondaryMetrics": [
+      "uncached input",
+      "cached input",
+      "output tokens",
+      "test-case accuracy",
+      "latency",
+      "actual filtered results",
+      "actual rewinds"
+    ],
+    "method": "Fresh isolated workspaces. Task/repetition-matched conditions with rotating arm order. Unmodified model weights and classifier prompts. Independent model generations. No repair after hidden tests. Exploratory threshold is reported separately. Post-tool scores happen synchronously; full-tail rewind checks happen only at a settled boundary."
+  }
+}

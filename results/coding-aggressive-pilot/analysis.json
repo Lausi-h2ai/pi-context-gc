@@ -1,0 +1,55 @@
+{
+  "trialsPerArm": 3,
+  "baseline": {
+    "taskPasses": 3,
+    "testsPassed": 48,
+    "inputTotal": 77968,
+    "inputUncached": 24208,
+    "inputCached": 53760,
+    "outputTokens": 1919
+  },
+  "aggressive": {
+    "taskPasses": 3,
+    "testsPassed": 48,
+    "inputTotal": 31174,
+    "inputUncached": 31174,
+    "inputCached": 0,
+    "outputTokens": 1852,
+    "inputSaved": 46794,
+    "inputSavingsPercent": 60.016930022573355,
+    "filteredResults": 3,
+    "removedToolCharacters": 33364,
+    "rewinds": 3,
+    "judgeCalls": 45
+  },
+  "paired": [
+    {
+      "task": "invoice",
+      "baselineInput": 26044,
+      "aggressiveInput": 10867,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 1,
+      "rewinds": 1
+    },
+    {
+      "task": "retry",
+      "baselineInput": 26133,
+      "aggressiveInput": 11300,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 1,
+      "rewinds": 1
+    },
+    {
+      "task": "paths",
+      "baselineInput": 25791,
+      "aggressiveInput": 9007,
+      "baselinePass": true,
+      "aggressivePass": true,
+      "filteredResults": 1,
+      "rewinds": 1
+    }
+  ],
+  "qualification": "Independent model generations on three small tasks. Saved input includes cached tokens; this is not a billing estimate or a general coding-accuracy guarantee."
+}

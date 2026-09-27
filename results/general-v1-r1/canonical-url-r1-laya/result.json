@@ -1,0 +1,265 @@
+{
+  "id": "canonical-url-r1-laya",
+  "task": "canonical-url",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "laya",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": "http://example.com/path",
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com",
+        "name": "root",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:80/a",
+        "name": "default-http-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com:443/a",
+        "name": "default-https-port",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:8080/a",
+        "name": "nondefault-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/./b/../c/",
+        "name": "dot-segments",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com//a///b",
+        "name": "duplicate-slashes",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?z=2&a=1&z=1",
+        "name": "query-sorted",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?b=&a=hello%20world",
+        "name": "query-blank",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?a=2&a=1",
+        "name": "query-duplicate-key-values",
+        "pass": false
+      },
+      {
+        "name": "fragment-rejected",
+        "pass": false
+      },
+      {
+        "name": "credentials-rejected",
+        "pass": false
+      },
+      {
+        "name": "relative-rejected",
+        "pass": false
+      },
+      {
+        "name": "scheme-rejected",
+        "pass": false
+      },
+      {
+        "name": "missing-host",
+        "pass": false
+      },
+      {
+        "name": "invalid-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com./a",
+        "name": "trailing-dot-host",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/資料/é",
+        "name": "unicode-path",
+        "pass": true
+      },
+      {
+        "name": "control-character",
+        "pass": false
+      }
+    ],
+    "passed": 3,
+    "success": false,
+    "total": 19
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": "http://example.com/path",
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/",
+        "name": "root",
+        "pass": true
+      },
+      {
+        "actual": "http://example.com/a",
+        "name": "default-http-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a",
+        "name": "default-https-port",
+        "pass": true
+      },
+      {
+        "actual": "http://example.com:8080/a",
+        "name": "nondefault-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/c/",
+        "name": "dot-segments",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/b",
+        "name": "duplicate-slashes",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/p?a=1&z=1&z=2",
+        "name": "query-sorted",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/p?a=hello+world&b=",
+        "name": "query-blank",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/p?a=1&a=2",
+        "name": "query-duplicate-key-values",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "fragment-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "credentials-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "relative-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "scheme-rejected",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "missing-host",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid URL",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a",
+        "name": "trailing-dot-host",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/%E8%B3%87%E6%96%99/%C3%A9",
+        "name": "unicode-path",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "URL must be text without control characters",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "control-character",
+        "pass": true
+      }
+    ],
+    "passed": 18,
+    "success": false,
+    "total": 19
+  },
+  "inputTotal": 34528,
+  "inputUncached": 19680,
+  "inputCached": 14848,
+  "cacheWrite": 0,
+  "outputTokens": 1742,
+  "requests": 17,
+  "prunedResults": 2,
+  "removedToolCharacters": 2280,
+  "judgeCalls": 2,
+  "judgeLatencyMs": 1356.2615890004963,
+  "wallMs": 67022.796408,
+  "events": [
+    {
+      "toolCallId": "call_sVylMvwDsdBo6MX1i1YXMB0r|fc_0bd9f5f8a0b4de9c016ab80ba2f24c87d28afb681f7b6d3584",
+      "toolName": "read",
+      "originalCharacters": 1909,
+      "retainedCharacters": 226,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.1071,
+      "durableProbability": 0.4093,
+      "archive": "/home/laurent/pi_jev/results/general-v1-r1/canonical-url-r1-laya/workspace/.artifacts/d551c2996bb528563576c3569655a70f49eb37177647507c084d1431c3c10c61.txt"
+    },
+    {
+      "toolCallId": "call_sJHTShLlT4JTdwsreVcsNwIl|fc_0bd9f5f8a0b4de9c016ab80bb371e487d2a1c9add35fd69854",
+      "toolName": "read",
+      "originalCharacters": 823,
+      "retainedCharacters": 226,
+      "action": "KEEP_RESULT",
+      "discardProbability": 0.1329,
+      "durableProbability": 0.1546,
+      "archive": "/home/laurent/pi_jev/results/general-v1-r1/canonical-url-r1-laya/workspace/.artifacts/9472a6b91bfd49271efe85a27e08d92a3d6c9f79edda99ce1dab5fae6b8c2772.txt"
+    }
+  ]
+}

@@ -1,0 +1,8394 @@
+[
+  {
+    "id": "config-merge-r1-baseline",
+    "task": "config-merge",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": false
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": null
+          },
+          "name": "null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "tls": {
+              "key": null
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 99,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": false,
+          "result_alias": "return value changed after input mutation"
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": false,
+          "result_alias": "return value changed after input mutation"
+        },
+        {
+          "actual": {
+            "a": null,
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": false
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": false
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 10,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "host": "a",
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": true
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db"
+          },
+          "name": "null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "tls": {
+              "cert": "a"
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 4,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9,
+                "d": 2
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": true
+        },
+        {
+          "actual": {
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": true
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1,
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 17,
+      "success": true,
+      "total": 17
+    },
+    "inputTotal": 61319,
+    "inputUncached": 20359,
+    "inputCached": 40960,
+    "cacheWrite": 0,
+    "outputTokens": 1556,
+    "requests": 17,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 59368.538653999996,
+    "events": []
+  },
+  {
+    "id": "config-merge-r1-laya",
+    "task": "config-merge",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": false
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": null
+          },
+          "name": "null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "tls": {
+              "key": null
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 99,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": false,
+          "result_alias": "return value changed after input mutation"
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": false,
+          "result_alias": "return value changed after input mutation"
+        },
+        {
+          "actual": {
+            "a": null,
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": false
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": false
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 10,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "host": "a",
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": true
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db"
+          },
+          "name": "null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "tls": {
+              "cert": "a"
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 4,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9,
+                "d": 2
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": true
+        },
+        {
+          "actual": {
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": true
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1,
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 17,
+      "success": true,
+      "total": 17
+    },
+    "inputTotal": 24950,
+    "inputUncached": 15734,
+    "inputCached": 9216,
+    "cacheWrite": 0,
+    "outputTokens": 989,
+    "requests": 14,
+    "prunedResults": 1,
+    "removedToolCharacters": 12796,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 2084.6843069994065,
+    "wallMs": 41903.598861000006,
+    "events": [
+      {
+        "toolCallId": "call_ikgnXvX33L8kVibancRwjrbu|fc_00ab8b6fa93b11c7016ab80d52e25887d294f6f360500daead",
+        "toolName": "read",
+        "originalCharacters": 13021,
+        "retainedCharacters": 225,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1787,
+        "durableProbability": 0.5907,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/config-merge-r1-laya/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+      }
+    ]
+  },
+  {
+    "id": "config-merge-r1-von",
+    "task": "config-merge",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": false
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": null
+          },
+          "name": "null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "tls": {
+              "key": null
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 99,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": false,
+          "result_alias": "return value changed after input mutation"
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": false,
+          "result_alias": "return value changed after input mutation"
+        },
+        {
+          "actual": {
+            "a": null,
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": false
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": false
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 10,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "host": "a",
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": true
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db"
+          },
+          "name": "null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "tls": {
+              "cert": "a"
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 4,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9,
+                "d": 2
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": true
+        },
+        {
+          "actual": {
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": true
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1,
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 17,
+      "success": true,
+      "total": 17
+    },
+    "inputTotal": 22452,
+    "inputUncached": 14772,
+    "inputCached": 7680,
+    "cacheWrite": 0,
+    "outputTokens": 706,
+    "requests": 13,
+    "prunedResults": 1,
+    "removedToolCharacters": 12797,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 2016.0269629996037,
+    "wallMs": 40308.94030399999,
+    "events": [
+      {
+        "toolCallId": "call_nudrNTcirrzMiQeB8ZGMX7EA|fc_0c8382f5cb254612016ab80d83ffa487d2b6024ca5e8f2acb1",
+        "toolName": "read",
+        "originalCharacters": 13021,
+        "retainedCharacters": 224,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.2119,
+        "durableProbability": 0.53,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/config-merge-r1-von/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+      }
+    ]
+  },
+  {
+    "id": "header-redaction-r1-laya",
+    "task": "header-redaction",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "Bearer abc"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "secret"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "Basic x"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "k"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "abc"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "abc"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "a"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "value2"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 15
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "[REDACTED]"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "[REDACTED]"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 15,
+      "success": true,
+      "total": 15
+    },
+    "inputTotal": 27550,
+    "inputUncached": 18334,
+    "inputCached": 9216,
+    "cacheWrite": 0,
+    "outputTokens": 975,
+    "requests": 16,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 47687.56760800001,
+    "events": []
+  },
+  {
+    "id": "header-redaction-r1-von",
+    "task": "header-redaction",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "Bearer abc"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "secret"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "Basic x"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "k"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "abc"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "abc"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "a"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "value2"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 15
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "[REDACTED]"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "[REDACTED]"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 15,
+      "success": true,
+      "total": 15
+    },
+    "inputTotal": 38875,
+    "inputUncached": 18907,
+    "inputCached": 19968,
+    "cacheWrite": 0,
+    "outputTokens": 962,
+    "requests": 18,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 70156.49312500001,
+    "events": []
+  },
+  {
+    "id": "header-redaction-r1-baseline",
+    "task": "header-redaction",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "Bearer abc"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "secret"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "Basic x"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "k"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "abc"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "abc"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "a"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "value2"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 15
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "[REDACTED]"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "[REDACTED]"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 15,
+      "success": true,
+      "total": 15
+    },
+    "inputTotal": 29278,
+    "inputUncached": 17502,
+    "inputCached": 11776,
+    "cacheWrite": 0,
+    "outputTokens": 1380,
+    "requests": 16,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 57628.781122999964,
+    "events": []
+  },
+  {
+    "id": "rate-window-r1-von",
+    "task": "rate-window",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "under-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "name": "rejected-does-not-consume",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "boundary-is-in-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "just-outside-window",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "same-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "name": "multiple-expiry",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "zero-time",
+          "pass": true
+        },
+        {
+          "name": "negative-timestamp",
+          "pass": false
+        },
+        {
+          "name": "decreasing",
+          "pass": false
+        },
+        {
+          "name": "zero-limit",
+          "pass": false
+        },
+        {
+          "name": "zero-window",
+          "pass": false
+        },
+        {
+          "name": "bool-limit",
+          "pass": false
+        },
+        {
+          "name": "float-timestamp",
+          "pass": false
+        },
+        {
+          "name": "string-timestamp",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 7,
+      "success": false,
+      "total": 18
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "under-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false,
+            false,
+            true
+          ],
+          "name": "rejected-does-not-consume",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "boundary-is-in-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true
+          ],
+          "name": "just-outside-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "same-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "name": "multiple-expiry",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "zero-time",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative-timestamp",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be in nondecreasing order",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "decreasing",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "window_ms must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-window",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "bool-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "float-timestamp",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "string-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 18,
+      "success": true,
+      "total": 18
+    },
+    "inputTotal": 27286,
+    "inputUncached": 18070,
+    "inputCached": 9216,
+    "cacheWrite": 0,
+    "outputTokens": 1013,
+    "requests": 15,
+    "prunedResults": 1,
+    "removedToolCharacters": 12196,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 1124.4096740010718,
+    "wallMs": 106426.74621499999,
+    "events": [
+      {
+        "toolCallId": "call_JwcqPXeXJxXXEJsAmBG4sWjy|fc_029ec389ad127bfd016ab80e74940487d282cb66e29b2d85c8",
+        "toolName": "read",
+        "originalCharacters": 12419,
+        "retainedCharacters": 223,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.2136,
+        "durableProbability": 0.4854,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/rate-window-r1-von/workspace/.artifacts/4b10b9ee5f8834cdc5d67727887667786d5948889b5d1c268d1e48d3e5cfaafb.txt"
+      }
+    ]
+  },
+  {
+    "id": "rate-window-r1-baseline",
+    "task": "rate-window",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "under-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "name": "rejected-does-not-consume",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "boundary-is-in-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "just-outside-window",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "same-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "name": "multiple-expiry",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "zero-time",
+          "pass": true
+        },
+        {
+          "name": "negative-timestamp",
+          "pass": false
+        },
+        {
+          "name": "decreasing",
+          "pass": false
+        },
+        {
+          "name": "zero-limit",
+          "pass": false
+        },
+        {
+          "name": "zero-window",
+          "pass": false
+        },
+        {
+          "name": "bool-limit",
+          "pass": false
+        },
+        {
+          "name": "float-timestamp",
+          "pass": false
+        },
+        {
+          "name": "string-timestamp",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 7,
+      "success": false,
+      "total": 18
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "under-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false,
+            false,
+            true
+          ],
+          "name": "rejected-does-not-consume",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "boundary-is-in-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true
+          ],
+          "name": "just-outside-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "same-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "name": "multiple-expiry",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "zero-time",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative-timestamp",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nondecreasing",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "decreasing",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "window_ms must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-window",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "bool-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "float-timestamp",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "string-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 18,
+      "success": true,
+      "total": 18
+    },
+    "inputTotal": 60754,
+    "inputUncached": 16722,
+    "inputCached": 44032,
+    "cacheWrite": 0,
+    "outputTokens": 1295,
+    "requests": 17,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 76550.53176199994,
+    "events": []
+  },
+  {
+    "id": "rate-window-r1-laya",
+    "task": "rate-window",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "under-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "name": "rejected-does-not-consume",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "boundary-is-in-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "just-outside-window",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "same-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "name": "multiple-expiry",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "zero-time",
+          "pass": true
+        },
+        {
+          "name": "negative-timestamp",
+          "pass": false
+        },
+        {
+          "name": "decreasing",
+          "pass": false
+        },
+        {
+          "name": "zero-limit",
+          "pass": false
+        },
+        {
+          "name": "zero-window",
+          "pass": false
+        },
+        {
+          "name": "bool-limit",
+          "pass": false
+        },
+        {
+          "name": "float-timestamp",
+          "pass": false
+        },
+        {
+          "name": "string-timestamp",
+          "pass": false
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 7,
+      "success": false,
+      "total": 18
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "under-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false,
+            false,
+            true
+          ],
+          "name": "rejected-does-not-consume",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "boundary-is-in-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true
+          ],
+          "name": "just-outside-window",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false
+          ],
+          "name": "same-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "name": "multiple-expiry",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            false
+          ],
+          "name": "zero-time",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative-timestamp",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nondecreasing",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "decreasing",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "window_ms must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-window",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be a positive integer",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "bool-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "float-timestamp",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "timestamps must be nonnegative integers",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "string-timestamp",
+          "pass": true
+        },
+        {
+          "actual": [
+            true,
+            true,
+            true
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 18,
+      "success": true,
+      "total": 18
+    },
+    "inputTotal": 37321,
+    "inputUncached": 25545,
+    "inputCached": 11776,
+    "cacheWrite": 0,
+    "outputTokens": 1126,
+    "requests": 18,
+    "prunedResults": 1,
+    "removedToolCharacters": 12195,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 1826.0884279989114,
+    "wallMs": 65009.76150100003,
+    "events": [
+      {
+        "toolCallId": "call_DIvVlPWdcKvwkGyPY79p9yTM|fc_00293511532f61de016ab80f2c57b487d296b0ea08368c6990",
+        "toolName": "read",
+        "originalCharacters": 12419,
+        "retainedCharacters": 224,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1611,
+        "durableProbability": 0.6555,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/rate-window-r1-laya/workspace/.artifacts/4b10b9ee5f8834cdc5d67727887667786d5948889b5d1c268d1e48d3e5cfaafb.txt"
+      }
+    ]
+  },
+  {
+    "id": "pagination-r1-baseline",
+    "task": "pagination",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "v": 1
+              },
+              {
+                "id": "b",
+                "v": 2
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "first-page",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "after-middle",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              }
+            ],
+            "next_after": "a"
+          },
+          "name": "after-first-limit-one",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "after-last",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "nested": {
+                  "x": 1
+                },
+                "tags": [
+                  "x"
+                ]
+              }
+            ],
+            "next_after": null
+          },
+          "name": "record-fields-preserved",
+          "pass": true
+        },
+        {
+          "name": "unknown-cursor",
+          "pass": false
+        },
+        {
+          "name": "duplicate-id",
+          "pass": false
+        },
+        {
+          "name": "missing-id",
+          "pass": false
+        },
+        {
+          "name": "empty-id",
+          "pass": false
+        },
+        {
+          "name": "non-string-id",
+          "pass": false
+        },
+        {
+          "name": "zero-limit",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "list index out of range",
+            "module": "builtins",
+            "name": "IndexError"
+          },
+          "name": "negative-limit",
+          "pass": false
+        },
+        {
+          "name": "limit-too-large",
+          "pass": false
+        },
+        {
+          "name": "bool-limit",
+          "pass": false
+        },
+        {
+          "name": "invalid-after-type",
+          "pass": false
+        }
+      ],
+      "passed": 5,
+      "success": false,
+      "total": 18
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "v": 1
+              },
+              {
+                "id": "b",
+                "v": 2
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "first-page",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "c"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "after-middle",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "after-first-limit-one",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "after-last",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "nested": {
+                  "x": 1
+                },
+                "tags": [
+                  "x"
+                ]
+              }
+            ],
+            "next_after": null
+          },
+          "name": "record-fields-preserved",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "after must be None or an id present in records",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-cursor",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "record ids must be unique",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "duplicate-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "limit-too-large",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "bool-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "after must be None or an id present in records",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-after-type",
+          "pass": true
+        }
+      ],
+      "passed": 18,
+      "success": true,
+      "total": 18
+    },
+    "inputTotal": 66801,
+    "inputUncached": 16625,
+    "inputCached": 50176,
+    "cacheWrite": 0,
+    "outputTokens": 1856,
+    "requests": 17,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 81787.14476100006,
+    "events": []
+  },
+  {
+    "id": "pagination-r1-laya",
+    "task": "pagination",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "v": 1
+              },
+              {
+                "id": "b",
+                "v": 2
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "first-page",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "after-middle",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              }
+            ],
+            "next_after": "a"
+          },
+          "name": "after-first-limit-one",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "after-last",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "nested": {
+                  "x": 1
+                },
+                "tags": [
+                  "x"
+                ]
+              }
+            ],
+            "next_after": null
+          },
+          "name": "record-fields-preserved",
+          "pass": true
+        },
+        {
+          "name": "unknown-cursor",
+          "pass": false
+        },
+        {
+          "name": "duplicate-id",
+          "pass": false
+        },
+        {
+          "name": "missing-id",
+          "pass": false
+        },
+        {
+          "name": "empty-id",
+          "pass": false
+        },
+        {
+          "name": "non-string-id",
+          "pass": false
+        },
+        {
+          "name": "zero-limit",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "list index out of range",
+            "module": "builtins",
+            "name": "IndexError"
+          },
+          "name": "negative-limit",
+          "pass": false
+        },
+        {
+          "name": "limit-too-large",
+          "pass": false
+        },
+        {
+          "name": "bool-limit",
+          "pass": false
+        },
+        {
+          "name": "invalid-after-type",
+          "pass": false
+        }
+      ],
+      "passed": 5,
+      "success": false,
+      "total": 18
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "v": 1
+              },
+              {
+                "id": "b",
+                "v": 2
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "first-page",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "c"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "after-middle",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "after-first-limit-one",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "after-last",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "nested": {
+                  "x": 1
+                },
+                "tags": [
+                  "x"
+                ]
+              }
+            ],
+            "next_after": null
+          },
+          "name": "record-fields-preserved",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "after must be None or an id present in records",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-cursor",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "record ids must be unique",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "duplicate-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "limit-too-large",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "bool-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "after must be None or an id present in records",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-after-type",
+          "pass": true
+        }
+      ],
+      "passed": 18,
+      "success": true,
+      "total": 18
+    },
+    "inputTotal": 26390,
+    "inputUncached": 17686,
+    "inputCached": 8704,
+    "cacheWrite": 0,
+    "outputTokens": 1175,
+    "requests": 14,
+    "prunedResults": 1,
+    "removedToolCharacters": 11735,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 1921.612702000857,
+    "wallMs": 55882.493443999905,
+    "events": [
+      {
+        "toolCallId": "call_YxXeaMCgdF8oFT1S1aOIQaD2|fc_083f0ce0d39d3f3d016ab80fbbceec87d284e1ef15f69d20c2",
+        "toolName": "read",
+        "originalCharacters": 11958,
+        "retainedCharacters": 223,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1813,
+        "durableProbability": 0.7497,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/pagination-r1-laya/workspace/.artifacts/1cf49a8c22f9adb321bfca42337dc9ff7c785e09175a3d13eb543c96bdbd4adb.txt"
+      }
+    ]
+  },
+  {
+    "id": "pagination-r1-von",
+    "task": "pagination",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "v": 1
+              },
+              {
+                "id": "b",
+                "v": 2
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "first-page",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "after-middle",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              }
+            ],
+            "next_after": "a"
+          },
+          "name": "after-first-limit-one",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "after-last",
+          "pass": false
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "nested": {
+                  "x": 1
+                },
+                "tags": [
+                  "x"
+                ]
+              }
+            ],
+            "next_after": null
+          },
+          "name": "record-fields-preserved",
+          "pass": true
+        },
+        {
+          "name": "unknown-cursor",
+          "pass": false
+        },
+        {
+          "name": "duplicate-id",
+          "pass": false
+        },
+        {
+          "name": "missing-id",
+          "pass": false
+        },
+        {
+          "name": "empty-id",
+          "pass": false
+        },
+        {
+          "name": "non-string-id",
+          "pass": false
+        },
+        {
+          "name": "zero-limit",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "list index out of range",
+            "module": "builtins",
+            "name": "IndexError"
+          },
+          "name": "negative-limit",
+          "pass": false
+        },
+        {
+          "name": "limit-too-large",
+          "pass": false
+        },
+        {
+          "name": "bool-limit",
+          "pass": false
+        },
+        {
+          "name": "invalid-after-type",
+          "pass": false
+        }
+      ],
+      "passed": 5,
+      "success": false,
+      "total": 18
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "v": 1
+              },
+              {
+                "id": "b",
+                "v": 2
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "first-page",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "c"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "after-middle",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": "b"
+          },
+          "name": "after-first-limit-one",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [],
+            "next_after": null
+          },
+          "name": "after-last",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a"
+              },
+              {
+                "id": "b"
+              }
+            ],
+            "next_after": null
+          },
+          "name": "large-limit",
+          "pass": true
+        },
+        {
+          "actual": {
+            "items": [
+              {
+                "id": "a",
+                "nested": {
+                  "x": 1
+                },
+                "tags": [
+                  "x"
+                ]
+              }
+            ],
+            "next_after": null
+          },
+          "name": "record-fields-preserved",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "after must be an id present in records",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-cursor",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "record ids must be unique",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "duplicate-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each record must have a nonempty string id",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-id",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "zero-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "limit-too-large",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "limit must be an integer from 1 through 100",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "bool-limit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "after must be an id present in records",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-after-type",
+          "pass": true
+        }
+      ],
+      "passed": 18,
+      "success": true,
+      "total": 18
+    },
+    "inputTotal": 63366,
+    "inputUncached": 24454,
+    "inputCached": 38912,
+    "cacheWrite": 0,
+    "outputTokens": 1682,
+    "requests": 20,
+    "prunedResults": 2,
+    "removedToolCharacters": 23472,
+    "judgeCalls": 2,
+    "judgeLatencyMs": 2333.9046479977696,
+    "wallMs": 87087.66168499994,
+    "events": [
+      {
+        "toolCallId": "call_3XPVv7O4IlUhqo3H4xzjns9I|fc_0e1fccc47694f8d9016ab8100a104887d2a3fa63afd934b8e5",
+        "toolName": "read",
+        "originalCharacters": 11958,
+        "retainedCharacters": 222,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1903,
+        "durableProbability": 0.51,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/pagination-r1-von/workspace/.artifacts/1cf49a8c22f9adb321bfca42337dc9ff7c785e09175a3d13eb543c96bdbd4adb.txt"
+      },
+      {
+        "toolCallId": "call_yfzaJHd6ydJVY9ypox9UboQe|fc_0e1fccc47694f8d9016ab81024831887d2aa5ff1e8191d3fb6",
+        "toolName": "read",
+        "originalCharacters": 11958,
+        "retainedCharacters": 222,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.2091,
+        "durableProbability": 0.5091,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/pagination-r1-von/workspace/.artifacts/1cf49a8c22f9adb321bfca42337dc9ff7c785e09175a3d13eb543c96bdbd4adb.txt"
+      }
+    ]
+  },
+  {
+    "id": "duration-r1-laya",
+    "task": "duration",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": 0,
+          "name": "zero",
+          "pass": true
+        },
+        {
+          "actual": 2000,
+          "name": "seconds",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '500m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "milliseconds",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '2m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "minutes",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1h'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "hours",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1d'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "days",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1h30m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "compound-no-space",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: ' 1h 30m 500ms '",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "compound-space",
+          "pass": false
+        },
+        {
+          "actual": 1500,
+          "name": "decimal",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '.25m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "leading-dot",
+          "pass": false
+        },
+        {
+          "actual": 0,
+          "name": "ceil-fraction",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '2d 3h 4m 5s 6m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "mixed-units",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: ''",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '   '",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "whitespace-only",
+          "pass": true
+        },
+        {
+          "name": "missing-unit",
+          "pass": false
+        },
+        {
+          "name": "space-inside-term",
+          "pass": false
+        },
+        {
+          "name": "negative",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '1w'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '1S'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "uppercase-unit",
+          "pass": true
+        },
+        {
+          "name": "trailing-dot",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "'int' object has no attribute 'rstrip'",
+            "module": "builtins",
+            "name": "AttributeError"
+          },
+          "name": "input-type",
+          "pass": false
+        }
+      ],
+      "passed": 7,
+      "success": false,
+      "total": 21
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": 0,
+          "name": "zero",
+          "pass": true
+        },
+        {
+          "actual": 2000,
+          "name": "seconds",
+          "pass": true
+        },
+        {
+          "actual": 500,
+          "name": "milliseconds",
+          "pass": true
+        },
+        {
+          "actual": 120000,
+          "name": "minutes",
+          "pass": true
+        },
+        {
+          "actual": 3600000,
+          "name": "hours",
+          "pass": true
+        },
+        {
+          "actual": 86400000,
+          "name": "days",
+          "pass": true
+        },
+        {
+          "actual": 5400000,
+          "name": "compound-no-space",
+          "pass": true
+        },
+        {
+          "actual": 5400500,
+          "name": "compound-space",
+          "pass": true
+        },
+        {
+          "actual": 1500,
+          "name": "decimal",
+          "pass": true
+        },
+        {
+          "actual": 15000,
+          "name": "leading-dot",
+          "pass": true
+        },
+        {
+          "actual": 1,
+          "name": "ceil-fraction",
+          "pass": true
+        },
+        {
+          "actual": 183845006,
+          "name": "mixed-units",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "empty duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "empty duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "whitespace-only",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "space-inside-term",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "uppercase-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "trailing-dot",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "duration must be a string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "input-type",
+          "pass": true
+        }
+      ],
+      "passed": 21,
+      "success": true,
+      "total": 21
+    },
+    "inputTotal": 55354,
+    "inputUncached": 23610,
+    "inputCached": 31744,
+    "cacheWrite": 0,
+    "outputTokens": 1663,
+    "requests": 22,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 148834.53651699994,
+    "events": []
+  },
+  {
+    "id": "duration-r1-von",
+    "task": "duration",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": 0,
+          "name": "zero",
+          "pass": true
+        },
+        {
+          "actual": 2000,
+          "name": "seconds",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '500m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "milliseconds",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '2m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "minutes",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1h'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "hours",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1d'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "days",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1h30m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "compound-no-space",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: ' 1h 30m 500ms '",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "compound-space",
+          "pass": false
+        },
+        {
+          "actual": 1500,
+          "name": "decimal",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '.25m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "leading-dot",
+          "pass": false
+        },
+        {
+          "actual": 0,
+          "name": "ceil-fraction",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '2d 3h 4m 5s 6m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "mixed-units",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: ''",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '   '",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "whitespace-only",
+          "pass": true
+        },
+        {
+          "name": "missing-unit",
+          "pass": false
+        },
+        {
+          "name": "space-inside-term",
+          "pass": false
+        },
+        {
+          "name": "negative",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '1w'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '1S'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "uppercase-unit",
+          "pass": true
+        },
+        {
+          "name": "trailing-dot",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "'int' object has no attribute 'rstrip'",
+            "module": "builtins",
+            "name": "AttributeError"
+          },
+          "name": "input-type",
+          "pass": false
+        }
+      ],
+      "passed": 7,
+      "success": false,
+      "total": 21
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": 0,
+          "name": "zero",
+          "pass": true
+        },
+        {
+          "actual": 2000,
+          "name": "seconds",
+          "pass": true
+        },
+        {
+          "actual": 500,
+          "name": "milliseconds",
+          "pass": true
+        },
+        {
+          "actual": 120000,
+          "name": "minutes",
+          "pass": true
+        },
+        {
+          "actual": 3600000,
+          "name": "hours",
+          "pass": true
+        },
+        {
+          "actual": 86400000,
+          "name": "days",
+          "pass": true
+        },
+        {
+          "actual": 5400000,
+          "name": "compound-no-space",
+          "pass": true
+        },
+        {
+          "actual": 5400500,
+          "name": "compound-space",
+          "pass": true
+        },
+        {
+          "actual": 1500,
+          "name": "decimal",
+          "pass": true
+        },
+        {
+          "actual": 15000,
+          "name": "leading-dot",
+          "pass": true
+        },
+        {
+          "actual": 1,
+          "name": "ceil-fraction",
+          "pass": true
+        },
+        {
+          "actual": 183845006,
+          "name": "mixed-units",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "whitespace-only",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "space-inside-term",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "uppercase-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "trailing-dot",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "duration must be a string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "input-type",
+          "pass": true
+        }
+      ],
+      "passed": 21,
+      "success": true,
+      "total": 21
+    },
+    "inputTotal": 55635,
+    "inputUncached": 23891,
+    "inputCached": 31744,
+    "cacheWrite": 0,
+    "outputTokens": 2291,
+    "requests": 22,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 79574.40465900011,
+    "events": []
+  },
+  {
+    "id": "duration-r1-baseline",
+    "task": "duration",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": 0,
+          "name": "zero",
+          "pass": true
+        },
+        {
+          "actual": 2000,
+          "name": "seconds",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '500m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "milliseconds",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '2m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "minutes",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1h'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "hours",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1d'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "days",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '1h30m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "compound-no-space",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: ' 1h 30m 500ms '",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "compound-space",
+          "pass": false
+        },
+        {
+          "actual": 1500,
+          "name": "decimal",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '.25m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "leading-dot",
+          "pass": false
+        },
+        {
+          "actual": 0,
+          "name": "ceil-fraction",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "could not convert string to float: '2d 3h 4m 5s 6m'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "mixed-units",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: ''",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '   '",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "whitespace-only",
+          "pass": true
+        },
+        {
+          "name": "missing-unit",
+          "pass": false
+        },
+        {
+          "name": "space-inside-term",
+          "pass": false
+        },
+        {
+          "name": "negative",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '1w'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "could not convert string to float: '1S'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "uppercase-unit",
+          "pass": true
+        },
+        {
+          "name": "trailing-dot",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "'int' object has no attribute 'rstrip'",
+            "module": "builtins",
+            "name": "AttributeError"
+          },
+          "name": "input-type",
+          "pass": false
+        }
+      ],
+      "passed": 7,
+      "success": false,
+      "total": 21
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": 0,
+          "name": "zero",
+          "pass": true
+        },
+        {
+          "actual": 2000,
+          "name": "seconds",
+          "pass": true
+        },
+        {
+          "actual": 500,
+          "name": "milliseconds",
+          "pass": true
+        },
+        {
+          "actual": 120000,
+          "name": "minutes",
+          "pass": true
+        },
+        {
+          "actual": 3600000,
+          "name": "hours",
+          "pass": true
+        },
+        {
+          "actual": 86400000,
+          "name": "days",
+          "pass": true
+        },
+        {
+          "actual": 5400000,
+          "name": "compound-no-space",
+          "pass": true
+        },
+        {
+          "actual": 5400500,
+          "name": "compound-space",
+          "pass": true
+        },
+        {
+          "actual": 1500,
+          "name": "decimal",
+          "pass": true
+        },
+        {
+          "actual": 15000,
+          "name": "leading-dot",
+          "pass": true
+        },
+        {
+          "actual": 1,
+          "name": "ceil-fraction",
+          "pass": true
+        },
+        {
+          "actual": 183845006,
+          "name": "mixed-units",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "duration must be a non-empty string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "duration must be a non-empty string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "whitespace-only",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "space-inside-term",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "negative",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unknown-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "uppercase-unit",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid duration",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "trailing-dot",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "duration must be a non-empty string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "input-type",
+          "pass": true
+        }
+      ],
+      "passed": 21,
+      "success": true,
+      "total": 21
+    },
+    "inputTotal": 47104,
+    "inputUncached": 18944,
+    "inputCached": 28160,
+    "cacheWrite": 0,
+    "outputTokens": 2370,
+    "requests": 20,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 110910.76864599995,
+    "events": []
+  },
+  {
+    "id": "dotenv-r1-von",
+    "task": "dotenv",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db",
+            "PORT": "5432"
+          },
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db"
+          },
+          "name": "spaces-around-equals",
+          "pass": true
+        },
+        {
+          "actual": {
+            "export API_KEY": "abc"
+          },
+          "name": "export-prefix",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "comments-and-blanks",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value # explanation"
+          },
+          "name": "inline-comment",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "abc#123"
+          },
+          "name": "hash-in-word",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "  spaced # value  "
+          },
+          "name": "single-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "hello world"
+          },
+          "name": "double-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "line\\nnext\\t\\\"q\\"
+          },
+          "name": "double-escapes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "value # stays\" # comment"
+          },
+          "name": "quoted-hash",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "",
+            "B": "",
+            "C": ""
+          },
+          "name": "empty-value",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "two"
+          },
+          "name": "duplicate-last-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "localhost",
+            "PORT": "8080"
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "preserve-default-order",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "not enough values to unpack (expected 2, got 1)",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-no-equals",
+          "pass": true
+        },
+        {
+          "name": "invalid-key",
+          "pass": false
+        },
+        {
+          "name": "invalid-key-dash",
+          "pass": false
+        },
+        {
+          "name": "unterminated-single",
+          "pass": false
+        },
+        {
+          "name": "unterminated-double",
+          "pass": false
+        },
+        {
+          "name": "junk-after-quote",
+          "pass": false
+        },
+        {
+          "name": "non-string-defaults",
+          "pass": false
+        }
+      ],
+      "passed": 12,
+      "success": false,
+      "total": 22
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db",
+            "PORT": "5432"
+          },
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db"
+          },
+          "name": "spaces-around-equals",
+          "pass": true
+        },
+        {
+          "actual": {
+            "API_KEY": "abc"
+          },
+          "name": "export-prefix",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "comments-and-blanks",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value"
+          },
+          "name": "inline-comment",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "abc#123"
+          },
+          "name": "hash-in-word",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "  spaced # value  "
+          },
+          "name": "single-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "hello world"
+          },
+          "name": "double-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "line\nnext\t\"q\""
+          },
+          "name": "double-escapes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value # stays"
+          },
+          "name": "quoted-hash",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "",
+            "B": "",
+            "C": ""
+          },
+          "name": "empty-value",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "two"
+          },
+          "name": "duplicate-last-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "localhost",
+            "PORT": "8080"
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "preserve-default-order",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-no-equals",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-key",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-key-dash",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unterminated-single",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unterminated-double",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "junk-after-quote",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "defaults must be a dictionary",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-defaults",
+          "pass": true
+        }
+      ],
+      "passed": 22,
+      "success": true,
+      "total": 22
+    },
+    "inputTotal": 47647,
+    "inputUncached": 17439,
+    "inputCached": 30208,
+    "cacheWrite": 0,
+    "outputTokens": 2057,
+    "requests": 18,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 89219.8785339999,
+    "events": []
+  },
+  {
+    "id": "dotenv-r1-baseline",
+    "task": "dotenv",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db",
+            "PORT": "5432"
+          },
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db"
+          },
+          "name": "spaces-around-equals",
+          "pass": true
+        },
+        {
+          "actual": {
+            "export API_KEY": "abc"
+          },
+          "name": "export-prefix",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "comments-and-blanks",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value # explanation"
+          },
+          "name": "inline-comment",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "abc#123"
+          },
+          "name": "hash-in-word",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "  spaced # value  "
+          },
+          "name": "single-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "hello world"
+          },
+          "name": "double-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "line\\nnext\\t\\\"q\\"
+          },
+          "name": "double-escapes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "value # stays\" # comment"
+          },
+          "name": "quoted-hash",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "",
+            "B": "",
+            "C": ""
+          },
+          "name": "empty-value",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "two"
+          },
+          "name": "duplicate-last-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "localhost",
+            "PORT": "8080"
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "preserve-default-order",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "not enough values to unpack (expected 2, got 1)",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-no-equals",
+          "pass": true
+        },
+        {
+          "name": "invalid-key",
+          "pass": false
+        },
+        {
+          "name": "invalid-key-dash",
+          "pass": false
+        },
+        {
+          "name": "unterminated-single",
+          "pass": false
+        },
+        {
+          "name": "unterminated-double",
+          "pass": false
+        },
+        {
+          "name": "junk-after-quote",
+          "pass": false
+        },
+        {
+          "name": "non-string-defaults",
+          "pass": false
+        }
+      ],
+      "passed": 12,
+      "success": false,
+      "total": 22
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db",
+            "PORT": "5432"
+          },
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db"
+          },
+          "name": "spaces-around-equals",
+          "pass": true
+        },
+        {
+          "actual": {
+            "API_KEY": "abc"
+          },
+          "name": "export-prefix",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "comments-and-blanks",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value"
+          },
+          "name": "inline-comment",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "abc#123"
+          },
+          "name": "hash-in-word",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "  spaced # value  "
+          },
+          "name": "single-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "hello world"
+          },
+          "name": "double-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "line\nnext\t\"q\""
+          },
+          "name": "double-escapes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value # stays"
+          },
+          "name": "quoted-hash",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "",
+            "B": "",
+            "C": ""
+          },
+          "name": "empty-value",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "two"
+          },
+          "name": "duplicate-last-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "localhost",
+            "PORT": "8080"
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "preserve-default-order",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid environment definition",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-no-equals",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid environment definition",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-key",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid environment definition",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-key-dash",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "unterminated quoted value",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unterminated-single",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "unterminated quoted value",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unterminated-double",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "junk after quoted value",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "junk-after-quote",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "defaults must be a dictionary",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-defaults",
+          "pass": true
+        }
+      ],
+      "passed": 22,
+      "success": true,
+      "total": 22
+    },
+    "inputTotal": 79871,
+    "inputUncached": 23551,
+    "inputCached": 56320,
+    "cacheWrite": 0,
+    "outputTokens": 2311,
+    "requests": 24,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 209295.32323900005,
+    "events": []
+  },
+  {
+    "id": "dotenv-r1-laya",
+    "task": "dotenv",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db",
+            "PORT": "5432"
+          },
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db"
+          },
+          "name": "spaces-around-equals",
+          "pass": true
+        },
+        {
+          "actual": {
+            "export API_KEY": "abc"
+          },
+          "name": "export-prefix",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "comments-and-blanks",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value # explanation"
+          },
+          "name": "inline-comment",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "abc#123"
+          },
+          "name": "hash-in-word",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "  spaced # value  "
+          },
+          "name": "single-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "hello world"
+          },
+          "name": "double-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "line\\nnext\\t\\\"q\\"
+          },
+          "name": "double-escapes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "value # stays\" # comment"
+          },
+          "name": "quoted-hash",
+          "pass": false
+        },
+        {
+          "actual": {
+            "A": "",
+            "B": "",
+            "C": ""
+          },
+          "name": "empty-value",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "two"
+          },
+          "name": "duplicate-last-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "localhost",
+            "PORT": "8080"
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "preserve-default-order",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "not enough values to unpack (expected 2, got 1)",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-no-equals",
+          "pass": true
+        },
+        {
+          "name": "invalid-key",
+          "pass": false
+        },
+        {
+          "name": "invalid-key-dash",
+          "pass": false
+        },
+        {
+          "name": "unterminated-single",
+          "pass": false
+        },
+        {
+          "name": "unterminated-double",
+          "pass": false
+        },
+        {
+          "name": "junk-after-quote",
+          "pass": false
+        },
+        {
+          "name": "non-string-defaults",
+          "pass": false
+        }
+      ],
+      "passed": 12,
+      "success": false,
+      "total": 22
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db",
+            "PORT": "5432"
+          },
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "db"
+          },
+          "name": "spaces-around-equals",
+          "pass": true
+        },
+        {
+          "actual": {
+            "API_KEY": "abc"
+          },
+          "name": "export-prefix",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "comments-and-blanks",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value"
+          },
+          "name": "inline-comment",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "abc#123"
+          },
+          "name": "hash-in-word",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "  spaced # value  "
+          },
+          "name": "single-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "hello world"
+          },
+          "name": "double-quote",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "line\nnext\t\"q\""
+          },
+          "name": "double-escapes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "value # stays"
+          },
+          "name": "quoted-hash",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "",
+            "B": "",
+            "C": ""
+          },
+          "name": "empty-value",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "two"
+          },
+          "name": "duplicate-last-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "HOST": "localhost",
+            "PORT": "8080"
+          },
+          "name": "defaults",
+          "pass": true
+        },
+        {
+          "actual": {
+            "A": "1",
+            "B": "2"
+          },
+          "name": "preserve-default-order",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-no-equals",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-key",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-key-dash",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unterminated-single",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "unterminated-double",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "malformed line 1",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "junk-after-quote",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "defaults must be a dictionary",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-defaults",
+          "pass": true
+        }
+      ],
+      "passed": 22,
+      "success": true,
+      "total": 22
+    },
+    "inputTotal": 68494,
+    "inputUncached": 23438,
+    "inputCached": 45056,
+    "cacheWrite": 0,
+    "outputTokens": 2695,
+    "requests": 22,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 94842.10024400009,
+    "events": []
+  },
+  {
+    "id": "record-sort-r1-baseline",
+    "task": "record-sort",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "name": "ascending",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "descending",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "group": "a",
+              "score": 2
+            },
+            {
+              "group": "a",
+              "score": 1
+            },
+            {
+              "group": "b",
+              "score": 1
+            }
+          ],
+          "name": "multi-key",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "third",
+              "k": 0
+            },
+            {
+              "id": "first",
+              "k": 1
+            },
+            {
+              "id": "second",
+              "k": 1
+            }
+          ],
+          "name": "stable-tie",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'int'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "missing-last-ascending",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "missing-last-descending",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'int' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "none-last",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": -3
+            },
+            {
+              "v": -1
+            },
+            {
+              "v": 0
+            }
+          ],
+          "name": "negative-numbers",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "key-with-leading-dash",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": 1
+            },
+            {
+              "v": 2
+            }
+          ],
+          "name": "rows-not-mutated",
+          "pass": true
+        },
+        {
+          "name": "empty-keys",
+          "pass": false
+        },
+        {
+          "name": "non-string-key",
+          "pass": false
+        },
+        {
+          "name": "empty-key-name",
+          "pass": false
+        },
+        {
+          "name": "only-minus",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "'<' not supported between instances of 'str' and 'int'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "mixed-value-types",
+          "pass": false
+        },
+        {
+          "name": "nested-values-not-supported",
+          "pass": false
+        }
+      ],
+      "passed": 6,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "name": "ascending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "score": 9
+            },
+            {
+              "score": 4
+            },
+            {
+              "score": 2
+            }
+          ],
+          "name": "descending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "group": "a",
+              "score": 2
+            },
+            {
+              "group": "a",
+              "score": 1
+            },
+            {
+              "group": "b",
+              "score": 1
+            }
+          ],
+          "name": "multi-key",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "third",
+              "k": 0
+            },
+            {
+              "id": "first",
+              "k": 1
+            },
+            {
+              "id": "second",
+              "k": 1
+            }
+          ],
+          "name": "stable-tie",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "b",
+              "v": 1
+            },
+            {
+              "id": "a",
+              "v": 2
+            },
+            {
+              "id": "missing"
+            }
+          ],
+          "name": "missing-last-ascending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "a",
+              "v": 2
+            },
+            {
+              "id": "b",
+              "v": 1
+            },
+            {
+              "id": "missing"
+            }
+          ],
+          "name": "missing-last-descending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "one",
+              "v": 1
+            },
+            {
+              "id": "two",
+              "v": 2
+            },
+            {
+              "id": "none",
+              "v": null
+            }
+          ],
+          "name": "none-last",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "v": -3
+            },
+            {
+              "v": -1
+            },
+            {
+              "v": 0
+            }
+          ],
+          "name": "negative-numbers",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "-name": "b"
+            },
+            {
+              "-name": "a"
+            }
+          ],
+          "name": "key-with-leading-dash",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": 1
+            },
+            {
+              "v": 2
+            }
+          ],
+          "name": "rows-not-mutated",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty strings",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-keys",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty strings",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-key",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty strings",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-key-name",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field name must not be empty",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "only-minus",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "non-None values for a field must have a common type",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "mixed-value-types",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field values must be JSON scalars",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "nested-values-not-supported",
+          "pass": true
+        }
+      ],
+      "passed": 16,
+      "success": false,
+      "total": 17
+    },
+    "inputTotal": 69578,
+    "inputUncached": 17866,
+    "inputCached": 51712,
+    "cacheWrite": 0,
+    "outputTokens": 2059,
+    "requests": 18,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 78994.46911499999,
+    "events": []
+  },
+  {
+    "id": "record-sort-r1-laya",
+    "task": "record-sort",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "name": "ascending",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "descending",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "group": "a",
+              "score": 2
+            },
+            {
+              "group": "a",
+              "score": 1
+            },
+            {
+              "group": "b",
+              "score": 1
+            }
+          ],
+          "name": "multi-key",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "third",
+              "k": 0
+            },
+            {
+              "id": "first",
+              "k": 1
+            },
+            {
+              "id": "second",
+              "k": 1
+            }
+          ],
+          "name": "stable-tie",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'int'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "missing-last-ascending",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "missing-last-descending",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'int' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "none-last",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": -3
+            },
+            {
+              "v": -1
+            },
+            {
+              "v": 0
+            }
+          ],
+          "name": "negative-numbers",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "key-with-leading-dash",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": 1
+            },
+            {
+              "v": 2
+            }
+          ],
+          "name": "rows-not-mutated",
+          "pass": true
+        },
+        {
+          "name": "empty-keys",
+          "pass": false
+        },
+        {
+          "name": "non-string-key",
+          "pass": false
+        },
+        {
+          "name": "empty-key-name",
+          "pass": false
+        },
+        {
+          "name": "only-minus",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "'<' not supported between instances of 'str' and 'int'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "mixed-value-types",
+          "pass": false
+        },
+        {
+          "name": "nested-values-not-supported",
+          "pass": false
+        }
+      ],
+      "passed": 6,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "name": "ascending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "score": 9
+            },
+            {
+              "score": 4
+            },
+            {
+              "score": 2
+            }
+          ],
+          "name": "descending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "group": "a",
+              "score": 2
+            },
+            {
+              "group": "a",
+              "score": 1
+            },
+            {
+              "group": "b",
+              "score": 1
+            }
+          ],
+          "name": "multi-key",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "third",
+              "k": 0
+            },
+            {
+              "id": "first",
+              "k": 1
+            },
+            {
+              "id": "second",
+              "k": 1
+            }
+          ],
+          "name": "stable-tie",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "b",
+              "v": 1
+            },
+            {
+              "id": "a",
+              "v": 2
+            },
+            {
+              "id": "missing"
+            }
+          ],
+          "name": "missing-last-ascending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "a",
+              "v": 2
+            },
+            {
+              "id": "b",
+              "v": 1
+            },
+            {
+              "id": "missing"
+            }
+          ],
+          "name": "missing-last-descending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "one",
+              "v": 1
+            },
+            {
+              "id": "two",
+              "v": 2
+            },
+            {
+              "id": "none",
+              "v": null
+            }
+          ],
+          "name": "none-last",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "v": -3
+            },
+            {
+              "v": -1
+            },
+            {
+              "v": 0
+            }
+          ],
+          "name": "negative-numbers",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "-name": "b"
+            },
+            {
+              "-name": "a"
+            }
+          ],
+          "name": "key-with-leading-dash",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": 1
+            },
+            {
+              "v": 2
+            }
+          ],
+          "name": "rows-not-mutated",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty field names",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-keys",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty field names",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-key",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty field names",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-key-name",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list of nonempty field names",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "only-minus",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field values must have a common comparable type",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "mixed-value-types",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field values must be JSON scalars",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "nested-values-not-supported",
+          "pass": true
+        }
+      ],
+      "passed": 16,
+      "success": false,
+      "total": 17
+    },
+    "inputTotal": 84309,
+    "inputUncached": 31061,
+    "inputCached": 53248,
+    "cacheWrite": 0,
+    "outputTokens": 2166,
+    "requests": 22,
+    "prunedResults": 3,
+    "removedToolCharacters": 34797,
+    "judgeCalls": 3,
+    "judgeLatencyMs": 4702.663439999014,
+    "wallMs": 89564.6516809999,
+    "events": [
+      {
+        "toolCallId": "call_rH18PdRjxOvXxBX9EFBkGR58|fc_012059462a2595bb016ab813b4d1b887d28543a29994e5a05b",
+        "toolName": "read",
+        "originalCharacters": 11823,
+        "retainedCharacters": 224,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1036,
+        "durableProbability": 0.5307,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-laya/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+      },
+      {
+        "toolCallId": "call_Fw8Sc5Nc4biD6P3hCroSrbPD|fc_012059462a2595bb016ab813d4aaf887d2beff29d66d98ff36",
+        "toolName": "read",
+        "originalCharacters": 11823,
+        "retainedCharacters": 224,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1811,
+        "durableProbability": 0.5505,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-laya/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+      },
+      {
+        "toolCallId": "call_cnj0y6yKqPJQCPOAjXte5G2t|fc_012059462a2595bb016ab813e84f3887d29d9f9d4d99f65cf6",
+        "toolName": "read",
+        "originalCharacters": 11823,
+        "retainedCharacters": 224,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1029,
+        "durableProbability": 0.5516,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-laya/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+      }
+    ]
+  },
+  {
+    "id": "record-sort-r1-von",
+    "task": "record-sort",
+    "stratum": "long",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "name": "ascending",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "descending",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "group": "a",
+              "score": 2
+            },
+            {
+              "group": "a",
+              "score": 1
+            },
+            {
+              "group": "b",
+              "score": 1
+            }
+          ],
+          "name": "multi-key",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "third",
+              "k": 0
+            },
+            {
+              "id": "first",
+              "k": 1
+            },
+            {
+              "id": "second",
+              "k": 1
+            }
+          ],
+          "name": "stable-tie",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'int'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "missing-last-ascending",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "missing-last-descending",
+          "pass": false
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'int' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "none-last",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": -3
+            },
+            {
+              "v": -1
+            },
+            {
+              "v": 0
+            }
+          ],
+          "name": "negative-numbers",
+          "pass": true
+        },
+        {
+          "error": {
+            "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "key-with-leading-dash",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": 1
+            },
+            {
+              "v": 2
+            }
+          ],
+          "name": "rows-not-mutated",
+          "pass": true
+        },
+        {
+          "name": "empty-keys",
+          "pass": false
+        },
+        {
+          "name": "non-string-key",
+          "pass": false
+        },
+        {
+          "name": "empty-key-name",
+          "pass": false
+        },
+        {
+          "name": "only-minus",
+          "pass": false
+        },
+        {
+          "exception": {
+            "message": "'<' not supported between instances of 'str' and 'int'",
+            "module": "builtins",
+            "name": "TypeError"
+          },
+          "name": "mixed-value-types",
+          "pass": false
+        },
+        {
+          "name": "nested-values-not-supported",
+          "pass": false
+        }
+      ],
+      "passed": 6,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "name": "ascending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "score": 9
+            },
+            {
+              "score": 4
+            },
+            {
+              "score": 2
+            }
+          ],
+          "name": "descending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "group": "a",
+              "score": 2
+            },
+            {
+              "group": "a",
+              "score": 1
+            },
+            {
+              "group": "b",
+              "score": 1
+            }
+          ],
+          "name": "multi-key",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "third",
+              "k": 0
+            },
+            {
+              "id": "first",
+              "k": 1
+            },
+            {
+              "id": "second",
+              "k": 1
+            }
+          ],
+          "name": "stable-tie",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "b",
+              "v": 1
+            },
+            {
+              "id": "a",
+              "v": 2
+            },
+            {
+              "id": "missing"
+            }
+          ],
+          "name": "missing-last-ascending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "a",
+              "v": 2
+            },
+            {
+              "id": "b",
+              "v": 1
+            },
+            {
+              "id": "missing"
+            }
+          ],
+          "name": "missing-last-descending",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "id": "one",
+              "v": 1
+            },
+            {
+              "id": "two",
+              "v": 2
+            },
+            {
+              "id": "none",
+              "v": null
+            }
+          ],
+          "name": "none-last",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "v": -3
+            },
+            {
+              "v": -1
+            },
+            {
+              "v": 0
+            }
+          ],
+          "name": "negative-numbers",
+          "pass": true
+        },
+        {
+          "actual": [
+            {
+              "-name": "b"
+            },
+            {
+              "-name": "a"
+            }
+          ],
+          "name": "key-with-leading-dash",
+          "pass": false
+        },
+        {
+          "actual": [
+            {
+              "v": 1
+            },
+            {
+              "v": 2
+            }
+          ],
+          "name": "rows-not-mutated",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "keys must be a nonempty list",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-keys",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each key must be a nonempty string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "non-string-key",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "each key must be a nonempty string",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "empty-key-name",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field name must not be empty",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "only-minus",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field values must have a common comparable type",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "mixed-value-types",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "field values must be JSON scalars",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "nested-values-not-supported",
+          "pass": true
+        }
+      ],
+      "passed": 16,
+      "success": false,
+      "total": 17
+    },
+    "inputTotal": 60766,
+    "inputUncached": 24926,
+    "inputCached": 35840,
+    "cacheWrite": 0,
+    "outputTokens": 2448,
+    "requests": 20,
+    "prunedResults": 2,
+    "removedToolCharacters": 23200,
+    "judgeCalls": 2,
+    "judgeLatencyMs": 2190.77419200039,
+    "wallMs": 89373.20826600003,
+    "events": [
+      {
+        "toolCallId": "call_09zWtDiTGcTbHGesg4Dwf2kw|fc_04d346b94eead494016ab8141cd6a487d2a80d1e28acc1f2ec",
+        "toolName": "read",
+        "originalCharacters": 11823,
+        "retainedCharacters": 223,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1801,
+        "durableProbability": 0.4841,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-von/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+      },
+      {
+        "toolCallId": "call_4hdkFB1LC9IXVULVNVJrDeAy|fc_04d346b94eead494016ab8142ff4cc87d2a49b759cdb1087d9",
+        "toolName": "read",
+        "originalCharacters": 11823,
+        "retainedCharacters": 223,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.203,
+        "durableProbability": 0.4853,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-von/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+      }
+    ]
+  },
+  {
+    "id": "canonical-url-r1-laya",
+    "task": "canonical-url",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": "http://example.com/path",
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com",
+          "name": "root",
+          "pass": false
+        },
+        {
+          "actual": "http://example.com:80/a",
+          "name": "default-http-port",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com:443/a",
+          "name": "default-https-port",
+          "pass": false
+        },
+        {
+          "actual": "http://example.com:8080/a",
+          "name": "nondefault-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/./b/../c/",
+          "name": "dot-segments",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com//a///b",
+          "name": "duplicate-slashes",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?z=2&a=1&z=1",
+          "name": "query-sorted",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?b=&a=hello%20world",
+          "name": "query-blank",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?a=2&a=1",
+          "name": "query-duplicate-key-values",
+          "pass": false
+        },
+        {
+          "name": "fragment-rejected",
+          "pass": false
+        },
+        {
+          "name": "credentials-rejected",
+          "pass": false
+        },
+        {
+          "name": "relative-rejected",
+          "pass": false
+        },
+        {
+          "name": "scheme-rejected",
+          "pass": false
+        },
+        {
+          "name": "missing-host",
+          "pass": false
+        },
+        {
+          "name": "invalid-port",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com./a",
+          "name": "trailing-dot-host",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/資料/é",
+          "name": "unicode-path",
+          "pass": true
+        },
+        {
+          "name": "control-character",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 19
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": "http://example.com/path",
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/",
+          "name": "root",
+          "pass": true
+        },
+        {
+          "actual": "http://example.com/a",
+          "name": "default-http-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a",
+          "name": "default-https-port",
+          "pass": true
+        },
+        {
+          "actual": "http://example.com:8080/a",
+          "name": "nondefault-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/c/",
+          "name": "dot-segments",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/b",
+          "name": "duplicate-slashes",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=1&z=1&z=2",
+          "name": "query-sorted",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=hello+world&b=",
+          "name": "query-blank",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=1&a=2",
+          "name": "query-duplicate-key-values",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "fragments are not allowed",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "fragment-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "credentials-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "relative-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "scheme-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-host",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a",
+          "name": "trailing-dot-host",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/資料/é",
+          "name": "unicode-path",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "control-character",
+          "pass": true
+        }
+      ],
+      "passed": 19,
+      "success": true,
+      "total": 19
+    },
+    "inputTotal": 94853,
+    "inputUncached": 24709,
+    "inputCached": 70144,
+    "cacheWrite": 0,
+    "outputTokens": 3511,
+    "requests": 25,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 123836.61033399985,
+    "events": []
+  },
+  {
+    "id": "canonical-url-r1-von",
+    "task": "canonical-url",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": "http://example.com/path",
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com",
+          "name": "root",
+          "pass": false
+        },
+        {
+          "actual": "http://example.com:80/a",
+          "name": "default-http-port",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com:443/a",
+          "name": "default-https-port",
+          "pass": false
+        },
+        {
+          "actual": "http://example.com:8080/a",
+          "name": "nondefault-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/./b/../c/",
+          "name": "dot-segments",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com//a///b",
+          "name": "duplicate-slashes",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?z=2&a=1&z=1",
+          "name": "query-sorted",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?b=&a=hello%20world",
+          "name": "query-blank",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?a=2&a=1",
+          "name": "query-duplicate-key-values",
+          "pass": false
+        },
+        {
+          "name": "fragment-rejected",
+          "pass": false
+        },
+        {
+          "name": "credentials-rejected",
+          "pass": false
+        },
+        {
+          "name": "relative-rejected",
+          "pass": false
+        },
+        {
+          "name": "scheme-rejected",
+          "pass": false
+        },
+        {
+          "name": "missing-host",
+          "pass": false
+        },
+        {
+          "name": "invalid-port",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com./a",
+          "name": "trailing-dot-host",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/資料/é",
+          "name": "unicode-path",
+          "pass": true
+        },
+        {
+          "name": "control-character",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 19
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": "http://example.com/path",
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/",
+          "name": "root",
+          "pass": true
+        },
+        {
+          "actual": "http://example.com/a",
+          "name": "default-http-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a",
+          "name": "default-https-port",
+          "pass": true
+        },
+        {
+          "actual": "http://example.com:8080/a",
+          "name": "nondefault-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/c/",
+          "name": "dot-segments",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/b",
+          "name": "duplicate-slashes",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=1&z=1&z=2",
+          "name": "query-sorted",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=hello+world&b=",
+          "name": "query-blank",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=1&a=2",
+          "name": "query-duplicate-key-values",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "fragments are not allowed",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "fragment-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "credentials are not allowed",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "credentials-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "unsupported URL scheme",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "relative-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "unsupported URL scheme",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "scheme-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "missing host",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-host",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid port",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a",
+          "name": "trailing-dot-host",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/資料/é",
+          "name": "unicode-path",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "control-character",
+          "pass": true
+        }
+      ],
+      "passed": 19,
+      "success": true,
+      "total": 19
+    },
+    "inputTotal": 45287,
+    "inputUncached": 19175,
+    "inputCached": 26112,
+    "cacheWrite": 0,
+    "outputTokens": 2442,
+    "requests": 18,
+    "prunedResults": 1,
+    "removedToolCharacters": 2116,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 406.1660430015763,
+    "wallMs": 97409.66516500013,
+    "events": [
+      {
+        "toolCallId": "call_MhVrxQS5xatMEMDBHqzZciKW|fc_0278ab81c89280d1016ab8152d89b487d29d3e629a8a7dfd9f",
+        "toolName": "bash",
+        "originalCharacters": 2341,
+        "retainedCharacters": 225,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.178,
+        "durableProbability": 0.5192,
+        "archive": "/home/laurent/pi_jev/results/general-v2-r1/canonical-url-r1-von/workspace/.artifacts/e0adc7430eb17393fa65f33cde8a01d1a1bfa2ede5b48c0f65974fa1a93084f1.txt"
+      }
+    ]
+  },
+  {
+    "id": "canonical-url-r1-baseline",
+    "task": "canonical-url",
+    "stratum": "short",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": "http://example.com/path",
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com",
+          "name": "root",
+          "pass": false
+        },
+        {
+          "actual": "http://example.com:80/a",
+          "name": "default-http-port",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com:443/a",
+          "name": "default-https-port",
+          "pass": false
+        },
+        {
+          "actual": "http://example.com:8080/a",
+          "name": "nondefault-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/./b/../c/",
+          "name": "dot-segments",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com//a///b",
+          "name": "duplicate-slashes",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?z=2&a=1&z=1",
+          "name": "query-sorted",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?b=&a=hello%20world",
+          "name": "query-blank",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/p?a=2&a=1",
+          "name": "query-duplicate-key-values",
+          "pass": false
+        },
+        {
+          "name": "fragment-rejected",
+          "pass": false
+        },
+        {
+          "name": "credentials-rejected",
+          "pass": false
+        },
+        {
+          "name": "relative-rejected",
+          "pass": false
+        },
+        {
+          "name": "scheme-rejected",
+          "pass": false
+        },
+        {
+          "name": "missing-host",
+          "pass": false
+        },
+        {
+          "name": "invalid-port",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com./a",
+          "name": "trailing-dot-host",
+          "pass": false
+        },
+        {
+          "actual": "https://example.com/資料/é",
+          "name": "unicode-path",
+          "pass": true
+        },
+        {
+          "name": "control-character",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 19
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": "http://example.com/path",
+          "name": "simple",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/",
+          "name": "root",
+          "pass": true
+        },
+        {
+          "actual": "http://example.com/a",
+          "name": "default-http-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a",
+          "name": "default-https-port",
+          "pass": true
+        },
+        {
+          "actual": "http://example.com:8080/a",
+          "name": "nondefault-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/c/",
+          "name": "dot-segments",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a/b",
+          "name": "duplicate-slashes",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=1&z=1&z=2",
+          "name": "query-sorted",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=hello+world&b=",
+          "name": "query-blank",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/p?a=1&a=2",
+          "name": "query-duplicate-key-values",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "fragments are not supported",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "fragment-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid authority",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "credentials-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "unsupported scheme",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "relative-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "unsupported scheme",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "scheme-rejected",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid authority",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "missing-host",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "Port could not be cast to integer value as 'abc'",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "invalid-port",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/a",
+          "name": "trailing-dot-host",
+          "pass": true
+        },
+        {
+          "actual": "https://example.com/資料/é",
+          "name": "unicode-path",
+          "pass": true
+        },
+        {
+          "exception": {
+            "message": "invalid URL",
+            "module": "builtins",
+            "name": "ValueError"
+          },
+          "name": "control-character",
+          "pass": true
+        }
+      ],
+      "passed": 19,
+      "success": true,
+      "total": 19
+    },
+    "inputTotal": 38777,
+    "inputUncached": 15225,
+    "inputCached": 23552,
+    "cacheWrite": 0,
+    "outputTokens": 1586,
+    "requests": 17,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 58255.43013700005,
+    "events": []
+  }
+]

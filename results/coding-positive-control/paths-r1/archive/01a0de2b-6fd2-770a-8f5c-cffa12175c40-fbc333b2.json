@@ -1,0 +1,133 @@
+{
+  "checkpoint": "bca6ec79",
+  "leaf": "fbc333b2",
+  "entries": [
+    {
+      "type": "custom",
+      "customType": "laya-gc-state",
+      "data": {
+        "checkpoint": "bca6ec79",
+        "task": "Normalize archive member paths and reject paths that can escape the archive root."
+      },
+      "id": "da39742c",
+      "parentId": "bca6ec79",
+      "timestamp": "2026-09-26T14:43:09.047Z"
+    },
+    {
+      "type": "message",
+      "id": "8b506477",
+      "parentId": "da39742c",
+      "timestamp": "2026-09-26T14:43:09.048Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "As an unrelated short break, read aside.txt and answer: what is the capital mentioned? Do not change anything."
+          }
+        ],
+        "timestamp": 1790433789048
+      }
+    },
+    {
+      "type": "message",
+      "id": "82903df5",
+      "parentId": "8b506477",
+      "timestamp": "2026-09-26T14:43:10.521Z",
+      "message": {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "toolCall",
+            "id": "call_XLLXsAYWMRHdQLpDQwLrphIL|fc_0e742f6f2f20d2aa016ab7d9fdddf887d2a6df8da4192a1467",
+            "name": "read",
+            "arguments": {
+              "path": "aside.txt",
+              "offset": 1,
+              "limit": null
+            }
+          }
+        ],
+        "api": "openai-codex-responses",
+        "provider": "openai-codex",
+        "model": "gpt-6-luna",
+        "usage": {
+          "input": 1291,
+          "output": 26,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "reasoning": 0,
+          "totalTokens": 1317,
+          "cost": {
+            "input": 0.00012910000000000002,
+            "output": 0.000013,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0.0001421
+          }
+        },
+        "stopReason": "toolUse",
+        "timestamp": 1790433789048,
+        "responseId": "resp_0e742f6f2f20d2aa016ab7d9fd305087d28d5d11a719cbf3c3",
+        "rawStopReason": "completed"
+      }
+    },
+    {
+      "type": "message",
+      "id": "41b24224",
+      "parentId": "82903df5",
+      "timestamp": "2026-09-26T14:43:10.523Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_XLLXsAYWMRHdQLpDQwLrphIL|fc_0e742f6f2f20d2aa016ab7d9fdddf887d2a6df8da4192a1467",
+        "toolName": "read",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unrelated trivia for a short break: Paris is the capital of France. Spiders have eight legs. This document has no software requirements.\n"
+          }
+        ],
+        "isError": false,
+        "timestamp": 1790433790523
+      }
+    },
+    {
+      "type": "message",
+      "id": "fbc333b2",
+      "parentId": "41b24224",
+      "timestamp": "2026-09-26T14:43:12.210Z",
+      "message": {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "The capital mentioned is Paris.",
+            "textSignature": "{\"v\":1,\"id\":\"msg_0e742f6f2f20d2aa016ab7d9ff82f487d2ab9f47715768de88\",\"phase\":\"final_answer\"}"
+          }
+        ],
+        "api": "openai-codex-responses",
+        "provider": "openai-codex",
+        "model": "gpt-6-luna",
+        "usage": {
+          "input": 1355,
+          "output": 10,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "reasoning": 0,
+          "totalTokens": 1365,
+          "cost": {
+            "input": 0.00013550000000000001,
+            "output": 0.0000049999999999999996,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0.0001405
+          }
+        },
+        "stopReason": "stop",
+        "timestamp": 1790433790523,
+        "responseId": "resp_0e742f6f2f20d2aa016ab7d9fe9c7487d28cee728a197d089f",
+        "rawStopReason": "completed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "id": "pagination-r1-von",
+  "task": "pagination",
+  "stratum": "long",
+  "repetition": 0,
+  "arm": "von",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {
+          "items": [],
+          "next_after": null
+        },
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "v": 1
+            },
+            {
+              "id": "b",
+              "v": 2
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "first-page",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "after-middle",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            }
+          ],
+          "next_after": "a"
+        },
+        "name": "after-first-limit-one",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "after-last",
+        "pass": false
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "large-limit",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "nested": {
+                "x": 1
+              },
+              "tags": [
+                "x"
+              ]
+            }
+          ],
+          "next_after": null
+        },
+        "name": "record-fields-preserved",
+        "pass": true
+      },
+      {
+        "name": "unknown-cursor",
+        "pass": false
+      },
+      {
+        "name": "duplicate-id",
+        "pass": false
+      },
+      {
+        "name": "missing-id",
+        "pass": false
+      },
+      {
+        "name": "empty-id",
+        "pass": false
+      },
+      {
+        "name": "non-string-id",
+        "pass": false
+      },
+      {
+        "name": "zero-limit",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "list index out of range",
+          "module": "builtins",
+          "name": "IndexError"
+        },
+        "name": "negative-limit",
+        "pass": false
+      },
+      {
+        "name": "limit-too-large",
+        "pass": false
+      },
+      {
+        "name": "bool-limit",
+        "pass": false
+      },
+      {
+        "name": "invalid-after-type",
+        "pass": false
+      }
+    ],
+    "passed": 5,
+    "success": false,
+    "total": 18
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {
+          "items": [],
+          "next_after": null
+        },
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "v": 1
+            },
+            {
+              "id": "b",
+              "v": 2
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "first-page",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "c"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "after-middle",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": "b"
+        },
+        "name": "after-first-limit-one",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [],
+          "next_after": null
+        },
+        "name": "after-last",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b"
+            }
+          ],
+          "next_after": null
+        },
+        "name": "large-limit",
+        "pass": true
+      },
+      {
+        "actual": {
+          "items": [
+            {
+              "id": "a",
+              "nested": {
+                "x": 1
+              },
+              "tags": [
+                "x"
+              ]
+            }
+          ],
+          "next_after": null
+        },
+        "name": "record-fields-preserved",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "after must be a record id in records",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unknown-cursor",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "record ids must be unique",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "duplicate-id",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "each record must have a nonempty string id",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "missing-id",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "each record must have a nonempty string id",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "empty-id",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "each record must have a nonempty string id",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "non-string-id",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "limit must be an integer from 1 through 100",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "zero-limit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "limit must be an integer from 1 through 100",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "negative-limit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "limit must be an integer from 1 through 100",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "limit-too-large",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "limit must be an integer from 1 through 100",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "bool-limit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "after must be a record id in records",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-after-type",
+        "pass": true
+      }
+    ],
+    "passed": 18,
+    "success": true,
+    "total": 18
+  },
+  "inputTotal": 28422,
+  "inputUncached": 19206,
+  "inputCached": 9216,
+  "cacheWrite": 0,
+  "outputTokens": 977,
+  "requests": 15,
+  "prunedResults": 1,
+  "removedToolCharacters": 11725,
+  "judgeCalls": 1,
+  "judgeLatencyMs": 4327.347384001769,
+  "wallMs": 49151.01495899999,
+  "events": [
+    {
+      "toolCallId": "call_AEi8qWhAjuC6ar4MFNS7vGNv|fc_0bf6b623a32c2d18016ab967dcc43887d283f107a4866acecf",
+      "toolName": "read",
+      "originalCharacters": 11958,
+      "retainedCharacters": 233,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.2091,
+      "durableProbability": 0.5091,
+      "archive": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/pagination-r1-von/workspace/.artifacts/1cf49a8c22f9adb321bfca42337dc9ff7c785e09175a3d13eb543c96bdbd4adb.txt"
+    }
+  ]
+}

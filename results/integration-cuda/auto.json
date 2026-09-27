@@ -1,0 +1,366 @@
+[
+  {
+    "turn": "Our task is an invoice CSV parser preserving decimal precision. Durable project token: AMBER-482. Delimiter: semicolon. Acknowledge briefly.",
+    "latencyMs": 1477.2969759999978,
+    "answer": "Acknowledged — AMBER-482: invoice CSV parser, semicolon-delimited, preserving decimal precision.",
+    "usage": {
+      "input": 88,
+      "output": 25,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 113,
+      "cost": {
+        "input": 0.0000088,
+        "output": 0.000012499999999999999,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000213
+      },
+      "inputTotal": 88,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 3
+  },
+  {
+    "turn": "Unrelated break: what is the capital of France? Answer in one sentence.",
+    "latencyMs": 2301.5383629999997,
+    "answer": "The capital of France is Paris.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "6acb0f8d",
+      "leaf": "2f9d35dd",
+      "beforeMessages": 5,
+      "afterMessages": 5,
+      "verdict": {
+        "id": 1,
+        "action": "KEEP_RESULT",
+        "discardProbability": 0.2553,
+        "durableProbability": 0.4168,
+        "windows": 1,
+        "latencyMs": 1317.1374890000607,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_RESULT",
+                "probabilities": {
+                  "KEEP_FULL": 0.1934,
+                  "KEEP_RESULT": 0.4014,
+                  "EXTERNALIZE": 0.1499,
+                  "DISCARD": 0.2553
+                },
+                "confidence": 0.0499,
+                "answer_confidence": 0.4014,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.4168,
+                  "no": 0.5832
+                },
+                "confidence": 0.0201,
+                "answer_confidence": 0.5832,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 383,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    "usage": {
+      "input": 135,
+      "output": 11,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 146,
+      "cost": {
+        "input": 0.000013500000000000001,
+        "output": 0.0000055,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.000019
+      },
+      "inputTotal": 135,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 5
+  },
+  {
+    "turn": "Unrelated break: write a short haiku about rain.",
+    "latencyMs": 1629.894690000001,
+    "answer": "Rain taps the window  \nGray clouds soften the rooftops  \nSpring drinks in silence",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "2f9d35dd",
+      "leaf": "8190c383",
+      "beforeMessages": 7,
+      "afterMessages": 7,
+      "verdict": {
+        "id": 2,
+        "action": "KEEP_RESULT",
+        "discardProbability": 0.2127,
+        "durableProbability": 0.477,
+        "windows": 1,
+        "latencyMs": 233.3770379998441,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_RESULT",
+                "probabilities": {
+                  "KEEP_FULL": 0.2055,
+                  "KEEP_RESULT": 0.4499,
+                  "EXTERNALIZE": 0.1319,
+                  "DISCARD": 0.2127
+                },
+                "confidence": 0.076,
+                "answer_confidence": 0.4499,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.477,
+                  "no": 0.523
+                },
+                "confidence": 0.0015,
+                "answer_confidence": 0.523,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 409,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    "usage": {
+      "input": 164,
+      "output": 20,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 184,
+      "cost": {
+        "input": 0.000016400000000000002,
+        "output": 0.000009999999999999999,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000264
+      },
+      "inputTotal": 164,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 7
+  },
+  {
+    "turn": "Important parser requirement: negative values and trailing zeros must be preserved. Acknowledge briefly.",
+    "latencyMs": 1615.064316,
+    "answer": "Acknowledged — preserve negative values and trailing zeros in the parser.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "8190c383",
+      "leaf": "2f694ae6",
+      "beforeMessages": 9,
+      "afterMessages": 9,
+      "verdict": {
+        "id": 3,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1337,
+        "durableProbability": 0.2671,
+        "windows": 1,
+        "latencyMs": 37.75054699985958,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3731,
+                  "KEEP_RESULT": 0.3571,
+                  "EXTERNALIZE": 0.1361,
+                  "DISCARD": 0.1337
+                },
+                "confidence": 0.0796,
+                "answer_confidence": 0.3731,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.2671,
+                  "no": 0.7329
+                },
+                "confidence": 0.1627,
+                "answer_confidence": 0.7329,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 403,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    "usage": {
+      "input": 208,
+      "output": 17,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 225,
+      "cost": {
+        "input": 0.0000208,
+        "output": 0.0000085,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000293
+      },
+      "inputTotal": 208,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 9
+  },
+  {
+    "turn": "Unrelated break: how many legs does a spider have? Answer briefly.",
+    "latencyMs": 1550.623808999997,
+    "answer": "A spider has eight legs.",
+    "decision": {
+      "action": "KEEP",
+      "reason": "useful or uncertain tail",
+      "checkpoint": "2f694ae6",
+      "leaf": "ed522c3d",
+      "beforeMessages": 11,
+      "afterMessages": 11,
+      "verdict": {
+        "id": 4,
+        "action": "KEEP_RESULT",
+        "discardProbability": 0.2285,
+        "durableProbability": 0.4163,
+        "windows": 1,
+        "latencyMs": 84.41080500006137,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_RESULT",
+                "probabilities": {
+                  "KEEP_FULL": 0.2079,
+                  "KEEP_RESULT": 0.3777,
+                  "EXTERNALIZE": 0.1859,
+                  "DISCARD": 0.2285
+                },
+                "confidence": 0.0302,
+                "answer_confidence": 0.3777,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.4163,
+                  "no": 0.5837
+                },
+                "confidence": 0.0203,
+                "answer_confidence": 0.5837,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 375,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    "usage": {
+      "input": 246,
+      "output": 10,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 256,
+      "cost": {
+        "input": 0.0000246,
+        "output": 0.0000049999999999999996,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000296
+      },
+      "inputTotal": 246,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 11
+  },
+  {
+    "turn": "Return JSON with project_token, delimiter, preserve_negative_values, preserve_trailing_zeros from our project requirements.",
+    "latencyMs": 1631.243133,
+    "answer": "{\"project_token\":\"AMBER-482\",\"delimiter\":\";\",\"preserve_negative_values\":true,\"preserve_trailing_zeros\":true}",
+    "usage": {
+      "input": 284,
+      "output": 33,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 317,
+      "cost": {
+        "input": 0.000028400000000000003,
+        "output": 0.000016499999999999998,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000449
+      },
+      "inputTotal": 284,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 13
+  }
+]

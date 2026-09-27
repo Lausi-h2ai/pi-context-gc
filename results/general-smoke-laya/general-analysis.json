@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "source": "/home/laurent/pi_jev/results/general-smoke-laya",
+  "baseline": "baseline",
+  "treatments": [
+    "laya"
+  ],
+  "targetConfig": {
+    "minSavingsPercent": 25,
+    "maxSavingsPercent": 35,
+    "maxTaskPassDropPercent": 0,
+    "maxCasePassDropPercent": 2,
+    "bootstrapSamples": 20000
+  },
+  "validity": {
+    "designPresent": true,
+    "expectedArms": [
+      "baseline",
+      "laya"
+    ],
+    "discoveredArms": [
+      "baseline",
+      "laya"
+    ],
+    "expectedRepeats": 1,
+    "expectedTasks": [
+      "header-redaction"
+    ],
+    "expectedTrialsPerArm": 1,
+    "totalArtifacts": 2,
+    "validArtifacts": 2,
+    "invalidArtifacts": 0,
+    "invalidIds": [],
+    "missingExpected": [],
+    "missingExpectedCount": 0
+  },
+  "arms": {
+    "baseline": {
+      "trials": 1,
+      "validTrials": 1,
+      "expectedTrials": 1,
+      "completionRate": 1.0,
+      "errors": 0,
+      "errorIds": [],
+      "taskPasses": 0,
+      "taskPassRate": 0.0,
+      "testsPassed": 13,
+      "testsTotal": 15,
+      "casePassRate": 0.8666666666666667,
+      "inputTotal": 48993,
+      "inputCached": 35328,
+      "inputUncached": 13665,
+      "cacheShare": 0.7210826036372543,
+      "cachedRequests": 11,
+      "requests": 14,
+      "outputTokens": 858,
+      "allTokens": 49851,
+      "meanWallMs": 38210.802741,
+      "judgeCalls": 0,
+      "judgeLatencyMs": 0,
+      "filterEventsJudged": 0,
+      "filterEventsApplied": 0,
+      "interventionEventsApplied": 0,
+      "filterActions": {},
+      "filterRemovedCharacters": 0,
+      "pruneEventsJudged": 0,
+      "pruneEventsApplied": 0,
+      "pruneActions": {},
+      "prunedMessages": 0,
+      "prunedCharacters": 0,
+      "models": []
+    },
+    "laya": {
+      "trials": 1,
+      "validTrials": 1,
+      "expectedTrials": 1,
+      "completionRate": 1.0,
+      "errors": 0,
+      "errorIds": [],
+      "taskPasses": 0,
+      "taskPassRate": 0.0,
+      "testsPassed": 13,
+      "testsTotal": 15,
+      "casePassRate": 0.8666666666666667,
+      "inputTotal": 24781,
+      "inputCached": 7680,
+      "inputUncached": 17101,
+      "cacheShare": 0.3099148541221097,
+      "cachedRequests": 5,
+      "requests": 14,
+      "outputTokens": 1035,
+      "allTokens": 25816,
+      "meanWallMs": 45562.084015,
+      "judgeCalls": 2,
+      "judgeLatencyMs": 2180.037996,
+      "filterEventsJudged": 1,
+      "filterEventsApplied": 1,
+      "interventionEventsApplied": 1,
+      "filterActions": {
+        "KEEP_FULL": 1
+      },
+      "filterRemovedCharacters": 11266,
+      "pruneEventsJudged": 0,
+      "pruneEventsApplied": 0,
+      "pruneActions": {},
+      "prunedMessages": 0,
+      "prunedCharacters": 0,
+      "models": []
+    }
+  },
+  "comparisons": {
+    "laya": {
+      "baseline": "baseline",
+      "pairing": {
+        "paired": 1,
+        "baselineOnly": 0,
+        "candidateOnly": 0,
+        "duplicateKeys": []
+      },
+      "total": {
+        "pairsWithMetric": 1,
+        "baselineTotal": 48993,
+        "candidateTotal": 24781,
+        "deltaTokens": -24212,
+        "pooledSavings": 0.494193,
+        "pooledSavingsPercent": 49.419305,
+        "pairedMeanSavings": 0.494193,
+        "pairedMedianSavings": 0.494193,
+        "pairedSavingsPercent": 49.419305,
+        "pairedSavingsCI95": {
+          "low": 49.419305,
+          "high": 49.419305,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 0
+        }
+      },
+      "uncached": {
+        "pairsWithMetric": 1,
+        "baselineTotal": 13665,
+        "candidateTotal": 17101,
+        "deltaTokens": 3436,
+        "pooledSavings": -0.251445,
+        "pooledSavingsPercent": -25.14453,
+        "pairedMeanSavings": -0.251445,
+        "pairedMedianSavings": -0.251445,
+        "pairedSavingsPercent": -25.14453,
+        "pairedSavingsCI95": {
+          "low": -25.14453,
+          "high": -25.14453,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 0
+        }
+      },
+      "cached": {
+        "pairsWithMetric": 1,
+        "baselineTotal": 35328,
+        "candidateTotal": 7680,
+        "deltaTokens": -27648,
+        "pooledSavings": 0.782609,
+        "pooledSavingsPercent": 78.26087,
+        "pairedMeanSavings": 0.782609,
+        "pairedMedianSavings": 0.782609,
+        "pairedSavingsPercent": 78.26087,
+        "pairedSavingsCI95": {
+          "low": 78.26087,
+          "high": 78.26087,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 0
+        }
+      },
+      "cacheEffects": {
+        "baselineCacheShare": 0.721083,
+        "candidateCacheShare": 0.309915,
+        "cacheShareDelta": -0.411168,
+        "cachedInputDelta": -27648,
+        "uncachedInputDelta": 3436,
+        "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+      },
+      "quality": {
+        "paired": 1,
+        "taskPairs": 1,
+        "baselineTaskPasses": 0,
+        "candidateTaskPasses": 0,
+        "baselineTaskPassRate": 0,
+        "candidateTaskPassRate": 0,
+        "taskPassDelta": 0,
+        "taskPassDeltaPercent": 0,
+        "taskPassDeltaCI95": {
+          "low": 0,
+          "high": 0,
+          "method": "percentile bootstrap over paired task pass indicators"
+        },
+        "baselineCasePassRate": 0.866667,
+        "candidateCasePassRate": 0.866667,
+        "casePassDelta": 0,
+        "casePassDeltaPercent": 0,
+        "casePassDeltaCI95": {
+          "low": 0,
+          "high": 0,
+          "method": "percentile bootstrap over paired per-trial case rates"
+        },
+        "candidateWins": 0,
+        "candidateLosses": 0,
+        "mcnemarPValue": 1,
+        "maxTaskPassDrop": 0,
+        "maxCasePassDrop": 2,
+        "taskGuardPass": true,
+        "caseGuardPass": true,
+        "pass": true
+      },
+      "actualChanges": {
+        "filterEventsApplied": 1,
+        "pruneEventsApplied": 0,
+        "contextChangeEvents": 1,
+        "trialsWithContextChanges": 1,
+        "attributionEvidence": true,
+        "filterActionCounts": {
+          "KEEP_FULL": 1
+        },
+        "pruneActionCounts": {}
+      },
+      "target": {
+        "minSavingsPercent": 25,
+        "maxSavingsPercent": 35,
+        "pooledSavingsPercent": 49.419305,
+        "pairedSavingsCI95": {
+          "low": 49.419305,
+          "high": 49.419305,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 0
+        },
+        "observedWithinBand": false,
+        "conservativeLowerBoundAtLeastMinimum": true,
+        "gate": "ABOVE_TARGET_BAND",
+        "qualityGuardPass": true,
+        "mechanismEvidence": true
+      }
+    }
+  },
+  "pairedTrials": {
+    "laya": [
+      {
+        "pairKey": "header-redaction::r0",
+        "task": "header-redaction",
+        "repetition": 0,
+        "baselineId": "header-redaction-r1-baseline",
+        "candidateId": "header-redaction-r1-laya",
+        "baselineInputTotal": 48993,
+        "candidateInputTotal": 24781,
+        "totalSavingsPercent": 49.419305,
+        "baselineTaskPass": false,
+        "candidateTaskPass": false,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      }
+    ]
+  },
+  "trials": [
+    {
+      "id": "header-redaction-r1-baseline",
+      "task": "header-redaction",
+      "repetition": 0,
+      "arm": "baseline",
+      "pairKey": "header-redaction::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 48993,
+        "inputCached": 35328,
+        "inputUncached": 13665,
+        "outputTokens": 858,
+        "allTokens": 49851,
+        "requests": 14,
+        "cachedRequests": 11,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": false,
+        "testsPassed": 13,
+        "testsTotal": 15,
+        "casePassRate": 0.8666666666666667,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 38210.802741,
+      "path": "/home/laurent/pi_jev/results/general-smoke-laya/header-redaction-r1-baseline"
+    },
+    {
+      "id": "header-redaction-r1-laya",
+      "task": "header-redaction",
+      "repetition": 0,
+      "arm": "laya",
+      "pairKey": "header-redaction::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 24781,
+        "inputCached": 7680,
+        "inputUncached": 17101,
+        "outputTokens": 1035,
+        "allTokens": 25816,
+        "requests": 14,
+        "cachedRequests": 5,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": false,
+        "testsPassed": 13,
+        "testsTotal": 15,
+        "casePassRate": 0.8666666666666667,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 11266,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 2,
+        "latencyMs": 2180.037996,
+        "malformed": 0
+      },
+      "wallMs": 45562.084015,
+      "path": "/home/laurent/pi_jev/results/general-smoke-laya/header-redaction-r1-laya"
+    }
+  ]
+}

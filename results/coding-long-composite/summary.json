@@ -1,0 +1,82 @@
+[
+  {
+    "arm": "baseline",
+    "trials": 2,
+    "taskPasses": 2,
+    "testsPassed": 96,
+    "testsTotal": 96,
+    "inputTotal": 382530,
+    "inputUncached": 68674,
+    "inputCached": 313856,
+    "outputTokens": 3058,
+    "allTokens": 385588,
+    "inputSavingsPercent": 0,
+    "filteredResults": 0,
+    "rewinds": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 138517.887193,
+    "errors": [],
+    "paired": [
+      {
+        "id": "suite-r1-baseline",
+        "baselineInput": 191425,
+        "input": 191425,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "suite-r2-baseline",
+        "baselineInput": 191105,
+        "input": 191105,
+        "savedInput": 0,
+        "savedPercent": 0,
+        "baselineSuccess": true,
+        "success": true
+      }
+    ]
+  },
+  {
+    "arm": "aggressive",
+    "trials": 2,
+    "taskPasses": 2,
+    "testsPassed": 96,
+    "testsTotal": 96,
+    "inputTotal": 384364,
+    "inputUncached": 56684,
+    "inputCached": 327680,
+    "outputTokens": 3104,
+    "allTokens": 387468,
+    "inputSavingsPercent": -0.47943952108331356,
+    "filteredResults": 6,
+    "rewinds": 0,
+    "removedToolCharacters": 726,
+    "judgeCalls": 88,
+    "judgeLatencyMs": 24352.042784998957,
+    "wallMs": 162595.57685800001,
+    "errors": [],
+    "paired": [
+      {
+        "id": "suite-r1-aggressive",
+        "baselineInput": 191425,
+        "input": 192708,
+        "savedInput": -1283,
+        "savedPercent": -0.6702363850071835,
+        "baselineSuccess": true,
+        "success": true
+      },
+      {
+        "id": "suite-r2-aggressive",
+        "baselineInput": 191105,
+        "input": 191656,
+        "savedInput": -551,
+        "savedPercent": -0.2883231731247271,
+        "baselineSuccess": true,
+        "success": true
+      }
+    ]
+  }
+]

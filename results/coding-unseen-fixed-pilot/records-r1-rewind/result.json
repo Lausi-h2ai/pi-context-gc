@@ -1,0 +1,706 @@
+{
+  "id": "records-r1-rewind",
+  "task": "records",
+  "repetition": 0,
+  "arm": "rewind",
+  "config": {
+    "name": "rewind",
+    "filter": false,
+    "rewind": true,
+    "heuristic": false,
+    "threshold": 0.3
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 13,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ],
+          [
+            "y"
+          ],
+          [
+            "b",
+            "z"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-key",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": [
+          [
+            "a"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          [
+            "",
+            "x"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\q"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ]
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 13,
+    "total": 13,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "x;y"
+          ],
+          [
+            "b",
+            "z"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-key",
+        "pass": true,
+        "actual": [
+          [
+            "a=b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "b=c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record has no unescaped equals sign"
+      },
+      {
+        "name": "invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record has no unescaped equals sign"
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record key must be nonempty"
+      },
+      {
+        "name": "invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid escape"
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "trailing backslash"
+      }
+    ]
+  },
+  "inputTotal": 20498,
+  "inputUncached": 9746,
+  "inputCached": 10752,
+  "outputTokens": 755,
+  "allTokens": 21253,
+  "requests": 12,
+  "wallMs": 33101.91436199995,
+  "judgeCalls": 9,
+  "judgeLatencyMs": 1941.3898440016055,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 1,
+  "finalMessages": 21,
+  "finalSourceHash": "343728c8de31ced291156fb53ed272533fb9373bba783e58bb60bb62274a3e89",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-rewind/session/2026-09-26T16-42-13-884Z_01a0de98-89fc-7419-afc1-5cbbb3fb7c3f.jsonl",
+  "filterEvents": [],
+  "postToolEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_nsUkKET9qW4iSj8p4381FKY8|fc_04ff9387157a840d016ab7f5e85f3c87d2b8437255c09b0855",
+      "verdict": {
+        "id": 55,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1714,
+        "durableProbability": 0.3897,
+        "windows": 1,
+        "latencyMs": 200.9013810002216,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3613,
+                  "KEEP_RESULT": 0.214,
+                  "EXTERNALIZE": 0.2533,
+                  "DISCARD": 0.1714
+                },
+                "confidence": 0.0277,
+                "answer_confidence": 0.3613,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.3897,
+                  "no": 0.6103
+                },
+                "confidence": 0.0354,
+                "answer_confidence": 0.6103,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 429,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_7VvNlM0olgHVal2QdsgAoIwv|fc_04ff9387157a840d016ab7f5ec1bb487d29e103655466ae7a2",
+      "verdict": {
+        "id": 57,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1718,
+        "durableProbability": 0.6883,
+        "windows": 5,
+        "latencyMs": 239.8704999995971,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3232,
+                  "KEEP_RESULT": 0.2933,
+                  "EXTERNALIZE": 0.1497,
+                  "DISCARD": 0.2338
+                },
+                "confidence": 0.027,
+                "answer_confidence": 0.3232,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6527,
+                  "no": 0.3473
+                },
+                "confidence": 0.0684,
+                "answer_confidence": 0.6527,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_RESULT",
+                "probabilities": {
+                  "KEEP_FULL": 0.3093,
+                  "KEEP_RESULT": 0.3269,
+                  "EXTERNALIZE": 0.1376,
+                  "DISCARD": 0.2263
+                },
+                "confidence": 0.0351,
+                "answer_confidence": 0.3269,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.4887,
+                  "no": 0.5113
+                },
+                "confidence": 0.0004,
+                "answer_confidence": 0.5113,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3658,
+                  "KEEP_RESULT": 0.2743,
+                  "EXTERNALIZE": 0.1298,
+                  "DISCARD": 0.2301
+                },
+                "confidence": 0.0437,
+                "answer_confidence": 0.3658,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6128,
+                  "no": 0.3872
+                },
+                "confidence": 0.037,
+                "answer_confidence": 0.6128,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3447,
+                  "KEEP_RESULT": 0.2912,
+                  "EXTERNALIZE": 0.1412,
+                  "DISCARD": 0.2229
+                },
+                "confidence": 0.0353,
+                "answer_confidence": 0.3447,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6128,
+                  "no": 0.3872
+                },
+                "confidence": 0.037,
+                "answer_confidence": 0.6128,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4571,
+                  "KEEP_RESULT": 0.255,
+                  "EXTERNALIZE": 0.1162,
+                  "DISCARD": 0.1718
+                },
+                "confidence": 0.0918,
+                "answer_confidence": 0.4571,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6883,
+                  "no": 0.3117
+                },
+                "confidence": 0.1048,
+                "answer_confidence": 0.6883,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 569,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_DA7fIGls60vqM3velLKK95Uz|fc_04ff9387157a840d016ab7f5f023a087d2a153b3dc205120d3",
+      "verdict": {
+        "id": 59,
+        "action": "DISCARD",
+        "discardProbability": 0.7238,
+        "durableProbability": 0.1662,
+        "windows": 1,
+        "latencyMs": 27.064879001045483,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "DISCARD",
+                "probabilities": {
+                  "KEEP_FULL": 0.0845,
+                  "KEEP_RESULT": 0.0935,
+                  "EXTERNALIZE": 0.0982,
+                  "DISCARD": 0.7238
+                },
+                "confidence": 0.3564,
+                "answer_confidence": 0.7238,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.1662,
+                  "no": 0.8338
+                },
+                "confidence": 0.351,
+                "answer_confidence": 0.8338,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 249,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_Om2bEbogqW05tTYucYn8cjMh|fc_04ff9387157a840d016ab7f5f3af5487d2aae131ee3ddb3c22",
+      "verdict": {
+        "id": 61,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1714,
+        "durableProbability": 0.3897,
+        "windows": 1,
+        "latencyMs": 280.54951800004346,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3613,
+                  "KEEP_RESULT": 0.214,
+                  "EXTERNALIZE": 0.2533,
+                  "DISCARD": 0.1714
+                },
+                "confidence": 0.0277,
+                "answer_confidence": 0.3613,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.3897,
+                  "no": 0.6103
+                },
+                "confidence": 0.0354,
+                "answer_confidence": 0.6103,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 429,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_yhXXu4okOvdD74RtCxsk8gwK|fc_04ff9387157a840d016ab7f5faa7b487d28a4b3cf4bdcb469a",
+      "verdict": {
+        "id": 63,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1064,
+        "durableProbability": 0.4898,
+        "windows": 1,
+        "latencyMs": 185.69251599910785,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.5053,
+                  "KEEP_RESULT": 0.2838,
+                  "EXTERNALIZE": 0.1045,
+                  "DISCARD": 0.1064
+                },
+                "confidence": 0.1511,
+                "answer_confidence": 0.5053,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.4898,
+                  "no": 0.5102
+                },
+                "confidence": 0.0003,
+                "answer_confidence": 0.5102,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 249,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

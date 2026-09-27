@@ -1,0 +1,347 @@
+{
+  "id": "dotenv-r1-baseline",
+  "task": "dotenv",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "baseline",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db",
+          "PORT": "5432"
+        },
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db"
+        },
+        "name": "spaces-around-equals",
+        "pass": true
+      },
+      {
+        "actual": {
+          "export API_KEY": "abc"
+        },
+        "name": "export-prefix",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "comments-and-blanks",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value # explanation"
+        },
+        "name": "inline-comment",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "abc#123"
+        },
+        "name": "hash-in-word",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "  spaced # value  "
+        },
+        "name": "single-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "hello world"
+        },
+        "name": "double-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "line\\nnext\\t\\\"q\\"
+        },
+        "name": "double-escapes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "value # stays\" # comment"
+        },
+        "name": "quoted-hash",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "",
+          "B": "",
+          "C": ""
+        },
+        "name": "empty-value",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "two"
+        },
+        "name": "duplicate-last-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "localhost",
+          "PORT": "8080"
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "preserve-default-order",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "not enough values to unpack (expected 2, got 1)",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-no-equals",
+        "pass": true
+      },
+      {
+        "name": "invalid-key",
+        "pass": false
+      },
+      {
+        "name": "invalid-key-dash",
+        "pass": false
+      },
+      {
+        "name": "unterminated-single",
+        "pass": false
+      },
+      {
+        "name": "unterminated-double",
+        "pass": false
+      },
+      {
+        "name": "junk-after-quote",
+        "pass": false
+      },
+      {
+        "name": "non-string-defaults",
+        "pass": false
+      }
+    ],
+    "passed": 12,
+    "success": false,
+    "total": 22
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db",
+          "PORT": "5432"
+        },
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db"
+        },
+        "name": "spaces-around-equals",
+        "pass": true
+      },
+      {
+        "actual": {
+          "API_KEY": "abc"
+        },
+        "name": "export-prefix",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "comments-and-blanks",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value"
+        },
+        "name": "inline-comment",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "abc#123"
+        },
+        "name": "hash-in-word",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "  spaced # value  "
+        },
+        "name": "single-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "hello world"
+        },
+        "name": "double-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "line\nnext\t\"q\""
+        },
+        "name": "double-escapes",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value # stays"
+        },
+        "name": "quoted-hash",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "",
+          "B": "",
+          "C": ""
+        },
+        "name": "empty-value",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "two"
+        },
+        "name": "duplicate-last-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "localhost",
+          "PORT": "8080"
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "preserve-default-order",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid environment definition",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-no-equals",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid environment definition",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-key",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "invalid environment definition",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-key-dash",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "unterminated quoted value",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unterminated-single",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "unterminated quoted value",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unterminated-double",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "junk after quoted value",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "junk-after-quote",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "defaults must be a dictionary",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "non-string-defaults",
+        "pass": true
+      }
+    ],
+    "passed": 22,
+    "success": true,
+    "total": 22
+  },
+  "inputTotal": 79871,
+  "inputUncached": 23551,
+  "inputCached": 56320,
+  "cacheWrite": 0,
+  "outputTokens": 2311,
+  "requests": 24,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 209295.32323900005,
+  "events": []
+}

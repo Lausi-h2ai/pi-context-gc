@@ -1,0 +1,2982 @@
+{
+  "schemaVersion": 1,
+  "source": "/home/laurent/pi_jev/results/general-v3-aggressive-r1",
+  "baseline": "baseline",
+  "treatments": [
+    "laya",
+    "von"
+  ],
+  "strata": [
+    "long",
+    "short"
+  ],
+  "taskStrata": {
+    "config-merge": "long",
+    "header-redaction": "short",
+    "rate-window": "long",
+    "pagination": "long",
+    "duration": "short",
+    "dotenv": "short",
+    "record-sort": "long",
+    "canonical-url": "short"
+  },
+  "targetConfig": {
+    "minSavingsPercent": 25,
+    "maxSavingsPercent": 35,
+    "maxTaskPassDropPercent": 0,
+    "maxCasePassDropPercent": 2,
+    "bootstrapSamples": 20000
+  },
+  "validity": {
+    "designPresent": true,
+    "expectedArms": [
+      "baseline",
+      "laya",
+      "von"
+    ],
+    "discoveredArms": [
+      "baseline",
+      "laya",
+      "von"
+    ],
+    "expectedRepeats": 1,
+    "expectedTasks": [
+      "config-merge",
+      "header-redaction",
+      "rate-window",
+      "pagination",
+      "duration",
+      "dotenv",
+      "record-sort",
+      "canonical-url"
+    ],
+    "expectedTrialsPerArm": 8,
+    "totalArtifacts": 24,
+    "validArtifacts": 24,
+    "invalidArtifacts": 0,
+    "invalidIds": [],
+    "missingExpected": [],
+    "missingExpectedCount": 0,
+    "incompleteExpected": [],
+    "incompleteExpectedCount": 0
+  },
+  "arms": {
+    "baseline": {
+      "trials": 8,
+      "validTrials": 8,
+      "expectedTrials": 8,
+      "completionRate": 1.0,
+      "errors": 0,
+      "errorIds": [],
+      "taskPasses": 7,
+      "taskPassRate": 0.875,
+      "testsPassed": 138,
+      "testsTotal": 147,
+      "casePassRate": 0.9387755102040817,
+      "inputTotal": 529263,
+      "inputCached": 376320,
+      "inputUncached": 152943,
+      "cacheShare": 0.7110264651033608,
+      "cachedRequests": 103,
+      "requests": 149,
+      "outputTokens": 14162,
+      "allTokens": 543425,
+      "meanWallMs": 85024.120972,
+      "judgeCalls": 0,
+      "judgeLatencyMs": 0,
+      "filterEventsJudged": 0,
+      "filterEventsApplied": 0,
+      "interventionEventsApplied": 0,
+      "filterActions": {},
+      "filterRemovedCharacters": 0,
+      "pruneEventsJudged": 0,
+      "pruneEventsApplied": 0,
+      "pruneActions": {},
+      "prunedMessages": 0,
+      "prunedCharacters": 0,
+      "models": [],
+      "strata": {
+        "long": {
+          "trials": 4,
+          "validTrials": 4,
+          "expectedTrials": 4,
+          "completionRate": 1.0,
+          "errors": 0,
+          "errorIds": [],
+          "taskPasses": 3,
+          "taskPassRate": 0.75,
+          "testsPassed": 61,
+          "testsTotal": 70,
+          "casePassRate": 0.8714285714285714,
+          "inputTotal": 321638,
+          "inputCached": 247296,
+          "inputUncached": 74342,
+          "cacheShare": 0.7688643754780219,
+          "cachedRequests": 53,
+          "requests": 71,
+          "outputTokens": 5808,
+          "allTokens": 327446,
+          "meanWallMs": 60788.380786,
+          "judgeCalls": 0,
+          "judgeLatencyMs": 0,
+          "filterEventsJudged": 0,
+          "filterEventsApplied": 0,
+          "interventionEventsApplied": 0,
+          "filterActions": {},
+          "filterRemovedCharacters": 0,
+          "pruneEventsJudged": 0,
+          "pruneEventsApplied": 0,
+          "pruneActions": {},
+          "prunedMessages": 0,
+          "prunedCharacters": 0,
+          "models": []
+        },
+        "short": {
+          "trials": 4,
+          "validTrials": 4,
+          "expectedTrials": 4,
+          "completionRate": 1.0,
+          "errors": 0,
+          "errorIds": [],
+          "taskPasses": 4,
+          "taskPassRate": 1.0,
+          "testsPassed": 77,
+          "testsTotal": 77,
+          "casePassRate": 1.0,
+          "inputTotal": 207625,
+          "inputCached": 129024,
+          "inputUncached": 78601,
+          "cacheShare": 0.6214280553883202,
+          "cachedRequests": 50,
+          "requests": 78,
+          "outputTokens": 8354,
+          "allTokens": 215979,
+          "meanWallMs": 109259.861158,
+          "judgeCalls": 0,
+          "judgeLatencyMs": 0,
+          "filterEventsJudged": 0,
+          "filterEventsApplied": 0,
+          "interventionEventsApplied": 0,
+          "filterActions": {},
+          "filterRemovedCharacters": 0,
+          "pruneEventsJudged": 0,
+          "pruneEventsApplied": 0,
+          "pruneActions": {},
+          "prunedMessages": 0,
+          "prunedCharacters": 0,
+          "models": []
+        }
+      }
+    },
+    "laya": {
+      "trials": 8,
+      "validTrials": 8,
+      "expectedTrials": 8,
+      "completionRate": 1.0,
+      "errors": 0,
+      "errorIds": [],
+      "taskPasses": 7,
+      "taskPassRate": 0.875,
+      "testsPassed": 146,
+      "testsTotal": 147,
+      "casePassRate": 0.9931972789115646,
+      "inputTotal": 293319,
+      "inputCached": 130560,
+      "inputUncached": 162759,
+      "cacheShare": 0.44511265891401514,
+      "cachedRequests": 65,
+      "requests": 134,
+      "outputTokens": 11115,
+      "allTokens": 304434,
+      "meanWallMs": 60540.662982,
+      "judgeCalls": 9,
+      "judgeLatencyMs": 19049.418902,
+      "filterEventsJudged": 8,
+      "filterEventsApplied": 8,
+      "interventionEventsApplied": 8,
+      "filterActions": {
+        "KEEP_FULL": 8
+      },
+      "filterRemovedCharacters": 65495,
+      "pruneEventsJudged": 0,
+      "pruneEventsApplied": 0,
+      "pruneActions": {},
+      "prunedMessages": 0,
+      "prunedCharacters": 0,
+      "models": [],
+      "strata": {
+        "long": {
+          "trials": 4,
+          "validTrials": 4,
+          "expectedTrials": 4,
+          "completionRate": 1.0,
+          "errors": 0,
+          "errorIds": [],
+          "taskPasses": 3,
+          "taskPassRate": 0.75,
+          "testsPassed": 69,
+          "testsTotal": 70,
+          "casePassRate": 0.9857142857142858,
+          "inputTotal": 148503,
+          "inputCached": 65024,
+          "inputUncached": 83479,
+          "cacheShare": 0.4378632081506771,
+          "cachedRequests": 31,
+          "requests": 64,
+          "outputTokens": 5088,
+          "allTokens": 153591,
+          "meanWallMs": 57970.799889,
+          "judgeCalls": 6,
+          "judgeLatencyMs": 13816.915212,
+          "filterEventsJudged": 5,
+          "filterEventsApplied": 5,
+          "interventionEventsApplied": 5,
+          "filterActions": {
+            "KEEP_FULL": 5
+          },
+          "filterRemovedCharacters": 60465,
+          "pruneEventsJudged": 0,
+          "pruneEventsApplied": 0,
+          "pruneActions": {},
+          "prunedMessages": 0,
+          "prunedCharacters": 0,
+          "models": []
+        },
+        "short": {
+          "trials": 4,
+          "validTrials": 4,
+          "expectedTrials": 4,
+          "completionRate": 1.0,
+          "errors": 0,
+          "errorIds": [],
+          "taskPasses": 4,
+          "taskPassRate": 1.0,
+          "testsPassed": 77,
+          "testsTotal": 77,
+          "casePassRate": 1.0,
+          "inputTotal": 144816,
+          "inputCached": 65536,
+          "inputUncached": 79280,
+          "cacheShare": 0.4525466799248702,
+          "cachedRequests": 34,
+          "requests": 70,
+          "outputTokens": 6027,
+          "allTokens": 150843,
+          "meanWallMs": 63110.526076,
+          "judgeCalls": 3,
+          "judgeLatencyMs": 5232.50369,
+          "filterEventsJudged": 3,
+          "filterEventsApplied": 3,
+          "interventionEventsApplied": 3,
+          "filterActions": {
+            "KEEP_FULL": 3
+          },
+          "filterRemovedCharacters": 5030,
+          "pruneEventsJudged": 0,
+          "pruneEventsApplied": 0,
+          "pruneActions": {},
+          "prunedMessages": 0,
+          "prunedCharacters": 0,
+          "models": []
+        }
+      }
+    },
+    "von": {
+      "trials": 8,
+      "validTrials": 8,
+      "expectedTrials": 8,
+      "completionRate": 1.0,
+      "errors": 0,
+      "errorIds": [],
+      "taskPasses": 6,
+      "taskPassRate": 0.75,
+      "testsPassed": 145,
+      "testsTotal": 147,
+      "casePassRate": 0.9863945578231292,
+      "inputTotal": 301038,
+      "inputCached": 143360,
+      "inputUncached": 157678,
+      "cacheShare": 0.47621894910277107,
+      "cachedRequests": 64,
+      "requests": 132,
+      "outputTokens": 10751,
+      "allTokens": 311789,
+      "meanWallMs": 67102.666028,
+      "judgeCalls": 8,
+      "judgeLatencyMs": 9662.20826,
+      "filterEventsJudged": 8,
+      "filterEventsApplied": 8,
+      "interventionEventsApplied": 8,
+      "filterActions": {
+        "EXTERNALIZE": 3,
+        "KEEP_FULL": 5
+      },
+      "filterRemovedCharacters": 65517,
+      "pruneEventsJudged": 0,
+      "pruneEventsApplied": 0,
+      "pruneActions": {},
+      "prunedMessages": 0,
+      "prunedCharacters": 0,
+      "models": [],
+      "strata": {
+        "long": {
+          "trials": 4,
+          "validTrials": 4,
+          "expectedTrials": 4,
+          "completionRate": 1.0,
+          "errors": 0,
+          "errorIds": [],
+          "taskPasses": 3,
+          "taskPassRate": 0.75,
+          "testsPassed": 69,
+          "testsTotal": 70,
+          "casePassRate": 0.9857142857142858,
+          "inputTotal": 147953,
+          "inputCached": 68608,
+          "inputUncached": 79345,
+          "cacheShare": 0.4637148283576541,
+          "cachedRequests": 30,
+          "requests": 64,
+          "outputTokens": 5254,
+          "allTokens": 153207,
+          "meanWallMs": 73356.984208,
+          "judgeCalls": 5,
+          "judgeLatencyMs": 8734.603259,
+          "filterEventsJudged": 5,
+          "filterEventsApplied": 5,
+          "interventionEventsApplied": 5,
+          "filterActions": {
+            "KEEP_FULL": 5
+          },
+          "filterRemovedCharacters": 60470,
+          "pruneEventsJudged": 0,
+          "pruneEventsApplied": 0,
+          "pruneActions": {},
+          "prunedMessages": 0,
+          "prunedCharacters": 0,
+          "models": []
+        },
+        "short": {
+          "trials": 4,
+          "validTrials": 4,
+          "expectedTrials": 4,
+          "completionRate": 1.0,
+          "errors": 0,
+          "errorIds": [],
+          "taskPasses": 3,
+          "taskPassRate": 0.75,
+          "testsPassed": 76,
+          "testsTotal": 77,
+          "casePassRate": 0.987012987012987,
+          "inputTotal": 153085,
+          "inputCached": 74752,
+          "inputUncached": 78333,
+          "cacheShare": 0.48830388346343534,
+          "cachedRequests": 34,
+          "requests": 68,
+          "outputTokens": 5497,
+          "allTokens": 158582,
+          "meanWallMs": 60848.347848,
+          "judgeCalls": 3,
+          "judgeLatencyMs": 927.605001,
+          "filterEventsJudged": 3,
+          "filterEventsApplied": 3,
+          "interventionEventsApplied": 3,
+          "filterActions": {
+            "EXTERNALIZE": 3
+          },
+          "filterRemovedCharacters": 5047,
+          "pruneEventsJudged": 0,
+          "pruneEventsApplied": 0,
+          "pruneActions": {},
+          "prunedMessages": 0,
+          "prunedCharacters": 0,
+          "models": []
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "laya": {
+      "baseline": "baseline",
+      "treatment": "laya",
+      "pairing": {
+        "paired": 8,
+        "baselineOnly": 0,
+        "candidateOnly": 0,
+        "duplicateKeys": [],
+        "expected": 8,
+        "complete": true,
+        "incomplete": []
+      },
+      "total": {
+        "pairsWithMetric": 8,
+        "baselineTotal": 529263,
+        "candidateTotal": 293319,
+        "deltaTokens": -235944,
+        "pooledSavings": 0.445797,
+        "pooledSavingsPercent": 44.579727,
+        "pairedMeanSavings": 0.368221,
+        "pairedMedianSavings": 0.429212,
+        "pairedSavingsPercent": 36.822122,
+        "pairedSavingsCI95": {
+          "low": 17.3706,
+          "high": 53.9224,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        }
+      },
+      "uncached": {
+        "pairsWithMetric": 8,
+        "baselineTotal": 152943,
+        "candidateTotal": 162759,
+        "deltaTokens": 9816,
+        "pooledSavings": -0.064181,
+        "pooledSavingsPercent": -6.418077,
+        "pairedMeanSavings": -0.061013,
+        "pairedMedianSavings": -0.042776,
+        "pairedSavingsPercent": -6.101329,
+        "pairedSavingsCI95": {
+          "low": -15.161,
+          "high": 2.5093,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        }
+      },
+      "cached": {
+        "pairsWithMetric": 8,
+        "baselineTotal": 376320,
+        "candidateTotal": 130560,
+        "deltaTokens": -245760,
+        "pooledSavings": 0.653061,
+        "pooledSavingsPercent": 65.306122,
+        "pairedMeanSavings": 0.533044,
+        "pairedMedianSavings": 0.660849,
+        "pairedSavingsPercent": 53.304413,
+        "pairedSavingsCI95": {
+          "low": 30.0058,
+          "high": 73.9381,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        }
+      },
+      "cacheEffects": {
+        "baselineCacheShare": 0.711026,
+        "candidateCacheShare": 0.445113,
+        "cacheShareDelta": -0.265914,
+        "cachedInputDelta": -245760,
+        "uncachedInputDelta": 9816,
+        "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+      },
+      "quality": {
+        "paired": 8,
+        "taskPairs": 8,
+        "baselineTaskPasses": 7,
+        "candidateTaskPasses": 7,
+        "baselineTaskPassRate": 0.875,
+        "candidateTaskPassRate": 0.875,
+        "taskPassDelta": 0,
+        "taskPassDeltaPercent": 0,
+        "taskPassDeltaCI95": {
+          "low": 0,
+          "high": 0,
+          "method": "percentile bootstrap over paired task pass indicators"
+        },
+        "baselineCasePassRate": 0.933824,
+        "candidateCasePassRate": 0.992647,
+        "casePassDelta": 0.058824,
+        "casePassDeltaPercent": 5.882353,
+        "casePassDeltaCI95": {
+          "low": 0,
+          "high": 17.6471,
+          "method": "percentile bootstrap over paired per-trial case rates"
+        },
+        "candidateWins": 0,
+        "candidateLosses": 0,
+        "mcnemarPValue": 1,
+        "maxTaskPassDrop": 0,
+        "maxCasePassDrop": 2,
+        "taskGuardPass": true,
+        "caseGuardPass": true,
+        "pass": true,
+        "complete": true,
+        "stratumGuardPass": true,
+        "stratumQualityFailures": [],
+        "stratumGuardComplete": true,
+        "stratumQualityIncomplete": []
+      },
+      "actualChanges": {
+        "filterEventsApplied": 8,
+        "pruneEventsApplied": 0,
+        "contextChangeEvents": 8,
+        "trialsWithContextChanges": 6,
+        "attributionEvidence": true,
+        "filterActionCounts": {
+          "KEEP_FULL": 8
+        },
+        "pruneActionCounts": {}
+      },
+      "target": {
+        "minSavingsPercent": 25,
+        "maxSavingsPercent": 35,
+        "pooledSavingsPercent": 44.579727,
+        "pairedSavingsCI95": {
+          "low": 17.3706,
+          "high": 53.9224,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        },
+        "observedWithinBand": false,
+        "conservativeLowerBoundAtLeastMinimum": false,
+        "gate": "ABOVE_TARGET_BAND",
+        "qualityGuardPass": true,
+        "mechanismEvidence": true
+      },
+      "strata": {
+        "long": {
+          "baseline": "baseline",
+          "treatment": "laya",
+          "pairing": {
+            "paired": 4,
+            "baselineOnly": 0,
+            "candidateOnly": 0,
+            "duplicateKeys": [],
+            "expected": 4,
+            "complete": true,
+            "incomplete": []
+          },
+          "total": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 321638,
+            "candidateTotal": 148503,
+            "deltaTokens": -173135,
+            "pooledSavings": 0.538291,
+            "pooledSavingsPercent": 53.82915,
+            "pairedMeanSavings": 0.539321,
+            "pairedMedianSavings": 0.531307,
+            "pairedSavingsPercent": 53.932101,
+            "pairedSavingsCI95": {
+              "low": 42.9212,
+              "high": 64.943,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "uncached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 74342,
+            "candidateTotal": 83479,
+            "deltaTokens": 9137,
+            "pooledSavings": -0.122905,
+            "pooledSavingsPercent": -12.290495,
+            "pairedMeanSavings": -0.117663,
+            "pairedMedianSavings": -0.0831,
+            "pairedSavingsPercent": -11.766274,
+            "pairedSavingsCI95": {
+              "low": -20.7868,
+              "high": -4.2776,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 247296,
+            "candidateTotal": 65024,
+            "deltaTokens": -182272,
+            "pooledSavings": 0.73706,
+            "pooledSavingsPercent": 73.706004,
+            "pairedMeanSavings": 0.758711,
+            "pairedMedianSavings": 0.798543,
+            "pairedSavingsPercent": 75.87111,
+            "pairedSavingsCI95": {
+              "low": 62.5,
+              "high": 85.652,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cacheEffects": {
+            "baselineCacheShare": 0.768864,
+            "candidateCacheShare": 0.437863,
+            "cacheShareDelta": -0.331001,
+            "cachedInputDelta": -182272,
+            "uncachedInputDelta": 9137,
+            "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+          },
+          "quality": {
+            "paired": 4,
+            "taskPairs": 4,
+            "baselineTaskPasses": 3,
+            "candidateTaskPasses": 3,
+            "baselineTaskPassRate": 0.75,
+            "candidateTaskPassRate": 0.75,
+            "taskPassDelta": 0,
+            "taskPassDeltaPercent": 0,
+            "taskPassDeltaCI95": {
+              "low": 0,
+              "high": 0,
+              "method": "percentile bootstrap over paired task pass indicators"
+            },
+            "baselineCasePassRate": 0.867647,
+            "candidateCasePassRate": 0.985294,
+            "casePassDelta": 0.117647,
+            "casePassDeltaPercent": 11.764706,
+            "casePassDeltaCI95": {
+              "low": 0,
+              "high": 35.2941,
+              "method": "percentile bootstrap over paired per-trial case rates"
+            },
+            "candidateWins": 0,
+            "candidateLosses": 0,
+            "mcnemarPValue": 1,
+            "maxTaskPassDrop": 0,
+            "maxCasePassDrop": 2,
+            "taskGuardPass": true,
+            "caseGuardPass": true,
+            "pass": true,
+            "complete": true
+          },
+          "actualChanges": {
+            "filterEventsApplied": 5,
+            "pruneEventsApplied": 0,
+            "contextChangeEvents": 5,
+            "trialsWithContextChanges": 4,
+            "attributionEvidence": true,
+            "filterActionCounts": {
+              "KEEP_FULL": 5
+            },
+            "pruneActionCounts": {}
+          },
+          "target": {
+            "minSavingsPercent": 25,
+            "maxSavingsPercent": 35,
+            "pooledSavingsPercent": 53.82915,
+            "pairedSavingsCI95": {
+              "low": 42.9212,
+              "high": 64.943,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            },
+            "observedWithinBand": false,
+            "conservativeLowerBoundAtLeastMinimum": true,
+            "gate": "ABOVE_TARGET_BAND",
+            "qualityGuardPass": true,
+            "mechanismEvidence": true
+          }
+        },
+        "short": {
+          "baseline": "baseline",
+          "treatment": "laya",
+          "pairing": {
+            "paired": 4,
+            "baselineOnly": 0,
+            "candidateOnly": 0,
+            "duplicateKeys": [],
+            "expected": 4,
+            "complete": true,
+            "incomplete": []
+          },
+          "total": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 207625,
+            "candidateTotal": 144816,
+            "deltaTokens": -62809,
+            "pooledSavings": 0.302512,
+            "pooledSavingsPercent": 30.251174,
+            "pairedMeanSavings": 0.197121,
+            "pairedMedianSavings": 0.155426,
+            "pairedSavingsPercent": 19.712143,
+            "pairedSavingsCI95": {
+              "low": -4.3993,
+              "high": 47.9931,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "uncached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 78601,
+            "candidateTotal": 79280,
+            "deltaTokens": 679,
+            "pooledSavings": -0.008639,
+            "pooledSavingsPercent": -0.863857,
+            "pairedMeanSavings": -0.004364,
+            "pairedMedianSavings": 0.047872,
+            "pairedSavingsPercent": -0.436384,
+            "pairedSavingsCI95": {
+              "low": -15.8645,
+              "high": 9.7681,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 129024,
+            "candidateTotal": 65536,
+            "deltaTokens": -63488,
+            "pooledSavings": 0.492063,
+            "pooledSavingsPercent": 49.206349,
+            "pairedMeanSavings": 0.307377,
+            "pairedMedianSavings": 0.252404,
+            "pairedSavingsPercent": 30.737715,
+            "pairedSavingsCI95": {
+              "low": 4.7513,
+              "high": 62.2215,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cacheEffects": {
+            "baselineCacheShare": 0.621428,
+            "candidateCacheShare": 0.452547,
+            "cacheShareDelta": -0.168881,
+            "cachedInputDelta": -63488,
+            "uncachedInputDelta": 679,
+            "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+          },
+          "quality": {
+            "paired": 4,
+            "taskPairs": 4,
+            "baselineTaskPasses": 4,
+            "candidateTaskPasses": 4,
+            "baselineTaskPassRate": 1,
+            "candidateTaskPassRate": 1,
+            "taskPassDelta": 0,
+            "taskPassDeltaPercent": 0,
+            "taskPassDeltaCI95": {
+              "low": 0,
+              "high": 0,
+              "method": "percentile bootstrap over paired task pass indicators"
+            },
+            "baselineCasePassRate": 1,
+            "candidateCasePassRate": 1,
+            "casePassDelta": 0,
+            "casePassDeltaPercent": 0,
+            "casePassDeltaCI95": {
+              "low": 0,
+              "high": 0,
+              "method": "percentile bootstrap over paired per-trial case rates"
+            },
+            "candidateWins": 0,
+            "candidateLosses": 0,
+            "mcnemarPValue": 1,
+            "maxTaskPassDrop": 0,
+            "maxCasePassDrop": 2,
+            "taskGuardPass": true,
+            "caseGuardPass": true,
+            "pass": true,
+            "complete": true
+          },
+          "actualChanges": {
+            "filterEventsApplied": 3,
+            "pruneEventsApplied": 0,
+            "contextChangeEvents": 3,
+            "trialsWithContextChanges": 2,
+            "attributionEvidence": true,
+            "filterActionCounts": {
+              "KEEP_FULL": 3
+            },
+            "pruneActionCounts": {}
+          },
+          "target": {
+            "minSavingsPercent": 25,
+            "maxSavingsPercent": 35,
+            "pooledSavingsPercent": 30.251174,
+            "pairedSavingsCI95": {
+              "low": -4.3993,
+              "high": 47.9931,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            },
+            "observedWithinBand": true,
+            "conservativeLowerBoundAtLeastMinimum": false,
+            "gate": "PASS",
+            "qualityGuardPass": true,
+            "mechanismEvidence": true
+          }
+        }
+      }
+    },
+    "von": {
+      "baseline": "baseline",
+      "treatment": "von",
+      "pairing": {
+        "paired": 8,
+        "baselineOnly": 0,
+        "candidateOnly": 0,
+        "duplicateKeys": [],
+        "expected": 8,
+        "complete": true,
+        "incomplete": []
+      },
+      "total": {
+        "pairsWithMetric": 8,
+        "baselineTotal": 529263,
+        "candidateTotal": 301038,
+        "deltaTokens": -228225,
+        "pooledSavings": 0.431213,
+        "pooledSavingsPercent": 43.121284,
+        "pairedMeanSavings": 0.376876,
+        "pairedMedianSavings": 0.310528,
+        "pairedSavingsPercent": 37.687564,
+        "pairedSavingsCI95": {
+          "low": 26.187,
+          "high": 51.3597,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        }
+      },
+      "uncached": {
+        "pairsWithMetric": 8,
+        "baselineTotal": 152943,
+        "candidateTotal": 157678,
+        "deltaTokens": 4735,
+        "pooledSavings": -0.030959,
+        "pooledSavingsPercent": -3.095925,
+        "pairedMeanSavings": -0.037311,
+        "pairedMedianSavings": -0.034991,
+        "pairedSavingsPercent": -3.731108,
+        "pairedSavingsCI95": {
+          "low": -18.3913,
+          "high": 10.0611,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        }
+      },
+      "cached": {
+        "pairsWithMetric": 8,
+        "baselineTotal": 376320,
+        "candidateTotal": 143360,
+        "deltaTokens": -232960,
+        "pooledSavings": 0.619048,
+        "pooledSavingsPercent": 61.904762,
+        "pairedMeanSavings": 0.546672,
+        "pairedMedianSavings": 0.525797,
+        "pairedSavingsPercent": 54.667204,
+        "pairedSavingsCI95": {
+          "low": 41.1817,
+          "high": 69.0979,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        }
+      },
+      "cacheEffects": {
+        "baselineCacheShare": 0.711026,
+        "candidateCacheShare": 0.476219,
+        "cacheShareDelta": -0.234808,
+        "cachedInputDelta": -232960,
+        "uncachedInputDelta": 4735,
+        "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+      },
+      "quality": {
+        "paired": 8,
+        "taskPairs": 8,
+        "baselineTaskPasses": 7,
+        "candidateTaskPasses": 6,
+        "baselineTaskPassRate": 0.875,
+        "candidateTaskPassRate": 0.75,
+        "taskPassDelta": -0.125,
+        "taskPassDeltaPercent": -12.5,
+        "taskPassDeltaCI95": {
+          "low": -37.5,
+          "high": 0,
+          "method": "percentile bootstrap over paired task pass indicators"
+        },
+        "baselineCasePassRate": 0.933824,
+        "candidateCasePassRate": 0.986965,
+        "casePassDelta": 0.053142,
+        "casePassDeltaPercent": 5.314171,
+        "casePassDeltaCI95": {
+          "low": -1.7045,
+          "high": 17.6471,
+          "method": "percentile bootstrap over paired per-trial case rates"
+        },
+        "candidateWins": 0,
+        "candidateLosses": 1,
+        "mcnemarPValue": 1,
+        "maxTaskPassDrop": 0,
+        "maxCasePassDrop": 2,
+        "taskGuardPass": false,
+        "caseGuardPass": true,
+        "pass": false,
+        "complete": true,
+        "stratumGuardPass": false,
+        "stratumQualityFailures": [
+          "short"
+        ],
+        "stratumGuardComplete": true,
+        "stratumQualityIncomplete": []
+      },
+      "actualChanges": {
+        "filterEventsApplied": 8,
+        "pruneEventsApplied": 0,
+        "contextChangeEvents": 8,
+        "trialsWithContextChanges": 6,
+        "attributionEvidence": true,
+        "filterActionCounts": {
+          "EXTERNALIZE": 3,
+          "KEEP_FULL": 5
+        },
+        "pruneActionCounts": {}
+      },
+      "target": {
+        "minSavingsPercent": 25,
+        "maxSavingsPercent": 35,
+        "pooledSavingsPercent": 43.121284,
+        "pairedSavingsCI95": {
+          "low": 26.187,
+          "high": 51.3597,
+          "method": "percentile bootstrap over task/repetition savings",
+          "samples": 20000
+        },
+        "observedWithinBand": false,
+        "conservativeLowerBoundAtLeastMinimum": true,
+        "gate": "FAIL_QUALITY_STRATUM",
+        "qualityGuardPass": false,
+        "mechanismEvidence": true
+      },
+      "strata": {
+        "long": {
+          "baseline": "baseline",
+          "treatment": "von",
+          "pairing": {
+            "paired": 4,
+            "baselineOnly": 0,
+            "candidateOnly": 0,
+            "duplicateKeys": [],
+            "expected": 4,
+            "complete": true,
+            "incomplete": []
+          },
+          "total": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 321638,
+            "candidateTotal": 147953,
+            "deltaTokens": -173685,
+            "pooledSavings": 0.540001,
+            "pooledSavingsPercent": 54.000149,
+            "pairedMeanSavings": 0.50671,
+            "pairedMedianSavings": 0.473689,
+            "pairedSavingsPercent": 50.670986,
+            "pairedSavingsCI95": {
+              "low": 35.8982,
+              "high": 68.7459,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "uncached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 74342,
+            "candidateTotal": 79345,
+            "deltaTokens": 5003,
+            "pooledSavings": -0.067297,
+            "pooledSavingsPercent": -6.729709,
+            "pairedMeanSavings": -0.08966,
+            "pairedMedianSavings": -0.061031,
+            "pairedSavingsPercent": -8.965967,
+            "pairedSavingsCI95": {
+              "low": -33.5212,
+              "high": 12.7264,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 247296,
+            "candidateTotal": 68608,
+            "deltaTokens": -178688,
+            "pooledSavings": 0.722567,
+            "pooledSavingsPercent": 72.256729,
+            "pairedMeanSavings": 0.709108,
+            "pairedMedianSavings": 0.676791,
+            "pairedSavingsPercent": 70.910796,
+            "pairedSavingsCI95": {
+              "low": 59.8315,
+              "high": 84.9497,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cacheEffects": {
+            "baselineCacheShare": 0.768864,
+            "candidateCacheShare": 0.463715,
+            "cacheShareDelta": -0.30515,
+            "cachedInputDelta": -178688,
+            "uncachedInputDelta": 5003,
+            "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+          },
+          "quality": {
+            "paired": 4,
+            "taskPairs": 4,
+            "baselineTaskPasses": 3,
+            "candidateTaskPasses": 3,
+            "baselineTaskPassRate": 0.75,
+            "candidateTaskPassRate": 0.75,
+            "taskPassDelta": 0,
+            "taskPassDeltaPercent": 0,
+            "taskPassDeltaCI95": {
+              "low": 0,
+              "high": 0,
+              "method": "percentile bootstrap over paired task pass indicators"
+            },
+            "baselineCasePassRate": 0.867647,
+            "candidateCasePassRate": 0.985294,
+            "casePassDelta": 0.117647,
+            "casePassDeltaPercent": 11.764706,
+            "casePassDeltaCI95": {
+              "low": 0,
+              "high": 35.2941,
+              "method": "percentile bootstrap over paired per-trial case rates"
+            },
+            "candidateWins": 0,
+            "candidateLosses": 0,
+            "mcnemarPValue": 1,
+            "maxTaskPassDrop": 0,
+            "maxCasePassDrop": 2,
+            "taskGuardPass": true,
+            "caseGuardPass": true,
+            "pass": true,
+            "complete": true
+          },
+          "actualChanges": {
+            "filterEventsApplied": 5,
+            "pruneEventsApplied": 0,
+            "contextChangeEvents": 5,
+            "trialsWithContextChanges": 4,
+            "attributionEvidence": true,
+            "filterActionCounts": {
+              "KEEP_FULL": 5
+            },
+            "pruneActionCounts": {}
+          },
+          "target": {
+            "minSavingsPercent": 25,
+            "maxSavingsPercent": 35,
+            "pooledSavingsPercent": 54.000149,
+            "pairedSavingsCI95": {
+              "low": 35.8982,
+              "high": 68.7459,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            },
+            "observedWithinBand": false,
+            "conservativeLowerBoundAtLeastMinimum": true,
+            "gate": "ABOVE_TARGET_BAND",
+            "qualityGuardPass": true,
+            "mechanismEvidence": true
+          }
+        },
+        "short": {
+          "baseline": "baseline",
+          "treatment": "von",
+          "pairing": {
+            "paired": 4,
+            "baselineOnly": 0,
+            "candidateOnly": 0,
+            "duplicateKeys": [],
+            "expected": 4,
+            "complete": true,
+            "incomplete": []
+          },
+          "total": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 207625,
+            "candidateTotal": 153085,
+            "deltaTokens": -54540,
+            "pooledSavings": 0.262685,
+            "pooledSavingsPercent": 26.268513,
+            "pairedMeanSavings": 0.247041,
+            "pairedMedianSavings": 0.271451,
+            "pairedSavingsPercent": 24.704142,
+            "pairedSavingsCI95": {
+              "low": 17.2107,
+              "high": 30.1229,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "uncached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 78601,
+            "candidateTotal": 78333,
+            "deltaTokens": -268,
+            "pooledSavings": 0.00341,
+            "pooledSavingsPercent": 0.340963,
+            "pairedMeanSavings": 0.015038,
+            "pairedMedianSavings": 0.012544,
+            "pairedSavingsPercent": 1.503751,
+            "pairedSavingsCI95": {
+              "low": -15.3234,
+              "high": 18.5802,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cached": {
+            "pairsWithMetric": 4,
+            "baselineTotal": 129024,
+            "candidateTotal": 74752,
+            "deltaTokens": -54272,
+            "pooledSavings": 0.420635,
+            "pooledSavingsPercent": 42.063492,
+            "pairedMeanSavings": 0.384236,
+            "pairedMedianSavings": 0.40819,
+            "pairedSavingsPercent": 38.423611,
+            "pairedSavingsCI95": {
+              "low": 28.3422,
+              "high": 46.5588,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            }
+          },
+          "cacheEffects": {
+            "baselineCacheShare": 0.621428,
+            "candidateCacheShare": 0.488304,
+            "cacheShareDelta": -0.133124,
+            "cachedInputDelta": -54272,
+            "uncachedInputDelta": -268,
+            "interpretation": "Cached input is included in total input; cache reuse is reported separately, not treated as removed work."
+          },
+          "quality": {
+            "paired": 4,
+            "taskPairs": 4,
+            "baselineTaskPasses": 4,
+            "candidateTaskPasses": 3,
+            "baselineTaskPassRate": 1,
+            "candidateTaskPassRate": 0.75,
+            "taskPassDelta": -0.25,
+            "taskPassDeltaPercent": -25,
+            "taskPassDeltaCI95": {
+              "low": -75,
+              "high": 0,
+              "method": "percentile bootstrap over paired task pass indicators"
+            },
+            "baselineCasePassRate": 1,
+            "candidateCasePassRate": 0.988636,
+            "casePassDelta": -0.011364,
+            "casePassDeltaPercent": -1.136364,
+            "casePassDeltaCI95": {
+              "low": -3.4091,
+              "high": 0,
+              "method": "percentile bootstrap over paired per-trial case rates"
+            },
+            "candidateWins": 0,
+            "candidateLosses": 1,
+            "mcnemarPValue": 1,
+            "maxTaskPassDrop": 0,
+            "maxCasePassDrop": 2,
+            "taskGuardPass": false,
+            "caseGuardPass": true,
+            "pass": false,
+            "complete": true
+          },
+          "actualChanges": {
+            "filterEventsApplied": 3,
+            "pruneEventsApplied": 0,
+            "contextChangeEvents": 3,
+            "trialsWithContextChanges": 2,
+            "attributionEvidence": true,
+            "filterActionCounts": {
+              "EXTERNALIZE": 3
+            },
+            "pruneActionCounts": {}
+          },
+          "target": {
+            "minSavingsPercent": 25,
+            "maxSavingsPercent": 35,
+            "pooledSavingsPercent": 26.268513,
+            "pairedSavingsCI95": {
+              "low": 17.2107,
+              "high": 30.1229,
+              "method": "percentile bootstrap over task/repetition savings",
+              "samples": 20000
+            },
+            "observedWithinBand": true,
+            "conservativeLowerBoundAtLeastMinimum": false,
+            "gate": "FAIL_QUALITY",
+            "qualityGuardPass": false,
+            "mechanismEvidence": true
+          }
+        }
+      }
+    }
+  },
+  "pairedTrials": {
+    "laya": [
+      {
+        "pairKey": "canonical-url::r0",
+        "task": "canonical-url",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "canonical-url-r1-baseline",
+        "candidateId": "canonical-url-r1-laya",
+        "baselineInputTotal": 46046,
+        "candidateInputTotal": 51969,
+        "totalSavingsPercent": -12.863224,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 2,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "config-merge::r0",
+        "task": "config-merge",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "config-merge-r1-baseline",
+        "candidateId": "config-merge-r1-laya",
+        "baselineInputTotal": 98202,
+        "candidateInputTotal": 30447,
+        "totalSavingsPercent": 68.99554,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "dotenv::r0",
+        "task": "dotenv",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "dotenv-r1-baseline",
+        "candidateId": "dotenv-r1-laya",
+        "baselineInputTotal": 96151,
+        "candidateInputTotal": 37858,
+        "totalSavingsPercent": 60.626515,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "duration::r0",
+        "task": "duration",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "duration-r1-baseline",
+        "candidateId": "duration-r1-laya",
+        "baselineInputTotal": 35189,
+        "candidateInputTotal": 27802,
+        "totalSavingsPercent": 20.992356,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 0,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "header-redaction::r0",
+        "task": "header-redaction",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "header-redaction-r1-baseline",
+        "candidateId": "header-redaction-r1-laya",
+        "baselineInputTotal": 30239,
+        "candidateInputTotal": 27187,
+        "totalSavingsPercent": 10.092926,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 0,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "pagination::r0",
+        "task": "pagination",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "pagination-r1-baseline",
+        "candidateId": "pagination-r1-laya",
+        "baselineInputTotal": 50506,
+        "candidateInputTotal": 27591,
+        "totalSavingsPercent": 45.370847,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "rate-window::r0",
+        "task": "rate-window",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "rate-window-r1-baseline",
+        "candidateId": "rate-window-r1-laya",
+        "baselineInputTotal": 111822,
+        "candidateInputTotal": 66566,
+        "totalSavingsPercent": 40.471464,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 2,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "record-sort::r0",
+        "task": "record-sort",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "record-sort-r1-baseline",
+        "candidateId": "record-sort-r1-laya",
+        "baselineInputTotal": 61108,
+        "candidateInputTotal": 23899,
+        "totalSavingsPercent": 60.890554,
+        "baselineTaskPass": false,
+        "candidateTaskPass": false,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      }
+    ],
+    "von": [
+      {
+        "pairKey": "canonical-url::r0",
+        "task": "canonical-url",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "canonical-url-r1-baseline",
+        "candidateId": "canonical-url-r1-von",
+        "baselineInputTotal": 46046,
+        "candidateInputTotal": 34401,
+        "totalSavingsPercent": 25.289927,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "config-merge::r0",
+        "task": "config-merge",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "config-merge-r1-baseline",
+        "candidateId": "config-merge-r1-von",
+        "baselineInputTotal": 98202,
+        "candidateInputTotal": 22502,
+        "totalSavingsPercent": 77.086006,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "dotenv::r0",
+        "task": "dotenv",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "dotenv-r1-baseline",
+        "candidateId": "dotenv-r1-von",
+        "baselineInputTotal": 96151,
+        "candidateInputTotal": 68267,
+        "totalSavingsPercent": 29.000218,
+        "baselineTaskPass": true,
+        "candidateTaskPass": false,
+        "candidateFilterEventsApplied": 2,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "duration::r0",
+        "task": "duration",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "duration-r1-baseline",
+        "candidateId": "duration-r1-von",
+        "baselineInputTotal": 35189,
+        "candidateInputTotal": 24194,
+        "totalSavingsPercent": 31.24556,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 0,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "header-redaction::r0",
+        "task": "header-redaction",
+        "repetition": 0,
+        "stratum": "short",
+        "baselineId": "header-redaction-r1-baseline",
+        "candidateId": "header-redaction-r1-von",
+        "baselineInputTotal": 30239,
+        "candidateInputTotal": 26223,
+        "totalSavingsPercent": 13.280862,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 0,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "pagination::r0",
+        "task": "pagination",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "pagination-r1-baseline",
+        "candidateId": "pagination-r1-von",
+        "baselineInputTotal": 50506,
+        "candidateInputTotal": 28422,
+        "totalSavingsPercent": 43.725498,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "rate-window::r0",
+        "task": "rate-window",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "rate-window-r1-baseline",
+        "candidateId": "rate-window-r1-von",
+        "baselineInputTotal": 111822,
+        "candidateInputTotal": 54779,
+        "totalSavingsPercent": 51.012323,
+        "baselineTaskPass": true,
+        "candidateTaskPass": true,
+        "candidateFilterEventsApplied": 2,
+        "candidatePruneEventsApplied": 0
+      },
+      {
+        "pairKey": "record-sort::r0",
+        "task": "record-sort",
+        "repetition": 0,
+        "stratum": "long",
+        "baselineId": "record-sort-r1-baseline",
+        "candidateId": "record-sort-r1-von",
+        "baselineInputTotal": 61108,
+        "candidateInputTotal": 42250,
+        "totalSavingsPercent": 30.860117,
+        "baselineTaskPass": false,
+        "candidateTaskPass": false,
+        "candidateFilterEventsApplied": 1,
+        "candidatePruneEventsApplied": 0
+      }
+    ]
+  },
+  "pairedTrialsByStratum": {
+    "laya": {
+      "long": [
+        {
+          "pairKey": "config-merge::r0",
+          "task": "config-merge",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "config-merge-r1-baseline",
+          "candidateId": "config-merge-r1-laya",
+          "baselineInputTotal": 98202,
+          "candidateInputTotal": 30447,
+          "totalSavingsPercent": 68.99554,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "pagination::r0",
+          "task": "pagination",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "pagination-r1-baseline",
+          "candidateId": "pagination-r1-laya",
+          "baselineInputTotal": 50506,
+          "candidateInputTotal": 27591,
+          "totalSavingsPercent": 45.370847,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "rate-window::r0",
+          "task": "rate-window",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "rate-window-r1-baseline",
+          "candidateId": "rate-window-r1-laya",
+          "baselineInputTotal": 111822,
+          "candidateInputTotal": 66566,
+          "totalSavingsPercent": 40.471464,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 2,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "record-sort::r0",
+          "task": "record-sort",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "record-sort-r1-baseline",
+          "candidateId": "record-sort-r1-laya",
+          "baselineInputTotal": 61108,
+          "candidateInputTotal": 23899,
+          "totalSavingsPercent": 60.890554,
+          "baselineTaskPass": false,
+          "candidateTaskPass": false,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        }
+      ],
+      "short": [
+        {
+          "pairKey": "canonical-url::r0",
+          "task": "canonical-url",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "canonical-url-r1-baseline",
+          "candidateId": "canonical-url-r1-laya",
+          "baselineInputTotal": 46046,
+          "candidateInputTotal": 51969,
+          "totalSavingsPercent": -12.863224,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 2,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "dotenv::r0",
+          "task": "dotenv",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "dotenv-r1-baseline",
+          "candidateId": "dotenv-r1-laya",
+          "baselineInputTotal": 96151,
+          "candidateInputTotal": 37858,
+          "totalSavingsPercent": 60.626515,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "duration::r0",
+          "task": "duration",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "duration-r1-baseline",
+          "candidateId": "duration-r1-laya",
+          "baselineInputTotal": 35189,
+          "candidateInputTotal": 27802,
+          "totalSavingsPercent": 20.992356,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 0,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "header-redaction::r0",
+          "task": "header-redaction",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "header-redaction-r1-baseline",
+          "candidateId": "header-redaction-r1-laya",
+          "baselineInputTotal": 30239,
+          "candidateInputTotal": 27187,
+          "totalSavingsPercent": 10.092926,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 0,
+          "candidatePruneEventsApplied": 0
+        }
+      ]
+    },
+    "von": {
+      "long": [
+        {
+          "pairKey": "config-merge::r0",
+          "task": "config-merge",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "config-merge-r1-baseline",
+          "candidateId": "config-merge-r1-von",
+          "baselineInputTotal": 98202,
+          "candidateInputTotal": 22502,
+          "totalSavingsPercent": 77.086006,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "pagination::r0",
+          "task": "pagination",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "pagination-r1-baseline",
+          "candidateId": "pagination-r1-von",
+          "baselineInputTotal": 50506,
+          "candidateInputTotal": 28422,
+          "totalSavingsPercent": 43.725498,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "rate-window::r0",
+          "task": "rate-window",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "rate-window-r1-baseline",
+          "candidateId": "rate-window-r1-von",
+          "baselineInputTotal": 111822,
+          "candidateInputTotal": 54779,
+          "totalSavingsPercent": 51.012323,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 2,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "record-sort::r0",
+          "task": "record-sort",
+          "repetition": 0,
+          "stratum": "long",
+          "baselineId": "record-sort-r1-baseline",
+          "candidateId": "record-sort-r1-von",
+          "baselineInputTotal": 61108,
+          "candidateInputTotal": 42250,
+          "totalSavingsPercent": 30.860117,
+          "baselineTaskPass": false,
+          "candidateTaskPass": false,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        }
+      ],
+      "short": [
+        {
+          "pairKey": "canonical-url::r0",
+          "task": "canonical-url",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "canonical-url-r1-baseline",
+          "candidateId": "canonical-url-r1-von",
+          "baselineInputTotal": 46046,
+          "candidateInputTotal": 34401,
+          "totalSavingsPercent": 25.289927,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 1,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "dotenv::r0",
+          "task": "dotenv",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "dotenv-r1-baseline",
+          "candidateId": "dotenv-r1-von",
+          "baselineInputTotal": 96151,
+          "candidateInputTotal": 68267,
+          "totalSavingsPercent": 29.000218,
+          "baselineTaskPass": true,
+          "candidateTaskPass": false,
+          "candidateFilterEventsApplied": 2,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "duration::r0",
+          "task": "duration",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "duration-r1-baseline",
+          "candidateId": "duration-r1-von",
+          "baselineInputTotal": 35189,
+          "candidateInputTotal": 24194,
+          "totalSavingsPercent": 31.24556,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 0,
+          "candidatePruneEventsApplied": 0
+        },
+        {
+          "pairKey": "header-redaction::r0",
+          "task": "header-redaction",
+          "repetition": 0,
+          "stratum": "short",
+          "baselineId": "header-redaction-r1-baseline",
+          "candidateId": "header-redaction-r1-von",
+          "baselineInputTotal": 30239,
+          "candidateInputTotal": 26223,
+          "totalSavingsPercent": 13.280862,
+          "baselineTaskPass": true,
+          "candidateTaskPass": true,
+          "candidateFilterEventsApplied": 0,
+          "candidatePruneEventsApplied": 0
+        }
+      ]
+    }
+  },
+  "trials": [
+    {
+      "id": "canonical-url-r1-baseline",
+      "task": "canonical-url",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "baseline",
+      "pairKey": "canonical-url::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 46046,
+        "inputCached": 25088,
+        "inputUncached": 20958,
+        "outputTokens": 1992,
+        "allTokens": 48038,
+        "requests": 18,
+        "cachedRequests": 13,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 19,
+        "testsTotal": 19,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 74954.047333,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/canonical-url-r1-baseline"
+    },
+    {
+      "id": "canonical-url-r1-laya",
+      "task": "canonical-url",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "laya",
+      "pairKey": "canonical-url::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 51969,
+        "inputCached": 26112,
+        "inputUncached": 25857,
+        "outputTokens": 2047,
+        "allTokens": 54016,
+        "requests": 22,
+        "cachedRequests": 13,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 19,
+        "testsTotal": 19,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 2,
+        "applied": 2,
+        "removedCharacters": 3344,
+        "actions": {
+          "KEEP_FULL": 2
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 2,
+        "latencyMs": 2584.502093,
+        "malformed": 0
+      },
+      "wallMs": 82628.85442900006,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/canonical-url-r1-laya"
+    },
+    {
+      "id": "canonical-url-r1-von",
+      "task": "canonical-url",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "von",
+      "pairKey": "canonical-url::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 34401,
+        "inputCached": 12800,
+        "inputUncached": 21601,
+        "outputTokens": 1496,
+        "allTokens": 35897,
+        "requests": 17,
+        "cachedRequests": 7,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 19,
+        "testsTotal": 19,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 1673,
+        "actions": {
+          "EXTERNALIZE": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 233.481915,
+        "malformed": 0
+      },
+      "wallMs": 57334.35053699999,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/canonical-url-r1-von"
+    },
+    {
+      "id": "config-merge-r1-baseline",
+      "task": "config-merge",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "baseline",
+      "pairKey": "config-merge::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 98202,
+        "inputCached": 77824,
+        "inputUncached": 20378,
+        "outputTokens": 1455,
+        "allTokens": 99657,
+        "requests": 21,
+        "cachedRequests": 14,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 17,
+        "testsTotal": 17,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 65809.898741,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/config-merge-r1-baseline"
+    },
+    {
+      "id": "config-merge-r1-laya",
+      "task": "config-merge",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "laya",
+      "pairKey": "config-merge::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 30447,
+        "inputCached": 9216,
+        "inputUncached": 21231,
+        "outputTokens": 1094,
+        "allTokens": 31541,
+        "requests": 16,
+        "cachedRequests": 6,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 17,
+        "testsTotal": 17,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 12785,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 3066.231855,
+        "malformed": 0
+      },
+      "wallMs": 52034.03684299998,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/config-merge-r1-laya"
+    },
+    {
+      "id": "config-merge-r1-von",
+      "task": "config-merge",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "von",
+      "pairKey": "config-merge::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 22502,
+        "inputCached": 6144,
+        "inputUncached": 16358,
+        "outputTokens": 681,
+        "allTokens": 23183,
+        "requests": 13,
+        "cachedRequests": 4,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 17,
+        "testsTotal": 17,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 12786,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 1086.825526,
+        "malformed": 0
+      },
+      "wallMs": 43478.14927600001,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/config-merge-r1-von"
+    },
+    {
+      "id": "dotenv-r1-baseline",
+      "task": "dotenv",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "baseline",
+      "pairKey": "dotenv::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 96151,
+        "inputCached": 74240,
+        "inputUncached": 21911,
+        "outputTokens": 3607,
+        "allTokens": 99758,
+        "requests": 26,
+        "cachedRequests": 21,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 22,
+        "testsTotal": 22,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 241541.30801000004,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/dotenv-r1-baseline"
+    },
+    {
+      "id": "dotenv-r1-laya",
+      "task": "dotenv",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "laya",
+      "pairKey": "dotenv::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 37858,
+        "inputCached": 17408,
+        "inputUncached": 20450,
+        "outputTokens": 1788,
+        "allTokens": 39646,
+        "requests": 17,
+        "cachedRequests": 8,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 22,
+        "testsTotal": 22,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 1686,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 2648.001597,
+        "malformed": 0
+      },
+      "wallMs": 71639.93592299998,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/dotenv-r1-laya"
+    },
+    {
+      "id": "dotenv-r1-von",
+      "task": "dotenv",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "von",
+      "pairKey": "dotenv::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 68267,
+        "inputCached": 41472,
+        "inputUncached": 26795,
+        "outputTokens": 2061,
+        "allTokens": 70328,
+        "requests": 22,
+        "cachedRequests": 15,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": false,
+        "testsPassed": 21,
+        "testsTotal": 22,
+        "casePassRate": 0.9545454545454546,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 2,
+        "applied": 2,
+        "removedCharacters": 3374,
+        "actions": {
+          "EXTERNALIZE": 2
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 2,
+        "latencyMs": 694.123086,
+        "malformed": 0
+      },
+      "wallMs": 90862.02931800002,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/dotenv-r1-von"
+    },
+    {
+      "id": "duration-r1-baseline",
+      "task": "duration",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "baseline",
+      "pairKey": "duration::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 35189,
+        "inputCached": 16384,
+        "inputUncached": 18805,
+        "outputTokens": 1738,
+        "allTokens": 36927,
+        "requests": 17,
+        "cachedRequests": 8,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 21,
+        "testsTotal": 21,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 65130.279898,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/duration-r1-baseline"
+    },
+    {
+      "id": "duration-r1-laya",
+      "task": "duration",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "laya",
+      "pairKey": "duration::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 27802,
+        "inputCached": 11264,
+        "inputUncached": 16538,
+        "outputTokens": 1288,
+        "allTokens": 29090,
+        "requests": 15,
+        "cachedRequests": 6,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 21,
+        "testsTotal": 21,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 55406.842014999995,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/duration-r1-laya"
+    },
+    {
+      "id": "duration-r1-von",
+      "task": "duration",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "von",
+      "pairKey": "duration::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 24194,
+        "inputCached": 10240,
+        "inputUncached": 13954,
+        "outputTokens": 1038,
+        "allTokens": 25232,
+        "requests": 14,
+        "cachedRequests": 6,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 21,
+        "testsTotal": 21,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 47123.25518000001,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/duration-r1-von"
+    },
+    {
+      "id": "header-redaction-r1-baseline",
+      "task": "header-redaction",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "baseline",
+      "pairKey": "header-redaction::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 30239,
+        "inputCached": 13312,
+        "inputUncached": 16927,
+        "outputTokens": 1017,
+        "allTokens": 31256,
+        "requests": 17,
+        "cachedRequests": 8,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 15,
+        "testsTotal": 15,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 55413.809389,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/header-redaction-r1-baseline"
+    },
+    {
+      "id": "header-redaction-r1-laya",
+      "task": "header-redaction",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "laya",
+      "pairKey": "header-redaction::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 27187,
+        "inputCached": 10752,
+        "inputUncached": 16435,
+        "outputTokens": 904,
+        "allTokens": 28091,
+        "requests": 16,
+        "cachedRequests": 7,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 15,
+        "testsTotal": 15,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 42766.47193500001,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/header-redaction-r1-laya"
+    },
+    {
+      "id": "header-redaction-r1-von",
+      "task": "header-redaction",
+      "repetition": 0,
+      "stratum": "short",
+      "arm": "von",
+      "pairKey": "header-redaction::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 26223,
+        "inputCached": 10240,
+        "inputUncached": 15983,
+        "outputTokens": 902,
+        "allTokens": 27125,
+        "requests": 15,
+        "cachedRequests": 6,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 15,
+        "testsTotal": 15,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 48073.756357999984,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/header-redaction-r1-von"
+    },
+    {
+      "id": "pagination-r1-baseline",
+      "task": "pagination",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "baseline",
+      "pairKey": "pagination::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 50506,
+        "inputCached": 32768,
+        "inputUncached": 17738,
+        "outputTokens": 1206,
+        "allTokens": 51712,
+        "requests": 14,
+        "cachedRequests": 10,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 18,
+        "testsTotal": 18,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 46946.936944999994,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/pagination-r1-baseline"
+    },
+    {
+      "id": "pagination-r1-laya",
+      "task": "pagination",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "laya",
+      "pairKey": "pagination::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 27591,
+        "inputCached": 7680,
+        "inputUncached": 19911,
+        "outputTokens": 1024,
+        "allTokens": 28615,
+        "requests": 15,
+        "cachedRequests": 5,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 18,
+        "testsTotal": 18,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 11724,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 4848.715715,
+        "malformed": 0
+      },
+      "wallMs": 52245.548804000005,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/pagination-r1-laya"
+    },
+    {
+      "id": "pagination-r1-von",
+      "task": "pagination",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "von",
+      "pairKey": "pagination::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 28422,
+        "inputCached": 9216,
+        "inputUncached": 19206,
+        "outputTokens": 977,
+        "allTokens": 29399,
+        "requests": 15,
+        "cachedRequests": 6,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 18,
+        "testsTotal": 18,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 11725,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 4327.347384,
+        "malformed": 0
+      },
+      "wallMs": 49151.01495899999,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/pagination-r1-von"
+    },
+    {
+      "id": "rate-window-r1-baseline",
+      "task": "rate-window",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "baseline",
+      "pairKey": "rate-window::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 111822,
+        "inputCached": 91136,
+        "inputUncached": 20686,
+        "outputTokens": 1706,
+        "allTokens": 113528,
+        "requests": 20,
+        "cachedRequests": 16,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 18,
+        "testsTotal": 18,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 73933.37620200001,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/rate-window-r1-baseline"
+    },
+    {
+      "id": "rate-window-r1-laya",
+      "task": "rate-window",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "laya",
+      "pairKey": "rate-window::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 66566,
+        "inputCached": 40448,
+        "inputUncached": 26118,
+        "outputTokens": 1609,
+        "allTokens": 68175,
+        "requests": 20,
+        "cachedRequests": 15,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 18,
+        "testsTotal": 18,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 2,
+        "applied": 2,
+        "removedCharacters": 24368,
+        "actions": {
+          "KEEP_FULL": 2
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 3,
+        "latencyMs": 3505.100005,
+        "malformed": 0
+      },
+      "wallMs": 71614.96221699996,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/rate-window-r1-laya"
+    },
+    {
+      "id": "rate-window-r1-von",
+      "task": "rate-window",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "von",
+      "pairKey": "rate-window::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 54779,
+        "inputCached": 33280,
+        "inputUncached": 21499,
+        "outputTokens": 1462,
+        "allTokens": 56241,
+        "requests": 18,
+        "cachedRequests": 11,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": true,
+        "testsPassed": 18,
+        "testsTotal": 18,
+        "casePassRate": 1.0,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 2,
+        "applied": 2,
+        "removedCharacters": 24370,
+        "actions": {
+          "KEEP_FULL": 2
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 2,
+        "latencyMs": 2241.439184,
+        "malformed": 0
+      },
+      "wallMs": 128208.84410799999,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/rate-window-r1-von"
+    },
+    {
+      "id": "record-sort-r1-baseline",
+      "task": "record-sort",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "baseline",
+      "pairKey": "record-sort::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 61108,
+        "inputCached": 45568,
+        "inputUncached": 15540,
+        "outputTokens": 1441,
+        "allTokens": 62549,
+        "requests": 16,
+        "cachedRequests": 13,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": false,
+        "testsPassed": 8,
+        "testsTotal": 17,
+        "casePassRate": 0.47058823529411764,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 0,
+        "applied": 0,
+        "removedCharacters": 0,
+        "actions": {},
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 0,
+        "latencyMs": 0,
+        "malformed": 0
+      },
+      "wallMs": 56463.31125400006,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/record-sort-r1-baseline"
+    },
+    {
+      "id": "record-sort-r1-laya",
+      "task": "record-sort",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "laya",
+      "pairKey": "record-sort::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 23899,
+        "inputCached": 7680,
+        "inputUncached": 16219,
+        "outputTokens": 1361,
+        "allTokens": 25260,
+        "requests": 13,
+        "cachedRequests": 5,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": false,
+        "testsPassed": 16,
+        "testsTotal": 17,
+        "casePassRate": 0.9411764705882353,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 11588,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 2396.867637,
+        "malformed": 0
+      },
+      "wallMs": 55988.65169299999,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/record-sort-r1-laya"
+    },
+    {
+      "id": "record-sort-r1-von",
+      "task": "record-sort",
+      "repetition": 0,
+      "stratum": "long",
+      "arm": "von",
+      "pairKey": "record-sort::r0",
+      "valid": true,
+      "error": null,
+      "missing": [],
+      "usage": {
+        "inputTotal": 42250,
+        "inputCached": 19968,
+        "inputUncached": 22282,
+        "outputTokens": 2134,
+        "allTokens": 44384,
+        "requests": 18,
+        "cachedRequests": 9,
+        "source": "result"
+      },
+      "evaluation": {
+        "taskPass": false,
+        "testsPassed": 16,
+        "testsTotal": 17,
+        "casePassRate": 0.9411764705882353,
+        "initialTaskPass": false
+      },
+      "filter": {
+        "judged": 1,
+        "applied": 1,
+        "removedCharacters": 11589,
+        "actions": {
+          "KEEP_FULL": 1
+        },
+        "judgeActions": {},
+        "malformed": 0,
+        "source": "result"
+      },
+      "gc": {
+        "judged": 0,
+        "applied": 0,
+        "prunedMessages": 0,
+        "prunedCharacters": 0,
+        "actions": {},
+        "malformed": 0
+      },
+      "judge": {
+        "calls": 1,
+        "latencyMs": 1078.991165,
+        "malformed": 0
+      },
+      "wallMs": 72589.92849000008,
+      "path": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/record-sort-r1-von"
+    }
+  ]
+}

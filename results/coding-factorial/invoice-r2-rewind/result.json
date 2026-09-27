@@ -1,0 +1,785 @@
+{
+  "id": "invoice-r2-rewind",
+  "task": "invoice",
+  "repetition": 1,
+  "arm": "rewind",
+  "config": {
+    "name": "rewind",
+    "filter": false,
+    "rewind": true,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.0"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '-0002,500'"
+      },
+      {
+        "name": "plus",
+        "pass": false,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "4.0"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "could not convert string to float: 'B\"'"
+      },
+      {
+        "name": "spaces-blank",
+        "pass": false,
+        "exception": "IndexError",
+        "message": "list index out of range"
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": []
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "nan"
+          }
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "100.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: ''"
+      },
+      {
+        "name": "invalid-5",
+        "pass": false,
+        "actual": [
+          {
+            "id": "",
+            "amount": "2.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-6",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "1.0"
+          }
+        ]
+      },
+      {
+        "name": "invalid-7",
+        "pass": false,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "inf"
+          }
+        ]
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '$2'"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "could not convert string to float: '1.2.3'"
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.00"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": true,
+        "actual": [
+          {
+            "id": "B",
+            "amount": "-0002.500"
+          }
+        ]
+      },
+      {
+        "name": "plus",
+        "pass": true,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "+04.00"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A;B",
+            "amount": "9.20"
+          }
+        ]
+      },
+      {
+        "name": "spaces-blank",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "0.000"
+          }
+        ]
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "input must include a header"
+      },
+      {
+        "name": "invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "expected header 'id;amount'"
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "id and amount must not be empty"
+      },
+      {
+        "name": "invalid-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "id and amount must not be empty"
+      },
+      {
+        "name": "invalid-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "each record must contain exactly two fields"
+      },
+      {
+        "name": "invalid-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid amount"
+      }
+    ]
+  },
+  "inputTotal": 26000,
+  "inputUncached": 8080,
+  "inputCached": 17920,
+  "outputTokens": 644,
+  "allTokens": 26644,
+  "requests": 10,
+  "wallMs": 32586.415990999958,
+  "judgeCalls": 7,
+  "judgeLatencyMs": 1839.5673860004536,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 21,
+  "finalSourceHash": "5b58ffd182a6b7a35cd20676a7413d2ecf59947dd4d75622563aa867d1d37966",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-factorial/invoice-r2-rewind/session/2026-09-26T14-43-54-946Z_01a0de2c-37c2-75a0-a36a-ab093d33f41a.jsonl",
+  "filterEvents": [],
+  "postToolEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_NAMKaSnxpOYNFbU7d3BxosIP|fc_0be743bd0766985b016ab7da2d6de487d2b00403aeb47694a2",
+      "verdict": {
+        "id": 73,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1459,
+        "durableProbability": 0.6814,
+        "windows": 9,
+        "latencyMs": 575.534424000125,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4213,
+                  "KEEP_RESULT": 0.2844,
+                  "EXTERNALIZE": 0.0911,
+                  "DISCARD": 0.2032
+                },
+                "confidence": 0.0883,
+                "answer_confidence": 0.4213,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6167,
+                  "no": 0.3833
+                },
+                "confidence": 0.0396,
+                "answer_confidence": 0.6167,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4879,
+                  "KEEP_RESULT": 0.2538,
+                  "EXTERNALIZE": 0.0853,
+                  "DISCARD": 0.173
+                },
+                "confidence": 0.126,
+                "answer_confidence": 0.4879,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6263,
+                  "no": 0.3737
+                },
+                "confidence": 0.0465,
+                "answer_confidence": 0.6263,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.389,
+                  "KEEP_RESULT": 0.2535,
+                  "EXTERNALIZE": 0.0978,
+                  "DISCARD": 0.2597
+                },
+                "confidence": 0.0675,
+                "answer_confidence": 0.389,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.5602,
+                  "no": 0.4398
+                },
+                "confidence": 0.0105,
+                "answer_confidence": 0.5602,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4028,
+                  "KEEP_RESULT": 0.2684,
+                  "EXTERNALIZE": 0.0939,
+                  "DISCARD": 0.2349
+                },
+                "confidence": 0.0754,
+                "answer_confidence": 0.4028,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6518,
+                  "no": 0.3482
+                },
+                "confidence": 0.0676,
+                "answer_confidence": 0.6518,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4359,
+                  "KEEP_RESULT": 0.2693,
+                  "EXTERNALIZE": 0.0988,
+                  "DISCARD": 0.1961
+                },
+                "confidence": 0.0887,
+                "answer_confidence": 0.4359,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6471,
+                  "no": 0.3529
+                },
+                "confidence": 0.0634,
+                "answer_confidence": 0.6471,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4135,
+                  "KEEP_RESULT": 0.2786,
+                  "EXTERNALIZE": 0.0973,
+                  "DISCARD": 0.2106
+                },
+                "confidence": 0.0796,
+                "answer_confidence": 0.4135,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.5561,
+                  "no": 0.4439
+                },
+                "confidence": 0.0091,
+                "answer_confidence": 0.5561,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4901,
+                  "KEEP_RESULT": 0.2897,
+                  "EXTERNALIZE": 0.0743,
+                  "DISCARD": 0.1459
+                },
+                "confidence": 0.1471,
+                "answer_confidence": 0.4901,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6509,
+                  "no": 0.3491
+                },
+                "confidence": 0.0667,
+                "answer_confidence": 0.6509,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4245,
+                  "KEEP_RESULT": 0.295,
+                  "EXTERNALIZE": 0.0729,
+                  "DISCARD": 0.2077
+                },
+                "confidence": 0.1047,
+                "answer_confidence": 0.4245,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6509,
+                  "no": 0.3491
+                },
+                "confidence": 0.0667,
+                "answer_confidence": 0.6509,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4233,
+                  "KEEP_RESULT": 0.2786,
+                  "EXTERNALIZE": 0.0834,
+                  "DISCARD": 0.2147
+                },
+                "confidence": 0.093,
+                "answer_confidence": 0.4233,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6814,
+                  "no": 0.3186
+                },
+                "confidence": 0.0971,
+                "answer_confidence": 0.6814,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 549,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_jxmBbB1ZOoBkVLY9GDLjnGBS|fc_0be743bd0766985b016ab7da319cdc87d28f9f79319f9e16ea",
+      "verdict": {
+        "id": 75,
+        "action": "DISCARD",
+        "discardProbability": 0.7442,
+        "durableProbability": 0.3515,
+        "windows": 1,
+        "latencyMs": 28.195966000112094,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "DISCARD",
+                "probabilities": {
+                  "KEEP_FULL": 0.0734,
+                  "KEEP_RESULT": 0.0964,
+                  "EXTERNALIZE": 0.0861,
+                  "DISCARD": 0.7442
+                },
+                "confidence": 0.3882,
+                "answer_confidence": 0.7442,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.3515,
+                  "no": 0.6485
+                },
+                "confidence": 0.0646,
+                "answer_confidence": 0.6485,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 245,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_RKZXD0PleXZfFq3ac7hHrnuy|fc_0be743bd0766985b016ab7da353d5887d29d0fac2b26aaff26",
+      "verdict": {
+        "id": 77,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.0562,
+        "durableProbability": 0.2657,
+        "windows": 1,
+        "latencyMs": 265.20018400015033,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.6683,
+                  "KEEP_RESULT": 0.1954,
+                  "EXTERNALIZE": 0.0801,
+                  "DISCARD": 0.0562
+                },
+                "confidence": 0.3131,
+                "answer_confidence": 0.6683,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.2657,
+                  "no": 0.7343
+                },
+                "confidence": 0.1647,
+                "answer_confidence": 0.7343,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 441,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_qRtC5uUfTNA08kE6xwsSTG9J|fc_0be743bd0766985b016ab7da3d4b5887d297256d7977ff0ce4",
+      "verdict": {
+        "id": 79,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.066,
+        "durableProbability": 0.3843,
+        "windows": 1,
+        "latencyMs": 111.8094389998987,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4939,
+                  "KEEP_RESULT": 0.3258,
+                  "EXTERNALIZE": 0.1144,
+                  "DISCARD": 0.066
+                },
+                "confidence": 0.1768,
+                "answer_confidence": 0.4939,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.3843,
+                  "no": 0.6157
+                },
+                "confidence": 0.039,
+                "answer_confidence": 0.6157,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 303,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

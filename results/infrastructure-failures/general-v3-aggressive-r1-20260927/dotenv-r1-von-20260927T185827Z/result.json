@@ -1,0 +1,318 @@
+{
+  "id": "dotenv-r1-von",
+  "task": "dotenv",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "von",
+  "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~185 min.",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db",
+          "PORT": "5432"
+        },
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db"
+        },
+        "name": "spaces-around-equals",
+        "pass": true
+      },
+      {
+        "actual": {
+          "export API_KEY": "abc"
+        },
+        "name": "export-prefix",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "comments-and-blanks",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value # explanation"
+        },
+        "name": "inline-comment",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "abc#123"
+        },
+        "name": "hash-in-word",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "  spaced # value  "
+        },
+        "name": "single-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "hello world"
+        },
+        "name": "double-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "line\\nnext\\t\\\"q\\"
+        },
+        "name": "double-escapes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "value # stays\" # comment"
+        },
+        "name": "quoted-hash",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "",
+          "B": "",
+          "C": ""
+        },
+        "name": "empty-value",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "two"
+        },
+        "name": "duplicate-last-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "localhost",
+          "PORT": "8080"
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "preserve-default-order",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "not enough values to unpack (expected 2, got 1)",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-no-equals",
+        "pass": true
+      },
+      {
+        "name": "invalid-key",
+        "pass": false
+      },
+      {
+        "name": "invalid-key-dash",
+        "pass": false
+      },
+      {
+        "name": "unterminated-single",
+        "pass": false
+      },
+      {
+        "name": "unterminated-double",
+        "pass": false
+      },
+      {
+        "name": "junk-after-quote",
+        "pass": false
+      },
+      {
+        "name": "non-string-defaults",
+        "pass": false
+      }
+    ],
+    "passed": 12,
+    "success": false,
+    "total": 22
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db",
+          "PORT": "5432"
+        },
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db"
+        },
+        "name": "spaces-around-equals",
+        "pass": true
+      },
+      {
+        "actual": {
+          "export API_KEY": "abc"
+        },
+        "name": "export-prefix",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "comments-and-blanks",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value # explanation"
+        },
+        "name": "inline-comment",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "abc#123"
+        },
+        "name": "hash-in-word",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "  spaced # value  "
+        },
+        "name": "single-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "hello world"
+        },
+        "name": "double-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "line\\nnext\\t\\\"q\\"
+        },
+        "name": "double-escapes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "value # stays\" # comment"
+        },
+        "name": "quoted-hash",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "",
+          "B": "",
+          "C": ""
+        },
+        "name": "empty-value",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "two"
+        },
+        "name": "duplicate-last-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "localhost",
+          "PORT": "8080"
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "preserve-default-order",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "not enough values to unpack (expected 2, got 1)",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-no-equals",
+        "pass": true
+      },
+      {
+        "name": "invalid-key",
+        "pass": false
+      },
+      {
+        "name": "invalid-key-dash",
+        "pass": false
+      },
+      {
+        "name": "unterminated-single",
+        "pass": false
+      },
+      {
+        "name": "unterminated-double",
+        "pass": false
+      },
+      {
+        "name": "junk-after-quote",
+        "pass": false
+      },
+      {
+        "name": "non-string-defaults",
+        "pass": false
+      }
+    ],
+    "passed": 12,
+    "success": false,
+    "total": 22
+  },
+  "inputTotal": 0,
+  "inputUncached": 0,
+  "inputCached": 0,
+  "cacheWrite": 0,
+  "outputTokens": 0,
+  "requests": 1,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 5206.522833000054,
+  "events": []
+}

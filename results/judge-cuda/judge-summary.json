@@ -1,0 +1,38 @@
+{
+  "cases": 26,
+  "exactAccuracy": 0.46153846153846156,
+  "falseDiscards": 0,
+  "durableCases": 17,
+  "discardedTangents": 0,
+  "tangentCases": 9,
+  "errors": 0,
+  "meanLatencyMs": 135.91854615383278,
+  "thresholds": [
+    {
+      "threshold": 0.5,
+      "falseDiscards": 1,
+      "discardedTangents": 1
+    },
+    {
+      "threshold": 0.7,
+      "falseDiscards": 1,
+      "discardedTangents": 0
+    },
+    {
+      "threshold": 0.9,
+      "falseDiscards": 0,
+      "discardedTangents": 0
+    },
+    {
+      "threshold": 0.95,
+      "falseDiscards": 0,
+      "discardedTangents": 0
+    },
+    {
+      "threshold": 0.99,
+      "falseDiscards": 0,
+      "discardedTangents": 0
+    }
+  ],
+  "note": "Small hand-labeled diagnostic set, no training or prompt tuning on these results. Window aggregates are conservative bounds, not calibrated document probabilities."
+}

@@ -1,0 +1,3 @@
+{"inputHash":"734b7def814ea63ca476766184a4cf5ecc438703b015a82748be31ffc3e842ea","inputCharacters":1942,"action":"KEEP_FULL","discardProbability":0.1245,"durableProbability":0.3855,"latencyMs":1339.675952000107}
+{"inputHash":"2c8a657a1240ea24342f5fa5481e0ed5d8267a5f7baa65b74fc91721c213546c","inputCharacters":1044,"action":"KEEP_FULL","discardProbability":0.1566,"durableProbability":0.2881,"latencyMs":213.2992339993507}
+{"inputHash":"993ce8af47384f678f3d36f16e16e534fb42d4f00e9ae335221df8952c474f94","inputCharacters":1044,"action":"KEEP_FULL","discardProbability":0.1627,"durableProbability":0.309,"latencyMs":227.59960500115994}

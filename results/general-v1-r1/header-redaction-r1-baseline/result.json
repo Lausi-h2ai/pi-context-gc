@@ -1,0 +1,395 @@
+{
+  "id": "header-redaction-r1-baseline",
+  "task": "header-redaction",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "baseline",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Accept",
+            "application/json"
+          ],
+          [
+            "X-Trace",
+            "abc"
+          ]
+        ],
+        "name": "ordinary-kept",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Authorization",
+            "Bearer abc"
+          ]
+        ],
+        "name": "authorization-default",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "aUtHoRiZaTiOn",
+            "secret"
+          ]
+        ],
+        "name": "authorization-case",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "Cookie",
+            "sid=123"
+          ]
+        ],
+        "name": "cookie-default",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "Set-Cookie",
+            "sid=123"
+          ]
+        ],
+        "name": "set-cookie-default",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "Proxy-Authorization",
+            "Basic x"
+          ]
+        ],
+        "name": "proxy-authorization",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "X-API-Key",
+            "k"
+          ]
+        ],
+        "name": "api-key-default",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "X-Trace",
+            "abc"
+          ],
+          [
+            "X-Id",
+            "42"
+          ]
+        ],
+        "name": "extra-sensitive",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "X-Token",
+            "abc"
+          ]
+        ],
+        "name": "extra-trimmed-casefolded",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "X-A",
+            "1"
+          ],
+          [
+            "Authorization",
+            "a"
+          ],
+          [
+            "X-A",
+            "2"
+          ],
+          [
+            "authorization",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "duplicates-preserved",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "Cookie",
+            "x"
+          ],
+          [
+            "X",
+            "y"
+          ]
+        ],
+        "name": "empty-sensitive",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "",
+            "value"
+          ],
+          [
+            " Authorization ",
+            "value2"
+          ]
+        ],
+        "name": "blank-header-name-not-special",
+        "pass": false
+      },
+      {
+        "actual": [
+          [
+            "X-Data",
+            "  spaced  "
+          ],
+          [
+            "X-Empty",
+            ""
+          ]
+        ],
+        "name": "values-untouched",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Cookie",
+            "x"
+          ],
+          [
+            "X",
+            "y"
+          ]
+        ],
+        "name": "input-not-mutated",
+        "pass": false
+      }
+    ],
+    "passed": 3,
+    "success": false,
+    "total": 15
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Accept",
+            "application/json"
+          ],
+          [
+            "X-Trace",
+            "abc"
+          ]
+        ],
+        "name": "ordinary-kept",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Authorization",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "authorization-default",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "aUtHoRiZaTiOn",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "authorization-case",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Cookie",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "cookie-default",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Set-Cookie",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "set-cookie-default",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Proxy-Authorization",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "proxy-authorization",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "X-API-Key",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "api-key-default",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "X-Trace",
+            "[REDACTED]"
+          ],
+          [
+            "X-Id",
+            "42"
+          ]
+        ],
+        "name": "extra-sensitive",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "X-Token",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "extra-trimmed-casefolded",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "X-A",
+            "1"
+          ],
+          [
+            "Authorization",
+            "[REDACTED]"
+          ],
+          [
+            "X-A",
+            "2"
+          ],
+          [
+            "authorization",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "duplicates-preserved",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Cookie",
+            "[REDACTED]"
+          ],
+          [
+            "X",
+            "y"
+          ]
+        ],
+        "name": "empty-sensitive",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "",
+            "value"
+          ],
+          [
+            " Authorization ",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "blank-header-name-not-special",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "X-Data",
+            "  spaced  "
+          ],
+          [
+            "X-Empty",
+            ""
+          ]
+        ],
+        "name": "values-untouched",
+        "pass": true
+      },
+      {
+        "actual": [
+          [
+            "Cookie",
+            "[REDACTED]"
+          ],
+          [
+            "X",
+            "[REDACTED]"
+          ]
+        ],
+        "name": "input-not-mutated",
+        "pass": true
+      }
+    ],
+    "passed": 15,
+    "success": true,
+    "total": 15
+  },
+  "inputTotal": 35780,
+  "inputUncached": 21444,
+  "inputCached": 14336,
+  "cacheWrite": 0,
+  "outputTokens": 1411,
+  "requests": 19,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 61821.33020899998,
+  "events": []
+}

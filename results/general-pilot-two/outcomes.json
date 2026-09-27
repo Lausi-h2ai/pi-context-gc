@@ -1,0 +1,2273 @@
+[
+  {
+    "id": "config-merge-r1-baseline",
+    "task": "config-merge",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": false
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": null
+          },
+          "name": "null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "tls": {
+              "key": null
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 99,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": false,
+          "result_alias": "return value changed when an input was mutated after return"
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": false,
+          "result_alias": "return value changed when an input was mutated after return"
+        },
+        {
+          "actual": {
+            "a": null,
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": false
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": false
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 10,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "host": "a",
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": true
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db"
+          },
+          "name": "null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "tls": {
+              "cert": "a"
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 4,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9,
+                "d": 2
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": true
+        },
+        {
+          "actual": {
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": true
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1,
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 17,
+      "success": true,
+      "total": 17
+    },
+    "inputTotal": 99435,
+    "inputUncached": 26219,
+    "inputCached": 73216,
+    "cacheWrite": 0,
+    "outputTokens": 1092,
+    "requests": 19,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 51375.325818,
+    "events": []
+  },
+  {
+    "id": "config-merge-r1-laya",
+    "task": "config-merge",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": false
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": null
+          },
+          "name": "null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "tls": {
+              "key": null
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 99,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": false,
+          "result_alias": "return value changed when an input was mutated after return"
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": false,
+          "result_alias": "return value changed when an input was mutated after return"
+        },
+        {
+          "actual": {
+            "a": null,
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": false
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": false
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 10,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "host": "a",
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": true
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db"
+          },
+          "name": "null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "tls": {
+              "cert": "a"
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 4,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9,
+                "d": 2
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": true
+        },
+        {
+          "actual": {
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": true
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1,
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 17,
+      "success": true,
+      "total": 17
+    },
+    "inputTotal": 24612,
+    "inputUncached": 16932,
+    "inputCached": 7680,
+    "cacheWrite": 0,
+    "outputTokens": 955,
+    "requests": 14,
+    "prunedResults": 1,
+    "removedToolCharacters": 12792,
+    "judgeCalls": 2,
+    "judgeLatencyMs": 1933.1070199987153,
+    "wallMs": 47830.720668999995,
+    "events": [
+      {
+        "toolCallId": "call_M3eM6EKhNW6I96T8JnYFqKUs|fc_0a6fec0fb137898f016ab80235e99887d2a42d9b906a549601",
+        "toolName": "read",
+        "originalCharacters": 13021,
+        "retainedCharacters": 229,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1787,
+        "durableProbability": 0.5907,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-laya/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+      }
+    ]
+  },
+  {
+    "id": "config-merge-r1-von",
+    "task": "config-merge",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": false
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": null
+          },
+          "name": "null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "tls": {
+              "key": null
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": false
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 99,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": false,
+          "result_alias": "return value changed when an input was mutated after return"
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": false,
+          "result_alias": "return value changed when an input was mutated after return"
+        },
+        {
+          "actual": {
+            "a": null,
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": false
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": false
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 10,
+      "success": false,
+      "total": 17
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": {},
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db",
+            "port": 5432
+          },
+          "name": "top-level-add",
+          "pass": true
+        },
+        {
+          "actual": {
+            "service": {
+              "host": "a",
+              "port": 443,
+              "tls": true
+            }
+          },
+          "name": "nested-merge",
+          "pass": true
+        },
+        {
+          "actual": {
+            "retries": 3
+          },
+          "name": "later-overlay-wins",
+          "pass": true
+        },
+        {
+          "actual": {
+            "zones": [
+              "ap"
+            ]
+          },
+          "name": "list-replaces",
+          "pass": true
+        },
+        {
+          "actual": {
+            "host": "db"
+          },
+          "name": "null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "tls": {
+              "cert": "a"
+            }
+          },
+          "name": "nested-null-deletes",
+          "pass": true
+        },
+        {
+          "actual": {
+            "limits": {
+              "burst": 4,
+              "rate": 2
+            }
+          },
+          "name": "new-nested-copy",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": {
+              "ttl": 60
+            }
+          },
+          "name": "scalar-to-map",
+          "pass": true
+        },
+        {
+          "actual": {
+            "cache": false
+          },
+          "name": "map-to-scalar",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": {
+                "c": 9,
+                "d": 2
+              }
+            }
+          },
+          "name": "deep-three-levels",
+          "pass": true
+        },
+        {
+          "actual": {
+            "x": 2
+          },
+          "name": "delete-whole-nested",
+          "pass": true
+        },
+        {
+          "actual": {
+            "value": null
+          },
+          "name": "null-base-preserved",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1
+            }
+          },
+          "name": "empty-overlay",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "b": 1,
+              "c": 2
+            },
+            "list": [
+              3
+            ]
+          },
+          "name": "input-not-mutated",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": 2,
+            "b": 1,
+            "c": 2
+          },
+          "name": "overlay-order",
+          "pass": true
+        },
+        {
+          "actual": {
+            "a": {
+              "list": [
+                2,
+                3
+              ]
+            }
+          },
+          "name": "nested-list-copy",
+          "pass": true
+        }
+      ],
+      "passed": 17,
+      "success": true,
+      "total": 17
+    },
+    "inputTotal": 64430,
+    "inputUncached": 26542,
+    "inputCached": 37888,
+    "cacheWrite": 0,
+    "outputTokens": 1976,
+    "requests": 22,
+    "prunedResults": 4,
+    "removedToolCharacters": 26330,
+    "judgeCalls": 5,
+    "judgeLatencyMs": 2818.3070809991477,
+    "wallMs": 109602.52582600001,
+    "events": [
+      {
+        "toolCallId": "call_8dy4w0xt0fJIUahDurMrR66e|fc_0aa35de6dde5146f016ab80289ed4087d2bf9e63b4d1f5c95b",
+        "toolName": "read",
+        "originalCharacters": 13021,
+        "retainedCharacters": 228,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1901,
+        "durableProbability": 0.5295,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+      },
+      {
+        "toolCallId": "call_YakB9QEy701s7J0dKEbPWfjv|fc_0aa35de6dde5146f016ab8029ecc0c87d2a1e3b13f4be19a44",
+        "toolName": "read",
+        "originalCharacters": 13021,
+        "retainedCharacters": 228,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.2119,
+        "durableProbability": 0.53,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+      },
+      {
+        "toolCallId": "call_Ex1c9YkgWAGrcKL0Hhs6Z3ZJ|fc_0aa35de6dde5146f016ab802b03b5c87d2a787ab8d00a615a1",
+        "toolName": "read",
+        "originalCharacters": 600,
+        "retainedCharacters": 228,
+        "action": "KEEP_RESULT",
+        "discardProbability": 0.1766,
+        "durableProbability": 0.5363,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/09db9393ee64cf289fa4e534ac518b7819608bac9b276194f8f85eea5a74f778.txt"
+      },
+      {
+        "toolCallId": "call_BTsgUqmfOszofpEpqDPkdx0M|fc_0aa35de6dde5146f016ab802b4b25c87d2a3b5b4f981dcb01f",
+        "toolName": "read",
+        "originalCharacters": 600,
+        "retainedCharacters": 228,
+        "action": "KEEP_RESULT",
+        "discardProbability": 0.1811,
+        "durableProbability": 0.535,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/09db9393ee64cf289fa4e534ac518b7819608bac9b276194f8f85eea5a74f778.txt"
+      }
+    ]
+  },
+  {
+    "id": "header-redaction-r1-laya",
+    "task": "header-redaction",
+    "repetition": 0,
+    "arm": "laya",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "Bearer abc"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "secret"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "Basic x"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "k"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "abc"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "abc"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "a"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "value2"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 15
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "[REDACTED]"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "[REDACTED]"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 15,
+      "success": true,
+      "total": 15
+    },
+    "inputTotal": 33410,
+    "inputUncached": 17538,
+    "inputCached": 15872,
+    "cacheWrite": 0,
+    "outputTokens": 1135,
+    "requests": 18,
+    "prunedResults": 2,
+    "removedToolCharacters": 764,
+    "judgeCalls": 2,
+    "judgeLatencyMs": 689.9828410005284,
+    "wallMs": 54204.69224599996,
+    "events": [
+      {
+        "toolCallId": "call_okG9LHtNUOYX6zglj9RIok3F|fc_01d87464e3a2d850016ab802dd73dc87d2857bf7ffb0097295",
+        "toolName": "read",
+        "originalCharacters": 615,
+        "retainedCharacters": 233,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1168,
+        "durableProbability": 0.3747,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/header-redaction-r1-laya/workspace/.artifacts/6989babaf2b15b54e9c73c8c3a4d8254ed65e8fd87944a8e48055eb4c0f8fa6d.txt"
+      },
+      {
+        "toolCallId": "call_rzYRhIQ30WfOTt9BMklS6r0D|fc_01d87464e3a2d850016ab802e959d887d2bf3a87667cde896a",
+        "toolName": "bash",
+        "originalCharacters": 615,
+        "retainedCharacters": 233,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.0959,
+        "durableProbability": 0.3424,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/header-redaction-r1-laya/workspace/.artifacts/6989babaf2b15b54e9c73c8c3a4d8254ed65e8fd87944a8e48055eb4c0f8fa6d.txt"
+      }
+    ]
+  },
+  {
+    "id": "header-redaction-r1-von",
+    "task": "header-redaction",
+    "repetition": 0,
+    "arm": "von",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "Bearer abc"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "secret"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "Basic x"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "k"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "abc"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "abc"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "a"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "value2"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 15
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "[REDACTED]"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "[REDACTED]"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 15,
+      "success": true,
+      "total": 15
+    },
+    "inputTotal": 30412,
+    "inputUncached": 18636,
+    "inputCached": 11776,
+    "cacheWrite": 0,
+    "outputTokens": 1174,
+    "requests": 17,
+    "prunedResults": 1,
+    "removedToolCharacters": 383,
+    "judgeCalls": 1,
+    "judgeLatencyMs": 346.9387690001895,
+    "wallMs": 66715.56910899997,
+    "events": [
+      {
+        "toolCallId": "call_EqqpsHeBm2B3k2Q2pbKSuMSh|fc_043cf03d587db60e016ab8031c107887d29cfc428ea252534d",
+        "toolName": "read",
+        "originalCharacters": 615,
+        "retainedCharacters": 232,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.157,
+        "durableProbability": 0.4379,
+        "archive": "/home/laurent/pi_jev/results/general-pilot-two/header-redaction-r1-von/workspace/.artifacts/6989babaf2b15b54e9c73c8c3a4d8254ed65e8fd87944a8e48055eb4c0f8fa6d.txt"
+      }
+    ]
+  },
+  {
+    "id": "header-redaction-r1-baseline",
+    "task": "header-redaction",
+    "repetition": 0,
+    "arm": "baseline",
+    "initialEvaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "Bearer abc"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "secret"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "sid=123"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "Basic x"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "k"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "abc"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "abc"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "a"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "value2"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": false
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "x"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": false
+        }
+      ],
+      "passed": 3,
+      "success": false,
+      "total": 15
+    },
+    "evaluation": {
+      "cases": [
+        {
+          "actual": [],
+          "name": "empty",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Accept",
+              "application/json"
+            ],
+            [
+              "X-Trace",
+              "abc"
+            ]
+          ],
+          "name": "ordinary-kept",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "aUtHoRiZaTiOn",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "authorization-case",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Set-Cookie",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "set-cookie-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Proxy-Authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "proxy-authorization",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-API-Key",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "api-key-default",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Trace",
+              "[REDACTED]"
+            ],
+            [
+              "X-Id",
+              "42"
+            ]
+          ],
+          "name": "extra-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Token",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "extra-trimmed-casefolded",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-A",
+              "1"
+            ],
+            [
+              "Authorization",
+              "[REDACTED]"
+            ],
+            [
+              "X-A",
+              "2"
+            ],
+            [
+              "authorization",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "duplicates-preserved",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "y"
+            ]
+          ],
+          "name": "empty-sensitive",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "",
+              "value"
+            ],
+            [
+              " Authorization ",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "blank-header-name-not-special",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "X-Data",
+              "  spaced  "
+            ],
+            [
+              "X-Empty",
+              ""
+            ]
+          ],
+          "name": "values-untouched",
+          "pass": true
+        },
+        {
+          "actual": [
+            [
+              "Cookie",
+              "[REDACTED]"
+            ],
+            [
+              "X",
+              "[REDACTED]"
+            ]
+          ],
+          "name": "input-not-mutated",
+          "pass": true
+        }
+      ],
+      "passed": 15,
+      "success": true,
+      "total": 15
+    },
+    "inputTotal": 26316,
+    "inputUncached": 14028,
+    "inputCached": 12288,
+    "cacheWrite": 0,
+    "outputTokens": 934,
+    "requests": 15,
+    "prunedResults": 0,
+    "removedToolCharacters": 0,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "wallMs": 75495.559411,
+    "events": []
+  }
+]

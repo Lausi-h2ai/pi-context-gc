@@ -1,0 +1,336 @@
+{
+  "id": "config-merge-r1-baseline",
+  "task": "config-merge",
+  "stratum": "long",
+  "repetition": 0,
+  "arm": "baseline",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db",
+          "port": 5432
+        },
+        "name": "top-level-add",
+        "pass": true
+      },
+      {
+        "actual": {
+          "service": {
+            "port": 443,
+            "tls": true
+          }
+        },
+        "name": "nested-merge",
+        "pass": false
+      },
+      {
+        "actual": {
+          "retries": 3
+        },
+        "name": "later-overlay-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "zones": [
+            "ap"
+          ]
+        },
+        "name": "list-replaces",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db",
+          "port": null
+        },
+        "name": "null-deletes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "tls": {
+            "key": null
+          }
+        },
+        "name": "nested-null-deletes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "limits": {
+            "burst": 99,
+            "rate": 2
+          }
+        },
+        "name": "new-nested-copy",
+        "pass": false,
+        "result_alias": "return value changed after input mutation"
+      },
+      {
+        "actual": {
+          "cache": {
+            "ttl": 60
+          }
+        },
+        "name": "scalar-to-map",
+        "pass": true
+      },
+      {
+        "actual": {
+          "cache": false
+        },
+        "name": "map-to-scalar",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": {
+              "c": 9
+            }
+          }
+        },
+        "name": "deep-three-levels",
+        "pass": false,
+        "result_alias": "return value changed after input mutation"
+      },
+      {
+        "actual": {
+          "a": null,
+          "x": 2
+        },
+        "name": "delete-whole-nested",
+        "pass": false
+      },
+      {
+        "actual": {
+          "value": null
+        },
+        "name": "null-base-preserved",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": 1
+          }
+        },
+        "name": "empty-overlay",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "c": 2
+          },
+          "list": [
+            3
+          ]
+        },
+        "name": "input-not-mutated",
+        "pass": false
+      },
+      {
+        "actual": {
+          "a": 2,
+          "b": 1,
+          "c": 2
+        },
+        "name": "overlay-order",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "list": [
+              2,
+              3
+            ]
+          }
+        },
+        "name": "nested-list-copy",
+        "pass": true
+      }
+    ],
+    "passed": 10,
+    "success": false,
+    "total": 17
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db",
+          "port": 5432
+        },
+        "name": "top-level-add",
+        "pass": true
+      },
+      {
+        "actual": {
+          "service": {
+            "host": "a",
+            "port": 443,
+            "tls": true
+          }
+        },
+        "name": "nested-merge",
+        "pass": true
+      },
+      {
+        "actual": {
+          "retries": 3
+        },
+        "name": "later-overlay-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "zones": [
+            "ap"
+          ]
+        },
+        "name": "list-replaces",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db"
+        },
+        "name": "null-deletes",
+        "pass": true
+      },
+      {
+        "actual": {
+          "tls": {
+            "cert": "a"
+          }
+        },
+        "name": "nested-null-deletes",
+        "pass": true
+      },
+      {
+        "actual": {
+          "limits": {
+            "burst": 4,
+            "rate": 2
+          }
+        },
+        "name": "new-nested-copy",
+        "pass": true
+      },
+      {
+        "actual": {
+          "cache": {
+            "ttl": 60
+          }
+        },
+        "name": "scalar-to-map",
+        "pass": true
+      },
+      {
+        "actual": {
+          "cache": false
+        },
+        "name": "map-to-scalar",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": {
+              "c": 9,
+              "d": 2
+            }
+          }
+        },
+        "name": "deep-three-levels",
+        "pass": true
+      },
+      {
+        "actual": {
+          "x": 2
+        },
+        "name": "delete-whole-nested",
+        "pass": true
+      },
+      {
+        "actual": {
+          "value": null
+        },
+        "name": "null-base-preserved",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": 1
+          }
+        },
+        "name": "empty-overlay",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": 1,
+            "c": 2
+          },
+          "list": [
+            3
+          ]
+        },
+        "name": "input-not-mutated",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": 2,
+          "b": 1,
+          "c": 2
+        },
+        "name": "overlay-order",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "list": [
+              2,
+              3
+            ]
+          }
+        },
+        "name": "nested-list-copy",
+        "pass": true
+      }
+    ],
+    "passed": 17,
+    "success": true,
+    "total": 17
+  },
+  "inputTotal": 54472,
+  "inputUncached": 18120,
+  "inputCached": 36352,
+  "cacheWrite": 0,
+  "outputTokens": 1191,
+  "requests": 15,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 44144.847548000005,
+  "events": []
+}

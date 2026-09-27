@@ -1,0 +1,257 @@
+{
+  "id": "paths-r1-baseline",
+  "task": "paths",
+  "repetition": 0,
+  "arm": "baseline",
+  "config": {
+    "name": "baseline",
+    "filter": false,
+    "rewind": false,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 3,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": false,
+        "actual": [
+          "a//./b/"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": false,
+        "actual": [
+          "a/b/../c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": false,
+        "actual": [
+          "a/b",
+          "a//b",
+          "c",
+          "a/./b"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": false,
+        "actual": [
+          "../x"
+        ]
+      },
+      {
+        "name": "reject-1",
+        "pass": false,
+        "actual": [
+          "a/../../x"
+        ]
+      },
+      {
+        "name": "reject-2",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "reject-3",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "reject-4",
+        "pass": false,
+        "actual": [
+          "server/x"
+        ]
+      },
+      {
+        "name": "reject-5",
+        "pass": false,
+        "actual": [
+          "C:relative"
+        ]
+      },
+      {
+        "name": "reject-6",
+        "pass": false,
+        "actual": [
+          "d:/absolute"
+        ]
+      },
+      {
+        "name": "reject-7",
+        "pass": false,
+        "actual": [
+          "x\u0000y"
+        ]
+      },
+      {
+        "name": "reject-8",
+        "pass": false,
+        "actual": [
+          "."
+        ]
+      },
+      {
+        "name": "reject-9",
+        "pass": false,
+        "actual": [
+          "a/.."
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": true,
+        "actual": [
+          "a/b"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": true,
+        "actual": [
+          "a/c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": true,
+        "actual": [
+          "a/b",
+          "c"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member path escapes root: '../x'"
+      },
+      {
+        "name": "reject-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member path escapes root: 'a/../../x'"
+      },
+      {
+        "name": "reject-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member path: '/etc/x'"
+      },
+      {
+        "name": "reject-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member path: '/etc/x'"
+      },
+      {
+        "name": "reject-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member path: '//server/x'"
+      },
+      {
+        "name": "reject-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member path: 'C:relative'"
+      },
+      {
+        "name": "reject-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member path: 'd:/absolute'"
+      },
+      {
+        "name": "reject-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid archive member path: 'x\\x00y'"
+      },
+      {
+        "name": "reject-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member path normalizes to empty: '.'"
+      },
+      {
+        "name": "reject-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member path normalizes to empty: 'a/..'"
+      }
+    ]
+  },
+  "inputTotal": 25661,
+  "inputUncached": 7741,
+  "inputCached": 17920,
+  "outputTokens": 561,
+  "allTokens": 26222,
+  "requests": 10,
+  "wallMs": 28004.053608000046,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 21,
+  "finalSourceHash": "436cb475199342380e1c74716fc470f75c9cb6d1389647c6f1c9b49d732f1918",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-factorial/paths-r1-baseline/session/2026-09-26T14-42-35-168Z_01a0de2b-0020-75a0-a36a-ab03b07590c6.jsonl",
+  "filterEvents": [],
+  "postToolEvents": []
+}

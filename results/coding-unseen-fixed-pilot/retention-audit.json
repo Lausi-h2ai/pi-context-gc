@@ -1,0 +1,31 @@
+{
+  "sourceHashesMatch": {
+    "src/unseen-benchmark.ts": true,
+    "src/heuristic-filter.ts": true,
+    "benchmarks/unseen-tasks.ts": true,
+    "src/gc.ts": true,
+    "src/tool-filter.ts": true,
+    "src/post-tool-gc.ts": true,
+    "src/aggressive-filter.ts": true,
+    "src/aggressive-gc.ts": true,
+    "src/runtime.ts": true,
+    "python/judge.py": true,
+    "benchmarks/tasks.ts": true,
+    "benchmarks/long-tasks.ts": true,
+    "benchmarks/evaluate.py": true
+  },
+  "changedOutputs": [
+    {
+      "trial": "intervals-r1-heuristic",
+      "archive_hash_matches": true,
+      "retained_found": true,
+      "actionable_lines_omitted": []
+    },
+    {
+      "trial": "records-r1-heuristic",
+      "archive_hash_matches": true,
+      "retained_found": true,
+      "actionable_lines_omitted": []
+    }
+  ]
+}

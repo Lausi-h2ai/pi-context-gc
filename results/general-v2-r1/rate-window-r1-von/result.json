@@ -1,0 +1,325 @@
+{
+  "id": "rate-window-r1-von",
+  "task": "rate-window",
+  "stratum": "long",
+  "repetition": 0,
+  "arm": "von",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          true
+        ],
+        "name": "under-limit",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false
+        ],
+        "name": "limit",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "name": "rejected-does-not-consume",
+        "pass": false
+      },
+      {
+        "actual": [
+          true,
+          false
+        ],
+        "name": "boundary-is-in-window",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          false
+        ],
+        "name": "just-outside-window",
+        "pass": false
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false
+        ],
+        "name": "same-timestamp",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "name": "multiple-expiry",
+        "pass": false
+      },
+      {
+        "actual": [
+          true,
+          true,
+          true
+        ],
+        "name": "large-limit",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          false
+        ],
+        "name": "zero-time",
+        "pass": true
+      },
+      {
+        "name": "negative-timestamp",
+        "pass": false
+      },
+      {
+        "name": "decreasing",
+        "pass": false
+      },
+      {
+        "name": "zero-limit",
+        "pass": false
+      },
+      {
+        "name": "zero-window",
+        "pass": false
+      },
+      {
+        "name": "bool-limit",
+        "pass": false
+      },
+      {
+        "name": "float-timestamp",
+        "pass": false
+      },
+      {
+        "name": "string-timestamp",
+        "pass": false
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false
+        ],
+        "name": "input-not-mutated",
+        "pass": false
+      }
+    ],
+    "passed": 7,
+    "success": false,
+    "total": 18
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          true
+        ],
+        "name": "under-limit",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false
+        ],
+        "name": "limit",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          false,
+          false,
+          true
+        ],
+        "name": "rejected-does-not-consume",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          false
+        ],
+        "name": "boundary-is-in-window",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true
+        ],
+        "name": "just-outside-window",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false
+        ],
+        "name": "same-timestamp",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        "name": "multiple-expiry",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          true
+        ],
+        "name": "large-limit",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          false
+        ],
+        "name": "zero-time",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "timestamps must be nonnegative integers",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "negative-timestamp",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "timestamps must be in nondecreasing order",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "decreasing",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "limit must be a positive integer",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "zero-limit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "window_ms must be a positive integer",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "zero-window",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "limit must be a positive integer",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "bool-limit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "timestamps must be nonnegative integers",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "float-timestamp",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "timestamps must be nonnegative integers",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "string-timestamp",
+        "pass": true
+      },
+      {
+        "actual": [
+          true,
+          true,
+          true
+        ],
+        "name": "input-not-mutated",
+        "pass": true
+      }
+    ],
+    "passed": 18,
+    "success": true,
+    "total": 18
+  },
+  "inputTotal": 27286,
+  "inputUncached": 18070,
+  "inputCached": 9216,
+  "cacheWrite": 0,
+  "outputTokens": 1013,
+  "requests": 15,
+  "prunedResults": 1,
+  "removedToolCharacters": 12196,
+  "judgeCalls": 1,
+  "judgeLatencyMs": 1124.4096740010718,
+  "wallMs": 106426.74621499999,
+  "events": [
+    {
+      "toolCallId": "call_JwcqPXeXJxXXEJsAmBG4sWjy|fc_029ec389ad127bfd016ab80e74940487d282cb66e29b2d85c8",
+      "toolName": "read",
+      "originalCharacters": 12419,
+      "retainedCharacters": 223,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.2136,
+      "durableProbability": 0.4854,
+      "archive": "/home/laurent/pi_jev/results/general-v2-r1/rate-window-r1-von/workspace/.artifacts/4b10b9ee5f8834cdc5d67727887667786d5948889b5d1c268d1e48d3e5cfaafb.txt"
+    }
+  ]
+}

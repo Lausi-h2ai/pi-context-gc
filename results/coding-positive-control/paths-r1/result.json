@@ -1,0 +1,130 @@
+{
+  "id": "paths-r1",
+  "decisionSource": "fixture-aware deterministic control; NOT Laya",
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": true,
+        "actual": [
+          "a/b"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": true,
+        "actual": [
+          "a/c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": true,
+        "actual": [
+          "a/b",
+          "c"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member escapes root"
+      },
+      {
+        "name": "reject-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member escapes root"
+      },
+      {
+        "name": "reject-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member must be relative"
+      },
+      {
+        "name": "reject-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member must be relative"
+      },
+      {
+        "name": "reject-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member must be relative"
+      },
+      {
+        "name": "reject-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member must not have a drive prefix"
+      },
+      {
+        "name": "reject-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member must not have a drive prefix"
+      },
+      {
+        "name": "reject-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member contains a NUL character"
+      },
+      {
+        "name": "reject-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member normalizes to an empty path"
+      },
+      {
+        "name": "reject-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "archive member normalizes to an empty path"
+      }
+    ]
+  },
+  "inputTotal": 12906,
+  "outputTokens": 639,
+  "inputCached": 1536,
+  "inputUncached": 11370,
+  "baselineInput": 25661,
+  "inputSavingsPercent": 49.70577919800475,
+  "filteredResults": 1,
+  "rewinds": 1,
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_JJqaRVS2QHT7TqAGsaVci81B|fc_0e742f6f2f20d2aa016ab7d9fa56ec87d2abc3dc87ec0e13dd",
+      "originalCharacters": 12336,
+      "retainedCharacters": 3140,
+      "action": "KEEP_RESULT",
+      "changed": true
+    }
+  ]
+}

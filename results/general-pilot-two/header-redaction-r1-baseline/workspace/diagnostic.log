@@ -1,0 +1,5 @@
+2026-09-26T08:14:02Z INFO worker started component=HTTP_header
+2026-09-26T08:14:03Z INFO smoke suite completed checks=12
+2026-09-26T08:14:03Z WARN one regression remains after the latest change
+2026-09-26T08:14:03Z ERROR authorization and cookie values were emitted verbatim when header casing differed
+2026-09-26T08:14:04Z INFO run stopped status=failed

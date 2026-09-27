@@ -1,0 +1,376 @@
+{
+  "id": "config-merge-r1-von",
+  "task": "config-merge",
+  "repetition": 0,
+  "arm": "von",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db",
+          "port": 5432
+        },
+        "name": "top-level-add",
+        "pass": true
+      },
+      {
+        "actual": {
+          "service": {
+            "port": 443,
+            "tls": true
+          }
+        },
+        "name": "nested-merge",
+        "pass": false
+      },
+      {
+        "actual": {
+          "retries": 3
+        },
+        "name": "later-overlay-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "zones": [
+            "ap"
+          ]
+        },
+        "name": "list-replaces",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db",
+          "port": null
+        },
+        "name": "null-deletes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "tls": {
+            "key": null
+          }
+        },
+        "name": "nested-null-deletes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "limits": {
+            "burst": 99,
+            "rate": 2
+          }
+        },
+        "name": "new-nested-copy",
+        "pass": false,
+        "result_alias": "return value changed when an input was mutated after return"
+      },
+      {
+        "actual": {
+          "cache": {
+            "ttl": 60
+          }
+        },
+        "name": "scalar-to-map",
+        "pass": true
+      },
+      {
+        "actual": {
+          "cache": false
+        },
+        "name": "map-to-scalar",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": {
+              "c": 9
+            }
+          }
+        },
+        "name": "deep-three-levels",
+        "pass": false,
+        "result_alias": "return value changed when an input was mutated after return"
+      },
+      {
+        "actual": {
+          "a": null,
+          "x": 2
+        },
+        "name": "delete-whole-nested",
+        "pass": false
+      },
+      {
+        "actual": {
+          "value": null
+        },
+        "name": "null-base-preserved",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": 1
+          }
+        },
+        "name": "empty-overlay",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "c": 2
+          },
+          "list": [
+            3
+          ]
+        },
+        "name": "input-not-mutated",
+        "pass": false
+      },
+      {
+        "actual": {
+          "a": 2,
+          "b": 1,
+          "c": 2
+        },
+        "name": "overlay-order",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "list": [
+              2,
+              3
+            ]
+          }
+        },
+        "name": "nested-list-copy",
+        "pass": true
+      }
+    ],
+    "passed": 10,
+    "success": false,
+    "total": 17
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db",
+          "port": 5432
+        },
+        "name": "top-level-add",
+        "pass": true
+      },
+      {
+        "actual": {
+          "service": {
+            "host": "a",
+            "port": 443,
+            "tls": true
+          }
+        },
+        "name": "nested-merge",
+        "pass": true
+      },
+      {
+        "actual": {
+          "retries": 3
+        },
+        "name": "later-overlay-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "zones": [
+            "ap"
+          ]
+        },
+        "name": "list-replaces",
+        "pass": true
+      },
+      {
+        "actual": {
+          "host": "db"
+        },
+        "name": "null-deletes",
+        "pass": true
+      },
+      {
+        "actual": {
+          "tls": {
+            "cert": "a"
+          }
+        },
+        "name": "nested-null-deletes",
+        "pass": true
+      },
+      {
+        "actual": {
+          "limits": {
+            "burst": 4,
+            "rate": 2
+          }
+        },
+        "name": "new-nested-copy",
+        "pass": true
+      },
+      {
+        "actual": {
+          "cache": {
+            "ttl": 60
+          }
+        },
+        "name": "scalar-to-map",
+        "pass": true
+      },
+      {
+        "actual": {
+          "cache": false
+        },
+        "name": "map-to-scalar",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": {
+              "c": 9,
+              "d": 2
+            }
+          }
+        },
+        "name": "deep-three-levels",
+        "pass": true
+      },
+      {
+        "actual": {
+          "x": 2
+        },
+        "name": "delete-whole-nested",
+        "pass": true
+      },
+      {
+        "actual": {
+          "value": null
+        },
+        "name": "null-base-preserved",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": 1
+          }
+        },
+        "name": "empty-overlay",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "b": 1,
+            "c": 2
+          },
+          "list": [
+            3
+          ]
+        },
+        "name": "input-not-mutated",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": 2,
+          "b": 1,
+          "c": 2
+        },
+        "name": "overlay-order",
+        "pass": true
+      },
+      {
+        "actual": {
+          "a": {
+            "list": [
+              2,
+              3
+            ]
+          }
+        },
+        "name": "nested-list-copy",
+        "pass": true
+      }
+    ],
+    "passed": 17,
+    "success": true,
+    "total": 17
+  },
+  "inputTotal": 64430,
+  "inputUncached": 26542,
+  "inputCached": 37888,
+  "cacheWrite": 0,
+  "outputTokens": 1976,
+  "requests": 22,
+  "prunedResults": 4,
+  "removedToolCharacters": 26330,
+  "judgeCalls": 5,
+  "judgeLatencyMs": 2818.3070809991477,
+  "wallMs": 109602.52582600001,
+  "events": [
+    {
+      "toolCallId": "call_8dy4w0xt0fJIUahDurMrR66e|fc_0aa35de6dde5146f016ab80289ed4087d2bf9e63b4d1f5c95b",
+      "toolName": "read",
+      "originalCharacters": 13021,
+      "retainedCharacters": 228,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.1901,
+      "durableProbability": 0.5295,
+      "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+    },
+    {
+      "toolCallId": "call_YakB9QEy701s7J0dKEbPWfjv|fc_0aa35de6dde5146f016ab8029ecc0c87d2a1e3b13f4be19a44",
+      "toolName": "read",
+      "originalCharacters": 13021,
+      "retainedCharacters": 228,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.2119,
+      "durableProbability": 0.53,
+      "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/0a7cf5ad36b329a1f012a58e0487e5d4390aa402b2196753b315a1536da1b915.txt"
+    },
+    {
+      "toolCallId": "call_Ex1c9YkgWAGrcKL0Hhs6Z3ZJ|fc_0aa35de6dde5146f016ab802b03b5c87d2a787ab8d00a615a1",
+      "toolName": "read",
+      "originalCharacters": 600,
+      "retainedCharacters": 228,
+      "action": "KEEP_RESULT",
+      "discardProbability": 0.1766,
+      "durableProbability": 0.5363,
+      "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/09db9393ee64cf289fa4e534ac518b7819608bac9b276194f8f85eea5a74f778.txt"
+    },
+    {
+      "toolCallId": "call_BTsgUqmfOszofpEpqDPkdx0M|fc_0aa35de6dde5146f016ab802b4b25c87d2a3b5b4f981dcb01f",
+      "toolName": "read",
+      "originalCharacters": 600,
+      "retainedCharacters": 228,
+      "action": "KEEP_RESULT",
+      "discardProbability": 0.1811,
+      "durableProbability": 0.535,
+      "archive": "/home/laurent/pi_jev/results/general-pilot-two/config-merge-r1-von/workspace/.artifacts/09db9393ee64cf289fa4e534ac518b7819608bac9b276194f8f85eea5a74f778.txt"
+    }
+  ]
+}

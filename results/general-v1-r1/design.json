@@ -1,0 +1,85 @@
+{
+  "created": "2026-09-26T17:46:06.594Z",
+  "design": {
+    "version": 1,
+    "tasks": [
+      {
+        "id": "config-merge",
+        "stratum": "long",
+        "hash": "24e13efe999957e2ebde2c24e92dce17384dd57aa558c39b4c45f5c828a776a5"
+      },
+      {
+        "id": "header-redaction",
+        "stratum": "short",
+        "hash": "5cb683329bdf01f8ada2022ba07a16946eba1787170f2baf8ac49ba16d5caa58"
+      },
+      {
+        "id": "rate-window",
+        "stratum": "long",
+        "hash": "275bc300edf8b967570e02a064f6ca01af88e300e6f36ab171fa582dd982d26f"
+      },
+      {
+        "id": "pagination",
+        "stratum": "long",
+        "hash": "a7c5bcce7bf2654f41af33fa9b16fe8fa528a6d65f438706f3f08151ec03895a"
+      },
+      {
+        "id": "duration",
+        "stratum": "short",
+        "hash": "a8f7773d7a1912ff5721ebfa153ee855e5964898f3ea0590023b934590f610b2"
+      },
+      {
+        "id": "dotenv",
+        "stratum": "short",
+        "hash": "32a9588ba2ddddeb6a1c1decb4c2f36864a398558cf346676001ac2580b2a997"
+      },
+      {
+        "id": "record-sort",
+        "stratum": "long",
+        "hash": "7cdaff4f11b527c2ba755209f236cda622dc941bc99c037d6f7f3d04c4c03a97"
+      },
+      {
+        "id": "canonical-url",
+        "stratum": "short",
+        "hash": "d8b9d33221a5d4aacb311f5f4b06fbc10f4e4933ecb00e075048722bfa46fc76"
+      }
+    ],
+    "repeats": 1,
+    "arms": [
+      "baseline",
+      "laya",
+      "von"
+    ],
+    "model": "gpt-6-luna",
+    "policy": {
+      "retainedFraction": 0.7,
+      "minimumCharacters": 600,
+      "appliesTo": "text tool results from earlier turns",
+      "archive": "full result saved inside trial workspace; agent can reread on demand"
+    },
+    "primaryMetrics": [
+      "paired total input tokens across all Pi model requests",
+      "whole-task hidden-test pass rate"
+    ],
+    "secondaryMetrics": [
+      "uncached input",
+      "cached input",
+      "output tokens",
+      "interventions",
+      "wall time",
+      "judge time"
+    ],
+    "codeHashes": {
+      "src/general-benchmark.ts": "4d227cd1d8f2fe93730776a8433f0e0d95cba57b9e57cd8ac39138fe4e18055a",
+      "src/general-context-policy.ts": "249893135894e42a8a9fdaa9e637c1063162c792f2ea6f71826d02651199a1a0",
+      "src/runtime.ts": "01ff45f9fa91e0fdb3ed37d2da069bcfe81c1402799b72511f00a1fdf22657d4",
+      "src/judge.ts": "d31bff208834bf404b5997b64f5f551f1f9d24cc7e549fd0e93c8ec6d993de8d",
+      "src/von-judge.ts": "35eac6f07fd9257e3f3053a039892b63496fa525d8567700b49d1d84296e7e21",
+      "python/judge.py": "12ca93bd4e105ec55c3b3b10537ecf67c511511a0d3336c5c58e579e892f36f8",
+      "python/von-judge.py": "23695e6764203ddf0d5b06372c75578b20bfee77d20230bb685605b04b5ba415",
+      "benchmarks/general-tasks.ts": "a671702d0371b3b9b0929e99eee4278f5137850e53ab1c1bce23a8ea6015dd74",
+      "benchmarks/general-evaluate.py": "7a0ed406a0c88963c5b8d1a414ba88d56838ccd926a8031db6de93d996d8ba22",
+      "requirements.lock.txt": "d5b9d51ecda0845d207a19d4991967fcd53e572eab49361b9272693e4cfe8c4f"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "label": "bootstrap",
+    "text": "Implement retry_delays(statuses, method=\"GET\", idempotency_key=None, retry_after=None) in solver.py. Return integer delays in milliseconds before retries, processing statuses in order. Do not perform requests or sleep. Further requirements will follow. Do not inspect files or implement yet. Acknowledge in one sentence.",
+    "latencyMs": 1803.000347000081,
+    "answer": "Understood—I’ll wait for the further requirements before inspecting files or implementing anything.",
+    "messages": 3
+  }
+]

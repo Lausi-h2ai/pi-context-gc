@@ -1,0 +1,7553 @@
+[
+  {
+    "id": "intervals-r1-baseline",
+    "task": "intervals",
+    "repetition": 0,
+    "arm": "baseline",
+    "config": {
+      "name": "baseline",
+      "filter": false,
+      "rewind": false,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 14,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": false,
+          "actual": [
+            [
+              -3,
+              0
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": false,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              true,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              1.5,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-5",
+          "pass": false,
+          "actual": [
+            [
+              "1",
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-6",
+          "pass": false,
+          "actual": [
+            null
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": true,
+          "actual": [
+            [
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": true,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window start must not exceed its end"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window endpoints must be integers"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window endpoints must be integers"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each window must be a two-item list"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each window must be a two-item list"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window endpoints must be integers"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each window must be a two-item list"
+        }
+      ]
+    },
+    "inputTotal": 29261,
+    "inputUncached": 13901,
+    "inputCached": 15360,
+    "outputTokens": 614,
+    "allTokens": 29875,
+    "requests": 12,
+    "wallMs": 33046.588357,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "ef014c20e400743e64dacfd2b79f785073e7306fa363464247642cf77361a336",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/intervals-r1-baseline/session/2026-09-26T16-35-55-946Z_01a0de92-c5a9-7419-afc1-5ca57c1d5bdf.jsonl",
+    "filterEvents": [],
+    "postToolEvents": []
+  },
+  {
+    "id": "intervals-r1-heuristic",
+    "task": "intervals",
+    "repetition": 0,
+    "arm": "heuristic",
+    "config": {
+      "name": "heuristic",
+      "filter": false,
+      "rewind": false,
+      "heuristic": true,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 14,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": false,
+          "actual": [
+            [
+              -3,
+              0
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": false,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              true,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              1.5,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-5",
+          "pass": false,
+          "actual": [
+            [
+              "1",
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-6",
+          "pass": false,
+          "actual": [
+            null
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": true,
+          "actual": [
+            [
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": true,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval start must not exceed end"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        }
+      ]
+    },
+    "inputTotal": 11978,
+    "inputUncached": 11978,
+    "inputCached": 0,
+    "outputTokens": 606,
+    "allTokens": 12584,
+    "requests": 12,
+    "wallMs": 30717.795497000006,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 1,
+    "removedToolCharacters": 10277,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "7767ac1a2454069dddc7d1ba72e8102abae3c805ec72e7b069c05c539bcb2875",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/intervals-r1-heuristic/session/2026-09-26T16-36-28-521Z_01a0de93-44e9-7419-afc1-5ca6e2b1ca4e.jsonl",
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_HlXuPldLPj5tur2FzXxV57zC|fc_005054f19185635f016ab7f49310f487d2a4ea3ac5715a157f",
+        "originalCharacters": 10577,
+        "retainedCharacters": 300,
+        "changed": true,
+        "archive": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/intervals-r1-heuristic/workspace/.artifacts/ca91357428447f838f225990ebcf8fdbbedd0f687791ffda3c2e9413ba4ed796.txt",
+        "decisions": []
+      }
+    ],
+    "postToolEvents": []
+  },
+  {
+    "id": "intervals-r1-filter",
+    "task": "intervals",
+    "repetition": 0,
+    "arm": "filter",
+    "config": {
+      "name": "filter",
+      "filter": true,
+      "rewind": false,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 14,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": false,
+          "actual": [
+            [
+              -3,
+              0
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": false,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              true,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              1.5,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-5",
+          "pass": false,
+          "actual": [
+            [
+              "1",
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-6",
+          "pass": false,
+          "actual": [
+            null
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": true,
+          "actual": [
+            [
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": true,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval start must not exceed its end"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        }
+      ]
+    },
+    "inputTotal": 29181,
+    "inputUncached": 11261,
+    "inputCached": 17920,
+    "outputTokens": 604,
+    "allTokens": 29785,
+    "requests": 12,
+    "wallMs": 40892.31048,
+    "judgeCalls": 7,
+    "judgeLatencyMs": 3226.7308970003796,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "a2342e48b0e9d8ed5d06379ceff27e154c2ce40cf980ba42ac5713d680e5e915",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/intervals-r1-filter/session/2026-09-26T16-36-58-742Z_01a0de93-baf6-7419-afc1-5ca862fa58e5.jsonl",
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_Hc9DDTwXZio0OgizhuXe8Jfb|fc_019eb9849bb20600016ab7f4b31fec87d285bff638f2d335e7",
+        "originalCharacters": 10577,
+        "retainedCharacters": 10577,
+        "changed": false,
+        "decisions": [
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1374,
+            "durableProbability": 0.4622
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1395,
+            "durableProbability": 0.4857
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1379,
+            "durableProbability": 0.4622
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1414,
+            "durableProbability": 0.4203
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1399,
+            "durableProbability": 0.4273
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1325,
+            "durableProbability": 0.4469
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1039,
+            "durableProbability": 0.4795
+          }
+        ]
+      }
+    ],
+    "postToolEvents": []
+  },
+  {
+    "id": "intervals-r1-rewind",
+    "task": "intervals",
+    "repetition": 0,
+    "arm": "rewind",
+    "config": {
+      "name": "rewind",
+      "filter": false,
+      "rewind": true,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 14,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": false,
+          "actual": [
+            [
+              -3,
+              0
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": false,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              true,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              1.5,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-5",
+          "pass": false,
+          "actual": [
+            [
+              "1",
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-6",
+          "pass": false,
+          "actual": [
+            null
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": true,
+          "actual": [
+            [
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": true,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window start must not exceed end"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window endpoints must be integers"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window endpoints must be integers"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each window must be a two-item list"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each window must be a two-item list"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "window endpoints must be integers"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each window must be a two-item list"
+        }
+      ]
+    },
+    "inputTotal": 28917,
+    "inputUncached": 10997,
+    "inputCached": 17920,
+    "outputTokens": 637,
+    "allTokens": 29554,
+    "requests": 12,
+    "wallMs": 40068.30370299998,
+    "judgeCalls": 9,
+    "judgeLatencyMs": 2594.35850400223,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 1,
+    "finalMessages": 21,
+    "finalSourceHash": "d8828294a1329053c5acb7fb078f691a3ad2febb58921eacbdf7648fc16f6222",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/intervals-r1-rewind/session/2026-09-26T16-37-39-153Z_01a0de94-58d1-7419-afc1-5cabedf974d3.jsonl",
+    "filterEvents": [],
+    "postToolEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_PRd4KOAsW8WXOc9daGSzxY1G|fc_09daaa5daa47b4a2016ab7f4d5114487d2bd6c91cad8f58e7c",
+        "verdict": {
+          "id": 8,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1662,
+          "durableProbability": 0.306,
+          "windows": 1,
+          "latencyMs": 343.2115140003589,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3796,
+                    "KEEP_RESULT": 0.2733,
+                    "EXTERNALIZE": 0.1809,
+                    "DISCARD": 0.1662
+                  },
+                  "confidence": 0.0408,
+                  "answer_confidence": 0.3796,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.306,
+                    "no": 0.694
+                  },
+                  "confidence": 0.1115,
+                  "answer_confidence": 0.694,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 349,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_8L6B0QvG98iU0X1TY8BiNFJm|fc_09daaa5daa47b4a2016ab7f4d9a74487d2bbc45ba2c9a1702c",
+        "verdict": {
+          "id": 10,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1147,
+          "durableProbability": 0.6128,
+          "windows": 10,
+          "latencyMs": 463.8868670008378,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4391,
+                    "KEEP_RESULT": 0.3079,
+                    "EXTERNALIZE": 0.1226,
+                    "DISCARD": 0.1304
+                  },
+                  "confidence": 0.1004,
+                  "answer_confidence": 0.4391,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5516,
+                    "no": 0.4484
+                  },
+                  "confidence": 0.0077,
+                  "answer_confidence": 0.5516,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4126,
+                    "KEEP_RESULT": 0.3126,
+                    "EXTERNALIZE": 0.1149,
+                    "DISCARD": 0.1599
+                  },
+                  "confidence": 0.0835,
+                  "answer_confidence": 0.4126,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6128,
+                    "no": 0.3872
+                  },
+                  "confidence": 0.037,
+                  "answer_confidence": 0.6128,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.414,
+                    "KEEP_RESULT": 0.2994,
+                    "EXTERNALIZE": 0.1332,
+                    "DISCARD": 0.1534
+                  },
+                  "confidence": 0.0751,
+                  "answer_confidence": 0.414,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5932,
+                    "no": 0.4068
+                  },
+                  "confidence": 0.0252,
+                  "answer_confidence": 0.5932,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4435,
+                    "KEEP_RESULT": 0.2877,
+                    "EXTERNALIZE": 0.1101,
+                    "DISCARD": 0.1587
+                  },
+                  "confidence": 0.0954,
+                  "answer_confidence": 0.4435,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5912,
+                    "no": 0.4088
+                  },
+                  "confidence": 0.0241,
+                  "answer_confidence": 0.5912,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4447,
+                    "KEEP_RESULT": 0.3097,
+                    "EXTERNALIZE": 0.1164,
+                    "DISCARD": 0.1292
+                  },
+                  "confidence": 0.1069,
+                  "answer_confidence": 0.4447,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4887,
+                    "no": 0.5113
+                  },
+                  "confidence": 0.0004,
+                  "answer_confidence": 0.5113,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4125,
+                    "KEEP_RESULT": 0.297,
+                    "EXTERNALIZE": 0.1214,
+                    "DISCARD": 0.169
+                  },
+                  "confidence": 0.075,
+                  "answer_confidence": 0.4125,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4449,
+                    "no": 0.5551
+                  },
+                  "confidence": 0.0088,
+                  "answer_confidence": 0.5551,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3993,
+                    "KEEP_RESULT": 0.2926,
+                    "EXTERNALIZE": 0.1299,
+                    "DISCARD": 0.1782
+                  },
+                  "confidence": 0.0632,
+                  "answer_confidence": 0.3993,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5922,
+                    "no": 0.4078
+                  },
+                  "confidence": 0.0247,
+                  "answer_confidence": 0.5922,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.411,
+                    "KEEP_RESULT": 0.3128,
+                    "EXTERNALIZE": 0.1254,
+                    "DISCARD": 0.1507
+                  },
+                  "confidence": 0.0806,
+                  "answer_confidence": 0.411,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5892,
+                    "no": 0.4108
+                  },
+                  "confidence": 0.0231,
+                  "answer_confidence": 0.5892,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4569,
+                    "KEEP_RESULT": 0.3017,
+                    "EXTERNALIZE": 0.1139,
+                    "DISCARD": 0.1275
+                  },
+                  "confidence": 0.1131,
+                  "answer_confidence": 0.4569,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5852,
+                    "no": 0.4148
+                  },
+                  "confidence": 0.0211,
+                  "answer_confidence": 0.5852,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.5186,
+                    "KEEP_RESULT": 0.2932,
+                    "EXTERNALIZE": 0.0736,
+                    "DISCARD": 0.1147
+                  },
+                  "confidence": 0.1773,
+                  "answer_confidence": 0.5186,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3152,
+                    "no": 0.6848
+                  },
+                  "confidence": 0.1009,
+                  "answer_confidence": 0.6848,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 611,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_LFYTfsJ6FGZNvU6u6FcWOjdl|fc_09daaa5daa47b4a2016ab7f4e7f32087d2978a9ec50b5461d5",
+        "verdict": {
+          "id": 12,
+          "action": "DISCARD",
+          "discardProbability": 0.8117,
+          "durableProbability": 0.2231,
+          "windows": 1,
+          "latencyMs": 77.5386540008185,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "DISCARD",
+                  "probabilities": {
+                    "KEEP_FULL": 0.0502,
+                    "KEEP_RESULT": 0.0561,
+                    "EXTERNALIZE": 0.082,
+                    "DISCARD": 0.8117
+                  },
+                  "confidence": 0.505,
+                  "answer_confidence": 0.8117,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.2231,
+                    "no": 0.7769
+                  },
+                  "confidence": 0.2343,
+                  "answer_confidence": 0.7769,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 249,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_XQ0c5qr0Qadw3U6HOqOZbKAR|fc_09daaa5daa47b4a2016ab7f4eafd6087d28c63e509c8fad47f",
+        "verdict": {
+          "id": 14,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1662,
+          "durableProbability": 0.306,
+          "windows": 1,
+          "latencyMs": 35.36086699932639,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3796,
+                    "KEEP_RESULT": 0.2733,
+                    "EXTERNALIZE": 0.1809,
+                    "DISCARD": 0.1662
+                  },
+                  "confidence": 0.0408,
+                  "answer_confidence": 0.3796,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.306,
+                    "no": 0.694
+                  },
+                  "confidence": 0.1115,
+                  "answer_confidence": 0.694,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 349,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_Q00M6EMOTMNQF7O2Rq3he2wQ|fc_09daaa5daa47b4a2016ab7f4f10f3487d29dae0b22f7cd5adf",
+        "verdict": {
+          "id": 16,
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.1045,
+          "durableProbability": 0.3756,
+          "windows": 1,
+          "latencyMs": 96.29856399988057,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_RESULT",
+                  "probabilities": {
+                    "KEEP_FULL": 0.2952,
+                    "KEEP_RESULT": 0.4591,
+                    "EXTERNALIZE": 0.1413,
+                    "DISCARD": 0.1045
+                  },
+                  "confidence": 0.1127,
+                  "answer_confidence": 0.4591,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3756,
+                    "no": 0.6244
+                  },
+                  "confidence": 0.0451,
+                  "answer_confidence": 0.6244,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 219,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "intervals-r1-both",
+    "task": "intervals",
+    "repetition": 0,
+    "arm": "both",
+    "config": {
+      "name": "both",
+      "filter": true,
+      "rewind": true,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 14,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": false,
+          "actual": [
+            [
+              -3,
+              0
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": false,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              true,
+              2
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              1.5,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-5",
+          "pass": false,
+          "actual": [
+            [
+              "1",
+              3
+            ]
+          ]
+        },
+        {
+          "name": "invalid-6",
+          "pass": false,
+          "actual": [
+            null
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "overlap",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "name": "touch",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "name": "bridge",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              9
+            ]
+          ]
+        },
+        {
+          "name": "empty-window",
+          "pass": true,
+          "actual": [
+            [
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "actual": [
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "nested",
+          "pass": true,
+          "actual": [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval start must not exceed end"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        },
+        {
+          "name": "invalid-5",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "interval endpoints must be integers"
+        },
+        {
+          "name": "invalid-6",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "each interval must be a two-item list"
+        }
+      ]
+    },
+    "inputTotal": 28792,
+    "inputUncached": 10872,
+    "inputCached": 17920,
+    "outputTokens": 613,
+    "allTokens": 29405,
+    "requests": 12,
+    "wallMs": 36354.739558,
+    "judgeCalls": 16,
+    "judgeLatencyMs": 3146.943621997707,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 1,
+    "finalMessages": 21,
+    "finalSourceHash": "5de72df3653cab4ecabca022e34a96865ecda566a006ee9a742195654422ec43",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/intervals-r1-both/session/2026-09-26T16-38-18-256Z_01a0de94-f18f-7419-afc1-5cadf77d1db0.jsonl",
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_g2AG49YPVDktnhfehdrHlyaN|fc_0aa31f9fe7a60fb8016ab7f501ee1087d2bce2b7a0691dd634",
+        "originalCharacters": 10577,
+        "retainedCharacters": 10577,
+        "changed": false,
+        "decisions": [
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1374,
+            "durableProbability": 0.4622
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1395,
+            "durableProbability": 0.4857
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1379,
+            "durableProbability": 0.4622
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1414,
+            "durableProbability": 0.4203
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1399,
+            "durableProbability": 0.4273
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1325,
+            "durableProbability": 0.4469
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1039,
+            "durableProbability": 0.4795
+          }
+        ]
+      }
+    ],
+    "postToolEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_EgH4TMLnKzkkxCfqcqRizUhX|fc_0aa31f9fe7a60fb8016ab7f4fcbee087d2bbdc9f991aa2e1e9",
+        "verdict": {
+          "id": 17,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1662,
+          "durableProbability": 0.306,
+          "windows": 1,
+          "latencyMs": 288.48193300109415,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3796,
+                    "KEEP_RESULT": 0.2733,
+                    "EXTERNALIZE": 0.1809,
+                    "DISCARD": 0.1662
+                  },
+                  "confidence": 0.0408,
+                  "answer_confidence": 0.3796,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.306,
+                    "no": 0.694
+                  },
+                  "confidence": 0.1115,
+                  "answer_confidence": 0.694,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 349,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_g2AG49YPVDktnhfehdrHlyaN|fc_0aa31f9fe7a60fb8016ab7f501ee1087d2bce2b7a0691dd634",
+        "verdict": {
+          "id": 19,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1147,
+          "durableProbability": 0.6128,
+          "windows": 10,
+          "latencyMs": 707.7498560011009,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4391,
+                    "KEEP_RESULT": 0.3079,
+                    "EXTERNALIZE": 0.1226,
+                    "DISCARD": 0.1304
+                  },
+                  "confidence": 0.1004,
+                  "answer_confidence": 0.4391,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5516,
+                    "no": 0.4484
+                  },
+                  "confidence": 0.0077,
+                  "answer_confidence": 0.5516,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4126,
+                    "KEEP_RESULT": 0.3126,
+                    "EXTERNALIZE": 0.1149,
+                    "DISCARD": 0.1599
+                  },
+                  "confidence": 0.0835,
+                  "answer_confidence": 0.4126,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6128,
+                    "no": 0.3872
+                  },
+                  "confidence": 0.037,
+                  "answer_confidence": 0.6128,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.414,
+                    "KEEP_RESULT": 0.2994,
+                    "EXTERNALIZE": 0.1332,
+                    "DISCARD": 0.1534
+                  },
+                  "confidence": 0.0751,
+                  "answer_confidence": 0.414,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5932,
+                    "no": 0.4068
+                  },
+                  "confidence": 0.0252,
+                  "answer_confidence": 0.5932,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4435,
+                    "KEEP_RESULT": 0.2877,
+                    "EXTERNALIZE": 0.1101,
+                    "DISCARD": 0.1587
+                  },
+                  "confidence": 0.0954,
+                  "answer_confidence": 0.4435,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5912,
+                    "no": 0.4088
+                  },
+                  "confidence": 0.0241,
+                  "answer_confidence": 0.5912,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4447,
+                    "KEEP_RESULT": 0.3097,
+                    "EXTERNALIZE": 0.1164,
+                    "DISCARD": 0.1292
+                  },
+                  "confidence": 0.1069,
+                  "answer_confidence": 0.4447,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4887,
+                    "no": 0.5113
+                  },
+                  "confidence": 0.0004,
+                  "answer_confidence": 0.5113,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4125,
+                    "KEEP_RESULT": 0.297,
+                    "EXTERNALIZE": 0.1214,
+                    "DISCARD": 0.169
+                  },
+                  "confidence": 0.075,
+                  "answer_confidence": 0.4125,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4449,
+                    "no": 0.5551
+                  },
+                  "confidence": 0.0088,
+                  "answer_confidence": 0.5551,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3993,
+                    "KEEP_RESULT": 0.2926,
+                    "EXTERNALIZE": 0.1299,
+                    "DISCARD": 0.1782
+                  },
+                  "confidence": 0.0632,
+                  "answer_confidence": 0.3993,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5922,
+                    "no": 0.4078
+                  },
+                  "confidence": 0.0247,
+                  "answer_confidence": 0.5922,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.411,
+                    "KEEP_RESULT": 0.3128,
+                    "EXTERNALIZE": 0.1254,
+                    "DISCARD": 0.1507
+                  },
+                  "confidence": 0.0806,
+                  "answer_confidence": 0.411,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5892,
+                    "no": 0.4108
+                  },
+                  "confidence": 0.0231,
+                  "answer_confidence": 0.5892,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4569,
+                    "KEEP_RESULT": 0.3017,
+                    "EXTERNALIZE": 0.1139,
+                    "DISCARD": 0.1275
+                  },
+                  "confidence": 0.1131,
+                  "answer_confidence": 0.4569,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5852,
+                    "no": 0.4148
+                  },
+                  "confidence": 0.0211,
+                  "answer_confidence": 0.5852,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.5186,
+                    "KEEP_RESULT": 0.2932,
+                    "EXTERNALIZE": 0.0736,
+                    "DISCARD": 0.1147
+                  },
+                  "confidence": 0.1773,
+                  "answer_confidence": 0.5186,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3152,
+                    "no": 0.6848
+                  },
+                  "confidence": 0.1009,
+                  "answer_confidence": 0.6848,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 611,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_Hr7hpNrij7S6mWp0ZiKguJ7E|fc_0aa31f9fe7a60fb8016ab7f508592087d2bdeaa2e17f75da39",
+        "verdict": {
+          "id": 28,
+          "action": "DISCARD",
+          "discardProbability": 0.8117,
+          "durableProbability": 0.2231,
+          "windows": 1,
+          "latencyMs": 35.900011000194354,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "DISCARD",
+                  "probabilities": {
+                    "KEEP_FULL": 0.0502,
+                    "KEEP_RESULT": 0.0561,
+                    "EXTERNALIZE": 0.082,
+                    "DISCARD": 0.8117
+                  },
+                  "confidence": 0.505,
+                  "answer_confidence": 0.8117,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.2231,
+                    "no": 0.7769
+                  },
+                  "confidence": 0.2343,
+                  "answer_confidence": 0.7769,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 249,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_yo1cjiXtP3G90MjpLRkkENGv|fc_0aa31f9fe7a60fb8016ab7f50d690c87d299bc2b80851f6a3b",
+        "verdict": {
+          "id": 30,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1662,
+          "durableProbability": 0.306,
+          "windows": 1,
+          "latencyMs": 95.1465840007586,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3796,
+                    "KEEP_RESULT": 0.2733,
+                    "EXTERNALIZE": 0.1809,
+                    "DISCARD": 0.1662
+                  },
+                  "confidence": 0.0408,
+                  "answer_confidence": 0.3796,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.306,
+                    "no": 0.694
+                  },
+                  "confidence": 0.1115,
+                  "answer_confidence": 0.694,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 349,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_SRgavhOcws2PwcHlO439sgDb|fc_0aa31f9fe7a60fb8016ab7f5120aac87d28f2985bcade2c50b",
+        "verdict": {
+          "id": 32,
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.1045,
+          "durableProbability": 0.3756,
+          "windows": 1,
+          "latencyMs": 171.73151200040593,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_RESULT",
+                  "probabilities": {
+                    "KEEP_FULL": 0.2952,
+                    "KEEP_RESULT": 0.4591,
+                    "EXTERNALIZE": 0.1413,
+                    "DISCARD": 0.1045
+                  },
+                  "confidence": 0.1127,
+                  "answer_confidence": 0.4591,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3756,
+                    "no": 0.6244
+                  },
+                  "confidence": 0.0451,
+                  "answer_confidence": 0.6244,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 219,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "dependencies-r1-heuristic",
+    "task": "dependencies",
+    "repetition": 0,
+    "arm": "heuristic",
+    "config": {
+      "name": "heuristic",
+      "filter": false,
+      "rewind": false,
+      "heuristic": true,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 10,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": false,
+          "actual": [
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": false,
+          "actual": [
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": false,
+          "actual": [
+            "b",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "partial-cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "x"
+          ]
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 10,
+      "total": 10,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": true,
+          "actual": [
+            "z",
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": true,
+          "actual": [
+            "b",
+            "a",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": true,
+          "actual": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "w",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "partial-cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "inputTotal": 29256,
+    "inputUncached": 11336,
+    "inputCached": 17920,
+    "outputTokens": 621,
+    "allTokens": 29877,
+    "requests": 12,
+    "wallMs": 43038.117805000016,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "31d3b0d2e618ecfa10d29423b80f554cfe832c3e560844e5927230e44317a83b",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/dependencies-r1-heuristic/session/2026-09-26T16-38-54-134Z_01a0de95-7db6-7419-afc1-5cae8526a155.jsonl",
+    "filterEvents": [],
+    "postToolEvents": []
+  },
+  {
+    "id": "dependencies-r1-filter",
+    "task": "dependencies",
+    "repetition": 0,
+    "arm": "filter",
+    "config": {
+      "name": "filter",
+      "filter": true,
+      "rewind": false,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 10,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": false,
+          "actual": [
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": false,
+          "actual": [
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": false,
+          "actual": [
+            "b",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "partial-cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "x"
+          ]
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 10,
+      "total": 10,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": true,
+          "actual": [
+            "z",
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": true,
+          "actual": [
+            "b",
+            "a",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": true,
+          "actual": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "w",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "partial-cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "inputTotal": 29230,
+    "inputUncached": 11310,
+    "inputCached": 17920,
+    "outputTokens": 628,
+    "allTokens": 29858,
+    "requests": 12,
+    "wallMs": 28232.472612000012,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "69c6eddd511c492c2e63dcd529ec04892427cc4b3618c98eb69aec1e5214cd44",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/dependencies-r1-filter/session/2026-09-26T16-39-36-702Z_01a0de96-23fe-7419-afc1-5cb03469e4cd.jsonl",
+    "filterEvents": [],
+    "postToolEvents": []
+  },
+  {
+    "id": "dependencies-r1-rewind",
+    "task": "dependencies",
+    "repetition": 0,
+    "arm": "rewind",
+    "config": {
+      "name": "rewind",
+      "filter": false,
+      "rewind": true,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 10,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": false,
+          "actual": [
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": false,
+          "actual": [
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": false,
+          "actual": [
+            "b",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "partial-cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "x"
+          ]
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 10,
+      "total": 10,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": true,
+          "actual": [
+            "z",
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": true,
+          "actual": [
+            "b",
+            "a",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": true,
+          "actual": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "w",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "partial-cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "inputTotal": 28736,
+    "inputUncached": 10816,
+    "inputCached": 17920,
+    "outputTokens": 608,
+    "allTokens": 29344,
+    "requests": 12,
+    "wallMs": 33387.598757,
+    "judgeCalls": 9,
+    "judgeLatencyMs": 2908.625482003117,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 1,
+    "finalMessages": 21,
+    "finalSourceHash": "8774aab30ab3a2e13350ddfa4d374f98d498e95122d315e812e81cd58dd69e00",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/dependencies-r1-rewind/session/2026-09-26T16-40-04-465Z_01a0de96-9071-7419-afc1-5cb376d99342.jsonl",
+    "filterEvents": [],
+    "postToolEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_qJ8fyHc6WqheIbGhIfU61oLL|fc_0eeeb54cd299bdcc016ab7f56748ac87d2b92d5eb43579aa74",
+        "verdict": {
+          "id": 33,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1955,
+          "durableProbability": 0.1956,
+          "windows": 1,
+          "latencyMs": 305.71192800016433,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3409,
+                    "KEEP_RESULT": 0.2233,
+                    "EXTERNALIZE": 0.2403,
+                    "DISCARD": 0.1955
+                  },
+                  "confidence": 0.0165,
+                  "answer_confidence": 0.3409,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1956,
+                    "no": 0.8044
+                  },
+                  "confidence": 0.2869,
+                  "answer_confidence": 0.8044,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 331,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_0pAUDoEYsmQdnxS4F0i8wEfI|fc_0eeeb54cd299bdcc016ab7f56c927c87d295cfb97e6dfcf493",
+        "verdict": {
+          "id": 35,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1236,
+          "durableProbability": 0.5742,
+          "windows": 11,
+          "latencyMs": 664.6001959998102,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4012,
+                    "KEEP_RESULT": 0.2566,
+                    "EXTERNALIZE": 0.1759,
+                    "DISCARD": 0.1663
+                  },
+                  "confidence": 0.0482,
+                  "answer_confidence": 0.4012,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4857,
+                    "no": 0.5143
+                  },
+                  "confidence": 0.0006,
+                  "answer_confidence": 0.5143,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4396,
+                    "KEEP_RESULT": 0.2562,
+                    "EXTERNALIZE": 0.1609,
+                    "DISCARD": 0.1433
+                  },
+                  "confidence": 0.0748,
+                  "answer_confidence": 0.4396,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5164,
+                    "no": 0.4836
+                  },
+                  "confidence": 0.0008,
+                  "answer_confidence": 0.5164,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3349,
+                    "KEEP_RESULT": 0.2333,
+                    "EXTERNALIZE": 0.2433,
+                    "DISCARD": 0.1885
+                  },
+                  "confidence": 0.0158,
+                  "answer_confidence": 0.3349,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5338,
+                    "no": 0.4662
+                  },
+                  "confidence": 0.0033,
+                  "answer_confidence": 0.5338,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4064,
+                    "KEEP_RESULT": 0.2637,
+                    "EXTERNALIZE": 0.1812,
+                    "DISCARD": 0.1487
+                  },
+                  "confidence": 0.0548,
+                  "answer_confidence": 0.4064,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.498,
+                    "no": 0.502
+                  },
+                  "confidence": 0,
+                  "answer_confidence": 0.502,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4344,
+                    "KEEP_RESULT": 0.2635,
+                    "EXTERNALIZE": 0.1654,
+                    "DISCARD": 0.1367
+                  },
+                  "confidence": 0.0743,
+                  "answer_confidence": 0.4344,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5041,
+                    "no": 0.4959
+                  },
+                  "confidence": 0,
+                  "answer_confidence": 0.5041,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4499,
+                    "KEEP_RESULT": 0.2532,
+                    "EXTERNALIZE": 0.1732,
+                    "DISCARD": 0.1236
+                  },
+                  "confidence": 0.0844,
+                  "answer_confidence": 0.4499,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5389,
+                    "no": 0.4611
+                  },
+                  "confidence": 0.0044,
+                  "answer_confidence": 0.5389,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4072,
+                    "KEEP_RESULT": 0.274,
+                    "EXTERNALIZE": 0.1813,
+                    "DISCARD": 0.1375
+                  },
+                  "confidence": 0.0601,
+                  "answer_confidence": 0.4072,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5041,
+                    "no": 0.4959
+                  },
+                  "confidence": 0,
+                  "answer_confidence": 0.5041,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3764,
+                    "KEEP_RESULT": 0.2741,
+                    "EXTERNALIZE": 0.1676,
+                    "DISCARD": 0.1819
+                  },
+                  "confidence": 0.0392,
+                  "answer_confidence": 0.3764,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5742,
+                    "no": 0.4258
+                  },
+                  "confidence": 0.016,
+                  "answer_confidence": 0.5742,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4056,
+                    "KEEP_RESULT": 0.2589,
+                    "EXTERNALIZE": 0.1772,
+                    "DISCARD": 0.1583
+                  },
+                  "confidence": 0.0519,
+                  "answer_confidence": 0.4056,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5581,
+                    "no": 0.4419
+                  },
+                  "confidence": 0.0098,
+                  "answer_confidence": 0.5581,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4194,
+                    "KEEP_RESULT": 0.2571,
+                    "EXTERNALIZE": 0.1594,
+                    "DISCARD": 0.164
+                  },
+                  "confidence": 0.0602,
+                  "answer_confidence": 0.4194,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.55,
+                    "no": 0.45
+                  },
+                  "confidence": 0.0072,
+                  "answer_confidence": 0.55,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3034,
+                    "KEEP_RESULT": 0.2414,
+                    "EXTERNALIZE": 0.1972,
+                    "DISCARD": 0.258
+                  },
+                  "confidence": 0.0084,
+                  "answer_confidence": 0.3034,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.2195,
+                    "no": 0.7805
+                  },
+                  "confidence": 0.2407,
+                  "answer_confidence": 0.7805,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 309,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_sKYgYTNon0UOxJav6uS23Ybx|fc_0eeeb54cd299bdcc016ab7f571c76887d2b8a8796e6a76f5a8",
+        "verdict": {
+          "id": 37,
+          "action": "DISCARD",
+          "discardProbability": 0.5969,
+          "durableProbability": 0.1831,
+          "windows": 1,
+          "latencyMs": 28.00502800164395,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "DISCARD",
+                  "probabilities": {
+                    "KEEP_FULL": 0.1208,
+                    "KEEP_RESULT": 0.1176,
+                    "EXTERNALIZE": 0.1648,
+                    "DISCARD": 0.5969
+                  },
+                  "confidence": 0.1978,
+                  "answer_confidence": 0.5969,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1831,
+                    "no": 0.8169
+                  },
+                  "confidence": 0.3133,
+                  "answer_confidence": 0.8169,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 243,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_i9qdzh8UJzeRKQyUPkAIaxkw|fc_0eeeb54cd299bdcc016ab7f575db2c87d2bfbc77330b841760",
+        "verdict": {
+          "id": 39,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1955,
+          "durableProbability": 0.1956,
+          "windows": 1,
+          "latencyMs": 165.18123300011212,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3409,
+                    "KEEP_RESULT": 0.2233,
+                    "EXTERNALIZE": 0.2403,
+                    "DISCARD": 0.1955
+                  },
+                  "confidence": 0.0165,
+                  "answer_confidence": 0.3409,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1956,
+                    "no": 0.8044
+                  },
+                  "confidence": 0.2869,
+                  "answer_confidence": 0.8044,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 331,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_PEGEdWGt0UmjaAzu6PaGAPbs|fc_0eeeb54cd299bdcc016ab7f57a6f5c87d282dae7fa23684d09",
+        "verdict": {
+          "id": 41,
+          "action": "EXTERNALIZE",
+          "discardProbability": 0.1918,
+          "durableProbability": 0.4142,
+          "windows": 1,
+          "latencyMs": 139.76542400087055,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "EXTERNALIZE",
+                  "probabilities": {
+                    "KEEP_FULL": 0.1871,
+                    "KEEP_RESULT": 0.1705,
+                    "EXTERNALIZE": 0.4506,
+                    "DISCARD": 0.1918
+                  },
+                  "confidence": 0.0687,
+                  "answer_confidence": 0.4506,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4142,
+                    "no": 0.5858
+                  },
+                  "confidence": 0.0214,
+                  "answer_confidence": 0.5858,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 213,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "dependencies-r1-both",
+    "task": "dependencies",
+    "repetition": 0,
+    "arm": "both",
+    "config": {
+      "name": "both",
+      "filter": true,
+      "rewind": true,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 10,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": false,
+          "actual": [
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": false,
+          "actual": [
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": false,
+          "actual": [
+            "b",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "partial-cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "x"
+          ]
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 10,
+      "total": 10,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": true,
+          "actual": [
+            "z",
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": true,
+          "actual": [
+            "b",
+            "a",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": true,
+          "actual": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "w",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "partial-cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "inputTotal": 28628,
+    "inputUncached": 13268,
+    "inputCached": 15360,
+    "outputTokens": 606,
+    "allTokens": 29234,
+    "requests": 12,
+    "wallMs": 30412.319745999994,
+    "judgeCalls": 9,
+    "judgeLatencyMs": 2372.2589380049612,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 1,
+    "finalMessages": 21,
+    "finalSourceHash": "95967df2af4b695163c50518e8fb4e944e1b078757e1b6d8907f2a891913593a",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/dependencies-r1-both/session/2026-09-26T16-40-37-369Z_01a0de97-10f9-7419-afc1-5cb5dc94c002.jsonl",
+    "filterEvents": [],
+    "postToolEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_DvljG7XfsZNAkJKkfjONrjdW|fc_0c58ce845540d0e5016ab7f5892ff487d2adad572d16b19200",
+        "verdict": {
+          "id": 42,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1955,
+          "durableProbability": 0.1956,
+          "windows": 1,
+          "latencyMs": 380.13274400145747,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3409,
+                    "KEEP_RESULT": 0.2233,
+                    "EXTERNALIZE": 0.2403,
+                    "DISCARD": 0.1955
+                  },
+                  "confidence": 0.0165,
+                  "answer_confidence": 0.3409,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1956,
+                    "no": 0.8044
+                  },
+                  "confidence": 0.2869,
+                  "answer_confidence": 0.8044,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 331,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_GvHCn3qPSU4dxxVkbsnjQqWP|fc_0c58ce845540d0e5016ab7f58d4cc887d2acb1294e26839069",
+        "verdict": {
+          "id": 44,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1236,
+          "durableProbability": 0.5742,
+          "windows": 11,
+          "latencyMs": 469.6740340004908,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4012,
+                    "KEEP_RESULT": 0.2566,
+                    "EXTERNALIZE": 0.1759,
+                    "DISCARD": 0.1663
+                  },
+                  "confidence": 0.0482,
+                  "answer_confidence": 0.4012,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4857,
+                    "no": 0.5143
+                  },
+                  "confidence": 0.0006,
+                  "answer_confidence": 0.5143,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4396,
+                    "KEEP_RESULT": 0.2562,
+                    "EXTERNALIZE": 0.1609,
+                    "DISCARD": 0.1433
+                  },
+                  "confidence": 0.0748,
+                  "answer_confidence": 0.4396,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5164,
+                    "no": 0.4836
+                  },
+                  "confidence": 0.0008,
+                  "answer_confidence": 0.5164,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3349,
+                    "KEEP_RESULT": 0.2333,
+                    "EXTERNALIZE": 0.2433,
+                    "DISCARD": 0.1885
+                  },
+                  "confidence": 0.0158,
+                  "answer_confidence": 0.3349,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5338,
+                    "no": 0.4662
+                  },
+                  "confidence": 0.0033,
+                  "answer_confidence": 0.5338,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4064,
+                    "KEEP_RESULT": 0.2637,
+                    "EXTERNALIZE": 0.1812,
+                    "DISCARD": 0.1487
+                  },
+                  "confidence": 0.0548,
+                  "answer_confidence": 0.4064,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.498,
+                    "no": 0.502
+                  },
+                  "confidence": 0,
+                  "answer_confidence": 0.502,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4344,
+                    "KEEP_RESULT": 0.2635,
+                    "EXTERNALIZE": 0.1654,
+                    "DISCARD": 0.1367
+                  },
+                  "confidence": 0.0743,
+                  "answer_confidence": 0.4344,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5041,
+                    "no": 0.4959
+                  },
+                  "confidence": 0,
+                  "answer_confidence": 0.5041,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4499,
+                    "KEEP_RESULT": 0.2532,
+                    "EXTERNALIZE": 0.1732,
+                    "DISCARD": 0.1236
+                  },
+                  "confidence": 0.0844,
+                  "answer_confidence": 0.4499,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5389,
+                    "no": 0.4611
+                  },
+                  "confidence": 0.0044,
+                  "answer_confidence": 0.5389,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4072,
+                    "KEEP_RESULT": 0.274,
+                    "EXTERNALIZE": 0.1813,
+                    "DISCARD": 0.1375
+                  },
+                  "confidence": 0.0601,
+                  "answer_confidence": 0.4072,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5041,
+                    "no": 0.4959
+                  },
+                  "confidence": 0,
+                  "answer_confidence": 0.5041,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3764,
+                    "KEEP_RESULT": 0.2741,
+                    "EXTERNALIZE": 0.1676,
+                    "DISCARD": 0.1819
+                  },
+                  "confidence": 0.0392,
+                  "answer_confidence": 0.3764,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5742,
+                    "no": 0.4258
+                  },
+                  "confidence": 0.016,
+                  "answer_confidence": 0.5742,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4056,
+                    "KEEP_RESULT": 0.2589,
+                    "EXTERNALIZE": 0.1772,
+                    "DISCARD": 0.1583
+                  },
+                  "confidence": 0.0519,
+                  "answer_confidence": 0.4056,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.5581,
+                    "no": 0.4419
+                  },
+                  "confidence": 0.0098,
+                  "answer_confidence": 0.5581,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4194,
+                    "KEEP_RESULT": 0.2571,
+                    "EXTERNALIZE": 0.1594,
+                    "DISCARD": 0.164
+                  },
+                  "confidence": 0.0602,
+                  "answer_confidence": 0.4194,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.55,
+                    "no": 0.45
+                  },
+                  "confidence": 0.0072,
+                  "answer_confidence": 0.55,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3034,
+                    "KEEP_RESULT": 0.2414,
+                    "EXTERNALIZE": 0.1972,
+                    "DISCARD": 0.258
+                  },
+                  "confidence": 0.0084,
+                  "answer_confidence": 0.3034,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.2195,
+                    "no": 0.7805
+                  },
+                  "confidence": 0.2407,
+                  "answer_confidence": 0.7805,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 309,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_b3WFUqVhSwLaGGc7WtvjRCwa|fc_0c58ce845540d0e5016ab7f5918bbc87d28f13730dfa437e31",
+        "verdict": {
+          "id": 46,
+          "action": "DISCARD",
+          "discardProbability": 0.5969,
+          "durableProbability": 0.1831,
+          "windows": 1,
+          "latencyMs": 26.622069000950432,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "DISCARD",
+                  "probabilities": {
+                    "KEEP_FULL": 0.1208,
+                    "KEEP_RESULT": 0.1176,
+                    "EXTERNALIZE": 0.1648,
+                    "DISCARD": 0.5969
+                  },
+                  "confidence": 0.1978,
+                  "answer_confidence": 0.5969,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1831,
+                    "no": 0.8169
+                  },
+                  "confidence": 0.3133,
+                  "answer_confidence": 0.8169,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 243,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_7J0JuOWn6DCROpg8rktwpMQN|fc_0c58ce845540d0e5016ab7f594ba7887d2b7451dd939764bb4",
+        "verdict": {
+          "id": 48,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1955,
+          "durableProbability": 0.1956,
+          "windows": 1,
+          "latencyMs": 128.47170599889068,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3409,
+                    "KEEP_RESULT": 0.2233,
+                    "EXTERNALIZE": 0.2403,
+                    "DISCARD": 0.1955
+                  },
+                  "confidence": 0.0165,
+                  "answer_confidence": 0.3409,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1956,
+                    "no": 0.8044
+                  },
+                  "confidence": 0.2869,
+                  "answer_confidence": 0.8044,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 331,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_zYsl9XHWFA9dbUn7bjlBpJIU|fc_0c58ce845540d0e5016ab7f599c5c087d2b171b5faa7b2abaf",
+        "verdict": {
+          "id": 50,
+          "action": "EXTERNALIZE",
+          "discardProbability": 0.1918,
+          "durableProbability": 0.4142,
+          "windows": 1,
+          "latencyMs": 26.012762000391376,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "EXTERNALIZE",
+                  "probabilities": {
+                    "KEEP_FULL": 0.1871,
+                    "KEEP_RESULT": 0.1705,
+                    "EXTERNALIZE": 0.4506,
+                    "DISCARD": 0.1918
+                  },
+                  "confidence": 0.0687,
+                  "answer_confidence": 0.4506,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4142,
+                    "no": 0.5858
+                  },
+                  "confidence": 0.0214,
+                  "answer_confidence": 0.5858,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 213,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "dependencies-r1-baseline",
+    "task": "dependencies",
+    "repetition": 0,
+    "arm": "baseline",
+    "config": {
+      "name": "baseline",
+      "filter": false,
+      "rewind": false,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 2,
+      "total": 10,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": false,
+          "actual": [
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": false,
+          "actual": [
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": false,
+          "actual": [
+            "b",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": false,
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "name": "cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "name": "partial-cycle",
+          "pass": false,
+          "actual": [
+            "a",
+            "b",
+            "x"
+          ]
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 10,
+      "total": 10,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "missing-node",
+          "pass": true,
+          "actual": [
+            "z",
+            "a"
+          ]
+        },
+        {
+          "name": "dynamic-ready",
+          "pass": true,
+          "actual": [
+            "b",
+            "a",
+            "c"
+          ]
+        },
+        {
+          "name": "duplicate",
+          "pass": true,
+          "actual": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "diamond",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name": "disconnected",
+          "pass": true,
+          "actual": [
+            "a",
+            "b",
+            "w",
+            "x",
+            "z"
+          ]
+        },
+        {
+          "name": "self",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "partial-cycle",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "graph contains a cycle"
+        },
+        {
+          "name": "case-order",
+          "pass": true,
+          "actual": [
+            "A",
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    "inputTotal": 30014,
+    "inputUncached": 12094,
+    "inputCached": 17920,
+    "outputTokens": 774,
+    "allTokens": 30788,
+    "requests": 12,
+    "wallMs": 33540.98830699996,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "9f58367ba7005bf6d732de84b0c6d881140a52c0814ba85f3d043041dc4aacd8",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/dependencies-r1-baseline/session/2026-09-26T16-41-07-312Z_01a0de97-85f0-7419-afc1-5cb7455f0d13.jsonl",
+    "filterEvents": [],
+    "postToolEvents": []
+  },
+  {
+    "id": "records-r1-filter",
+    "task": "records",
+    "repetition": 0,
+    "arm": "filter",
+    "config": {
+      "name": "filter",
+      "filter": true,
+      "rewind": false,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 4,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ],
+            [
+              "y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              "",
+              "x"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 13,
+      "total": 13,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "x;y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": true,
+          "actual": [
+            [
+              "a=b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record is missing '='"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record is missing '='"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record key must not be empty"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid escape"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid escape"
+        }
+      ]
+    },
+    "inputTotal": 21192,
+    "inputUncached": 11976,
+    "inputCached": 9216,
+    "outputTokens": 721,
+    "allTokens": 21913,
+    "requests": 12,
+    "wallMs": 33992.789610000036,
+    "judgeCalls": 4,
+    "judgeLatencyMs": 640.8847700022307,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "31196ff9b564cedf39d92a3023e3989d0673b58053424c4562d5a92cb38e4ea6",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-filter/session/2026-09-26T16-41-40-366Z_01a0de98-070e-7419-afc1-5cb8ccd1febc.jsonl",
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_kaLZ57bLD83YEsX4yL1Z7gL4|fc_0f67933200512f58016ab7f5cbab7487d28e8b4d43f8a969f7",
+        "originalCharacters": 5263,
+        "retainedCharacters": 5263,
+        "changed": false,
+        "decisions": [
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1729,
+            "durableProbability": 0.6128
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.183,
+            "durableProbability": 0.5702
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1823,
+            "durableProbability": 0.5991
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1926,
+            "durableProbability": 0.6907
+          }
+        ]
+      }
+    ],
+    "postToolEvents": []
+  },
+  {
+    "id": "records-r1-rewind",
+    "task": "records",
+    "repetition": 0,
+    "arm": "rewind",
+    "config": {
+      "name": "rewind",
+      "filter": false,
+      "rewind": true,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 4,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ],
+            [
+              "y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              "",
+              "x"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 13,
+      "total": 13,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "x;y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": true,
+          "actual": [
+            [
+              "a=b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record has no unescaped equals sign"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record has no unescaped equals sign"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record key must be nonempty"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid escape"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "trailing backslash"
+        }
+      ]
+    },
+    "inputTotal": 20498,
+    "inputUncached": 9746,
+    "inputCached": 10752,
+    "outputTokens": 755,
+    "allTokens": 21253,
+    "requests": 12,
+    "wallMs": 33101.91436199995,
+    "judgeCalls": 9,
+    "judgeLatencyMs": 1941.3898440016055,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 1,
+    "finalMessages": 21,
+    "finalSourceHash": "343728c8de31ced291156fb53ed272533fb9373bba783e58bb60bb62274a3e89",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-rewind/session/2026-09-26T16-42-13-884Z_01a0de98-89fc-7419-afc1-5cbbb3fb7c3f.jsonl",
+    "filterEvents": [],
+    "postToolEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_nsUkKET9qW4iSj8p4381FKY8|fc_04ff9387157a840d016ab7f5e85f3c87d2b8437255c09b0855",
+        "verdict": {
+          "id": 55,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1714,
+          "durableProbability": 0.3897,
+          "windows": 1,
+          "latencyMs": 200.9013810002216,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3613,
+                    "KEEP_RESULT": 0.214,
+                    "EXTERNALIZE": 0.2533,
+                    "DISCARD": 0.1714
+                  },
+                  "confidence": 0.0277,
+                  "answer_confidence": 0.3613,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3897,
+                    "no": 0.6103
+                  },
+                  "confidence": 0.0354,
+                  "answer_confidence": 0.6103,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 429,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_7VvNlM0olgHVal2QdsgAoIwv|fc_04ff9387157a840d016ab7f5ec1bb487d29e103655466ae7a2",
+        "verdict": {
+          "id": 57,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1718,
+          "durableProbability": 0.6883,
+          "windows": 5,
+          "latencyMs": 239.8704999995971,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3232,
+                    "KEEP_RESULT": 0.2933,
+                    "EXTERNALIZE": 0.1497,
+                    "DISCARD": 0.2338
+                  },
+                  "confidence": 0.027,
+                  "answer_confidence": 0.3232,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6527,
+                    "no": 0.3473
+                  },
+                  "confidence": 0.0684,
+                  "answer_confidence": 0.6527,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_RESULT",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3093,
+                    "KEEP_RESULT": 0.3269,
+                    "EXTERNALIZE": 0.1376,
+                    "DISCARD": 0.2263
+                  },
+                  "confidence": 0.0351,
+                  "answer_confidence": 0.3269,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4887,
+                    "no": 0.5113
+                  },
+                  "confidence": 0.0004,
+                  "answer_confidence": 0.5113,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3658,
+                    "KEEP_RESULT": 0.2743,
+                    "EXTERNALIZE": 0.1298,
+                    "DISCARD": 0.2301
+                  },
+                  "confidence": 0.0437,
+                  "answer_confidence": 0.3658,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6128,
+                    "no": 0.3872
+                  },
+                  "confidence": 0.037,
+                  "answer_confidence": 0.6128,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3447,
+                    "KEEP_RESULT": 0.2912,
+                    "EXTERNALIZE": 0.1412,
+                    "DISCARD": 0.2229
+                  },
+                  "confidence": 0.0353,
+                  "answer_confidence": 0.3447,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6128,
+                    "no": 0.3872
+                  },
+                  "confidence": 0.037,
+                  "answer_confidence": 0.6128,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4571,
+                    "KEEP_RESULT": 0.255,
+                    "EXTERNALIZE": 0.1162,
+                    "DISCARD": 0.1718
+                  },
+                  "confidence": 0.0918,
+                  "answer_confidence": 0.4571,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6883,
+                    "no": 0.3117
+                  },
+                  "confidence": 0.1048,
+                  "answer_confidence": 0.6883,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 569,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_DA7fIGls60vqM3velLKK95Uz|fc_04ff9387157a840d016ab7f5f023a087d2a153b3dc205120d3",
+        "verdict": {
+          "id": 59,
+          "action": "DISCARD",
+          "discardProbability": 0.7238,
+          "durableProbability": 0.1662,
+          "windows": 1,
+          "latencyMs": 27.064879001045483,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "DISCARD",
+                  "probabilities": {
+                    "KEEP_FULL": 0.0845,
+                    "KEEP_RESULT": 0.0935,
+                    "EXTERNALIZE": 0.0982,
+                    "DISCARD": 0.7238
+                  },
+                  "confidence": 0.3564,
+                  "answer_confidence": 0.7238,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1662,
+                    "no": 0.8338
+                  },
+                  "confidence": 0.351,
+                  "answer_confidence": 0.8338,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 249,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_Om2bEbogqW05tTYucYn8cjMh|fc_04ff9387157a840d016ab7f5f3af5487d2aae131ee3ddb3c22",
+        "verdict": {
+          "id": 61,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1714,
+          "durableProbability": 0.3897,
+          "windows": 1,
+          "latencyMs": 280.54951800004346,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3613,
+                    "KEEP_RESULT": 0.214,
+                    "EXTERNALIZE": 0.2533,
+                    "DISCARD": 0.1714
+                  },
+                  "confidence": 0.0277,
+                  "answer_confidence": 0.3613,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3897,
+                    "no": 0.6103
+                  },
+                  "confidence": 0.0354,
+                  "answer_confidence": 0.6103,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 429,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_yhXXu4okOvdD74RtCxsk8gwK|fc_04ff9387157a840d016ab7f5faa7b487d28a4b3cf4bdcb469a",
+        "verdict": {
+          "id": 63,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1064,
+          "durableProbability": 0.4898,
+          "windows": 1,
+          "latencyMs": 185.69251599910785,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.5053,
+                    "KEEP_RESULT": 0.2838,
+                    "EXTERNALIZE": 0.1045,
+                    "DISCARD": 0.1064
+                  },
+                  "confidence": 0.1511,
+                  "answer_confidence": 0.5053,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4898,
+                    "no": 0.5102
+                  },
+                  "confidence": 0.0003,
+                  "answer_confidence": 0.5102,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 249,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "records-r1-both",
+    "task": "records",
+    "repetition": 0,
+    "arm": "both",
+    "config": {
+      "name": "both",
+      "filter": true,
+      "rewind": true,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 4,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ],
+            [
+              "y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              "",
+              "x"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 13,
+      "total": 13,
+      "success": true,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "x;y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": true,
+          "actual": [
+            [
+              "a=b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record is missing an unescaped equals sign"
+        },
+        {
+          "name": "invalid-1",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record is missing an unescaped equals sign"
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record key must not be empty"
+        },
+        {
+          "name": "invalid-3",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "invalid escape sequence"
+        },
+        {
+          "name": "invalid-4",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "trailing backslash"
+        }
+      ]
+    },
+    "inputTotal": 20755,
+    "inputUncached": 11539,
+    "inputCached": 9216,
+    "outputTokens": 771,
+    "allTokens": 21526,
+    "requests": 12,
+    "wallMs": 32204.698756000027,
+    "judgeCalls": 13,
+    "judgeLatencyMs": 2498.30086500333,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 1,
+    "finalMessages": 21,
+    "finalSourceHash": "4c1b177d2a68952609647495f22763c34c675d3e39ce4aced0c5819e30168aa8",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-both/session/2026-09-26T16-42-46-504Z_01a0de99-0968-7419-afc1-5cbc958a7914.jsonl",
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_zpKNtGPOQa79aYJu9E9hl38F|fc_083ea6caa02fb978016ab7f60da9c087d2a92155857378e6e4",
+        "originalCharacters": 5263,
+        "retainedCharacters": 5263,
+        "changed": false,
+        "decisions": [
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1729,
+            "durableProbability": 0.6128
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.183,
+            "durableProbability": 0.5702
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1823,
+            "durableProbability": 0.5991
+          },
+          {
+            "action": "KEEP_FULL",
+            "discardProbability": 0.1926,
+            "durableProbability": 0.6907
+          }
+        ]
+      }
+    ],
+    "postToolEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_NCAzJVVFI0e9MtC6qsxbDLnh|fc_083ea6caa02fb978016ab7f608cce087d28829fd8f2188f3dd",
+        "verdict": {
+          "id": 64,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1714,
+          "durableProbability": 0.3897,
+          "windows": 1,
+          "latencyMs": 325.84042199960095,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3613,
+                    "KEEP_RESULT": 0.214,
+                    "EXTERNALIZE": 0.2533,
+                    "DISCARD": 0.1714
+                  },
+                  "confidence": 0.0277,
+                  "answer_confidence": 0.3613,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3897,
+                    "no": 0.6103
+                  },
+                  "confidence": 0.0354,
+                  "answer_confidence": 0.6103,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 429,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_zpKNtGPOQa79aYJu9E9hl38F|fc_083ea6caa02fb978016ab7f60da9c087d2a92155857378e6e4",
+        "verdict": {
+          "id": 66,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1718,
+          "durableProbability": 0.6883,
+          "windows": 5,
+          "latencyMs": 234.1842000005272,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3232,
+                    "KEEP_RESULT": 0.2933,
+                    "EXTERNALIZE": 0.1497,
+                    "DISCARD": 0.2338
+                  },
+                  "confidence": 0.027,
+                  "answer_confidence": 0.3232,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6527,
+                    "no": 0.3473
+                  },
+                  "confidence": 0.0684,
+                  "answer_confidence": 0.6527,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_RESULT",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3093,
+                    "KEEP_RESULT": 0.3269,
+                    "EXTERNALIZE": 0.1376,
+                    "DISCARD": 0.2263
+                  },
+                  "confidence": 0.0351,
+                  "answer_confidence": 0.3269,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4887,
+                    "no": 0.5113
+                  },
+                  "confidence": 0.0004,
+                  "answer_confidence": 0.5113,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3658,
+                    "KEEP_RESULT": 0.2743,
+                    "EXTERNALIZE": 0.1298,
+                    "DISCARD": 0.2301
+                  },
+                  "confidence": 0.0437,
+                  "answer_confidence": 0.3658,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6128,
+                    "no": 0.3872
+                  },
+                  "confidence": 0.037,
+                  "answer_confidence": 0.6128,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3447,
+                    "KEEP_RESULT": 0.2912,
+                    "EXTERNALIZE": 0.1412,
+                    "DISCARD": 0.2229
+                  },
+                  "confidence": 0.0353,
+                  "answer_confidence": 0.3447,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6128,
+                    "no": 0.3872
+                  },
+                  "confidence": 0.037,
+                  "answer_confidence": 0.6128,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 715,
+                "output_tokens": 0
+              }
+            },
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.4571,
+                    "KEEP_RESULT": 0.255,
+                    "EXTERNALIZE": 0.1162,
+                    "DISCARD": 0.1718
+                  },
+                  "confidence": 0.0918,
+                  "answer_confidence": 0.4571,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "yes",
+                  "probabilities": {
+                    "yes": 0.6883,
+                    "no": 0.3117
+                  },
+                  "confidence": 0.1048,
+                  "answer_confidence": 0.6883,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 569,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_ChIM0ef9gsSqSzEpRQPxFzZU|fc_083ea6caa02fb978016ab7f611eb1c87d2ace1b40007922947",
+        "verdict": {
+          "id": 72,
+          "action": "DISCARD",
+          "discardProbability": 0.7238,
+          "durableProbability": 0.1662,
+          "windows": 1,
+          "latencyMs": 32.902765000471845,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "DISCARD",
+                  "probabilities": {
+                    "KEEP_FULL": 0.0845,
+                    "KEEP_RESULT": 0.0935,
+                    "EXTERNALIZE": 0.0982,
+                    "DISCARD": 0.7238
+                  },
+                  "confidence": 0.3564,
+                  "answer_confidence": 0.7238,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.1662,
+                    "no": 0.8338
+                  },
+                  "confidence": 0.351,
+                  "answer_confidence": 0.8338,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 249,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_4DWqLpvX3icLQtEUJ0AmFQaf|fc_083ea6caa02fb978016ab7f614a42087d2991f807f7591543f",
+        "verdict": {
+          "id": 74,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1714,
+          "durableProbability": 0.3897,
+          "windows": 1,
+          "latencyMs": 237.08372299915936,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.3613,
+                    "KEEP_RESULT": 0.214,
+                    "EXTERNALIZE": 0.2533,
+                    "DISCARD": 0.1714
+                  },
+                  "confidence": 0.0277,
+                  "answer_confidence": 0.3613,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.3897,
+                    "no": 0.6103
+                  },
+                  "confidence": 0.0354,
+                  "answer_confidence": 0.6103,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 429,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "toolName": "read",
+        "toolCallId": "call_Z4fzIa2AXFvC2Q5KUP4X9ath|fc_083ea6caa02fb978016ab7f61b536887d2957e0c4b7f63245c",
+        "verdict": {
+          "id": 76,
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1064,
+          "durableProbability": 0.4898,
+          "windows": 1,
+          "latencyMs": 174.62605299988354,
+          "raw": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "retention": {
+                  "type": "choice",
+                  "choice": "KEEP_FULL",
+                  "probabilities": {
+                    "KEEP_FULL": 0.5053,
+                    "KEEP_RESULT": 0.2838,
+                    "EXTERNALIZE": 0.1045,
+                    "DISCARD": 0.1064
+                  },
+                  "confidence": 0.1511,
+                  "answer_confidence": 0.5053,
+                  "action": {
+                    "act_probability": 1
+                  }
+                },
+                "durable": {
+                  "type": "choice",
+                  "choice": "no",
+                  "probabilities": {
+                    "yes": 0.4898,
+                    "no": 0.5102
+                  },
+                  "confidence": 0.0003,
+                  "answer_confidence": 0.5102,
+                  "action": {
+                    "act_probability": 1
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 249,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "records-r1-baseline",
+    "task": "records",
+    "repetition": 0,
+    "arm": "baseline",
+    "config": {
+      "name": "baseline",
+      "filter": false,
+      "rewind": false,
+      "heuristic": false,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 4,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ],
+            [
+              "y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              "",
+              "x"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 7,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "exception": "ValueError",
+          "message": "record is missing an unescaped '='"
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record is missing an unescaped '='"
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record key must not be empty"
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "inputTotal": 21289,
+    "inputUncached": 10537,
+    "inputCached": 10752,
+    "outputTokens": 808,
+    "allTokens": 22097,
+    "requests": 12,
+    "wallMs": 29848.84277300001,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 0,
+    "removedToolCharacters": 0,
+    "rewinds": 0,
+    "finalMessages": 25,
+    "finalSourceHash": "35a644b757dfb3b18f5f7dd8390e11af91e117c57351308e789425c256bf07ea",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-baseline/session/2026-09-26T16-43-18-226Z_01a0de99-8552-7419-afc1-5cbe92ed2a72.jsonl",
+    "filterEvents": [],
+    "postToolEvents": []
+  },
+  {
+    "id": "records-r1-heuristic",
+    "task": "records",
+    "repetition": 0,
+    "arm": "heuristic",
+    "config": {
+      "name": "heuristic",
+      "filter": false,
+      "rewind": false,
+      "heuristic": true,
+      "threshold": 0.3
+    },
+    "initialEvaluation": {
+      "passed": 4,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ],
+            [
+              "y"
+            ],
+            [
+              "b",
+              "z"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": false,
+          "actual": [
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": false,
+          "actual": [
+            [
+              "",
+              "x"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "passed": 7,
+      "total": 13,
+      "success": false,
+      "cases": [
+        {
+          "name": "empty",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "simple",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "1"
+            ],
+            [
+              "b",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "escaped-separator",
+          "pass": false,
+          "exception": "ValueError",
+          "message": "record has no unescaped equals sign"
+        },
+        {
+          "name": "escaped-key",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "backslash",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\\\"
+            ]
+          ]
+        },
+        {
+          "name": "extra-equals",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              "b=c"
+            ]
+          ]
+        },
+        {
+          "name": "empty-records",
+          "pass": true,
+          "actual": [
+            [
+              "a",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "duplicate-space",
+          "pass": true,
+          "actual": [
+            [
+              " a ",
+              " x "
+            ],
+            [
+              " a ",
+              "y"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-0",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record has no unescaped equals sign"
+        },
+        {
+          "name": "invalid-1",
+          "pass": false,
+          "actual": [
+            [
+              "a\\",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-2",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "record key must not be empty"
+        },
+        {
+          "name": "invalid-3",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "\\q"
+            ]
+          ]
+        },
+        {
+          "name": "invalid-4",
+          "pass": false,
+          "actual": [
+            [
+              "a",
+              "x\\"
+            ]
+          ]
+        }
+      ]
+    },
+    "inputTotal": 14392,
+    "inputUncached": 14392,
+    "inputCached": 0,
+    "outputTokens": 799,
+    "allTokens": 15191,
+    "requests": 13,
+    "wallMs": 34390.71939600003,
+    "judgeCalls": 0,
+    "judgeLatencyMs": 0,
+    "filteredResults": 1,
+    "removedToolCharacters": 4854,
+    "rewinds": 0,
+    "finalMessages": 27,
+    "finalSourceHash": "1cf54e0b72ec0d4aedecf8e8aef005e970810675c5fdc8303a0f2b5bf60d15b1",
+    "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-heuristic/session/2026-09-26T16-43-47-600Z_01a0de99-f810-7419-afc1-5cc13e44ed9d.jsonl",
+    "filterEvents": [
+      {
+        "toolName": "read",
+        "toolCallId": "call_accnLI3Pw8sb3bj75d103pdR|fc_0f0f9575bc431ef3016ab7f64cd73487d2a7532b69ec9d0d22",
+        "originalCharacters": 5263,
+        "retainedCharacters": 409,
+        "changed": true,
+        "archive": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-heuristic/workspace/.artifacts/a1ccc9370f92159127f281b631d8c35853fbc99f2f698df09b2adf24269d0b58.txt",
+        "decisions": []
+      }
+    ],
+    "postToolEvents": []
+  }
+]

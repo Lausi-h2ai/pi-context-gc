@@ -1,0 +1,1 @@
+Question: Which animal is named? Answer: otter. This note contains no software requirement.

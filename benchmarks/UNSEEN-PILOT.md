@@ -1,0 +1,15 @@
+# Fixed focused-policy transfer pilot
+
+Run: `npx tsx src/unseen-benchmark.ts --out=results/coding-unseen-fixed-pilot --repeats=1`
+
+The output directory's `design.json` was written before model startup. It records SHA-256 hashes of task definitions (including hidden cases), policy implementation, runner, evaluator, and shared runtime. Do not reuse that directory with a changed design. This pilot is new relative to the previous invoice/retry/path fixtures, but it is synthetic and authored specifically for evaluation.
+
+Three Python repairs cover interval merging, deterministic dependency ordering, and escaped record parsing. Five arms use the same task prompts and source files: baseline, deterministic PASSED-line heuristic, unchanged Laya filter, unchanged Laya rewind, and both Laya mechanisms. The previously selected focused function objective and rewind threshold 0.30 are frozen. Order rotates by task. The heuristic archives exact text, strips only PASSED lines without diagnostic keywords, and never calls Laya. JSONL dependency logs intentionally do not match the existing Laya filter's status-line activation gate; record logs include a multiline actionable example. Every arm receives full contracts before diagnostics and again before editing.
+
+One repetition yields 15 trials. Any provider/trial error stops the pilot and is saved as an error, not interpreted as model accuracy. No hidden-result repair or policy tuning is allowed. A second repetition or longer-session experiment needs a separate registration and fresh output directory.
+
+Hidden cases enter the external evaluator through stdin. They are not written to agent workspaces; model tools are read/write/edit, with instructions not to inspect parent directories. This is instruction-level isolation, not a security sandbox. Return values and exception types are checked; input nonmutation is specified but not directly tested.
+
+Primary metrics are total input tokens and complete hidden-case pass rate. Cached input, uncached input, output, wall time, judge time, actual changed results, removed characters, and actual rewinds are separately recorded. Inspect `summary.json`, per-trial `telemetry.json`, `filter-events.jsonl`, and `gc.jsonl`. Token accounting is observed provider usage, not a dollar-cost estimate. Latency is serial observed runtime, with cache/order and service-load confounders.
+
+This short six-turn design tests policy transfer, including a format outside the frozen filter gate. It does not reproduce the prior long cache-bloat workload or establish production readiness. Repeated explicit contracts reduce sensitivity to missing diagnostic details. One sample per task/arm cannot distinguish modest token or quality differences from generation variability. Attribute direct filter/rewind effects only where event traces show actual context changes; a token difference without such events is not evidence of a successful intervention. Even perfect case accuracy only supports these cases. Laya startup warns that a checkpoint temperature is clamped and confidence is uncalibrated; 0.30 remains an empirical policy setting, not a calibrated safety probability.

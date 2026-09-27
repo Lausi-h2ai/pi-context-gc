@@ -1,0 +1,14 @@
+{
+  "beforeCount": 15,
+  "afterCount": 3,
+  "oldLeaf": "5d8803e5",
+  "checkpoint": "5788b31e",
+  "abandonedBranchStored": true,
+  "tangentAbsent": true,
+  "sameInstructions": true,
+  "sameTools": true,
+  "sameCacheKey": true,
+  "survivingInputPrefixIdentical": true,
+  "cacheHitAfterRewind": true,
+  "durableFactRecovered": true
+}

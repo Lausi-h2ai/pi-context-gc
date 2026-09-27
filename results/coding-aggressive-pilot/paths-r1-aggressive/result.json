@@ -1,0 +1,809 @@
+{
+  "id": "paths-r1-aggressive",
+  "task": "paths",
+  "repetition": 0,
+  "arm": "aggressive",
+  "config": {
+    "name": "aggressive",
+    "filter": true,
+    "rewind": true,
+    "threshold": 0.5
+  },
+  "initialEvaluation": {
+    "passed": 3,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": false,
+        "actual": [
+          "a//./b/"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": false,
+        "actual": [
+          "a/b/../c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": false,
+        "actual": [
+          "a/b",
+          "a//b",
+          "c",
+          "a/./b"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": false,
+        "actual": [
+          "../x"
+        ]
+      },
+      {
+        "name": "reject-1",
+        "pass": false,
+        "actual": [
+          "a/../../x"
+        ]
+      },
+      {
+        "name": "reject-2",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "reject-3",
+        "pass": false,
+        "actual": [
+          "etc/x"
+        ]
+      },
+      {
+        "name": "reject-4",
+        "pass": false,
+        "actual": [
+          "server/x"
+        ]
+      },
+      {
+        "name": "reject-5",
+        "pass": false,
+        "actual": [
+          "C:relative"
+        ]
+      },
+      {
+        "name": "reject-6",
+        "pass": false,
+        "actual": [
+          "d:/absolute"
+        ]
+      },
+      {
+        "name": "reject-7",
+        "pass": false,
+        "actual": [
+          "x\u0000y"
+        ]
+      },
+      {
+        "name": "reject-8",
+        "pass": false,
+        "actual": [
+          "."
+        ]
+      },
+      {
+        "name": "reject-9",
+        "pass": false,
+        "actual": [
+          "a/.."
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty-list",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "dots",
+        "pass": true,
+        "actual": [
+          "a/b"
+        ]
+      },
+      {
+        "name": "internal-parent",
+        "pass": true,
+        "actual": [
+          "a/c"
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          "a/b/c"
+        ]
+      },
+      {
+        "name": "dedup",
+        "pass": true,
+        "actual": [
+          "a/b",
+          "c"
+        ]
+      },
+      {
+        "name": "unicode-spaces",
+        "pass": true,
+        "actual": [
+          "資料/é x.txt"
+        ]
+      },
+      {
+        "name": "reject-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path escapes archive root"
+      },
+      {
+        "name": "reject-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path escapes archive root"
+      },
+      {
+        "name": "reject-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths and drive prefixes are not allowed"
+      },
+      {
+        "name": "reject-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths and drive prefixes are not allowed"
+      },
+      {
+        "name": "reject-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths and drive prefixes are not allowed"
+      },
+      {
+        "name": "reject-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths and drive prefixes are not allowed"
+      },
+      {
+        "name": "reject-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "absolute paths and drive prefixes are not allowed"
+      },
+      {
+        "name": "reject-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path contains a NUL character"
+      },
+      {
+        "name": "reject-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path normalizes to empty"
+      },
+      {
+        "name": "reject-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "path normalizes to empty"
+      }
+    ]
+  },
+  "inputTotal": 9007,
+  "inputUncached": 9007,
+  "inputCached": 0,
+  "outputTokens": 597,
+  "allTokens": 9604,
+  "requests": 10,
+  "wallMs": 33402.26715299999,
+  "judgeCalls": 15,
+  "judgeLatencyMs": 2383.5768049984836,
+  "filteredResults": 1,
+  "removedToolCharacters": 11980,
+  "rewinds": 1,
+  "finalMessages": 17,
+  "finalSourceHash": "e9f2b8f57cb38b69a26820b8e561c4802c6b61b89842090df3e4d84a5a69371d",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-aggressive-pilot/paths-r1-aggressive/session/2026-09-26T16-02-46-325Z_01a0de74-69b5-7237-8c20-66cfa10120b9.jsonl",
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_XU1dGNyfjkUfTGC1vwJxto3m|fc_0e18a92e77c5fe69016ab7eca9a0fc87d28df10ccac3279dfd",
+      "originalCharacters": 12336,
+      "retainedCharacters": 356,
+      "changed": true,
+      "decisions": [
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.1997,
+          "durableProbability": 0.5991
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.2081,
+          "durableProbability": 0.6137
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.2024,
+          "durableProbability": 0.6084
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.189,
+          "durableProbability": 0.6483
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.199,
+          "durableProbability": 0.6103
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.188,
+          "durableProbability": 0.633
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.1965,
+          "durableProbability": 0.6576
+        },
+        {
+          "action": "KEEP_RESULT",
+          "discardProbability": 0.2621,
+          "durableProbability": 0.4046
+        }
+      ],
+      "archive": "/home/laurent/pi_jev/results/coding-aggressive-pilot/paths-r1-aggressive/workspace/.artifacts/ecd7d052af88879d7619acd26e2cb4f40f87651b93e2336406318549ed4ef75d.txt"
+    }
+  ],
+  "postToolEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_XU1dGNyfjkUfTGC1vwJxto3m|fc_0e18a92e77c5fe69016ab7eca9a0fc87d28df10ccac3279dfd",
+      "verdict": {
+        "id": 31,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1698,
+        "durableProbability": 0.6448,
+        "windows": 9,
+        "latencyMs": 695.8414450000419,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3553,
+                  "KEEP_RESULT": 0.2587,
+                  "EXTERNALIZE": 0.093,
+                  "DISCARD": 0.2929
+                },
+                "confidence": 0.0637,
+                "answer_confidence": 0.3553,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.5752,
+                  "no": 0.4248
+                },
+                "confidence": 0.0164,
+                "answer_confidence": 0.5752,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4132,
+                  "KEEP_RESULT": 0.2357,
+                  "EXTERNALIZE": 0.1153,
+                  "DISCARD": 0.2357
+                },
+                "confidence": 0.0654,
+                "answer_confidence": 0.4132,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6387,
+                  "no": 0.3613
+                },
+                "confidence": 0.0562,
+                "answer_confidence": 0.6387,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4114,
+                  "KEEP_RESULT": 0.22,
+                  "EXTERNALIZE": 0.0914,
+                  "DISCARD": 0.2772
+                },
+                "confidence": 0.0819,
+                "answer_confidence": 0.4114,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.5353,
+                  "no": 0.4647
+                },
+                "confidence": 0.0036,
+                "answer_confidence": 0.5353,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.347,
+                  "KEEP_RESULT": 0.2285,
+                  "EXTERNALIZE": 0.1139,
+                  "DISCARD": 0.3106
+                },
+                "confidence": 0.0513,
+                "answer_confidence": 0.347,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.4713,
+                  "no": 0.5287
+                },
+                "confidence": 0.0024,
+                "answer_confidence": 0.5287,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.4847,
+                  "KEEP_RESULT": 0.2496,
+                  "EXTERNALIZE": 0.0959,
+                  "DISCARD": 0.1698
+                },
+                "confidence": 0.1175,
+                "answer_confidence": 0.4847,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6108,
+                  "no": 0.3892
+                },
+                "confidence": 0.0357,
+                "answer_confidence": 0.6108,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3968,
+                  "KEEP_RESULT": 0.3228,
+                  "EXTERNALIZE": 0.0963,
+                  "DISCARD": 0.1842
+                },
+                "confidence": 0.0848,
+                "answer_confidence": 0.3968,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.4338,
+                  "no": 0.5662
+                },
+                "confidence": 0.0127,
+                "answer_confidence": 0.5662,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.48,
+                  "KEEP_RESULT": 0.2488,
+                  "EXTERNALIZE": 0.0846,
+                  "DISCARD": 0.1866
+                },
+                "confidence": 0.1195,
+                "answer_confidence": 0.48,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.6448,
+                  "no": 0.3552
+                },
+                "confidence": 0.0614,
+                "answer_confidence": 0.6448,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.436,
+                  "KEEP_RESULT": 0.2526,
+                  "EXTERNALIZE": 0.0759,
+                  "DISCARD": 0.2355
+                },
+                "confidence": 0.1014,
+                "answer_confidence": 0.436,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "yes",
+                "probabilities": {
+                  "yes": 0.5732,
+                  "no": 0.4268
+                },
+                "confidence": 0.0155,
+                "answer_confidence": 0.5732,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 715,
+              "output_tokens": 0
+            }
+          },
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "DISCARD",
+                "probabilities": {
+                  "KEEP_FULL": 0.2851,
+                  "KEEP_RESULT": 0.2106,
+                  "EXTERNALIZE": 0.0605,
+                  "DISCARD": 0.4439
+                },
+                "confidence": 0.1228,
+                "answer_confidence": 0.4439,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.2274,
+                  "no": 0.7726
+                },
+                "confidence": 0.2266,
+                "answer_confidence": 0.7726,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 493,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_wyJNUkUxLB6dauSfHp22vFJW|fc_0e18a92e77c5fe69016ab7ecaf0ec087d2ace600a902ee6462",
+      "verdict": {
+        "id": 41,
+        "action": "DISCARD",
+        "discardProbability": 0.7039,
+        "durableProbability": 0.1985,
+        "windows": 1,
+        "latencyMs": 45.160207999288104,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "DISCARD",
+                "probabilities": {
+                  "KEEP_FULL": 0.0972,
+                  "KEEP_RESULT": 0.1203,
+                  "EXTERNALIZE": 0.0786,
+                  "DISCARD": 0.7039
+                },
+                "confidence": 0.3303,
+                "answer_confidence": 0.7039,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.1985,
+                  "no": 0.8015
+                },
+                "confidence": 0.281,
+                "answer_confidence": 0.8015,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 239,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_UpLOjE3QCnzBi7AnrmGvYv9c|fc_0e18a92e77c5fe69016ab7ecb3451c87d29e2204d59a34d534",
+      "verdict": {
+        "id": 43,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.1517,
+        "durableProbability": 0.2803,
+        "windows": 1,
+        "latencyMs": 261.20265899953665,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.3696,
+                  "KEEP_RESULT": 0.2423,
+                  "EXTERNALIZE": 0.2364,
+                  "DISCARD": 0.1517
+                },
+                "confidence": 0.0346,
+                "answer_confidence": 0.3696,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.2803,
+                  "no": 0.7197
+                },
+                "confidence": 0.1441,
+                "answer_confidence": 0.7197,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 399,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "read",
+      "toolCallId": "call_8tNG3pM62JFtqyXyXKXkCKEA|fc_0e18a92e77c5fe69016ab7ecbabc0887d2bb2d67d7e975df38",
+      "verdict": {
+        "id": 45,
+        "action": "KEEP_FULL",
+        "discardProbability": 0.0821,
+        "durableProbability": 0.2443,
+        "windows": 1,
+        "latencyMs": 205.67074100017635,
+        "raw": [
+          {
+            "model": "laya-rl-agent",
+            "answers": {
+              "retention": {
+                "type": "choice",
+                "choice": "KEEP_FULL",
+                "probabilities": {
+                  "KEEP_FULL": 0.402,
+                  "KEEP_RESULT": 0.388,
+                  "EXTERNALIZE": 0.1279,
+                  "DISCARD": 0.0821
+                },
+                "confidence": 0.133,
+                "answer_confidence": 0.402,
+                "action": {
+                  "act_probability": 1
+                }
+              },
+              "durable": {
+                "type": "choice",
+                "choice": "no",
+                "probabilities": {
+                  "yes": 0.2443,
+                  "no": 0.7557
+                },
+                "confidence": 0.1978,
+                "answer_confidence": 0.7557,
+                "action": {
+                  "act_probability": 1
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 237,
+              "output_tokens": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

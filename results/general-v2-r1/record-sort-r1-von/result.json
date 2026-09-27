@@ -1,0 +1,421 @@
+{
+  "id": "record-sort-r1-von",
+  "task": "record-sort",
+  "stratum": "long",
+  "repetition": 0,
+  "arm": "von",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "name": "a"
+          },
+          {
+            "name": "b"
+          }
+        ],
+        "name": "ascending",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "descending",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "group": "a",
+            "score": 2
+          },
+          {
+            "group": "a",
+            "score": 1
+          },
+          {
+            "group": "b",
+            "score": 1
+          }
+        ],
+        "name": "multi-key",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "third",
+            "k": 0
+          },
+          {
+            "id": "first",
+            "k": 1
+          },
+          {
+            "id": "second",
+            "k": 1
+          }
+        ],
+        "name": "stable-tie",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'int'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "missing-last-ascending",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "missing-last-descending",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'int' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "none-last",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": -3
+          },
+          {
+            "v": -1
+          },
+          {
+            "v": 0
+          }
+        ],
+        "name": "negative-numbers",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "key-with-leading-dash",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": 1
+          },
+          {
+            "v": 2
+          }
+        ],
+        "name": "rows-not-mutated",
+        "pass": true
+      },
+      {
+        "name": "empty-keys",
+        "pass": false
+      },
+      {
+        "name": "non-string-key",
+        "pass": false
+      },
+      {
+        "name": "empty-key-name",
+        "pass": false
+      },
+      {
+        "name": "only-minus",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "'<' not supported between instances of 'str' and 'int'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "mixed-value-types",
+        "pass": false
+      },
+      {
+        "name": "nested-values-not-supported",
+        "pass": false
+      }
+    ],
+    "passed": 6,
+    "success": false,
+    "total": 17
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "name": "a"
+          },
+          {
+            "name": "b"
+          }
+        ],
+        "name": "ascending",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "score": 9
+          },
+          {
+            "score": 4
+          },
+          {
+            "score": 2
+          }
+        ],
+        "name": "descending",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "group": "a",
+            "score": 2
+          },
+          {
+            "group": "a",
+            "score": 1
+          },
+          {
+            "group": "b",
+            "score": 1
+          }
+        ],
+        "name": "multi-key",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "third",
+            "k": 0
+          },
+          {
+            "id": "first",
+            "k": 1
+          },
+          {
+            "id": "second",
+            "k": 1
+          }
+        ],
+        "name": "stable-tie",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "b",
+            "v": 1
+          },
+          {
+            "id": "a",
+            "v": 2
+          },
+          {
+            "id": "missing"
+          }
+        ],
+        "name": "missing-last-ascending",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "a",
+            "v": 2
+          },
+          {
+            "id": "b",
+            "v": 1
+          },
+          {
+            "id": "missing"
+          }
+        ],
+        "name": "missing-last-descending",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "one",
+            "v": 1
+          },
+          {
+            "id": "two",
+            "v": 2
+          },
+          {
+            "id": "none",
+            "v": null
+          }
+        ],
+        "name": "none-last",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "v": -3
+          },
+          {
+            "v": -1
+          },
+          {
+            "v": 0
+          }
+        ],
+        "name": "negative-numbers",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "-name": "b"
+          },
+          {
+            "-name": "a"
+          }
+        ],
+        "name": "key-with-leading-dash",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": 1
+          },
+          {
+            "v": 2
+          }
+        ],
+        "name": "rows-not-mutated",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "keys must be a nonempty list",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "empty-keys",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "each key must be a nonempty string",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "non-string-key",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "each key must be a nonempty string",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "empty-key-name",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "field name must not be empty",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "only-minus",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "field values must have a common comparable type",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "mixed-value-types",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "field values must be JSON scalars",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "nested-values-not-supported",
+        "pass": true
+      }
+    ],
+    "passed": 16,
+    "success": false,
+    "total": 17
+  },
+  "inputTotal": 60766,
+  "inputUncached": 24926,
+  "inputCached": 35840,
+  "cacheWrite": 0,
+  "outputTokens": 2448,
+  "requests": 20,
+  "prunedResults": 2,
+  "removedToolCharacters": 23200,
+  "judgeCalls": 2,
+  "judgeLatencyMs": 2190.77419200039,
+  "wallMs": 89373.20826600003,
+  "events": [
+    {
+      "toolCallId": "call_09zWtDiTGcTbHGesg4Dwf2kw|fc_04d346b94eead494016ab8141cd6a487d2a80d1e28acc1f2ec",
+      "toolName": "read",
+      "originalCharacters": 11823,
+      "retainedCharacters": 223,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.1801,
+      "durableProbability": 0.4841,
+      "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-von/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+    },
+    {
+      "toolCallId": "call_4hdkFB1LC9IXVULVNVJrDeAy|fc_04d346b94eead494016ab8142ff4cc87d2a49b759cdb1087d9",
+      "toolName": "read",
+      "originalCharacters": 11823,
+      "retainedCharacters": 223,
+      "action": "KEEP_FULL",
+      "discardProbability": 0.203,
+      "durableProbability": 0.4853,
+      "archive": "/home/laurent/pi_jev/results/general-v2-r1/record-sort-r1-von/workspace/.artifacts/e6ccf451902428491185a6caf76cca5a2abbb86bdc482212d225de30272ce5e2.txt"
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "id": "retry-r1-filter",
+  "task": "retry",
+  "repetition": 0,
+  "arm": "filter",
+  "config": {
+    "name": "filter",
+    "filter": true,
+    "rewind": false,
+    "threshold": 0.95
+  },
+  "initialEvaluation": {
+    "passed": 3,
+    "total": 16,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "success-stop",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "ordinary",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "budget",
+        "pass": false,
+        "actual": [
+          100,
+          100,
+          100,
+          100
+        ]
+      },
+      {
+        "name": "401-stop",
+        "pass": false,
+        "actual": [
+          100,
+          100,
+          100
+        ]
+      },
+      {
+        "name": "500-no",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "post-no",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "post-key",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "empty-key",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "patch-no",
+        "pass": false,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "head",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "small-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "invalid-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "short-after",
+        "pass": false,
+        "actual": [
+          100,
+          100
+        ]
+      },
+      {
+        "name": "none-after",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "success-stop",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "ordinary",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "budget",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "401-stop",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "500-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "post-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "post-key",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "empty-key",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "patch-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "head",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry-after",
+        "pass": true,
+        "actual": [
+          201,
+          1000
+        ]
+      },
+      {
+        "name": "small-after",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "invalid-after",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "short-after",
+        "pass": true,
+        "actual": [
+          500,
+          200
+        ]
+      },
+      {
+        "name": "none-after",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      }
+    ]
+  },
+  "inputTotal": 26082,
+  "inputUncached": 10722,
+  "inputCached": 15360,
+  "outputTokens": 646,
+  "allTokens": 26728,
+  "requests": 10,
+  "wallMs": 28791.69049899999,
+  "judgeCalls": 1,
+  "judgeLatencyMs": 707.6655000000756,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 21,
+  "finalSourceHash": "64fa27cc3875ee957556a75b7bae08b04b28be39c26d9012a22d56ad1748a039",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-factorial/retry-r1-filter/session/2026-09-26T14-38-35-710Z_01a0de27-58bd-75a0-a36a-aaf3a144e2b4.jsonl",
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_vMswNFoSTBbRrXKuffHqRPU2|fc_0198e634a532bc54016ab7d8ef523887d280bc4aa1fc2a273d",
+      "originalCharacters": 12342,
+      "retainedCharacters": 12342,
+      "action": "KEEP_FULL",
+      "changed": false
+    }
+  ],
+  "postToolEvents": []
+}

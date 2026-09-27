@@ -1,0 +1,36 @@
+{
+  "requests": [
+    {
+      "instructions": "10b7d30a02c41f6aef9af9016de91b2c972fee0053df02d36f8a3529b379cc34",
+      "tools": "5d4531298c15b7bf38aa87862be7d1187fc64bec8e4e4fcf1ecd98f33b1c3c4b",
+      "model": "gpt-6-luna",
+      "cacheKey": "8c15f65d76c6d43fbba0c76bf8941a6a47d701d02ca016a3feb178f0e893e4be",
+      "inputHashes": [
+        "91990ec65a24ff7d5f14756391de1c7afe1d0d971de467a499940cc552b712c8"
+      ],
+      "inputItems": 1,
+      "payloadHash": "69644cbbec128c7106071db7f61f505bfaa3b93342b440335f7a417bf8ccf9ff",
+      "inputCharacters": 285
+    }
+  ],
+  "usage": [
+    {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "totalTokens": 0,
+      "cost": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      },
+      "inputTotal": 0,
+      "cached_tokens": 0,
+      "stopReason": "error",
+      "error": "You have hit your ChatGPT usage limit (plus plan). Try again in ~186 min."
+    }
+  ]
+}

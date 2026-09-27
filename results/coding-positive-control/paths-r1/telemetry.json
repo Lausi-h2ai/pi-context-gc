@@ -1,0 +1,376 @@
+{
+  "requests": [
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0"
+      ],
+      "inputItems": 1,
+      "payloadHash": "e3132eb1b5dea5f872ef2cc2961e18ae26e5133146a01d1e3dd575f6697cb9e5",
+      "inputCharacters": 344
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf"
+      ],
+      "inputItems": 3,
+      "payloadHash": "3236a38743fe915d89d1c43b26b2c091551bc0af8f9ca4854a4251202a192b45",
+      "inputCharacters": 842
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3"
+      ],
+      "inputItems": 5,
+      "payloadHash": "f78633057dcd2090cd0e51d4d62fc5dd39e06ca9e35ebcf261d99fa41dae422b",
+      "inputCharacters": 4384
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "636792bbc700f12a0db6cfcbb96c0c4b60de8cc4e7a4bedfa931ae3900670445"
+      ],
+      "inputItems": 7,
+      "payloadHash": "6fe04748712edbfddc736159abb03c02c303eb7bea2732402688ee00730dd20e",
+      "inputCharacters": 4917
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "636792bbc700f12a0db6cfcbb96c0c4b60de8cc4e7a4bedfa931ae3900670445",
+        "1793b916492d15bf9dbce7ca4f9377940b1114580615dd53ec3f4db00dee4189",
+        "182782f6195a5ced09ca67013ee434b1ec042e667cd2c606bd6c0c93e4eb6d7c"
+      ],
+      "inputItems": 9,
+      "payloadHash": "5a91221fc7c0bcbf8ea8ac43e2846fbf240961dc71d159edf05bf7b8f721d527",
+      "inputCharacters": 5350
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "5a493df1ea2b91a59ed7ce455244cc17031ecc79df173ff45d8784d1c6f2b7a4"
+      ],
+      "inputItems": 7,
+      "payloadHash": "6c19d8a8e36c66859229c256673a3414f8b30dbf6d540ab34833ccb2ad7baa9d",
+      "inputCharacters": 4958
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "5a493df1ea2b91a59ed7ce455244cc17031ecc79df173ff45d8784d1c6f2b7a4",
+        "86176ae9dc20af2894ccda5dfcfe3851f73d165a2adbd4777ffd4c8f9ca34671",
+        "e4f2f6b542155c6fa551f109b0d749ae42bf16cf5fbcd381c681938249b80441"
+      ],
+      "inputItems": 9,
+      "payloadHash": "5cabf2f6f52ccfdbde65e6db20eddd8b5f99b620f338c9d80b5598d0e3201444",
+      "inputCharacters": 5810
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "5a493df1ea2b91a59ed7ce455244cc17031ecc79df173ff45d8784d1c6f2b7a4",
+        "86176ae9dc20af2894ccda5dfcfe3851f73d165a2adbd4777ffd4c8f9ca34671",
+        "e4f2f6b542155c6fa551f109b0d749ae42bf16cf5fbcd381c681938249b80441",
+        "a5a388209df21ec11fddabe8a4b5ed353acee5efae445124a3f81aa9689ae2e6",
+        "b7d9e511a1469fc2a9c58155e441699f270b77d9d414c0acb29dc0da96b37f74"
+      ],
+      "inputItems": 11,
+      "payloadHash": "2e31f5380fdf2cbc0f3905593a794e5571e1ee465b17a4160c2a4d766a3c8450",
+      "inputCharacters": 6691
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "5a493df1ea2b91a59ed7ce455244cc17031ecc79df173ff45d8784d1c6f2b7a4",
+        "86176ae9dc20af2894ccda5dfcfe3851f73d165a2adbd4777ffd4c8f9ca34671",
+        "e4f2f6b542155c6fa551f109b0d749ae42bf16cf5fbcd381c681938249b80441",
+        "a5a388209df21ec11fddabe8a4b5ed353acee5efae445124a3f81aa9689ae2e6",
+        "b7d9e511a1469fc2a9c58155e441699f270b77d9d414c0acb29dc0da96b37f74",
+        "cea54afeddd2aea2385ac44049c0c867cdac4546d3b221e2f355e70422b335c9",
+        "76af08cb9ca7393d095a156688b42017e5248ee7177a17ca572051939a5af7cd"
+      ],
+      "inputItems": 13,
+      "payloadHash": "eb3864fa76e0f9f984cdab91f96699f9593b90dc36077fa2c4ce2089573c02e1",
+      "inputCharacters": 7087
+    },
+    {
+      "instructions": "150931e07286dd8ade377fdb1c9e9baf15a59614ccfa00e458fea28152db924b",
+      "tools": "cac24b2cfe67ab15dbf0100613f91483bd94f785dcdac20c6036f679e3a75327",
+      "model": "gpt-6-luna",
+      "cacheKey": "fdd86341050155bdd32045fc7c9b898aa550fe929a982d75923157a6fc2768ae",
+      "inputHashes": [
+        "143762542028ed8ece65a8d083f025f1226378f683b2b057181f6ff6a79ccba0",
+        "32ac3b2c61e56b58ffcb2a3bc55de36a7edeb078f0a686d6ccb750c62e09a81c",
+        "d6a0702e18afdfa022ab3c2de94d26a5a3593b54886155c01a99504e9c877cdf",
+        "a5b6bb041f6026a0a3a36169b4b826f9d378876ef676ffd205ea83d8610a732d",
+        "f7a5a114892b1bf1225df4b71b28265f3cc5680f971a9be2e800a5e4536e2bd3",
+        "d00d375772d65dd4289c63a11fe96e5e5a4a215bcd301786f45acbefa2a8a80d",
+        "5a493df1ea2b91a59ed7ce455244cc17031ecc79df173ff45d8784d1c6f2b7a4",
+        "86176ae9dc20af2894ccda5dfcfe3851f73d165a2adbd4777ffd4c8f9ca34671",
+        "e4f2f6b542155c6fa551f109b0d749ae42bf16cf5fbcd381c681938249b80441",
+        "a5a388209df21ec11fddabe8a4b5ed353acee5efae445124a3f81aa9689ae2e6",
+        "b7d9e511a1469fc2a9c58155e441699f270b77d9d414c0acb29dc0da96b37f74",
+        "cea54afeddd2aea2385ac44049c0c867cdac4546d3b221e2f355e70422b335c9",
+        "76af08cb9ca7393d095a156688b42017e5248ee7177a17ca572051939a5af7cd",
+        "059cc5cb44bcf7bd919fc2ae603ea50433c392aec70cbe503b9add099585f9a9",
+        "390431e7e9aaee294cc7c227da16f6ce460769750f127213de8ff22e0dd505e4"
+      ],
+      "inputItems": 15,
+      "payloadHash": "6128526900eaa43b50678811017005d13cc3a12eabbb0d572233fe67eeb8b844",
+      "inputCharacters": 8900
+    }
+  ],
+  "usage": [
+    {
+      "input": 543,
+      "output": 25,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 568,
+      "cost": {
+        "input": 0.000054300000000000005,
+        "output": 0.000012499999999999999,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000668
+      },
+      "inputTotal": 543,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    {
+      "input": 594,
+      "output": 46,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 640,
+      "cost": {
+        "input": 0.00005940000000000001,
+        "output": 0.000023,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.00008240000000000001
+      },
+      "inputTotal": 594,
+      "cached_tokens": 0,
+      "stopReason": "toolUse"
+    },
+    {
+      "input": 1228,
+      "output": 34,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1262,
+      "cost": {
+        "input": 0.0001228,
+        "output": 0.000017,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001398
+      },
+      "inputTotal": 1228,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    {
+      "input": 1291,
+      "output": 26,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1317,
+      "cost": {
+        "input": 0.00012910000000000002,
+        "output": 0.000013,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001421
+      },
+      "inputTotal": 1291,
+      "cached_tokens": 0,
+      "stopReason": "toolUse"
+    },
+    {
+      "input": 1355,
+      "output": 10,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1365,
+      "cost": {
+        "input": 0.00013550000000000001,
+        "output": 0.0000049999999999999996,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001405
+      },
+      "inputTotal": 1355,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    {
+      "input": 1295,
+      "output": 26,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1321,
+      "cost": {
+        "input": 0.0001295,
+        "output": 0.000013,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001425
+      },
+      "inputTotal": 1295,
+      "cached_tokens": 0,
+      "stopReason": "toolUse"
+    },
+    {
+      "input": 1431,
+      "output": 88,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1519,
+      "cost": {
+        "input": 0.0001431,
+        "output": 0.000044,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001871
+      },
+      "inputTotal": 1431,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    {
+      "input": 1566,
+      "output": 26,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1592,
+      "cost": {
+        "input": 0.0001566,
+        "output": 0.000013,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001696
+      },
+      "inputTotal": 1566,
+      "cached_tokens": 0,
+      "stopReason": "toolUse"
+    },
+    {
+      "input": 1624,
+      "output": 334,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1958,
+      "cost": {
+        "input": 0.00016240000000000002,
+        "output": 0.000167,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0003294
+      },
+      "inputTotal": 1624,
+      "cached_tokens": 0,
+      "stopReason": "toolUse"
+    },
+    {
+      "input": 443,
+      "output": 24,
+      "cacheRead": 1536,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 2003,
+      "cost": {
+        "input": 0.000044300000000000006,
+        "output": 0.000012,
+        "cacheRead": 0.000015360000000000002,
+        "cacheWrite": 0,
+        "total": 0.00007166
+      },
+      "inputTotal": 1979,
+      "cached_tokens": 1536,
+      "stopReason": "stop"
+    }
+  ]
+}

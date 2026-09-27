@@ -1,0 +1,16 @@
+{
+  "beforeCount": 15,
+  "afterCount": 3,
+  "oldLeaf": "5d8803e5",
+  "checkpoint": "5788b31e",
+  "abandonedBranchStored": true,
+  "tangentAbsent": true,
+  "sameInstructions": true,
+  "sameTools": true,
+  "sameCacheKey": true,
+  "survivingInputPrefixIdentical": true,
+  "cacheHitAfterRewind": true,
+  "durableFactRecovered": true,
+  "sessionFile": "/home/laurent/pi_jev/results/cache-first/cache-session/2026-09-26T14-20-18-044Z_01a0de16-98fc-74be-9460-38ea5d370d69.jsonl",
+  "note": "Pi cacheRead maps to backend input_tokens_details.cached_tokens. Input total = input + cacheRead + cacheWrite. Subscription tokens are usage, not an API invoice. Immediate reuse only; TTL is not measured."
+}

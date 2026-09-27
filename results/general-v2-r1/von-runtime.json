@@ -1,0 +1,9 @@
+{
+  "ready": true,
+  "model": "von-1.2.0",
+  "backend": "von-1.2",
+  "repository": "wfzyx/von",
+  "revision": "5df8185a4f2327ad0a7cd117cc4f701ac557b9ae",
+  "version": "1.2.3",
+  "device": "local"
+}

@@ -1,0 +1,1 @@
+graph maps string node names to lists of string prerequisite names. Include prerequisites absent as keys. Return a topological ordering: at each step select the lexicographically smallest currently ready node. Deduplicate repeated edges. Reject self cycles and any longer cycle with ValueError. Do not mutate graph or its lists. Empty graph returns []. Assume valid input types.

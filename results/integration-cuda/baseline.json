@@ -1,0 +1,146 @@
+[
+  {
+    "turn": "Our task is an invoice CSV parser preserving decimal precision. Durable project token: AMBER-482. Delimiter: semicolon. Acknowledge briefly.",
+    "latencyMs": 3586.16,
+    "answer": "Acknowledged: AMBER-482 — invoice CSV parser preserving decimal precision, using semicolons.",
+    "usage": {
+      "input": 88,
+      "output": 24,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 112,
+      "cost": {
+        "input": 0.0000088,
+        "output": 0.000012,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000208
+      },
+      "inputTotal": 88,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 3
+  },
+  {
+    "turn": "Unrelated break: what is the capital of France? Answer in one sentence.",
+    "latencyMs": 1406.0011109999996,
+    "answer": "The capital of France is Paris.",
+    "usage": {
+      "input": 134,
+      "output": 11,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 145,
+      "cost": {
+        "input": 0.0000134,
+        "output": 0.0000055,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000189
+      },
+      "inputTotal": 134,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 5
+  },
+  {
+    "turn": "Unrelated break: write a short haiku about rain.",
+    "latencyMs": 1579.285034999999,
+    "answer": "Rain taps the window  \nSoft clouds wander through the dusk  \nGreen leaves drink the sky",
+    "usage": {
+      "input": 163,
+      "output": 21,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 184,
+      "cost": {
+        "input": 0.0000163,
+        "output": 0.0000105,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000268
+      },
+      "inputTotal": 163,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 7
+  },
+  {
+    "turn": "Important parser requirement: negative values and trailing zeros must be preserved. Acknowledge briefly.",
+    "latencyMs": 1367.4837929999994,
+    "answer": "Acknowledged: preserve negative values and trailing zeros.",
+    "usage": {
+      "input": 208,
+      "output": 14,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 222,
+      "cost": {
+        "input": 0.0000208,
+        "output": 0.000007,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000278
+      },
+      "inputTotal": 208,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 9
+  },
+  {
+    "turn": "Unrelated break: how many legs does a spider have? Answer briefly.",
+    "latencyMs": 1368.9463319999995,
+    "answer": "A spider has eight legs.",
+    "usage": {
+      "input": 243,
+      "output": 10,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 253,
+      "cost": {
+        "input": 0.0000243,
+        "output": 0.0000049999999999999996,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000293
+      },
+      "inputTotal": 243,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 11
+  },
+  {
+    "turn": "Return JSON with project_token, delimiter, preserve_negative_values, preserve_trailing_zeros from our project requirements.",
+    "latencyMs": 1712.4946369999998,
+    "answer": "{\"project_token\":\"AMBER-482\",\"delimiter\":\";\",\"preserve_negative_values\":true,\"preserve_trailing_zeros\":true}",
+    "usage": {
+      "input": 281,
+      "output": 33,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 314,
+      "cost": {
+        "input": 0.000028100000000000002,
+        "output": 0.000016499999999999998,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0000446
+      },
+      "inputTotal": 281,
+      "cached_tokens": 0,
+      "stopReason": "stop"
+    },
+    "activeMessages": 13
+  }
+]

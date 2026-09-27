@@ -1,0 +1,210 @@
+{
+  "id": "canonical-url-r1-baseline",
+  "task": "canonical-url",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "baseline",
+  "error": "Error: fetch failed",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": "http://example.com/path",
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com",
+        "name": "root",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:80/a",
+        "name": "default-http-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com:443/a",
+        "name": "default-https-port",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:8080/a",
+        "name": "nondefault-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/./b/../c/",
+        "name": "dot-segments",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com//a///b",
+        "name": "duplicate-slashes",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?z=2&a=1&z=1",
+        "name": "query-sorted",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?b=&a=hello%20world",
+        "name": "query-blank",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?a=2&a=1",
+        "name": "query-duplicate-key-values",
+        "pass": false
+      },
+      {
+        "name": "fragment-rejected",
+        "pass": false
+      },
+      {
+        "name": "credentials-rejected",
+        "pass": false
+      },
+      {
+        "name": "relative-rejected",
+        "pass": false
+      },
+      {
+        "name": "scheme-rejected",
+        "pass": false
+      },
+      {
+        "name": "missing-host",
+        "pass": false
+      },
+      {
+        "name": "invalid-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com./a",
+        "name": "trailing-dot-host",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/資料/é",
+        "name": "unicode-path",
+        "pass": true
+      },
+      {
+        "name": "control-character",
+        "pass": false
+      }
+    ],
+    "passed": 3,
+    "success": false,
+    "total": 19
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": "http://example.com/path",
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com",
+        "name": "root",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:80/a",
+        "name": "default-http-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com:443/a",
+        "name": "default-https-port",
+        "pass": false
+      },
+      {
+        "actual": "http://example.com:8080/a",
+        "name": "nondefault-port",
+        "pass": true
+      },
+      {
+        "actual": "https://example.com/a/./b/../c/",
+        "name": "dot-segments",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com//a///b",
+        "name": "duplicate-slashes",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?z=2&a=1&z=1",
+        "name": "query-sorted",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?b=&a=hello%20world",
+        "name": "query-blank",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/p?a=2&a=1",
+        "name": "query-duplicate-key-values",
+        "pass": false
+      },
+      {
+        "name": "fragment-rejected",
+        "pass": false
+      },
+      {
+        "name": "credentials-rejected",
+        "pass": false
+      },
+      {
+        "name": "relative-rejected",
+        "pass": false
+      },
+      {
+        "name": "scheme-rejected",
+        "pass": false
+      },
+      {
+        "name": "missing-host",
+        "pass": false
+      },
+      {
+        "name": "invalid-port",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com./a",
+        "name": "trailing-dot-host",
+        "pass": false
+      },
+      {
+        "actual": "https://example.com/資料/é",
+        "name": "unicode-path",
+        "pass": true
+      },
+      {
+        "name": "control-character",
+        "pass": false
+      }
+    ],
+    "passed": 3,
+    "success": false,
+    "total": 19
+  },
+  "inputTotal": 974,
+  "inputUncached": 974,
+  "inputCached": 0,
+  "cacheWrite": 0,
+  "outputTokens": 44,
+  "requests": 2,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 2930.7648879999997,
+  "events": []
+}

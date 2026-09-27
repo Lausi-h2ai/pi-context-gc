@@ -1,0 +1,368 @@
+{
+  "id": "dotenv-r1-von",
+  "task": "dotenv",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "von",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db",
+          "PORT": "5432"
+        },
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db"
+        },
+        "name": "spaces-around-equals",
+        "pass": true
+      },
+      {
+        "actual": {
+          "export API_KEY": "abc"
+        },
+        "name": "export-prefix",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "comments-and-blanks",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value # explanation"
+        },
+        "name": "inline-comment",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "abc#123"
+        },
+        "name": "hash-in-word",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "  spaced # value  "
+        },
+        "name": "single-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "hello world"
+        },
+        "name": "double-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "line\\nnext\\t\\\"q\\"
+        },
+        "name": "double-escapes",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "value # stays\" # comment"
+        },
+        "name": "quoted-hash",
+        "pass": false
+      },
+      {
+        "actual": {
+          "A": "",
+          "B": "",
+          "C": ""
+        },
+        "name": "empty-value",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "two"
+        },
+        "name": "duplicate-last-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "localhost",
+          "PORT": "8080"
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "preserve-default-order",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "not enough values to unpack (expected 2, got 1)",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-no-equals",
+        "pass": true
+      },
+      {
+        "name": "invalid-key",
+        "pass": false
+      },
+      {
+        "name": "invalid-key-dash",
+        "pass": false
+      },
+      {
+        "name": "unterminated-single",
+        "pass": false
+      },
+      {
+        "name": "unterminated-double",
+        "pass": false
+      },
+      {
+        "name": "junk-after-quote",
+        "pass": false
+      },
+      {
+        "name": "non-string-defaults",
+        "pass": false
+      }
+    ],
+    "passed": 12,
+    "success": false,
+    "total": 22
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": {},
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db",
+          "PORT": "5432"
+        },
+        "name": "simple",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "db"
+        },
+        "name": "spaces-around-equals",
+        "pass": true
+      },
+      {
+        "actual": {
+          "API_KEY": "abc"
+        },
+        "name": "export-prefix",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "comments-and-blanks",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value"
+        },
+        "name": "inline-comment",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "abc#123"
+        },
+        "name": "hash-in-word",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "  spaced # value  "
+        },
+        "name": "single-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "hello world"
+        },
+        "name": "double-quote",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "line\nnext\t\"q\""
+        },
+        "name": "double-escapes",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "value # stays"
+        },
+        "name": "quoted-hash",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "",
+          "B": "",
+          "C": ""
+        },
+        "name": "empty-value",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "two"
+        },
+        "name": "duplicate-last-wins",
+        "pass": true
+      },
+      {
+        "actual": {
+          "HOST": "localhost",
+          "PORT": "8080"
+        },
+        "name": "defaults",
+        "pass": true
+      },
+      {
+        "actual": {
+          "A": "1",
+          "B": "2"
+        },
+        "name": "preserve-default-order",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed environment definition",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-no-equals",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed environment definition",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-key",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed environment definition",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "invalid-key-dash",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "unterminated quoted value",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unterminated-single",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "unterminated quoted value",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unterminated-double",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "junk after quoted value",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "junk-after-quote",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "defaults must be a dictionary",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "non-string-defaults",
+        "pass": false
+      }
+    ],
+    "passed": 21,
+    "success": false,
+    "total": 22
+  },
+  "inputTotal": 68267,
+  "inputUncached": 26795,
+  "inputCached": 41472,
+  "cacheWrite": 0,
+  "outputTokens": 2061,
+  "requests": 22,
+  "prunedResults": 2,
+  "removedToolCharacters": 3374,
+  "judgeCalls": 2,
+  "judgeLatencyMs": 694.1230859993084,
+  "wallMs": 90862.02931800002,
+  "events": [
+    {
+      "toolCallId": "call_w1ehWo3rFvPdyuxWTel0nrij|fc_0196d49c928a3463016ab96a0f005887d28c36a044fcda5e25",
+      "toolName": "read",
+      "originalCharacters": 1916,
+      "retainedCharacters": 229,
+      "action": "EXTERNALIZE",
+      "discardProbability": 0.1682,
+      "durableProbability": 0.4231,
+      "archive": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/dotenv-r1-von/workspace/.artifacts/1f49681b4c5f8742faf87fa8e35c3a7f6ed38429ca598bd621d69cb281b2bfda.txt"
+    },
+    {
+      "toolCallId": "call_0fHZgpBkixW7PoC6PL8osLJR|fc_0196d49c928a3463016ab96a2b7fc087d29a986e6c48757361",
+      "toolName": "read",
+      "originalCharacters": 1916,
+      "retainedCharacters": 229,
+      "action": "EXTERNALIZE",
+      "discardProbability": 0.1666,
+      "durableProbability": 0.4235,
+      "archive": "/home/laurent/pi_jev/results/general-v3-aggressive-r1/dotenv-r1-von/workspace/.artifacts/1f49681b4c5f8742faf87fa8e35c3a7f6ed38429ca598bd621d69cb281b2bfda.txt"
+    }
+  ]
+}

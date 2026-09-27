@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-26T14:25:04.619Z",
+  "node": "v24.15.0",
+  "pi": "0.87.1",
+  "laya": "0.3.20",
+  "model": "gpt-6-luna",
+  "provider": "openai-codex",
+  "suite": "tools",
+  "runDir": "/home/laurent/pi_jev/results/tools-cuda"
+}

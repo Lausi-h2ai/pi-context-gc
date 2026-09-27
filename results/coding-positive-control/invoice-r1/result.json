@@ -1,0 +1,144 @@
+{
+  "id": "invoice-r1",
+  "decisionSource": "fixture-aware deterministic control; NOT Laya",
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "precision",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "123.00"
+          }
+        ]
+      },
+      {
+        "name": "comma-negative",
+        "pass": true,
+        "actual": [
+          {
+            "id": "B",
+            "amount": "-0002.500"
+          }
+        ]
+      },
+      {
+        "name": "plus",
+        "pass": true,
+        "actual": [
+          {
+            "id": "C",
+            "amount": "+04.00"
+          }
+        ]
+      },
+      {
+        "name": "quoted-id",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A;B",
+            "amount": "9.20"
+          }
+        ]
+      },
+      {
+        "name": "spaces-blank",
+        "pass": true,
+        "actual": [
+          {
+            "id": "A",
+            "amount": "0.000"
+          }
+        ]
+      },
+      {
+        "name": "header-only",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "input must include a header"
+      },
+      {
+        "name": "invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "expected header 'id;amount'"
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      },
+      {
+        "name": "invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      },
+      {
+        "name": "invalid-5",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      },
+      {
+        "name": "invalid-6",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "each record must have exactly two fields"
+      },
+      {
+        "name": "invalid-7",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      },
+      {
+        "name": "invalid-8",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      },
+      {
+        "name": "invalid-9",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid id or amount"
+      }
+    ]
+  },
+  "inputTotal": 12954,
+  "outputTokens": 659,
+  "inputCached": 1536,
+  "inputUncached": 11418,
+  "baselineInput": 25891,
+  "inputSavingsPercent": 49.96717005909389,
+  "filteredResults": 1,
+  "rewinds": 1,
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_d1f42leKflGEoS92s07825Hh|fc_0ebe8ac1fc3ad5a0016ab7d9aa3f8487d2a05963cc6f527c2e",
+      "originalCharacters": 12327,
+      "retainedCharacters": 3133,
+      "action": "KEEP_RESULT",
+      "changed": true
+    }
+  ]
+}

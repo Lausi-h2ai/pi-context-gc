@@ -1,0 +1,35 @@
+{
+  "name": "pi-laya-context-gc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "experiment": "tsx src/experiments.ts",
+    "benchmark": "tsx src/coding-benchmark.ts",
+    "benchmark:aggressive": "tsx src/coding-benchmark.ts --aggressive",
+    "benchmark:long": "tsx src/coding-benchmark.ts --long",
+    "benchmark:long-focused": "tsx src/coding-benchmark.ts --long-focused",
+    "dashboard": "python3 benchmarks/dashboard.py",
+    "start": "tsx src/cli.ts",
+    "benchmark:unseen": "tsx src/unseen-benchmark.ts",
+    "benchmark:general": "tsx src/general-benchmark.ts",
+    "healthcheck": "tsx src/healthcheck.ts"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "0.87.1",
+    "@earendil-works/pi-coding-agent": "0.87.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "description": "Recoverable context archiving and rewind experiments for Pi coding agents",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lausi-h2ai/pi-context-gc.git"
+  }
+}

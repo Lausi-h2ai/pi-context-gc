@@ -1,0 +1,7 @@
+{
+  "originalCharacters": 36047,
+  "excerptCharacters": 222,
+  "failurePreserved": true,
+  "excerpt": "[Full output: /home/laurent/pi_jev/results/integration-cuda/artifacts/2222501f35efa9673a18eb4df9534dcdcc8bca3efd99c785abdee1e9be8afcaa.txt; 36047 characters. Excerpt follows.]\nFAILED test_precision: expected 123.00 got 123",
+  "note": "Deterministic externalization mechanism check; the label is specified, not claimed as a Laya prediction."
+}

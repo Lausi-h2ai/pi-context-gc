@@ -1,0 +1,327 @@
+{
+  "id": "duration-r1-laya",
+  "task": "duration",
+  "stratum": "short",
+  "repetition": 0,
+  "arm": "laya",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": 0,
+        "name": "zero",
+        "pass": true
+      },
+      {
+        "actual": 2000,
+        "name": "seconds",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '500m'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "milliseconds",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '2m'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "minutes",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '1h'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "hours",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '1d'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "days",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '1h30m'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "compound-no-space",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: ' 1h 30m 500ms '",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "compound-space",
+        "pass": false
+      },
+      {
+        "actual": 1500,
+        "name": "decimal",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '.25m'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "leading-dot",
+        "pass": false
+      },
+      {
+        "actual": 0,
+        "name": "ceil-fraction",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "could not convert string to float: '2d 3h 4m 5s 6m'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "mixed-units",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "could not convert string to float: ''",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "could not convert string to float: '   '",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "whitespace-only",
+        "pass": true
+      },
+      {
+        "name": "missing-unit",
+        "pass": false
+      },
+      {
+        "name": "space-inside-term",
+        "pass": false
+      },
+      {
+        "name": "negative",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "could not convert string to float: '1w'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unknown-unit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "could not convert string to float: '1S'",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "uppercase-unit",
+        "pass": true
+      },
+      {
+        "name": "trailing-dot",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "'int' object has no attribute 'rstrip'",
+          "module": "builtins",
+          "name": "AttributeError"
+        },
+        "name": "input-type",
+        "pass": false
+      }
+    ],
+    "passed": 7,
+    "success": false,
+    "total": 21
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": 0,
+        "name": "zero",
+        "pass": true
+      },
+      {
+        "actual": 2000,
+        "name": "seconds",
+        "pass": true
+      },
+      {
+        "actual": 500,
+        "name": "milliseconds",
+        "pass": true
+      },
+      {
+        "actual": 120000,
+        "name": "minutes",
+        "pass": true
+      },
+      {
+        "actual": 3600000,
+        "name": "hours",
+        "pass": true
+      },
+      {
+        "actual": 86400000,
+        "name": "days",
+        "pass": true
+      },
+      {
+        "actual": 5400000,
+        "name": "compound-no-space",
+        "pass": true
+      },
+      {
+        "actual": 5400500,
+        "name": "compound-space",
+        "pass": true
+      },
+      {
+        "actual": 1500,
+        "name": "decimal",
+        "pass": true
+      },
+      {
+        "actual": 15000,
+        "name": "leading-dot",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "name": "ceil-fraction",
+        "pass": true
+      },
+      {
+        "actual": 183845006,
+        "name": "mixed-units",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "duration must contain at least one term",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "duration must contain at least one term",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "whitespace-only",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed duration",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "missing-unit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed duration",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "space-inside-term",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed duration",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "negative",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed duration",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "unknown-unit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed duration",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "uppercase-unit",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "malformed duration",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "trailing-dot",
+        "pass": true
+      },
+      {
+        "exception": {
+          "message": "duration must be a string",
+          "module": "builtins",
+          "name": "ValueError"
+        },
+        "name": "input-type",
+        "pass": true
+      }
+    ],
+    "passed": 21,
+    "success": true,
+    "total": 21
+  },
+  "inputTotal": 27802,
+  "inputUncached": 16538,
+  "inputCached": 11264,
+  "cacheWrite": 0,
+  "outputTokens": 1288,
+  "requests": 15,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 55406.842014999995,
+  "events": []
+}

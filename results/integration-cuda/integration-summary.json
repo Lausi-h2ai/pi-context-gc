@@ -1,0 +1,34 @@
+[
+  {
+    "mode": "baseline",
+    "sessionFile": "/home/laurent/pi_jev/results/integration-cuda/baseline-session/2026-09-26T14-24-18-683Z_01a0de1a-44fb-748d-b688-a92f3fa4779f.jsonl",
+    "activeMessages": 13,
+    "activeCharacters": 5342,
+    "inputTotal": 1117,
+    "cachedTotal": 0,
+    "discardedTurns": 0,
+    "success": true,
+    "answer": {
+      "project_token": "AMBER-482",
+      "delimiter": ";",
+      "preserve_negative_values": true,
+      "preserve_trailing_zeros": true
+    }
+  },
+  {
+    "mode": "auto",
+    "sessionFile": "/home/laurent/pi_jev/results/integration-cuda/auto-session/2026-09-26T14-24-29-708Z_01a0de1a-700c-748d-b688-a931606c2949.jsonl",
+    "activeMessages": 13,
+    "activeCharacters": 5412,
+    "inputTotal": 1125,
+    "cachedTotal": 0,
+    "discardedTurns": 0,
+    "success": true,
+    "answer": {
+      "project_token": "AMBER-482",
+      "delimiter": ";",
+      "preserve_negative_values": true,
+      "preserve_trailing_zeros": true
+    }
+  }
+]

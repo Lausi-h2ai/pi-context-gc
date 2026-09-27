@@ -1,0 +1,332 @@
+{
+  "id": "records-r1-filter",
+  "task": "records",
+  "repetition": 0,
+  "arm": "filter",
+  "config": {
+    "name": "filter",
+    "filter": true,
+    "rewind": false,
+    "heuristic": false,
+    "threshold": 0.3
+  },
+  "initialEvaluation": {
+    "passed": 4,
+    "total": 13,
+    "success": false,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ],
+          [
+            "y"
+          ],
+          [
+            "b",
+            "z"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-key",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": false,
+        "actual": [
+          [
+            "a"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-1",
+        "pass": false,
+        "actual": [
+          [
+            "a\\",
+            "b"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-2",
+        "pass": false,
+        "actual": [
+          [
+            "",
+            "x"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-3",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "\\q"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-4",
+        "pass": false,
+        "actual": [
+          [
+            "a",
+            "x\\"
+          ]
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "passed": 13,
+    "total": 13,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "simple",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-separator",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "x;y"
+          ],
+          [
+            "b",
+            "z"
+          ]
+        ]
+      },
+      {
+        "name": "escaped-key",
+        "pass": true,
+        "actual": [
+          [
+            "a=b",
+            "c"
+          ]
+        ]
+      },
+      {
+        "name": "backslash",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "\\"
+          ]
+        ]
+      },
+      {
+        "name": "extra-equals",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            "b=c"
+          ]
+        ]
+      },
+      {
+        "name": "empty-records",
+        "pass": true,
+        "actual": [
+          [
+            "a",
+            ""
+          ]
+        ]
+      },
+      {
+        "name": "duplicate-space",
+        "pass": true,
+        "actual": [
+          [
+            " a ",
+            " x "
+          ],
+          [
+            " a ",
+            "y"
+          ]
+        ]
+      },
+      {
+        "name": "invalid-0",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record is missing '='"
+      },
+      {
+        "name": "invalid-1",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record is missing '='"
+      },
+      {
+        "name": "invalid-2",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "record key must not be empty"
+      },
+      {
+        "name": "invalid-3",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid escape"
+      },
+      {
+        "name": "invalid-4",
+        "pass": true,
+        "exception": "ValueError",
+        "message": "invalid escape"
+      }
+    ]
+  },
+  "inputTotal": 21192,
+  "inputUncached": 11976,
+  "inputCached": 9216,
+  "outputTokens": 721,
+  "allTokens": 21913,
+  "requests": 12,
+  "wallMs": 33992.789610000036,
+  "judgeCalls": 4,
+  "judgeLatencyMs": 640.8847700022307,
+  "filteredResults": 0,
+  "removedToolCharacters": 0,
+  "rewinds": 0,
+  "finalMessages": 25,
+  "finalSourceHash": "31196ff9b564cedf39d92a3023e3989d0673b58053424c4562d5a92cb38e4ea6",
+  "sessionFile": "/home/laurent/pi_jev/results/coding-unseen-fixed-pilot/records-r1-filter/session/2026-09-26T16-41-40-366Z_01a0de98-070e-7419-afc1-5cb8ccd1febc.jsonl",
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_kaLZ57bLD83YEsX4yL1Z7gL4|fc_0f67933200512f58016ab7f5cbab7487d28e8b4d43f8a969f7",
+      "originalCharacters": 5263,
+      "retainedCharacters": 5263,
+      "changed": false,
+      "decisions": [
+        {
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1729,
+          "durableProbability": 0.6128
+        },
+        {
+          "action": "KEEP_FULL",
+          "discardProbability": 0.183,
+          "durableProbability": 0.5702
+        },
+        {
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1823,
+          "durableProbability": 0.5991
+        },
+        {
+          "action": "KEEP_FULL",
+          "discardProbability": 0.1926,
+          "durableProbability": 0.6907
+        }
+      ]
+    }
+  ],
+  "postToolEvents": []
+}

@@ -1,0 +1,5 @@
+2026-09-26T08:14:02Z INFO worker started component=configuration_duration
+2026-09-26T08:14:03Z INFO smoke suite completed checks=12
+2026-09-26T08:14:03Z WARN one regression remains after the latest change
+2026-09-26T08:14:03Z ERROR compound duration 1h30m was truncated and malformed unit text was accepted
+2026-09-26T08:14:04Z INFO run stopped status=failed

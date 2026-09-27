@@ -1,0 +1,136 @@
+{
+  "id": "retry-r1",
+  "decisionSource": "fixture-aware deterministic control; NOT Laya",
+  "evaluation": {
+    "passed": 16,
+    "total": 16,
+    "success": true,
+    "cases": [
+      {
+        "name": "empty",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "success-stop",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "ordinary",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "budget",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "401-stop",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "500-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "post-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "post-key",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "empty-key",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "patch-no",
+        "pass": true,
+        "actual": []
+      },
+      {
+        "name": "head",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      },
+      {
+        "name": "retry-after",
+        "pass": true,
+        "actual": [
+          201,
+          1000
+        ]
+      },
+      {
+        "name": "small-after",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "invalid-after",
+        "pass": true,
+        "actual": [
+          100,
+          200
+        ]
+      },
+      {
+        "name": "short-after",
+        "pass": true,
+        "actual": [
+          500,
+          200
+        ]
+      },
+      {
+        "name": "none-after",
+        "pass": true,
+        "actual": [
+          100
+        ]
+      }
+    ]
+  },
+  "inputTotal": 13151,
+  "outputTokens": 660,
+  "inputCached": 1536,
+  "inputUncached": 11615,
+  "baselineInput": 26008,
+  "inputSavingsPercent": 49.434789295601355,
+  "filteredResults": 1,
+  "rewinds": 1,
+  "filterEvents": [
+    {
+      "toolName": "read",
+      "toolCallId": "call_knhhflZ0LQVL2qqdj0KpofkE|fc_0634da8101c88740016ab7d9c817dc87d29f238d84467a8991",
+      "originalCharacters": 12342,
+      "retainedCharacters": 3146,
+      "action": "KEEP_RESULT",
+      "changed": true
+    }
+  ]
+}

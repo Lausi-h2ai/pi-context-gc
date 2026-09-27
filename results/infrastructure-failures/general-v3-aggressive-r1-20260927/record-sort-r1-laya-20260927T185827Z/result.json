@@ -1,0 +1,342 @@
+{
+  "id": "record-sort-r1-laya",
+  "task": "record-sort",
+  "stratum": "long",
+  "repetition": 0,
+  "arm": "laya",
+  "error": "Error: You have hit your ChatGPT usage limit (plus plan). Try again in ~184 min.",
+  "initialEvaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "name": "a"
+          },
+          {
+            "name": "b"
+          }
+        ],
+        "name": "ascending",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "descending",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "group": "a",
+            "score": 2
+          },
+          {
+            "group": "a",
+            "score": 1
+          },
+          {
+            "group": "b",
+            "score": 1
+          }
+        ],
+        "name": "multi-key",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "third",
+            "k": 0
+          },
+          {
+            "id": "first",
+            "k": 1
+          },
+          {
+            "id": "second",
+            "k": 1
+          }
+        ],
+        "name": "stable-tie",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'int'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "missing-last-ascending",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "missing-last-descending",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'int' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "none-last",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": -3
+          },
+          {
+            "v": -1
+          },
+          {
+            "v": 0
+          }
+        ],
+        "name": "negative-numbers",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "key-with-leading-dash",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": 1
+          },
+          {
+            "v": 2
+          }
+        ],
+        "name": "rows-not-mutated",
+        "pass": true
+      },
+      {
+        "name": "empty-keys",
+        "pass": false
+      },
+      {
+        "name": "non-string-key",
+        "pass": false
+      },
+      {
+        "name": "empty-key-name",
+        "pass": false
+      },
+      {
+        "name": "only-minus",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "'<' not supported between instances of 'str' and 'int'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "mixed-value-types",
+        "pass": false
+      },
+      {
+        "name": "nested-values-not-supported",
+        "pass": false
+      }
+    ],
+    "passed": 6,
+    "success": false,
+    "total": 17
+  },
+  "evaluation": {
+    "cases": [
+      {
+        "actual": [],
+        "name": "empty",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "name": "a"
+          },
+          {
+            "name": "b"
+          }
+        ],
+        "name": "ascending",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "descending",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "group": "a",
+            "score": 2
+          },
+          {
+            "group": "a",
+            "score": 1
+          },
+          {
+            "group": "b",
+            "score": 1
+          }
+        ],
+        "name": "multi-key",
+        "pass": true
+      },
+      {
+        "actual": [
+          {
+            "id": "third",
+            "k": 0
+          },
+          {
+            "id": "first",
+            "k": 1
+          },
+          {
+            "id": "second",
+            "k": 1
+          }
+        ],
+        "name": "stable-tie",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'int'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "missing-last-ascending",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "missing-last-descending",
+        "pass": false
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'int' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "none-last",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": -3
+          },
+          {
+            "v": -1
+          },
+          {
+            "v": 0
+          }
+        ],
+        "name": "negative-numbers",
+        "pass": true
+      },
+      {
+        "error": {
+          "message": "'<' not supported between instances of 'NoneType' and 'NoneType'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "key-with-leading-dash",
+        "pass": false
+      },
+      {
+        "actual": [
+          {
+            "v": 1
+          },
+          {
+            "v": 2
+          }
+        ],
+        "name": "rows-not-mutated",
+        "pass": true
+      },
+      {
+        "name": "empty-keys",
+        "pass": false
+      },
+      {
+        "name": "non-string-key",
+        "pass": false
+      },
+      {
+        "name": "empty-key-name",
+        "pass": false
+      },
+      {
+        "name": "only-minus",
+        "pass": false
+      },
+      {
+        "exception": {
+          "message": "'<' not supported between instances of 'str' and 'int'",
+          "module": "builtins",
+          "name": "TypeError"
+        },
+        "name": "mixed-value-types",
+        "pass": false
+      },
+      {
+        "name": "nested-values-not-supported",
+        "pass": false
+      }
+    ],
+    "passed": 6,
+    "success": false,
+    "total": 17
+  },
+  "inputTotal": 0,
+  "inputUncached": 0,
+  "inputCached": 0,
+  "cacheWrite": 0,
+  "outputTokens": 0,
+  "requests": 1,
+  "prunedResults": 0,
+  "removedToolCharacters": 0,
+  "judgeCalls": 0,
+  "judgeLatencyMs": 0,
+  "wallMs": 5735.98028899997,
+  "events": []
+}

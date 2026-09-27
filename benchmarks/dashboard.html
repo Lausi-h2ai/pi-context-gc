@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pi + Laya experiment viewer</title>
+<style>
+  :root { color-scheme: dark; font: 15px/1.45 system-ui,sans-serif; background: #101722; color: #e9eff8; }
+  * { box-sizing: border-box; }
+  body { margin: 0 auto; max-width: 1500px; padding: 28px; }
+  h1,h2,h3,p { margin-top: 0; }
+  h1 { font-size: 1.8rem; margin-bottom: 6px; }
+  h2 { font-size: 1.1rem; margin: 0 0 14px; }
+  small,.muted { color: #a9b8cd; }
+  .layout { display: grid; grid-template-columns: minmax(470px, 1fr) minmax(450px, 1.2fr); gap: 18px; margin-top: 22px; }
+  .panel { background: #192434; border: 1px solid #304258; border-radius: 12px; padding: 18px; min-width: 0; }
+  .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 20px; }
+  .card { background:#192434; border:1px solid #304258; padding:16px; border-radius:12px; }
+  .number { display:block; font-size:1.45rem; font-weight:700; }
+  .warn { color:#ffcf87; } .good { color:#75ddba; } .bad { color:#ff9d9d; }
+  table { width:100%; border-collapse:collapse; font-size:.89rem; }
+  th,td { padding:9px 7px; border-bottom:1px solid #304258; text-align:left; vertical-align:top; }
+  th { color:#a9b8cd; font-weight:600; }
+  tr[data-id] { cursor:pointer; } tr[data-id]:hover,tr.selected { background:#25364a; }
+  .scroll { overflow:auto; max-height:560px; }
+  .pill { display:inline-block; border-radius:20px; background:#26394d; padding:2px 8px; margin:2px 4px 2px 0; font-size:.8rem; }
+  .timeline { border-left:2px solid #59708a; margin-left:8px; padding-left:16px; }
+  .event { margin:0 0 18px; position:relative; }
+  .event::before { content:""; position:absolute; left:-22px; top:5px; width:10px; height:10px; border-radius:50%; background:#7db7e5; }
+  .event h3 { font-size:.98rem; margin:0 0 5px; }
+  .event p { margin:3px 0; overflow-wrap:anywhere; }
+  .bar { height:8px; background:#34465c; border-radius:8px; overflow:hidden; margin:4px 0; }
+  .bar span { display:block; height:100%; background:#75ddba; }
+  details { margin:12px 0; } summary { cursor:pointer; color:#a8d5fa; }
+  code { color:#bfe7d9; } .empty { padding:28px; color:#a9b8cd; text-align:center; }
+  @media(max-width:1000px) { .layout { grid-template-columns:1fr; } .cards { grid-template-columns:1fr; } }
+</style>
+<body>
+<header>
+  <h1>Pi + Laya experiment viewer</h1>
+  <p class="muted">Coding accuracy, model input, local judgments, and Pi's turns. Refreshes every five seconds while a run is writing results.</p>
+  <small id="source"></small>
+</header>
+<div class="cards" id="cards"></div>
+<div class="layout">
+  <section class="panel"><h2>Experiment arms</h2><div id="arms"></div></section>
+  <section class="panel"><h2>Interpretation</h2><div id="interpretation"></div></section>
+  <section class="panel"><h2>Trials</h2><div class="scroll"><table><thead><tr><th>Trial</th><th>State</th><th>Accuracy</th><th>Input</th><th>Actions</th></tr></thead><tbody id="trials"></tbody></table></div></section>
+  <section class="panel"><h2 id="detail-title">Select a trial</h2><div id="detail" class="empty">Select a row to see Pi turns, Laya verdicts, context decisions, and per-request usage.</div></section>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const num = n => Number(n || 0).toLocaleString();
+const pct = n => `${Number(n || 0).toFixed(1)}%`;
+const escapeHTML = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let selected = null;
+let lastOverview = null;
+let lastTrial = null;
+let renderedTrialId = null;
+async function get(url) { const r = await fetch(url, {cache:'no-store'}); if (!r.ok) throw Error(`${r.status} ${r.statusText}`); return r.json(); }
+function renderOverview(data) {
+  const snapshot = JSON.stringify(data);
+  if (snapshot === lastOverview) return;
+  lastOverview = snapshot;
+  $('source').textContent = `Source: ${data.directory}`;
+  const completed = data.trials.filter(r => !r.error);
+  const actions = completed.reduce((n,r) => n + (r.filteredResults||0) + (r.rewinds||0),0);
+  const allDone = data.arms.length > 0 && data.arms.every(a => a.completed === a.expected);
+  const expected = data.arms.reduce((n,a) => n+a.expected, 0);
+  $('cards').innerHTML = `<div class="card"><small>Valid coding trials</small><span class="number ${allDone?'good':'warn'}">${completed.length}/${expected}</span><small>Failed provider attempts are excluded</small></div>
+    <div class="card"><small>Actual Laya context changes</small><span class="number">${actions}</span><small>Filtered results + rewinds</small></div>
+    ${data.control.expected ? `<div class="card"><small>Fixture-aware control</small><span class="number ${data.control.completed===6?'good':'warn'}">${data.control.completed}/6</span><small>${data.control.filteredResults} filters · ${data.control.rewinds} rewinds; not Laya</small></div>` : ''}`;
+  $('arms').innerHTML = `<table><thead><tr><th>Arm</th><th>Valid</th><th>Task pass</th><th>Input tokens</th><th>Actions</th></tr></thead><tbody>` + data.arms.map(a =>
+    `<tr><td>${escapeHTML(a.name)}</td><td class="${a.completed<6?'warn':''}">${a.completed}/${a.expected}</td><td>${a.passed}/${a.completed}</td><td>${num(a.inputTotal)}</td><td>${a.filteredResults} filter · ${a.rewinds} rewind</td></tr>`).join('') + `</tbody></table><p class="muted">Totals exclude provider-error trials. Compare input only after all matched trials finish; independent model runs vary.</p>`;
+  $('interpretation').innerHTML = `<p>${allDone ? 'All configured trials completed.' : data.arms.length ? 'The experiment is incomplete. An overall accuracy or token-saving percentage is premature.' : 'The experiment has not started yet.'}</p>
+    <p>${actions ? `${actions} Laya decisions changed context. Inspect their trial traces before attributing token differences.` : 'Among valid Laya trials, no tool result was shortened and no Pi branch was rewound. Laya-attributable context savings observed so far are zero.'}</p>
+    <p>${data.control.expected ? 'The control uses known fixture labels to force pruning. Its results verify the mechanism, not Laya classification quality. ' : ''}Input includes cached tokens; cache reuse does not remove context tokens.</p>`;
+  $('trials').innerHTML = data.trials.map(r => `<tr data-id="${escapeHTML(r.id)}" class="${r.id===selected?'selected':''}"><td>${escapeHTML(r.id)}</td><td class="${r.error?'bad':'good'}">${r.error?'provider error':'complete'}</td><td>${r.passed??0}/${r.total??0}</td><td>${num(r.inputTotal)}</td><td>${r.filteredResults||0}F · ${r.rewinds||0}R</td></tr>`).join('');
+  document.querySelectorAll('tr[data-id]').forEach(row => row.onclick = () => {
+    selected = row.dataset.id;
+    lastTrial = null;
+    document.querySelectorAll('tr[data-id]').forEach(other => other.classList.toggle('selected', other.dataset.id === selected));
+    renderTrial(selected);
+  });
+}
+function verdict(v) { return v ? `<span class="pill">${escapeHTML(v.action)}</span><span class="pill">discard ${pct(100*v.discardProbability)}</span><span class="pill">durable ${pct(100*v.durableProbability)}</span><span class="pill">${num(v.windows)} windows · ${num(v.latencyMs)} ms</span>` : '<span class="muted">No judgment</span>'; }
+async function renderTrial(id) {
+  const d = await get(`/api/trial?id=${encodeURIComponent(id)}`);
+  if (selected !== id) return;
+  const snapshot = JSON.stringify(d);
+  if (snapshot === lastTrial && renderedTrialId === id) return;
+  const sameTrial = renderedTrialId === id;
+  const openSections = sameTrial ? new Set([...$('detail').querySelectorAll('details[open]')].map(section => section.dataset.section)) : new Set(['turns']);
+  const scrollY = window.scrollY;
+  const innerScroll = sameTrial ? $('detail').querySelector('.scroll')?.scrollTop ?? 0 : 0;
+  $('detail-title').textContent = id;
+  const r=d.result;
+  const turns=d.turns.map(t => `<div class="event"><h3>Pi: ${escapeHTML(t.label)}</h3><p><small>Prompt</small> ${escapeHTML(t.text)}</p><p><small>Response</small> ${escapeHTML(t.answer)}</p><small>${num(t.latencyMs)} ms · ${t.messages??'?'} active messages${t.decision?' · GC '+escapeHTML(t.decision.action):''}</small></div>`).join('');
+  const judgments=d.judgments.map((j,i) => `<div class="event"><h3>Laya judgment ${i+1} · ${escapeHTML(j.stage)}</h3><p>${verdict(j.verdict)}</p><p>${escapeHTML(j.effect)}</p><small>${num(j.inputCharacters)} input characters</small></div>`).join('');
+  const gc=d.gc.map((g,i) => `<div class="event"><h3>Pi context decision ${i+1}: ${escapeHTML(g.action)}</h3><p>${escapeHTML(g.reason)}</p><p>${verdict(g.verdict)}</p><small>${g.beforeMessages??'?'} → ${g.afterMessages??'?'} active messages · ${escapeHTML(g.time)}</small></div>`).join('');
+  const usage=d.usage.map((u,i) => `<tr><td>${i+1}</td><td>${num(u.inputTotal)}</td><td>${num(u.cacheRead)}</td><td>${num(u.output)}</td><td>${escapeHTML(u.stopReason)}</td></tr>`).join('');
+  $('detail').className='';
+  $('detail').innerHTML = `<p>${r ? `${r.error?'<span class="bad">'+escapeHTML(r.error)+'</span>':'<span class="good">Completed</span>'} · ${r.evaluation?.passed??0}/${r.evaluation?.total??0} hidden checks · ${num(r.inputTotal)} input tokens · ${num(r.judgeCalls)} Laya calls` : 'Trial in progress'}</p>
+    <details data-section="turns"><summary>Pi turns (${d.turns.length})</summary><div class="timeline">${turns||'<p class="muted">No turns recorded yet.</p>'}</div></details>
+    <details data-section="judgments"><summary>Laya judgments (${d.judgments.length})</summary><div class="timeline">${judgments||'<p class="muted">No Laya calls in this trial.</p>'}</div></details>
+    <details data-section="context"><summary>Pi context decisions (${d.gc.length})</summary><div class="timeline">${gc||'<p class="muted">No rewind decisions.</p>'}</div></details>
+    <details data-section="requests"><summary>Model requests (${d.usage.length})</summary><div class="scroll"><table><thead><tr><th>#</th><th>Input</th><th>Cached</th><th>Output</th><th>Stop</th></tr></thead><tbody>${usage}</tbody></table></div></details>`;
+  $('detail').querySelectorAll('details').forEach(section => { section.open = openSections.has(section.dataset.section); });
+  const scroll = $('detail').querySelector('.scroll');
+  if (scroll) scroll.scrollTop = innerScroll;
+  if (sameTrial) window.scrollTo(0, scrollY);
+  lastTrial = snapshot;
+  renderedTrialId = id;
+}
+async function refresh() { try { renderOverview(await get('/api/overview')); if (selected) await renderTrial(selected); } catch(e) { $('interpretation').textContent=String(e); } }
+refresh(); setInterval(refresh,5000);
+</script>
+</body></html>

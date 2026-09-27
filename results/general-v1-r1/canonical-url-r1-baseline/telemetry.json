@@ -1,0 +1,69 @@
+{
+  "requests": [
+    {
+      "instructions": "68b7de6dca498a6e6d5f1438c188bbce94cd4dd0600b766146f4b41f770cd189",
+      "tools": "5d4531298c15b7bf38aa87862be7d1187fc64bec8e4e4fcf1ecd98f33b1c3c4b",
+      "model": "gpt-6-luna",
+      "cacheKey": "8d02d57f539ce9e7c7fbf687fa04d53b1e505cbb98be88a46cbbd3908800cd36",
+      "inputHashes": [
+        "a588073ec23ff4d286598dc432ef1f2d29a58fda9280f1e82ea7cfac032966e4"
+      ],
+      "inputItems": 1,
+      "payloadHash": "dea44a8c750be5a0868a5cd096feaa74018ba53ebd6b2f34253f637ec35164b6",
+      "inputCharacters": 256
+    },
+    {
+      "instructions": "68b7de6dca498a6e6d5f1438c188bbce94cd4dd0600b766146f4b41f770cd189",
+      "tools": "5d4531298c15b7bf38aa87862be7d1187fc64bec8e4e4fcf1ecd98f33b1c3c4b",
+      "model": "gpt-6-luna",
+      "cacheKey": "8d02d57f539ce9e7c7fbf687fa04d53b1e505cbb98be88a46cbbd3908800cd36",
+      "inputHashes": [
+        "a588073ec23ff4d286598dc432ef1f2d29a58fda9280f1e82ea7cfac032966e4",
+        "bc5e147bbdbb65a0afc538724d9512fd8e1dfc249ada6743be48bdd3ce20f29b",
+        "349d5bfb431d02f62afefa2e063b68414044cce81e83cd092502d0a8909df884",
+        "5075b5775a5f4e54b930a5193bda66171c9e3b57450446d68f0c6a41a308cef7"
+      ],
+      "inputItems": 4,
+      "payloadHash": "c62f304aec325a75658f9ddf7dfc8eb73d18fc9bfb5909008c56b37bc621a199",
+      "inputCharacters": 909
+    }
+  ],
+  "usage": [
+    {
+      "input": 974,
+      "output": 44,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "totalTokens": 1018,
+      "cost": {
+        "input": 0.00009740000000000001,
+        "output": 0.000022,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0.0001194
+      },
+      "inputTotal": 974,
+      "cached_tokens": 0,
+      "stopReason": "toolUse"
+    },
+    {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "totalTokens": 0,
+      "cost": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      },
+      "inputTotal": 0,
+      "cached_tokens": 0,
+      "stopReason": "error",
+      "error": "fetch failed"
+    }
+  ]
+}

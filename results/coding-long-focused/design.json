@@ -1,0 +1,56 @@
+{
+  "created": "2026-09-26T16:22:19.893Z",
+  "design": {
+    "repeats": 2,
+    "arms": [
+      {
+        "name": "baseline",
+        "filter": false,
+        "rewind": false,
+        "threshold": 0.95
+      },
+      {
+        "name": "aggressive",
+        "filter": true,
+        "rewind": true,
+        "threshold": 0.3
+      }
+    ],
+    "scenario": "long-focused",
+    "tasks": [
+      {
+        "id": "suite",
+        "tests": 48,
+        "hash": "364d843eaf8ed73ab2535aa44a9fa8e38f54c4d42b15f7ffe3bcf51debf6f45b"
+      }
+    ],
+    "codeHashes": {
+      "src/coding-benchmark.ts": "af180856944c3d98f418c99750b7742f0db5bb5a0a4850a5a0408b186b0e19c5",
+      "src/gc.ts": "f7c657a6534c7741b0bfa86799a67a09aef3538f286f96980eeafe6965ef81f8",
+      "src/tool-filter.ts": "27b0c068434a290251608394c6868f3c5fc87891739236930da67ce7e0935d7c",
+      "src/post-tool-gc.ts": "1eeac37f24f621bf5f55d585c6be475e3c58a1551aa0cd90afa287f4ed4e46bf",
+      "src/aggressive-filter.ts": "dd91404f8f82c94cfd501aafb33624785ecff4e246567c9b91361ec8f7871bcb",
+      "src/aggressive-gc.ts": "6a3d56e44f4cda6b2726fca74baabb4f2451c71af5da14430e7da9435c84cc11",
+      "src/runtime.ts": "01ff45f9fa91e0fdb3ed37d2da069bcfe81c1402799b72511f00a1fdf22657d4",
+      "python/judge.py": "12ca93bd4e105ec55c3b3b10537ecf67c511511a0d3336c5c58e579e892f36f8",
+      "benchmarks/tasks.ts": "08167046b0a6da9da90ef1d0f03614445b9d955a538a185abec9ba57c3bd628e",
+      "benchmarks/long-tasks.ts": "4b1b26f54f55c393c90646319441871fa810dfa68278dfaea374611836159e67",
+      "benchmarks/evaluate.py": "bcbd578cdfad418e707517b87ddd14bf906eedf54e54351c80fd53488e622a84"
+    },
+    "model": "gpt-6-luna",
+    "primaryMetrics": [
+      "total input tokens across every model call",
+      "all hidden tests pass"
+    ],
+    "secondaryMetrics": [
+      "uncached input",
+      "cached input",
+      "output tokens",
+      "test-case accuracy",
+      "latency",
+      "actual filtered results",
+      "actual rewinds"
+    ],
+    "method": "Fresh paired workspaces repair three functions in one module with 48 hidden checks. Six-section stable contract is read before three distinct verbose diagnostics and three unrelated read-only detours. Baseline keeps all context; aggressive Laya filters diagnostic chunks and can rewind completed tangents. Same prompts and evaluation, independent generations. Primary comparison includes cached and uncached input separately. Synthetic long reference intentionally keeps the durable prefix cacheable. Focused variant uses the corresponding function objective for each diagnostic chunk and a 0.30 rewind threshold; this policy was selected after probing the first long run and is not an independent holdout."
+  }
+}
