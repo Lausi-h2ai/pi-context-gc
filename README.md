@@ -1,12 +1,33 @@
 # Pi Context GC
 
-Recoverable context archiving and session rewind experiments for [Pi](https://github.com/earendil-works/pi). This is a research prototype with local Laya and Von retention judges, benchmark fixtures, hidden evaluators, and recorded synthetic runs.
+**Archive the bulk. Keep the evidence.**
+
+Old tool outputs can travel through request after request. Pi Context GC replaces eligible old outputs with recoverable file references. In an exploratory eight-task benchmark, the Laya-guided policy used **44.6% fewer input tokens, including cached input**, with the same whole-task pass count as baseline. Uncached input increased; cost savings are unproven.
+
+This is an MIT-licensed research prototype for [Pi](https://github.com/earendil-works/pi), with local Laya and Von retention judges, session rewind experiments, benchmark fixtures, hidden evaluators, and recorded synthetic runs.
+
+![Visual replay: archive a synthetic tool result, then recover it exactly. Deterministic judge; no model requests.](docs/assets/archive-demo.gif)
+
+## Try the mechanism in a minute
+
+With Node.js 24 installed:
+
+```bash
+git clone https://github.com/Lausi-h2ai/pi-context-gc.git
+cd pi-context-gc
+npm ci
+npm run demo
+```
+
+The demo needs **no GPU, Python environment, or model login**. It executes the real context policy on a synthetic log with a deterministic judge, reads the archived file back, and checks exact recovery. It makes no model requests and does not measure token savings or classifier quality. See [demo details and media reproduction](demo/README.md).
 
 The general benchmark archives eligible tool outputs from earlier turns and replaces them with file references the coding agent can read again. Requirements and source reads stay protected. A fixed context budget drives removal; the classifier ranks candidates and its `KEEP_FULL` vote can be overridden. The interactive host uses a separate, conservative checkpoint/rewind policy and defaults to shadow mode.
 
 ## Latest results
 
 Eight Python repair tasks, one repetition per arm, using `gpt-6-luna` through Pi's `openai-codex` provider. **The exploratory aggressive policy used 44.6% fewer total input tokens in the Laya arm**, with the same whole-task pass count as baseline.
+
+![V3 input usage split into cached and uncached tokens, with task pass counts and limitations.](docs/assets/v3-results.png)
 
 | Metric | Baseline | Laya-guided | Von-guided |
 | --- | ---: | ---: | ---: |

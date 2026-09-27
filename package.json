@@ -15,7 +15,8 @@
     "start": "tsx src/cli.ts",
     "benchmark:unseen": "tsx src/unseen-benchmark.ts",
     "benchmark:general": "tsx src/general-benchmark.ts",
-    "healthcheck": "tsx src/healthcheck.ts"
+    "healthcheck": "tsx src/healthcheck.ts",
+    "demo": "tsx demo/archive.ts"
   },
   "dependencies": {
     "@earendil-works/pi-ai": "0.87.1",
